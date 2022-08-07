@@ -1,0 +1,25 @@
+|lab1part2
+x[0] => m.IN0
+x[1] => m.IN0
+x[2] => m.IN0
+x[3] => m.IN0
+y[0] => m.IN0
+y[1] => m.IN0
+y[2] => m.IN0
+y[3] => m.IN0
+s => m.IN1
+s => m.IN1
+s => m.IN1
+s => m.IN1
+s => leds.DATAIN
+s => m.IN1
+s => m.IN1
+s => m.IN1
+s => m.IN1
+m[0] <= m.DB_MAX_OUTPUT_PORT_TYPE
+m[1] <= m.DB_MAX_OUTPUT_PORT_TYPE
+m[2] <= m.DB_MAX_OUTPUT_PORT_TYPE
+m[3] <= m.DB_MAX_OUTPUT_PORT_TYPE
+leds <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+

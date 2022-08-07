@@ -1,0 +1,29 @@
+|lab1part3
+u[0] => m.IN0
+u[1] => m.IN0
+v[0] => m.IN0
+v[1] => m.IN0
+w[0] => m.IN0
+w[1] => m.IN0
+x[0] => m.IN0
+x[1] => m.IN0
+s1 => m.IN1
+s1 => m.IN1
+s1 => m.IN1
+s1 => m.IN1
+s1 => m.IN1
+s1 => m.IN1
+s1 => m.IN1
+s1 => m.IN1
+s0 => m.IN1
+s0 => m.IN1
+s0 => m.IN1
+s0 => m.IN1
+s0 => m.IN1
+s0 => m.IN1
+s0 => m.IN1
+s0 => m.IN1
+m[0] <= m.DB_MAX_OUTPUT_PORT_TYPE
+m[1] <= m.DB_MAX_OUTPUT_PORT_TYPE
+
+

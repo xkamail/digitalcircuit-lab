@@ -1,0 +1,29 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity lab1part3 is
+	port (
+	   u : in std_logic_vector(1 downto 0);
+		v : in std_logic_vector(1 downto 0);
+		w : in std_logic_vector(1 downto 0);
+		x : in std_logic_vector(1 downto 0);
+		s1 : in std_logic;
+		s0 : in std_logic;
+		m : out std_logic_vector(1 downto 0)
+	);
+end lab1part3;
+
+architecture Behavior of lab1part3 is
+begin
+	
+	m(0) <= ( u(0) and not(s1) and not (s0)) 
+	or (v(0) and not(s1) and s0) 
+	or ( w(0) and s1 and not(s0)) 
+	or ( x(0) and s1 and s0);
+	
+	m(1) <= ( u(1) and not(s1) and not (s0)) 
+	or (v(1) and not(s1) and s0) 
+	or ( w(1) and s1 and not(s0)) 
+	or ( x(1) and s1 and s0);
+	
+end Behavior;
