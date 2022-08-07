@@ -14,7 +14,7 @@ begin
 	hex(1) <= (c(1) and c(0)) or (not(c(1)) and c(0));
 	hex(2) <= (c(1) and c(0)) or (not (c(1)) and c(0) );
 	hex(3) <= (c(1) and c(0));
-	hex(4) <= (c(1) and c(0)) or (c(1) and c(0));
+	hex(4) <= (c(1) and c(0));
 	hex(5) <= (c(1) and c(0)) or (not(c(1)) and not(c(0))) ;
 	hex(6) <= (c(1) and c(0)) or (c(1) and not(c(0)));
 end behavior;
