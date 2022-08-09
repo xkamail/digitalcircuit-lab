@@ -1,0 +1,16 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+
+entity circuit_a is 
+	port (
+		v : in std_logic_vector(3 downto 0);
+		o : out std_logic_vector(3 downto 0)
+	);
+end circuit_a;
+
+architecture behavior of circuit_a is
+begin
+
+end behavior;
+	
