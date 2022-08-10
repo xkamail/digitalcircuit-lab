@@ -1,0 +1,15 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity lab2part3 is 
+	port (
+	
+	);
+end lab2part3;
+
+architecture behavior of lab2part3 is 
+	
+begin
+	
+	
+end behavior;

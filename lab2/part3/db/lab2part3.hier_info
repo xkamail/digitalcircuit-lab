@@ -1,0 +1,57 @@
+|lab2part3
+a[0] => full_adder:g0.a
+a[1] => full_adder:g1.a
+a[2] => full_adder:g2.a
+a[3] => full_adder:g3.a
+b[0] => full_adder:g0.b
+b[1] => full_adder:g1.b
+b[2] => full_adder:g2.b
+b[3] => full_adder:g3.b
+c_in => full_adder:g0.c_in
+s[0] <= full_adder:g0.s
+s[1] <= full_adder:g1.s
+s[2] <= full_adder:g2.s
+s[3] <= full_adder:g3.s
+c_out <= full_adder:g3.c_out
+
+
+|lab2part3|full_adder:g0
+a => m0.IN0
+b => m0.IN1
+b => c_out.IN1
+c_in => s.IN1
+c_in => c_out.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab2part3|full_adder:g1
+a => m0.IN0
+b => m0.IN1
+b => c_out.IN1
+c_in => s.IN1
+c_in => c_out.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab2part3|full_adder:g2
+a => m0.IN0
+b => m0.IN1
+b => c_out.IN1
+c_in => s.IN1
+c_in => c_out.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab2part3|full_adder:g3
+a => m0.IN0
+b => m0.IN1
+b => c_out.IN1
+c_in => s.IN1
+c_in => c_out.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
