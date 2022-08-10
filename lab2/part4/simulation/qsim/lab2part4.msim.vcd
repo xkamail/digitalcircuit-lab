@@ -1,0 +1,477 @@
+$comment
+	File created using the following command:
+		vcd file lab2part4.msim.vcd -direction
+$end
+$date
+	Wed Aug 10 22:57:03 2022
+$end
+$version
+	ModelSim Version 10.1d
+$end
+$timescale
+	1ps
+$end
+$scope module lab2part4_vlg_vec_tst $end
+$var reg 1 ! c_in $end
+$var reg 4 " x [3:0] $end
+$var reg 4 # y [3:0] $end
+$var wire 1 $ hex0 [0] $end
+$var wire 1 % hex0 [1] $end
+$var wire 1 & hex0 [2] $end
+$var wire 1 ' hex0 [3] $end
+$var wire 1 ( hex0 [4] $end
+$var wire 1 ) hex0 [5] $end
+$var wire 1 * hex0 [6] $end
+$var wire 1 + hex1 [0] $end
+$var wire 1 , hex1 [1] $end
+$var wire 1 - hex1 [2] $end
+$var wire 1 . hex1 [3] $end
+$var wire 1 / hex1 [4] $end
+$var wire 1 0 hex1 [5] $end
+$var wire 1 1 hex1 [6] $end
+$var wire 1 2 led9 $end
+$var wire 1 3 sampler $end
+$scope module i1 $end
+$var wire 1 4 gnd $end
+$var wire 1 5 vcc $end
+$var wire 1 6 unknown $end
+$var tri1 1 7 devclrn $end
+$var tri1 1 8 devpor $end
+$var tri1 1 9 devoe $end
+$var wire 1 : y[0]~input_o $end
+$var wire 1 ; ~QUARTUS_CREATED_GND~I_combout $end
+$var wire 1 < y[1]~input_o $end
+$var wire 1 = y[3]~input_o $end
+$var wire 1 > y[2]~input_o $end
+$var wire 1 ? x[1]~input_o $end
+$var wire 1 @ x[2]~input_o $end
+$var wire 1 A x[3]~input_o $end
+$var wire 1 B led9~0_combout $end
+$var wire 1 C x[0]~input_o $end
+$var wire 1 D c_in~input_o $end
+$var wire 1 E f1|c_out~0_combout $end
+$var wire 1 F f1|s~combout $end
+$var wire 1 G g5|m[3]~0_combout $end
+$var wire 1 H f3|c_out~0_combout $end
+$var wire 1 I f2|s~combout $end
+$var wire 1 J f3|s~combout $end
+$var wire 1 K f0|s~combout $end
+$var wire 1 L g6|hex[6]~0_combout $end
+$var wire 1 M g6|hex[5]~1_combout $end
+$var wire 1 N g6|hex[4]~2_combout $end
+$var wire 1 O g6|Equal4~0_combout $end
+$var wire 1 P g6|hex[1]~3_combout $end
+$var wire 1 Q g6|hex[0]~4_combout $end
+$var wire 1 R g6|hex [0] $end
+$var wire 1 S g6|hex [1] $end
+$var wire 1 T g6|hex [2] $end
+$var wire 1 U g6|hex [3] $end
+$var wire 1 V g6|hex [4] $end
+$var wire 1 W g6|hex [5] $end
+$var wire 1 X g6|hex [6] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+b1010 "
+b0 #
+1*
+0)
+0(
+0'
+0&
+0%
+0$
+11
+10
+1/
+1.
+0-
+0,
+1+
+12
+x3
+04
+15
+x6
+17
+18
+19
+0:
+0;
+0<
+0=
+0>
+1?
+0@
+1A
+1B
+0C
+0D
+0E
+1F
+0G
+0H
+0I
+1J
+0K
+1L
+0M
+0N
+0O
+0P
+0Q
+zX
+zW
+zV
+0U
+zT
+zS
+zR
+$end
+#20000
+b1000 "
+b1001 "
+b1000 #
+b1001 #
+1:
+1=
+1C
+0?
+03
+1H
+0J
+0B
+02
+0L
+0*
+#80000
+b1 #
+b0 #
+0:
+0=
+13
+0F
+1K
+0H
+1J
+1G
+1N
+00
+0/
+0.
+0+
+1(
+#90000
+b1 "
+b10 #
+1<
+0A
+03
+1F
+0J
+1M
+1)
+#210000
+b0 "
+b0 #
+0<
+0C
+13
+0F
+0K
+1L
+0M
+0N
+1*
+0)
+0(
+#230000
+b100 "
+b1000 #
+b101 "
+b1010 #
+1<
+1=
+1C
+1@
+03
+1F
+0G
+1J
+1K
+1I
+1B
+10
+1/
+1.
+1+
+12
+0L
+1N
+1P
+0*
+1(
+1%
+#330000
+b10 #
+b0 #
+0<
+0=
+13
+0F
+1G
+0J
+0B
+00
+0/
+0.
+0+
+02
+#340000
+b1 "
+b0 "
+0C
+0@
+03
+0K
+0I
+1L
+0N
+0P
+1*
+0(
+0%
+#380000
+1!
+b1 #
+b1001 #
+b100 "
+b101 "
+1D
+1C
+1@
+1:
+1=
+13
+1F
+1K
+0G
+1I
+1J
+10
+1/
+1.
+1+
+0L
+1N
+1P
+0*
+1(
+1%
+#440000
+0!
+b1000 #
+b0 #
+b1 "
+b0 "
+0D
+0C
+0@
+0:
+0=
+03
+0F
+0K
+1G
+0I
+0J
+00
+0/
+0.
+0+
+1L
+0N
+0P
+1*
+0(
+0%
+#490000
+b1000 "
+b1 #
+b1001 #
+b1001 "
+1:
+1=
+1C
+1A
+13
+1F
+0G
+1H
+10
+1/
+1.
+1+
+0L
+0*
+#540000
+b1000 #
+0:
+03
+0F
+1K
+1L
+1M
+1N
+1U
+1*
+1)
+1(
+1'
+#610000
+b1100 #
+b1110 #
+b110 #
+b111 #
+1:
+1<
+1>
+0=
+13
+1E
+0K
+0H
+1I
+1J
+1H
+0I
+0J
+0L
+0N
+0U
+1O
+0*
+0(
+0'
+1&
+0M
+0O
+1P
+0)
+0&
+1%
+#690000
+b110 #
+0:
+03
+0E
+1F
+1K
+0H
+1I
+1J
+1N
+0P
+1(
+0%
+1P
+1%
+#760000
+b10 #
+b0 #
+0<
+0>
+13
+0F
+0I
+1G
+0P
+00
+0/
+0.
+0+
+0%
+#830000
+b1 "
+b0 "
+b1000 #
+b1100 #
+1>
+1=
+0C
+0A
+03
+0G
+1I
+0K
+1B
+10
+1/
+1.
+1+
+12
+1M
+0N
+1O
+1)
+0(
+1&
+#860000
+b10 "
+b1101 #
+b1010 "
+b1001 #
+1:
+0>
+1?
+1A
+13
+1F
+1K
+1H
+0I
+0J
+0M
+1N
+0O
+0)
+1(
+0&
+#900000
+1!
+b1000 #
+1D
+0:
+03
+#930000
+b0 #
+0!
+0=
+0D
+13
+0H
+1J
+0K
+1L
+0N
+1*
+0(
+#980000
+b1000 "
+b0 "
+0?
+0A
+03
+0F
+1G
+0J
+0B
+00
+0/
+0.
+0+
+02
+#1000000
