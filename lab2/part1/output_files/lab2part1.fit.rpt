@@ -1,5 +1,5 @@
 Fitter report for lab2part1
-Wed Aug 10 00:10:48 2022
+Thu Aug 11 19:27:58 2022
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -63,7 +63,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                       ;
 +------------------------------------+-------------------------------------------------+
-; Fitter Status                      ; Successful - Wed Aug 10 00:10:48 2022           ;
+; Fitter Status                      ; Successful - Thu Aug 11 19:27:58 2022           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; lab2part1                                       ;
 ; Top-level Entity Name              ; lab2part1                                       ;
@@ -653,67 +653,67 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Source Pin / Fanout         ; Pad To Core Index ; Setting ;
 +-----------------------------+-------------------+---------+
 ; sw1[0]                      ;                   ;         ;
-;      - sevenseg:o0|hex[6]~0 ; 0                 ; 6       ;
-;      - sevenseg:o0|hex[5]~1 ; 0                 ; 6       ;
-;      - sevenseg:o0|hex[4]~2 ; 0                 ; 6       ;
+;      - sevenseg:o0|hex[6]   ; 0                 ; 6       ;
+;      - sevenseg:o0|hex[5]~0 ; 0                 ; 6       ;
+;      - sevenseg:o0|hex[4]~1 ; 0                 ; 6       ;
 ;      - sevenseg:o0|hex[3]   ; 0                 ; 6       ;
-;      - sevenseg:o0|Equal4~0 ; 0                 ; 6       ;
+;      - sevenseg:o0|hex[2]~2 ; 0                 ; 6       ;
 ;      - sevenseg:o0|hex[1]~3 ; 0                 ; 6       ;
 ;      - sevenseg:o0|hex[0]~4 ; 0                 ; 6       ;
 ; sw1[2]                      ;                   ;         ;
-;      - sevenseg:o0|hex[6]~0 ; 0                 ; 6       ;
-;      - sevenseg:o0|hex[5]~1 ; 0                 ; 6       ;
-;      - sevenseg:o0|hex[4]~2 ; 0                 ; 6       ;
+;      - sevenseg:o0|hex[6]   ; 0                 ; 6       ;
+;      - sevenseg:o0|hex[5]~0 ; 0                 ; 6       ;
+;      - sevenseg:o0|hex[4]~1 ; 0                 ; 6       ;
 ;      - sevenseg:o0|hex[3]   ; 0                 ; 6       ;
-;      - sevenseg:o0|Equal4~0 ; 0                 ; 6       ;
+;      - sevenseg:o0|hex[2]~2 ; 0                 ; 6       ;
 ;      - sevenseg:o0|hex[1]~3 ; 0                 ; 6       ;
 ;      - sevenseg:o0|hex[0]~4 ; 0                 ; 6       ;
 ; sw1[1]                      ;                   ;         ;
-;      - sevenseg:o0|hex[6]~0 ; 0                 ; 6       ;
-;      - sevenseg:o0|hex[5]~1 ; 0                 ; 6       ;
-;      - sevenseg:o0|hex[4]~2 ; 0                 ; 6       ;
+;      - sevenseg:o0|hex[6]   ; 0                 ; 6       ;
+;      - sevenseg:o0|hex[5]~0 ; 0                 ; 6       ;
+;      - sevenseg:o0|hex[4]~1 ; 0                 ; 6       ;
 ;      - sevenseg:o0|hex[3]   ; 0                 ; 6       ;
-;      - sevenseg:o0|Equal4~0 ; 0                 ; 6       ;
+;      - sevenseg:o0|hex[2]~2 ; 0                 ; 6       ;
 ;      - sevenseg:o0|hex[1]~3 ; 0                 ; 6       ;
 ;      - sevenseg:o0|hex[0]~4 ; 0                 ; 6       ;
 ; sw1[3]                      ;                   ;         ;
-;      - sevenseg:o0|hex[6]~0 ; 1                 ; 6       ;
-;      - sevenseg:o0|hex[5]~1 ; 1                 ; 6       ;
-;      - sevenseg:o0|hex[4]~2 ; 1                 ; 6       ;
+;      - sevenseg:o0|hex[6]   ; 1                 ; 6       ;
+;      - sevenseg:o0|hex[5]~0 ; 1                 ; 6       ;
+;      - sevenseg:o0|hex[4]~1 ; 1                 ; 6       ;
 ;      - sevenseg:o0|hex[3]   ; 1                 ; 6       ;
-;      - sevenseg:o0|Equal4~0 ; 1                 ; 6       ;
+;      - sevenseg:o0|hex[2]~2 ; 1                 ; 6       ;
 ;      - sevenseg:o0|hex[1]~3 ; 1                 ; 6       ;
 ;      - sevenseg:o0|hex[0]~4 ; 1                 ; 6       ;
 ; sw2[0]                      ;                   ;         ;
-;      - sevenseg:o1|hex[6]~0 ; 0                 ; 6       ;
-;      - sevenseg:o1|hex[5]~1 ; 0                 ; 6       ;
-;      - sevenseg:o1|hex[4]~2 ; 0                 ; 6       ;
+;      - sevenseg:o1|hex[6]   ; 0                 ; 6       ;
+;      - sevenseg:o1|hex[5]~0 ; 0                 ; 6       ;
+;      - sevenseg:o1|hex[4]~1 ; 0                 ; 6       ;
 ;      - sevenseg:o1|hex[3]   ; 0                 ; 6       ;
-;      - sevenseg:o1|Equal4~0 ; 0                 ; 6       ;
+;      - sevenseg:o1|hex[2]~2 ; 0                 ; 6       ;
 ;      - sevenseg:o1|hex[1]~3 ; 0                 ; 6       ;
 ;      - sevenseg:o1|hex[0]~4 ; 0                 ; 6       ;
 ; sw2[2]                      ;                   ;         ;
-;      - sevenseg:o1|hex[6]~0 ; 1                 ; 6       ;
-;      - sevenseg:o1|hex[5]~1 ; 1                 ; 6       ;
-;      - sevenseg:o1|hex[4]~2 ; 1                 ; 6       ;
+;      - sevenseg:o1|hex[6]   ; 1                 ; 6       ;
+;      - sevenseg:o1|hex[5]~0 ; 1                 ; 6       ;
+;      - sevenseg:o1|hex[4]~1 ; 1                 ; 6       ;
 ;      - sevenseg:o1|hex[3]   ; 1                 ; 6       ;
-;      - sevenseg:o1|Equal4~0 ; 1                 ; 6       ;
+;      - sevenseg:o1|hex[2]~2 ; 1                 ; 6       ;
 ;      - sevenseg:o1|hex[1]~3 ; 1                 ; 6       ;
 ;      - sevenseg:o1|hex[0]~4 ; 1                 ; 6       ;
 ; sw2[1]                      ;                   ;         ;
-;      - sevenseg:o1|hex[6]~0 ; 0                 ; 6       ;
-;      - sevenseg:o1|hex[5]~1 ; 0                 ; 6       ;
-;      - sevenseg:o1|hex[4]~2 ; 0                 ; 6       ;
+;      - sevenseg:o1|hex[6]   ; 0                 ; 6       ;
+;      - sevenseg:o1|hex[5]~0 ; 0                 ; 6       ;
+;      - sevenseg:o1|hex[4]~1 ; 0                 ; 6       ;
 ;      - sevenseg:o1|hex[3]   ; 0                 ; 6       ;
-;      - sevenseg:o1|Equal4~0 ; 0                 ; 6       ;
+;      - sevenseg:o1|hex[2]~2 ; 0                 ; 6       ;
 ;      - sevenseg:o1|hex[1]~3 ; 0                 ; 6       ;
 ;      - sevenseg:o1|hex[0]~4 ; 0                 ; 6       ;
 ; sw2[3]                      ;                   ;         ;
-;      - sevenseg:o1|hex[6]~0 ; 0                 ; 6       ;
-;      - sevenseg:o1|hex[5]~1 ; 0                 ; 6       ;
-;      - sevenseg:o1|hex[4]~2 ; 0                 ; 6       ;
+;      - sevenseg:o1|hex[6]   ; 0                 ; 6       ;
+;      - sevenseg:o1|hex[5]~0 ; 0                 ; 6       ;
+;      - sevenseg:o1|hex[4]~1 ; 0                 ; 6       ;
 ;      - sevenseg:o1|hex[3]   ; 0                 ; 6       ;
-;      - sevenseg:o1|Equal4~0 ; 0                 ; 6       ;
+;      - sevenseg:o1|hex[2]~2 ; 0                 ; 6       ;
 ;      - sevenseg:o1|hex[1]~3 ; 0                 ; 6       ;
 ;      - sevenseg:o1|hex[0]~4 ; 0                 ; 6       ;
 +-----------------------------+-------------------+---------+
@@ -734,18 +734,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; sw1[0]~input         ; 7        ;
 ; sevenseg:o1|hex[0]~4 ; 1        ;
 ; sevenseg:o1|hex[1]~3 ; 1        ;
-; sevenseg:o1|Equal4~0 ; 1        ;
+; sevenseg:o1|hex[2]~2 ; 1        ;
 ; sevenseg:o1|hex[3]   ; 1        ;
-; sevenseg:o1|hex[4]~2 ; 1        ;
-; sevenseg:o1|hex[5]~1 ; 1        ;
-; sevenseg:o1|hex[6]~0 ; 1        ;
+; sevenseg:o1|hex[4]~1 ; 1        ;
+; sevenseg:o1|hex[5]~0 ; 1        ;
+; sevenseg:o1|hex[6]   ; 1        ;
 ; sevenseg:o0|hex[0]~4 ; 1        ;
 ; sevenseg:o0|hex[1]~3 ; 1        ;
-; sevenseg:o0|Equal4~0 ; 1        ;
+; sevenseg:o0|hex[2]~2 ; 1        ;
 ; sevenseg:o0|hex[3]   ; 1        ;
-; sevenseg:o0|hex[4]~2 ; 1        ;
-; sevenseg:o0|hex[5]~1 ; 1        ;
-; sevenseg:o0|hex[6]~0 ; 1        ;
+; sevenseg:o0|hex[4]~1 ; 1        ;
+; sevenseg:o0|hex[5]~0 ; 1        ;
+; sevenseg:o0|hex[6]   ; 1        ;
 +----------------------+----------+
 
 
@@ -1027,7 +1027,7 @@ Info (176215): I/O bank details before I/O pin placement
         Info (176213): I/O bank number 8A does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  2 pins available
         Info (176213): I/O bank number 8 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  5 pins available
         Info (176213): I/O bank number 9 does not use VREF pins and has undetermined VCCIO pins. 4 total pin(s) used --  0 pins available
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
@@ -1040,7 +1040,7 @@ Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.08 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.11 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -1048,8 +1048,8 @@ Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Info (144001): Generated suppressed messages file C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab2/part1/output_files/lab2part1.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 4977 megabytes
-    Info: Processing ended: Wed Aug 10 00:10:48 2022
+    Info: Peak virtual memory: 4969 megabytes
+    Info: Processing ended: Thu Aug 11 19:27:59 2022
     Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:04
 

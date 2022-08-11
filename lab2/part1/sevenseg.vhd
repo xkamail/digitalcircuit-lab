@@ -20,14 +20,35 @@ entity sevenseg is
 end sevenseg;
 
 architecture behavior of sevenseg is
+	
 begin
-
-	hex(0) <= '1' when( num = "0001" or num = "0100") else '0';
-	hex(1) <= '1' when (num = "0101" or num = "0110") else '0';
-	hex(2) <= '1' when (num = "0010") else '0';
-	hex(3) <= '1' when (num = "0001" or num = "0100" or num = "0111") else '0';
-	hex(4) <= '1' when (num = "0001" or num = "0011" or num = "0100" or num = "0101" or num = "0111" or num = "1001") else '0';
-	hex(5) <= '1' when (num = "0001" or num = "0010" or num = "0011" or num = "0111") else '0';
-	hex(6) <= '1' when (num = "0001" or num = "0000" or num = "0111") else '0';
+	
+	hex(0) <= (not(num(3)) and not(num(2)) and not(num(1)) and num(0)) 
+				or (not(num(3)) and num(2) and not(num(1)) and not(num(0)));
+				
+	hex(1) <= (not(num(3)) and num(2) and not(num(1)) and num(0)) 
+				or (not(num(3)) and num(2) and num(1) and not(num(0)));
+				
+	hex(2) <= (not(num(3)) and not(num(2)) and num(1) and not(num(0)));
+	
+	hex(3) <= (not(num(3)) and not(num(2)) and not(num(1)) and num(0)) 
+				or (not(num(3)) and num(2) and not(num(1)) and not(num(0))) 
+				or (not(num(3)) and num(2) and num(1) and num(0));
+				
+	hex(4) <= (not(num(3)) and not(num(2)) and not(num(1)) and num(0)) 
+				or (not(num(3)) and not(num(2)) and num(1) and num(0)) 
+				or (not(num(3)) and num(2) and not(num(1)) and not(num(0))) 
+				or (not(num(3)) and num(2) and not(num(1)) and num(0)) 
+				or (not(num(3)) and num(2) and num(1) and num(0)) 
+				or (num(3) and not(num(2)) and not(num(1)) and num(0));
+				
+	hex(5) <= (not(num(3)) and not(num(2)) and not(num(1)) and num(0)) 
+				or (not(num(3)) and not(num(2)) and num(1) and not(num(0))) 
+				or (not(num(3)) and not(num(2)) and num(1) and num(0)) 
+				or (not(num(3)) and num(2) and num(1) and num(0));
+				
+	hex(6) <= (not(num(3)) and not(num(2)) and not(num(1)) and num(0)) 
+				or (not(num(3)) and not(num(2)) and not(num(1)) and not(num(0))) 
+				or (not(num(3)) and num(2) and num(1) and num(0));
 end behavior;
 	

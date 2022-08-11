@@ -1,5 +1,5 @@
 Flow report for lab2part1
-Wed Aug 10 00:13:54 2022
+Thu Aug 11 19:28:11 2022
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,7 +40,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Wed Aug 10 00:13:54 2022           ;
+; Flow Status                        ; Successful - Thu Aug 11 19:28:11 2022           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; lab2part1                                       ;
 ; Top-level Entity Name              ; lab2part1                                       ;
@@ -68,7 +68,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 08/10/2022 00:10:43 ;
+; Start date & time ; 08/11/2022 19:27:53 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; lab2part1           ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ applicable agreement for further details.
 +-------------------------------------+--------------------------------+---------------+-------------+----------------------+
 ; Assignment Name                     ; Value                          ; Default Value ; Entity Name ; Section Id           ;
 +-------------------------------------+--------------------------------+---------------+-------------+----------------------+
-; COMPILER_SIGNATURE_ID               ; 27214208268705.166006504205428 ; --            ; --          ; --                   ;
+; COMPILER_SIGNATURE_ID               ; 27214208268705.166022087305980 ; --            ; --          ; --                   ;
 ; EDA_DESIGN_ENTRY_SYNTHESIS_TOOL     ; Custom                         ; <None>        ; --          ; --                   ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; On                             ; --            ; --          ; eda_simulation       ;
 ; EDA_INPUT_DATA_FORMAT               ; Vhdl                           ; --            ; --          ; eda_design_synthesis ;
@@ -99,15 +99,13 @@ applicable agreement for further details.
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Analysis & Synthesis      ; 00:00:01     ; 1.0                     ; 4672 MB             ; 00:00:01                           ;
-; Fitter                    ; 00:00:04     ; 1.0                     ; 4977 MB             ; 00:00:04                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 4602 MB             ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 4609 MB             ; 00:00:02                           ;
-; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 4558 MB             ; 00:00:00                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4566 MB             ; 00:00:00                           ;
-; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 4566 MB             ; 00:00:01                           ;
+; Fitter                    ; 00:00:03     ; 1.0                     ; 4969 MB             ; 00:00:04                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 4606 MB             ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 4609 MB             ; 00:00:02                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4558 MB             ; 00:00:00                           ;
 ; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 4566 MB             ; 00:00:00                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4566 MB             ; 00:00:01                           ;
-; Total                     ; 00:00:09     ; --                      ; --                  ; 00:00:10                           ;
+; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 4566 MB             ; 00:00:01                           ;
+; Total                     ; 00:00:08     ; --                      ; --                  ; 00:00:09                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -123,8 +121,6 @@ applicable agreement for further details.
 ; EDA Netlist Writer        ; xKamaiL-PC       ; Windows 7 ; 6.2        ; x86_64         ;
 ; EDA Netlist Writer        ; xKamaiL-PC       ; Windows 7 ; 6.2        ; x86_64         ;
 ; EDA Netlist Writer        ; xKamaiL-PC       ; Windows 7 ; 6.2        ; x86_64         ;
-; EDA Netlist Writer        ; xKamaiL-PC       ; Windows 7 ; 6.2        ; x86_64         ;
-; EDA Netlist Writer        ; xKamaiL-PC       ; Windows 7 ; 6.2        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 
@@ -136,8 +132,6 @@ quartus_fit --read_settings_files=off --write_settings_files=off lab2part1 -c la
 quartus_asm --read_settings_files=off --write_settings_files=off lab2part1 -c lab2part1
 quartus_sta lab2part1 -c lab2part1
 quartus_eda --read_settings_files=off --write_settings_files=off lab2part1 -c lab2part1
-quartus_eda --gen_testbench --check_outputs=on --tool=modelsim_oem --format=verilog lab2part1 -c lab2part1 --vector_source=C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab2/part1/Waveform.vwf --testbench_file=./simulation/qsim/lab2part1.vt
-quartus_eda --functional=on --simulation=on --tool=modelsim_oem --format=verilog lab2part1 -c lab2part1
 quartus_eda --gen_testbench --check_outputs=on --tool=modelsim_oem --format=verilog lab2part1 -c lab2part1 --vector_source=C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab2/part1/Waveform.vwf --testbench_file=./simulation/qsim/lab2part1.vt
 quartus_eda --functional=on --simulation=on --tool=modelsim_oem --format=verilog lab2part1 -c lab2part1
 

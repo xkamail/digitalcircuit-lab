@@ -522,7 +522,7 @@ SIGNAL("lab2part1_vlg_vec_tst|i1|sw1[3]~input_o")
 	PARENT = "";
 }
 
-SIGNAL("lab2part1_vlg_vec_tst|i1|o0|hex[6]~0_combout")
+SIGNAL("lab2part1_vlg_vec_tst|i1|o0|hex[5]~0_combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -532,7 +532,7 @@ SIGNAL("lab2part1_vlg_vec_tst|i1|o0|hex[6]~0_combout")
 	PARENT = "";
 }
 
-SIGNAL("lab2part1_vlg_vec_tst|i1|o0|hex[5]~1_combout")
+SIGNAL("lab2part1_vlg_vec_tst|i1|o0|hex[4]~1_combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -542,17 +542,7 @@ SIGNAL("lab2part1_vlg_vec_tst|i1|o0|hex[5]~1_combout")
 	PARENT = "";
 }
 
-SIGNAL("lab2part1_vlg_vec_tst|i1|o0|hex[4]~2_combout")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "";
-}
-
-SIGNAL("lab2part1_vlg_vec_tst|i1|o0|Equal4~0_combout")
+SIGNAL("lab2part1_vlg_vec_tst|i1|o0|hex[2]~2_combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -622,7 +612,7 @@ SIGNAL("lab2part1_vlg_vec_tst|i1|sw2[3]~input_o")
 	PARENT = "";
 }
 
-SIGNAL("lab2part1_vlg_vec_tst|i1|o1|hex[6]~0_combout")
+SIGNAL("lab2part1_vlg_vec_tst|i1|o1|hex[5]~0_combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -632,7 +622,7 @@ SIGNAL("lab2part1_vlg_vec_tst|i1|o1|hex[6]~0_combout")
 	PARENT = "";
 }
 
-SIGNAL("lab2part1_vlg_vec_tst|i1|o1|hex[5]~1_combout")
+SIGNAL("lab2part1_vlg_vec_tst|i1|o1|hex[4]~1_combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -642,17 +632,7 @@ SIGNAL("lab2part1_vlg_vec_tst|i1|o1|hex[5]~1_combout")
 	PARENT = "";
 }
 
-SIGNAL("lab2part1_vlg_vec_tst|i1|o1|hex[4]~2_combout")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "";
-}
-
-SIGNAL("lab2part1_vlg_vec_tst|i1|o1|Equal4~0_combout")
+SIGNAL("lab2part1_vlg_vec_tst|i1|o1|hex[2]~2_combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -1414,19 +1394,7 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|sw1[3]~input_o")
 	}
 }
 
-TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|o0|hex[6]~0_combout")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 1 FOR 200.0;
-		LEVEL 0 FOR 500.0;
-		LEVEL 1 FOR 100.0;
-		LEVEL 0 FOR 200.0;
-	}
-}
-
-TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|o0|hex[5]~1_combout")
+TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|o0|hex[5]~0_combout")
 {
 	NODE
 	{
@@ -1439,7 +1407,7 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|o0|hex[5]~1_combout")
 	}
 }
 
-TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|o0|hex[4]~2_combout")
+TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|o0|hex[4]~1_combout")
 {
 	NODE
 	{
@@ -1455,7 +1423,7 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|o0|hex[4]~2_combout")
 	}
 }
 
-TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|o0|Equal4~0_combout")
+TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|o0|hex[2]~2_combout")
 {
 	NODE
 	{
@@ -1471,9 +1439,9 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|o0|hex[1]~3_combout")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 500.0;
-		LEVEL 1 FOR 200.0;
-		LEVEL 0 FOR 300.0;
+		LEVEL 1 FOR 500.0;
+		LEVEL 0 FOR 200.0;
+		LEVEL 1 FOR 300.0;
 	}
 }
 
@@ -1482,11 +1450,11 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|o0|hex[0]~4_combout")
 	NODE
 	{
 		REPEAT = 1;
+		LEVEL 1 FOR 100.0;
 		LEVEL 0 FOR 100.0;
-		LEVEL 1 FOR 100.0;
-		LEVEL 0 FOR 200.0;
-		LEVEL 1 FOR 100.0;
-		LEVEL 0 FOR 500.0;
+		LEVEL 1 FOR 200.0;
+		LEVEL 0 FOR 100.0;
+		LEVEL 1 FOR 500.0;
 	}
 }
 
@@ -1542,19 +1510,7 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|sw2[3]~input_o")
 	}
 }
 
-TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|o1|hex[6]~0_combout")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 1 FOR 200.0;
-		LEVEL 0 FOR 500.0;
-		LEVEL 1 FOR 100.0;
-		LEVEL 0 FOR 200.0;
-	}
-}
-
-TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|o1|hex[5]~1_combout")
+TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|o1|hex[5]~0_combout")
 {
 	NODE
 	{
@@ -1567,7 +1523,7 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|o1|hex[5]~1_combout")
 	}
 }
 
-TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|o1|hex[4]~2_combout")
+TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|o1|hex[4]~1_combout")
 {
 	NODE
 	{
@@ -1583,7 +1539,7 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|o1|hex[4]~2_combout")
 	}
 }
 
-TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|o1|Equal4~0_combout")
+TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|o1|hex[2]~2_combout")
 {
 	NODE
 	{
@@ -1599,9 +1555,9 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|o1|hex[1]~3_combout")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 500.0;
-		LEVEL 1 FOR 200.0;
-		LEVEL 0 FOR 300.0;
+		LEVEL 1 FOR 500.0;
+		LEVEL 0 FOR 200.0;
+		LEVEL 1 FOR 300.0;
 	}
 }
 
@@ -1610,11 +1566,11 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|o1|hex[0]~4_combout")
 	NODE
 	{
 		REPEAT = 1;
+		LEVEL 1 FOR 100.0;
 		LEVEL 0 FOR 100.0;
-		LEVEL 1 FOR 100.0;
-		LEVEL 0 FOR 200.0;
-		LEVEL 1 FOR 100.0;
-		LEVEL 0 FOR 500.0;
+		LEVEL 1 FOR 200.0;
+		LEVEL 0 FOR 100.0;
+		LEVEL 1 FOR 500.0;
 	}
 }
 
@@ -1683,7 +1639,10 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|o1|hex[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL Z FOR 1000.0;
+		LEVEL 1 FOR 200.0;
+		LEVEL 0 FOR 500.0;
+		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 200.0;
 	}
 }
 
@@ -1752,7 +1711,10 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|o0|hex[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL Z FOR 1000.0;
+		LEVEL 1 FOR 200.0;
+		LEVEL 0 FOR 500.0;
+		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 200.0;
 	}
 }
 
@@ -2209,7 +2171,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "lab2part1_vlg_vec_tst|i1|o0|hex[6]~0_combout";
+	CHANNEL = "lab2part1_vlg_vec_tst|i1|o0|hex[5]~0_combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 49;
@@ -2218,7 +2180,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "lab2part1_vlg_vec_tst|i1|o0|hex[5]~1_combout";
+	CHANNEL = "lab2part1_vlg_vec_tst|i1|o0|hex[4]~1_combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 50;
@@ -2227,7 +2189,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "lab2part1_vlg_vec_tst|i1|o0|hex[4]~2_combout";
+	CHANNEL = "lab2part1_vlg_vec_tst|i1|o0|hex[2]~2_combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 51;
@@ -2236,7 +2198,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "lab2part1_vlg_vec_tst|i1|o0|Equal4~0_combout";
+	CHANNEL = "lab2part1_vlg_vec_tst|i1|o0|hex[1]~3_combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 52;
@@ -2245,7 +2207,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "lab2part1_vlg_vec_tst|i1|o0|hex[1]~3_combout";
+	CHANNEL = "lab2part1_vlg_vec_tst|i1|o0|hex[0]~4_combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 53;
@@ -2254,7 +2216,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "lab2part1_vlg_vec_tst|i1|o0|hex[0]~4_combout";
+	CHANNEL = "lab2part1_vlg_vec_tst|i1|sw2[2]~input_o";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 54;
@@ -2263,7 +2225,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "lab2part1_vlg_vec_tst|i1|sw2[2]~input_o";
+	CHANNEL = "lab2part1_vlg_vec_tst|i1|sw2[1]~input_o";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 55;
@@ -2272,7 +2234,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "lab2part1_vlg_vec_tst|i1|sw2[1]~input_o";
+	CHANNEL = "lab2part1_vlg_vec_tst|i1|sw2[0]~input_o";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 56;
@@ -2281,7 +2243,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "lab2part1_vlg_vec_tst|i1|sw2[0]~input_o";
+	CHANNEL = "lab2part1_vlg_vec_tst|i1|sw2[3]~input_o";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 57;
@@ -2290,7 +2252,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "lab2part1_vlg_vec_tst|i1|sw2[3]~input_o";
+	CHANNEL = "lab2part1_vlg_vec_tst|i1|o1|hex[5]~0_combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 58;
@@ -2299,7 +2261,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "lab2part1_vlg_vec_tst|i1|o1|hex[6]~0_combout";
+	CHANNEL = "lab2part1_vlg_vec_tst|i1|o1|hex[4]~1_combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 59;
@@ -2308,7 +2270,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "lab2part1_vlg_vec_tst|i1|o1|hex[5]~1_combout";
+	CHANNEL = "lab2part1_vlg_vec_tst|i1|o1|hex[2]~2_combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 60;
@@ -2317,7 +2279,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "lab2part1_vlg_vec_tst|i1|o1|hex[4]~2_combout";
+	CHANNEL = "lab2part1_vlg_vec_tst|i1|o1|hex[1]~3_combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 61;
@@ -2326,7 +2288,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "lab2part1_vlg_vec_tst|i1|o1|Equal4~0_combout";
+	CHANNEL = "lab2part1_vlg_vec_tst|i1|o1|hex[0]~4_combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 62;
@@ -2335,7 +2297,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "lab2part1_vlg_vec_tst|i1|o1|hex[1]~3_combout";
+	CHANNEL = "lab2part1_vlg_vec_tst|i1|o1|hex[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 63;
@@ -2344,7 +2306,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "lab2part1_vlg_vec_tst|i1|o1|hex[0]~4_combout";
+	CHANNEL = "lab2part1_vlg_vec_tst|i1|o1|hex[1]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 64;
@@ -2353,7 +2315,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "lab2part1_vlg_vec_tst|i1|o1|hex[0]";
+	CHANNEL = "lab2part1_vlg_vec_tst|i1|o1|hex[2]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 65;
@@ -2362,7 +2324,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "lab2part1_vlg_vec_tst|i1|o1|hex[1]";
+	CHANNEL = "lab2part1_vlg_vec_tst|i1|o1|hex[3]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 66;
@@ -2371,7 +2333,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "lab2part1_vlg_vec_tst|i1|o1|hex[2]";
+	CHANNEL = "lab2part1_vlg_vec_tst|i1|o1|hex[4]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 67;
@@ -2380,7 +2342,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "lab2part1_vlg_vec_tst|i1|o1|hex[3]";
+	CHANNEL = "lab2part1_vlg_vec_tst|i1|o1|hex[5]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 68;
@@ -2389,7 +2351,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "lab2part1_vlg_vec_tst|i1|o1|hex[4]";
+	CHANNEL = "lab2part1_vlg_vec_tst|i1|o1|hex[6]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 69;
@@ -2398,7 +2360,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "lab2part1_vlg_vec_tst|i1|o1|hex[5]";
+	CHANNEL = "lab2part1_vlg_vec_tst|i1|o0|hex[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 70;
@@ -2407,7 +2369,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "lab2part1_vlg_vec_tst|i1|o1|hex[6]";
+	CHANNEL = "lab2part1_vlg_vec_tst|i1|o0|hex[1]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 71;
@@ -2416,7 +2378,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "lab2part1_vlg_vec_tst|i1|o0|hex[0]";
+	CHANNEL = "lab2part1_vlg_vec_tst|i1|o0|hex[2]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 72;
@@ -2425,7 +2387,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "lab2part1_vlg_vec_tst|i1|o0|hex[1]";
+	CHANNEL = "lab2part1_vlg_vec_tst|i1|o0|hex[3]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 73;
@@ -2434,7 +2396,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "lab2part1_vlg_vec_tst|i1|o0|hex[2]";
+	CHANNEL = "lab2part1_vlg_vec_tst|i1|o0|hex[4]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 74;
@@ -2443,7 +2405,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "lab2part1_vlg_vec_tst|i1|o0|hex[3]";
+	CHANNEL = "lab2part1_vlg_vec_tst|i1|o0|hex[5]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 75;
@@ -2452,28 +2414,10 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "lab2part1_vlg_vec_tst|i1|o0|hex[4]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
-	TREE_INDEX = 76;
-	TREE_LEVEL = 0;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "lab2part1_vlg_vec_tst|i1|o0|hex[5]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
-	TREE_INDEX = 77;
-	TREE_LEVEL = 0;
-}
-
-DISPLAY_LINE
-{
 	CHANNEL = "lab2part1_vlg_vec_tst|i1|o0|hex[6]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
-	TREE_INDEX = 78;
+	TREE_INDEX = 76;
 	TREE_LEVEL = 0;
 }
 ;
