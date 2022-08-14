@@ -6,6 +6,8 @@ entity lab2part4 is
         y               : in     vl_logic_vector(3 downto 0);
         c_in            : in     vl_logic;
         led9            : out    vl_logic;
+        hex3            : out    vl_logic_vector(0 to 6);
+        hex5            : out    vl_logic_vector(0 to 6);
         hex1            : out    vl_logic_vector(0 to 6);
         hex0            : out    vl_logic_vector(0 to 6)
     );

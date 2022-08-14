@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab2part4
-Wed Aug 10 22:59:55 2022
+Sun Aug 14 22:41:34 2022
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -16,11 +16,8 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   8. General Register Statistics
   9. Multiplexer Restructuring Statistics (Restructuring Performed)
  10. Port Connectivity Checks: "sevenseg:g1"
- 11. Port Connectivity Checks: "comparator:g0"
- 12. Port Connectivity Checks: "comparator:v1"
- 13. Port Connectivity Checks: "comparator:v0"
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -46,14 +43,14 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +-------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status         ; Successful - Wed Aug 10 22:59:55 2022           ;
+; Analysis & Synthesis Status         ; Successful - Sun Aug 14 22:41:34 2022           ;
 ; Quartus II 64-Bit Version           ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                       ; lab2part4                                       ;
 ; Top-level Entity Name               ; lab2part4                                       ;
 ; Family                              ; Cyclone V                                       ;
 ; Logic utilization (in ALMs)         ; N/A                                             ;
 ; Total registers                     ; 0                                               ;
-; Total pins                          ; 24                                              ;
+; Total pins                          ; 38                                              ;
 ; Total virtual pins                  ; 0                                               ;
 ; Total block memory bits             ; 0                                               ;
 ; Total DSP Blocks                    ; 0                                               ;
@@ -185,29 +182,29 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                   ;
-+---------------------------------------------+-----------------+
-; Resource                                    ; Usage           ;
-+---------------------------------------------+-----------------+
-; Estimate of Logic utilization (ALMs needed) ; 9               ;
-;                                             ;                 ;
-; Combinational ALUT usage for logic          ; 15              ;
-;     -- 7 input functions                    ; 0               ;
-;     -- 6 input functions                    ; 2               ;
-;     -- 5 input functions                    ; 11              ;
-;     -- 4 input functions                    ; 0               ;
-;     -- <=3 input functions                  ; 2               ;
-;                                             ;                 ;
-; Dedicated logic registers                   ; 0               ;
-;                                             ;                 ;
-; I/O pins                                    ; 24              ;
-; Total DSP Blocks                            ; 0               ;
-; Maximum fan-out node                        ; full_adder:f1|s ;
-; Maximum fan-out                             ; 8               ;
-; Total fan-out                               ; 109             ;
-; Average fan-out                             ; 1.73            ;
-+---------------------------------------------+-----------------+
++----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary              ;
++---------------------------------------------+------------+
+; Resource                                    ; Usage      ;
++---------------------------------------------+------------+
+; Estimate of Logic utilization (ALMs needed) ; 16         ;
+;                                             ;            ;
+; Combinational ALUT usage for logic          ; 29         ;
+;     -- 7 input functions                    ; 0          ;
+;     -- 6 input functions                    ; 2          ;
+;     -- 5 input functions                    ; 11         ;
+;     -- 4 input functions                    ; 14         ;
+;     -- <=3 input functions                  ; 2          ;
+;                                             ;            ;
+; Dedicated logic registers                   ; 0          ;
+;                                             ;            ;
+; I/O pins                                    ; 38         ;
+; Total DSP Blocks                            ; 0          ;
+; Maximum fan-out node                        ; y[2]~input ;
+; Maximum fan-out                             ; 12         ;
+; Total fan-out                               ; 193        ;
+; Average fan-out                             ; 1.84       ;
++---------------------------------------------+------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -215,13 +212,15 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+-------------------+--------------+-------------------+------------+------+--------------+-----------------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name         ; Library Name ;
 +----------------------------+-------------------+--------------+-------------------+------------+------+--------------+-----------------------------+--------------+
-; |lab2part4                 ; 15 (1)            ; 0 (0)        ; 0                 ; 0          ; 24   ; 0            ; |lab2part4                  ; work         ;
+; |lab2part4                 ; 29 (1)            ; 0 (0)        ; 0                 ; 0          ; 38   ; 0            ; |lab2part4                  ; work         ;
 ;    |full_adder:f0|         ; 1 (1)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |lab2part4|full_adder:f0    ; work         ;
 ;    |full_adder:f1|         ; 2 (2)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |lab2part4|full_adder:f1    ; work         ;
 ;    |full_adder:f2|         ; 1 (1)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |lab2part4|full_adder:f2    ; work         ;
 ;    |full_adder:f3|         ; 2 (2)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |lab2part4|full_adder:f3    ; work         ;
 ;    |mux_4bit_2to1:g5|      ; 1 (1)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |lab2part4|mux_4bit_2to1:g5 ; work         ;
 ;    |sevenseg:g6|           ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |lab2part4|sevenseg:g6      ; work         ;
+;    |sevenseg:h0|           ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |lab2part4|sevenseg:h0      ; work         ;
+;    |sevenseg:h1|           ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |lab2part4|sevenseg:h1      ; work         ;
 +----------------------------+-------------------+--------------+-------------------+------------+------+--------------+-----------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -259,39 +258,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------+-------+----------+--------------+
 
 
-+-------------------------------------------+
-; Port Connectivity Checks: "comparator:g0" ;
-+---------+-------+----------+--------------+
-; Port    ; Type  ; Severity ; Details      ;
-+---------+-------+----------+--------------+
-; b[2..1] ; Input ; Info     ; Stuck at GND ;
-; b[3]    ; Input ; Info     ; Stuck at VCC ;
-; b[0]    ; Input ; Info     ; Stuck at VCC ;
-+---------+-------+----------+--------------+
-
-
-+-------------------------------------------+
-; Port Connectivity Checks: "comparator:v1" ;
-+---------+-------+----------+--------------+
-; Port    ; Type  ; Severity ; Details      ;
-+---------+-------+----------+--------------+
-; b[2..1] ; Input ; Info     ; Stuck at GND ;
-; b[3]    ; Input ; Info     ; Stuck at VCC ;
-; b[0]    ; Input ; Info     ; Stuck at VCC ;
-+---------+-------+----------+--------------+
-
-
-+-------------------------------------------+
-; Port Connectivity Checks: "comparator:v0" ;
-+---------+-------+----------+--------------+
-; Port    ; Type  ; Severity ; Details      ;
-+---------+-------+----------+--------------+
-; b[2..1] ; Input ; Info     ; Stuck at GND ;
-; b[3]    ; Input ; Info     ; Stuck at VCC ;
-; b[0]    ; Input ; Info     ; Stuck at VCC ;
-+---------+-------+----------+--------------+
-
-
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
@@ -307,7 +273,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Aug 10 22:59:53 2022
+    Info: Processing started: Sun Aug 14 22:41:33 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab2part4 -c lab2part4
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file lab2part4.vhd
@@ -336,8 +302,8 @@ Warning (12163): EDA synthesis tool is specified as "Custom", but VCC is not spe
 Warning (12164): EDA synthesis tool is specified as "Custom", but GND is not specified
 Info (12127): Elaborating entity "lab2part4" for the top level hierarchy
 Info (12128): Elaborating entity "comparator" for hierarchy "comparator:v0"
+Info (12128): Elaborating entity "sevenseg" for hierarchy "sevenseg:h0"
 Info (12128): Elaborating entity "full_adder" for hierarchy "full_adder:f0"
-Info (12128): Elaborating entity "sevenseg" for hierarchy "sevenseg:g1"
 Info (12128): Elaborating entity "circuit_a" for hierarchy "circuit_a:g2"
 Info (12128): Elaborating entity "mux_4bit_2to1" for hierarchy "mux_4bit_2to1:g3"
 Info (12128): Elaborating entity "encoder_6to9" for hierarchy "encoder_6to9:g4"
@@ -351,14 +317,14 @@ Warning (13024): Output pins are stuck at VCC or GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 39 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 67 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 9 input pins
-    Info (21059): Implemented 15 output pins
-    Info (21061): Implemented 15 logic cells
+    Info (21059): Implemented 29 output pins
+    Info (21061): Implemented 29 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 11 warnings
-    Info: Peak virtual memory: 4686 megabytes
-    Info: Processing ended: Wed Aug 10 22:59:55 2022
-    Info: Elapsed time: 00:00:02
+    Info: Peak virtual memory: 4680 megabytes
+    Info: Processing ended: Sun Aug 14 22:41:34 2022
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:02
 
 

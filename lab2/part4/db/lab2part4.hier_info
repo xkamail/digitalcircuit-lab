@@ -1,22 +1,44 @@
 |lab2part4
 x[0] => comparator:v0.a[0]
+x[0] => sevenseg:h0.num[0]
 x[0] => full_adder:f0.a
 x[1] => comparator:v0.a[1]
+x[1] => sevenseg:h0.num[1]
 x[1] => full_adder:f1.a
 x[2] => comparator:v0.a[2]
+x[2] => sevenseg:h0.num[2]
 x[2] => full_adder:f2.a
 x[3] => comparator:v0.a[3]
+x[3] => sevenseg:h0.num[3]
 x[3] => full_adder:f3.a
 y[0] => comparator:v1.a[0]
+y[0] => sevenseg:h1.num[0]
 y[0] => full_adder:f0.b
 y[1] => comparator:v1.a[1]
+y[1] => sevenseg:h1.num[1]
 y[1] => full_adder:f1.b
 y[2] => comparator:v1.a[2]
+y[2] => sevenseg:h1.num[2]
 y[2] => full_adder:f2.b
 y[3] => comparator:v1.a[3]
+y[3] => sevenseg:h1.num[3]
 y[3] => full_adder:f3.b
 c_in => full_adder:f0.c_in
 led9 <= led9.DB_MAX_OUTPUT_PORT_TYPE
+hex3[6] <= sevenseg:h1.hex[6]
+hex3[5] <= sevenseg:h1.hex[5]
+hex3[4] <= sevenseg:h1.hex[4]
+hex3[3] <= sevenseg:h1.hex[3]
+hex3[2] <= sevenseg:h1.hex[2]
+hex3[1] <= sevenseg:h1.hex[1]
+hex3[0] <= sevenseg:h1.hex[0]
+hex5[6] <= sevenseg:h0.hex[6]
+hex5[5] <= sevenseg:h0.hex[5]
+hex5[4] <= sevenseg:h0.hex[4]
+hex5[3] <= sevenseg:h0.hex[3]
+hex5[2] <= sevenseg:h0.hex[2]
+hex5[1] <= sevenseg:h0.hex[1]
+hex5[0] <= sevenseg:h0.hex[0]
 hex1[6] <= sevenseg:g1.hex[6]
 hex1[5] <= sevenseg:g1.hex[5]
 hex1[4] <= sevenseg:g1.hex[4]
@@ -34,27 +56,113 @@ hex0[0] <= sevenseg:g6.hex[0]
 
 
 |lab2part4|comparator:v0
-a[0] => LessThan0.IN4
-a[1] => LessThan0.IN3
-a[2] => LessThan0.IN2
-a[3] => LessThan0.IN1
-b[0] => LessThan0.IN8
-b[1] => LessThan0.IN7
-b[2] => LessThan0.IN6
-b[3] => LessThan0.IN5
-greater <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+a[0] => ~NO_FANOUT~
+a[1] => greater.IN0
+a[2] => greater.IN0
+a[3] => greater.IN1
+a[3] => greater.IN1
+greater <= greater.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |lab2part4|comparator:v1
-a[0] => LessThan0.IN4
-a[1] => LessThan0.IN3
-a[2] => LessThan0.IN2
-a[3] => LessThan0.IN1
-b[0] => LessThan0.IN8
-b[1] => LessThan0.IN7
-b[2] => LessThan0.IN6
-b[3] => LessThan0.IN5
-greater <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+a[0] => ~NO_FANOUT~
+a[1] => greater.IN0
+a[2] => greater.IN0
+a[3] => greater.IN1
+a[3] => greater.IN1
+greater <= greater.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab2part4|sevenseg:h0
+num[0] => Equal0.IN3
+num[0] => Equal1.IN2
+num[0] => Equal2.IN3
+num[0] => Equal3.IN1
+num[0] => Equal4.IN2
+num[0] => Equal5.IN3
+num[0] => Equal6.IN3
+num[0] => Equal7.IN3
+num[0] => Equal8.IN3
+num[1] => Equal0.IN2
+num[1] => Equal1.IN1
+num[1] => Equal2.IN1
+num[1] => Equal3.IN3
+num[1] => Equal4.IN3
+num[1] => Equal5.IN2
+num[1] => Equal6.IN2
+num[1] => Equal7.IN1
+num[1] => Equal8.IN2
+num[2] => Equal0.IN1
+num[2] => Equal1.IN3
+num[2] => Equal2.IN2
+num[2] => Equal3.IN2
+num[2] => Equal4.IN1
+num[2] => Equal5.IN1
+num[2] => Equal6.IN1
+num[2] => Equal7.IN0
+num[2] => Equal8.IN1
+num[3] => Equal0.IN0
+num[3] => Equal1.IN0
+num[3] => Equal2.IN0
+num[3] => Equal3.IN0
+num[3] => Equal4.IN0
+num[3] => Equal5.IN0
+num[3] => Equal6.IN0
+num[3] => Equal7.IN2
+num[3] => Equal8.IN0
+hex[6] <= hex.DB_MAX_OUTPUT_PORT_TYPE
+hex[5] <= hex.DB_MAX_OUTPUT_PORT_TYPE
+hex[4] <= hex.DB_MAX_OUTPUT_PORT_TYPE
+hex[3] <= hex.DB_MAX_OUTPUT_PORT_TYPE
+hex[2] <= Equal4.DB_MAX_OUTPUT_PORT_TYPE
+hex[1] <= hex.DB_MAX_OUTPUT_PORT_TYPE
+hex[0] <= hex.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab2part4|sevenseg:h1
+num[0] => Equal0.IN3
+num[0] => Equal1.IN2
+num[0] => Equal2.IN3
+num[0] => Equal3.IN1
+num[0] => Equal4.IN2
+num[0] => Equal5.IN3
+num[0] => Equal6.IN3
+num[0] => Equal7.IN3
+num[0] => Equal8.IN3
+num[1] => Equal0.IN2
+num[1] => Equal1.IN1
+num[1] => Equal2.IN1
+num[1] => Equal3.IN3
+num[1] => Equal4.IN3
+num[1] => Equal5.IN2
+num[1] => Equal6.IN2
+num[1] => Equal7.IN1
+num[1] => Equal8.IN2
+num[2] => Equal0.IN1
+num[2] => Equal1.IN3
+num[2] => Equal2.IN2
+num[2] => Equal3.IN2
+num[2] => Equal4.IN1
+num[2] => Equal5.IN1
+num[2] => Equal6.IN1
+num[2] => Equal7.IN0
+num[2] => Equal8.IN1
+num[3] => Equal0.IN0
+num[3] => Equal1.IN0
+num[3] => Equal2.IN0
+num[3] => Equal3.IN0
+num[3] => Equal4.IN0
+num[3] => Equal5.IN0
+num[3] => Equal6.IN0
+num[3] => Equal7.IN2
+num[3] => Equal8.IN0
+hex[6] <= hex.DB_MAX_OUTPUT_PORT_TYPE
+hex[5] <= hex.DB_MAX_OUTPUT_PORT_TYPE
+hex[4] <= hex.DB_MAX_OUTPUT_PORT_TYPE
+hex[3] <= hex.DB_MAX_OUTPUT_PORT_TYPE
+hex[2] <= Equal4.DB_MAX_OUTPUT_PORT_TYPE
+hex[1] <= hex.DB_MAX_OUTPUT_PORT_TYPE
+hex[0] <= hex.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |lab2part4|full_adder:f0
@@ -98,15 +206,12 @@ c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |lab2part4|comparator:g0
-a[0] => LessThan0.IN4
-a[1] => LessThan0.IN3
-a[2] => LessThan0.IN2
-a[3] => LessThan0.IN1
-b[0] => LessThan0.IN8
-b[1] => LessThan0.IN7
-b[2] => LessThan0.IN6
-b[3] => LessThan0.IN5
-greater <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+a[0] => ~NO_FANOUT~
+a[1] => greater.IN0
+a[2] => greater.IN0
+a[3] => greater.IN1
+a[3] => greater.IN1
+greater <= greater.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |lab2part4|sevenseg:g1

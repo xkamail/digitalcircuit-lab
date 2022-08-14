@@ -8,6 +8,7 @@ entity lab2part4 is
 		y : in std_logic_vector(3 downto 0);
 		c_in : in std_logic;
 		led9 : out std_logic;
+		hex3,hex5 : out std_logic_vector(0 to 6);
 		hex1 : out std_logic_vector(0 to 6); -- s1
 		hex0 : out std_logic_vector(0 to 6) -- s0
 	);
@@ -52,7 +53,7 @@ architecture behavior of lab2part4 is
 	end component;
 	component comparator
 		port (
-			a,b   : in std_logic_vector(3 downto 0);
+			a   : in std_logic_vector(3 downto 0);
 			greater  : out std_logic
 		);
 	end component;
@@ -70,9 +71,13 @@ architecture behavior of lab2part4 is
 begin
 
 	-- validate x or y value
-	v0: comparator port map (x,"1001", x_err);
-	v1: comparator port map (y,"1001", y_err);
+	v0: comparator port map (x, x_err);
+	v1: comparator port map (y, y_err);
 	led9 <= x_err or y_err;
+	
+	-- show value of X(hex5) and Y(hex3)
+	h0: sevenseg port map (x, hex5);
+	h1: sevenseg port map (y, hex3);
 
 	
 	-- SUM X + Y => S , C_OUT
@@ -83,10 +88,9 @@ begin
 	
 
 	-- for digit 1
-	g0: comparator port map (s,"1001", m0);
+	g0: comparator port map (s, m0);
 	d1 <= "0001" when (m0 = '1' or c_out = '1') else "0000"; -- for 1001 or 10000
 	g1: sevenseg port map (d1, hex1);
-	-- end digit 1
 	
 	-- for digit 0
 	g2: circuit_a port map (s, from_a); -- convert 10-15
@@ -94,6 +98,5 @@ begin
 	g4: encoder_6to9 port map (s, from_encoder_6to9); -- convert 16-19
 	g5: mux_4bit_2to1 port map (c_out, from_15, from_encoder_6to9, d0); -- if c_out then show 6-9
 	g6: sevenseg port map (d0, hex0);
-	-- end digit 1
 	
 end behavior;
