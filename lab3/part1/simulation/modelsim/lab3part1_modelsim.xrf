@@ -1,0 +1,15 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab3/part1/lab3part1.vhd
+source_file = 1, C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab3/part1/Waveform.vwf
+source_file = 1, C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab3/part1/Waveform1.vwf
+source_file = 1, C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab3/part1/db/lab3part1.cbx.xml
+source_file = 1, c:/altera/13.0sp1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
+source_file = 1, c:/altera/13.0sp1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
+source_file = 1, c:/altera/13.0sp1/quartus/libraries/vhdl/ieee/timing_b.vhd
+source_file = 1, c:/altera/13.0sp1/quartus/libraries/vhdl/ieee/timing_p.vhd
+design_name = lab3part1
+instance = comp, \Q~output , Q~output, lab3part1, 1
+instance = comp, \Clk~input , Clk~input, lab3part1, 1
+instance = comp, \R~input , R~input, lab3part1, 1
+instance = comp, \S~input , S~input, lab3part1, 1
+instance = comp, \~QUARTUS_CREATED_GND~I , ~QUARTUS_CREATED_GND~I, lab3part1, 1
