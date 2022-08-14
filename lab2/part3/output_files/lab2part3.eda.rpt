@@ -1,5 +1,5 @@
 EDA Netlist Writer report for lab2part3
-Wed Aug 10 21:12:56 2022
+Sun Aug 14 21:48:21 2022
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Wed Aug 10 21:12:56 2022 ;
+; EDA Netlist Writer Status ; Successful - Sun Aug 14 21:48:21 2022 ;
 ; Revision Name             ; lab2part3                             ;
 ; Top-level Entity Name     ; lab2part3                             ;
 ; Family                    ; Cyclone V                             ;
@@ -80,12 +80,12 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Aug 10 21:12:55 2022
+    Info: Processing started: Sun Aug 14 21:48:20 2022
 Info: Command: quartus_eda --functional=on --simulation=on --tool=modelsim_oem --format=verilog lab2part3 -c lab2part3
 Info (204019): Generated file lab2part3.vo in folder "C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab2/part3/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 4580 megabytes
-    Info: Processing ended: Wed Aug 10 21:12:56 2022
+    Info: Processing ended: Sun Aug 14 21:48:21 2022
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

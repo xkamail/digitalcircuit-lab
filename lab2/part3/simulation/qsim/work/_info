@@ -8,7 +8,7 @@ Z1 !s100 A1`i:z>L>3S`P?J<8:9]a0
 Z2 IFklUcYQA]?e=KM<?a]kNO3
 Z3 V;[o=J?Yh_Rf@7^5nA9LVl0
 Z4 dC:\Users\xKamaiL\Desktop\digitalcircuit-laboratoy\lab2\part3\simulation\qsim
-Z5 w1660140776
+Z5 w1660488501
 Z6 8lab2part3.vo
 Z7 Flab2part3.vo
 L0 31
@@ -19,7 +19,7 @@ Z9 !s90 -work|work|lab2part3.vo|
 Z10 o-work work -O0
 !i10b 1
 !s85 0
-Z11 !s108 1660140776.878000
+Z11 !s108 1660488502.141000
 Z12 !s107 lab2part3.vo|
 !s101 -O0
 vlab2part3_vlg_check_tst
@@ -28,7 +28,7 @@ Z13 !s100 ID7X;4e4YP^2@ZGoiWS<:0
 Z14 Ia9m:mJgW4Jk57jWD2^GP71
 Z15 VGVCJ;okKTXgTaH3HgEfR43
 R4
-Z16 w1660140775
+Z16 w1660488500
 Z17 8lab2part3.vt
 Z18 Flab2part3.vt
 L0 61
@@ -36,7 +36,7 @@ R8
 r1
 !s85 0
 31
-Z19 !s108 1660140776.926000
+Z19 !s108 1660488502.193000
 Z20 !s107 lab2part3.vt|
 Z21 !s90 -work|work|lab2part3.vt|
 !s101 -O0
@@ -62,8 +62,8 @@ R21
 R10
 vlab2part3_vlg_vec_tst
 !i10b 1
-!s100 ZmDT_;`F@Q;@9][7bCo>E1
-IHQoBNZhJ5C3^4]G<_Db@b2
+!s100 SGf8Qj2[oAV7ORF>_=E>T3
+IYl]]eCL`GBoc=MLRSUBTL1
 Z25 VN;h0Z??WY3@V]Eg_PRO8^0
 R4
 R16

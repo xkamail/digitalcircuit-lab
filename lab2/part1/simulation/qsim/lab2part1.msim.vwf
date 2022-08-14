@@ -859,8 +859,8 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|sw2[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 800.0;
 		LEVEL 1 FOR 200.0;
+		LEVEL 0 FOR 800.0;
 	}
 }
 
@@ -869,9 +869,9 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|sw2[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 400.0;
-		LEVEL 1 FOR 400.0;
 		LEVEL 0 FOR 200.0;
+		LEVEL 1 FOR 400.0;
+		LEVEL 0 FOR 400.0;
 	}
 }
 
@@ -893,7 +893,6 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|sw2[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 100.0;
 		LEVEL 1 FOR 100.0;
 		LEVEL 0 FOR 100.0;
 		LEVEL 1 FOR 100.0;
@@ -903,6 +902,7 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|sw2[0]")
 		LEVEL 1 FOR 100.0;
 		LEVEL 0 FOR 100.0;
 		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 100.0;
 	}
 }
 
@@ -1002,11 +1002,11 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|hex1[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 100.0;
+		LEVEL 0 FOR 500.0;
 		LEVEL 1 FOR 100.0;
 		LEVEL 0 FOR 200.0;
 		LEVEL 1 FOR 100.0;
-		LEVEL 0 FOR 500.0;
+		LEVEL 0 FOR 100.0;
 	}
 }
 
@@ -1015,9 +1015,9 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|hex1[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 500.0;
-		LEVEL 1 FOR 200.0;
 		LEVEL 0 FOR 300.0;
+		LEVEL 1 FOR 200.0;
+		LEVEL 0 FOR 500.0;
 	}
 }
 
@@ -1026,9 +1026,9 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|hex1[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 200.0;
-		LEVEL 1 FOR 100.0;
 		LEVEL 0 FOR 700.0;
+		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 200.0;
 	}
 }
 
@@ -1037,13 +1037,13 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|hex1[3]")
 	NODE
 	{
 		REPEAT = 1;
+		LEVEL 0 FOR 200.0;
+		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 200.0;
+		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 200.0;
+		LEVEL 1 FOR 100.0;
 		LEVEL 0 FOR 100.0;
-		LEVEL 1 FOR 100.0;
-		LEVEL 0 FOR 200.0;
-		LEVEL 1 FOR 100.0;
-		LEVEL 0 FOR 200.0;
-		LEVEL 1 FOR 100.0;
-		LEVEL 0 FOR 200.0;
 	}
 }
 
@@ -1052,6 +1052,7 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|hex1[4]")
 	NODE
 	{
 		REPEAT = 1;
+		LEVEL 1 FOR 100.0;
 		LEVEL 0 FOR 100.0;
 		LEVEL 1 FOR 100.0;
 		LEVEL 0 FOR 100.0;
@@ -1059,7 +1060,6 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|hex1[4]")
 		LEVEL 0 FOR 100.0;
 		LEVEL 1 FOR 100.0;
 		LEVEL 0 FOR 100.0;
-		LEVEL 1 FOR 100.0;
 	}
 }
 
@@ -1068,11 +1068,11 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|hex1[5]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 100.0;
-		LEVEL 1 FOR 300.0;
-		LEVEL 0 FOR 300.0;
-		LEVEL 1 FOR 100.0;
 		LEVEL 0 FOR 200.0;
+		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 300.0;
+		LEVEL 1 FOR 300.0;
+		LEVEL 0 FOR 100.0;
 	}
 }
 
@@ -1081,10 +1081,10 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|hex1[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 200.0;
-		LEVEL 0 FOR 500.0;
-		LEVEL 1 FOR 100.0;
 		LEVEL 0 FOR 200.0;
+		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 500.0;
+		LEVEL 1 FOR 200.0;
 	}
 }
 
@@ -1256,10 +1256,10 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|hex1[6]~output_o")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 200.0;
-		LEVEL 0 FOR 500.0;
-		LEVEL 1 FOR 100.0;
 		LEVEL 0 FOR 200.0;
+		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 500.0;
+		LEVEL 1 FOR 200.0;
 	}
 }
 
@@ -1268,11 +1268,11 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|hex1[5]~output_o")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 100.0;
-		LEVEL 1 FOR 300.0;
-		LEVEL 0 FOR 300.0;
-		LEVEL 1 FOR 100.0;
 		LEVEL 0 FOR 200.0;
+		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 300.0;
+		LEVEL 1 FOR 300.0;
+		LEVEL 0 FOR 100.0;
 	}
 }
 
@@ -1281,6 +1281,7 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|hex1[4]~output_o")
 	NODE
 	{
 		REPEAT = 1;
+		LEVEL 1 FOR 100.0;
 		LEVEL 0 FOR 100.0;
 		LEVEL 1 FOR 100.0;
 		LEVEL 0 FOR 100.0;
@@ -1288,7 +1289,6 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|hex1[4]~output_o")
 		LEVEL 0 FOR 100.0;
 		LEVEL 1 FOR 100.0;
 		LEVEL 0 FOR 100.0;
-		LEVEL 1 FOR 100.0;
 	}
 }
 
@@ -1297,13 +1297,13 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|hex1[3]~output_o")
 	NODE
 	{
 		REPEAT = 1;
+		LEVEL 0 FOR 200.0;
+		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 200.0;
+		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 200.0;
+		LEVEL 1 FOR 100.0;
 		LEVEL 0 FOR 100.0;
-		LEVEL 1 FOR 100.0;
-		LEVEL 0 FOR 200.0;
-		LEVEL 1 FOR 100.0;
-		LEVEL 0 FOR 200.0;
-		LEVEL 1 FOR 100.0;
-		LEVEL 0 FOR 200.0;
 	}
 }
 
@@ -1312,9 +1312,9 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|hex1[2]~output_o")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 200.0;
-		LEVEL 1 FOR 100.0;
 		LEVEL 0 FOR 700.0;
+		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 200.0;
 	}
 }
 
@@ -1323,9 +1323,9 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|hex1[1]~output_o")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 500.0;
-		LEVEL 1 FOR 200.0;
 		LEVEL 0 FOR 300.0;
+		LEVEL 1 FOR 200.0;
+		LEVEL 0 FOR 500.0;
 	}
 }
 
@@ -1334,11 +1334,11 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|hex1[0]~output_o")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 100.0;
+		LEVEL 0 FOR 500.0;
 		LEVEL 1 FOR 100.0;
 		LEVEL 0 FOR 200.0;
 		LEVEL 1 FOR 100.0;
-		LEVEL 0 FOR 500.0;
+		LEVEL 0 FOR 100.0;
 	}
 }
 
@@ -1463,9 +1463,9 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|sw2[2]~input_o")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 400.0;
-		LEVEL 1 FOR 400.0;
 		LEVEL 0 FOR 200.0;
+		LEVEL 1 FOR 400.0;
+		LEVEL 0 FOR 400.0;
 	}
 }
 
@@ -1487,7 +1487,6 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|sw2[0]~input_o")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 100.0;
 		LEVEL 1 FOR 100.0;
 		LEVEL 0 FOR 100.0;
 		LEVEL 1 FOR 100.0;
@@ -1497,6 +1496,7 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|sw2[0]~input_o")
 		LEVEL 1 FOR 100.0;
 		LEVEL 0 FOR 100.0;
 		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 100.0;
 	}
 }
 
@@ -1505,8 +1505,8 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|sw2[3]~input_o")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 800.0;
 		LEVEL 1 FOR 200.0;
+		LEVEL 0 FOR 800.0;
 	}
 }
 
@@ -1515,11 +1515,11 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|o1|hex[5]~0_combout")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 100.0;
-		LEVEL 1 FOR 300.0;
-		LEVEL 0 FOR 300.0;
-		LEVEL 1 FOR 100.0;
 		LEVEL 0 FOR 200.0;
+		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 300.0;
+		LEVEL 1 FOR 300.0;
+		LEVEL 0 FOR 100.0;
 	}
 }
 
@@ -1528,6 +1528,7 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|o1|hex[4]~1_combout")
 	NODE
 	{
 		REPEAT = 1;
+		LEVEL 1 FOR 100.0;
 		LEVEL 0 FOR 100.0;
 		LEVEL 1 FOR 100.0;
 		LEVEL 0 FOR 100.0;
@@ -1535,7 +1536,6 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|o1|hex[4]~1_combout")
 		LEVEL 0 FOR 100.0;
 		LEVEL 1 FOR 100.0;
 		LEVEL 0 FOR 100.0;
-		LEVEL 1 FOR 100.0;
 	}
 }
 
@@ -1544,9 +1544,9 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|o1|hex[2]~2_combout")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 200.0;
-		LEVEL 1 FOR 100.0;
 		LEVEL 0 FOR 700.0;
+		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 200.0;
 	}
 }
 
@@ -1555,9 +1555,9 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|o1|hex[1]~3_combout")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 500.0;
-		LEVEL 0 FOR 200.0;
 		LEVEL 1 FOR 300.0;
+		LEVEL 0 FOR 200.0;
+		LEVEL 1 FOR 500.0;
 	}
 }
 
@@ -1566,11 +1566,11 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|o1|hex[0]~4_combout")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 100.0;
+		LEVEL 1 FOR 500.0;
 		LEVEL 0 FOR 100.0;
 		LEVEL 1 FOR 200.0;
 		LEVEL 0 FOR 100.0;
-		LEVEL 1 FOR 500.0;
+		LEVEL 1 FOR 100.0;
 	}
 }
 
@@ -1606,13 +1606,13 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|o1|hex[3]")
 	NODE
 	{
 		REPEAT = 1;
+		LEVEL 0 FOR 200.0;
+		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 200.0;
+		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 200.0;
+		LEVEL 1 FOR 100.0;
 		LEVEL 0 FOR 100.0;
-		LEVEL 1 FOR 100.0;
-		LEVEL 0 FOR 200.0;
-		LEVEL 1 FOR 100.0;
-		LEVEL 0 FOR 200.0;
-		LEVEL 1 FOR 100.0;
-		LEVEL 0 FOR 200.0;
 	}
 }
 
@@ -1639,10 +1639,10 @@ TRANSITION_LIST("lab2part1_vlg_vec_tst|i1|o1|hex[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 200.0;
-		LEVEL 0 FOR 500.0;
-		LEVEL 1 FOR 100.0;
 		LEVEL 0 FOR 200.0;
+		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 500.0;
+		LEVEL 1 FOR 200.0;
 	}
 }
 

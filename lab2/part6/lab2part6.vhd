@@ -5,6 +5,7 @@ use ieee.std_logic_unsigned.all;
 entity lab2part6 is 
 	port (
 		t0 : in std_logic_vector(5 downto 0);
+		debug_s0, debug_s1 : out std_logic_vector(3 downto 0);
 		hex1: out std_logic_vector(0 to 6); -- s1
 		hex0: out std_logic_vector(0 to 6) -- s0
 	);
@@ -53,6 +54,7 @@ begin
 	s1 <= c1;
 	u0: sevenseg port map (s0(3 downto 0),hex0);
 	u1: sevenseg port map (s1,hex1);
-	
+	debug_s0 <= s0(3 downto 0);
+	debug_s1 <= s1;
 	
 end behavior;
