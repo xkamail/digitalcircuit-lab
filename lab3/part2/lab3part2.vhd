@@ -24,4 +24,4 @@ begin
 	Qb <= not(S_g or Qa);
 	
 	Q <= Qa;
-end structural;
+end Structural;
