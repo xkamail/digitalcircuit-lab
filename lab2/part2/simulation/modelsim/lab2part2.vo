@@ -16,7 +16,7 @@
 // PROGRAM "Quartus II 64-Bit"
 // VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition"
 
-// DATE "08/10/2022 00:58:05"
+// DATE "08/14/2022 20:51:24"
 
 // 
 // Device: Altera EP4CGX15BF14C6 Package FBGA169
@@ -85,7 +85,7 @@ wire \hex0[0]~output_o ;
 wire \v[2]~input_o ;
 wire \v[3]~input_o ;
 wire \v[1]~input_o ;
-wire \g4|LessThan0~0_combout ;
+wire \g4|greater~0_combout ;
 wire \v[0]~input_o ;
 wire \g3|hex[6]~0_combout ;
 wire \g3|hex[5]~1_combout ;
@@ -111,7 +111,7 @@ defparam \hex1[6]~output .open_drain_output = "false";
 
 // Location: IOOBUF_X24_Y31_N2
 cycloneiv_io_obuf \hex1[5]~output (
-	.i(\g4|LessThan0~0_combout ),
+	.i(\g4|greater~0_combout ),
 	.oe(vcc),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),
@@ -124,7 +124,7 @@ defparam \hex1[5]~output .open_drain_output = "false";
 
 // Location: IOOBUF_X26_Y31_N2
 cycloneiv_io_obuf \hex1[4]~output (
-	.i(\g4|LessThan0~0_combout ),
+	.i(\g4|greater~0_combout ),
 	.oe(vcc),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),
@@ -137,7 +137,7 @@ defparam \hex1[4]~output .open_drain_output = "false";
 
 // Location: IOOBUF_X20_Y31_N9
 cycloneiv_io_obuf \hex1[3]~output (
-	.i(\g4|LessThan0~0_combout ),
+	.i(\g4|greater~0_combout ),
 	.oe(vcc),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),
@@ -176,7 +176,7 @@ defparam \hex1[1]~output .open_drain_output = "false";
 
 // Location: IOOBUF_X12_Y31_N9
 cycloneiv_io_obuf \hex1[0]~output (
-	.i(\g4|LessThan0~0_combout ),
+	.i(\g4|greater~0_combout ),
 	.oe(vcc),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),
@@ -309,20 +309,20 @@ defparam \v[1]~input .simulate_z_as = "z";
 // synopsys translate_on
 
 // Location: LCCOMB_X14_Y4_N24
-cycloneiv_lcell_comb \g4|LessThan0~0 (
+cycloneiv_lcell_comb \g4|greater~0 (
 // Equation(s):
-// \g4|LessThan0~0_combout  = (\v[3]~input_o  & ((\v[2]~input_o ) # (\v[1]~input_o )))
+// \g4|greater~0_combout  = (\v[3]~input_o  & ((\v[2]~input_o ) # (\v[1]~input_o )))
 
 	.dataa(gnd),
 	.datab(\v[2]~input_o ),
 	.datac(\v[3]~input_o ),
 	.datad(\v[1]~input_o ),
 	.cin(gnd),
-	.combout(\g4|LessThan0~0_combout ),
+	.combout(\g4|greater~0_combout ),
 	.cout());
 // synopsys translate_off
-defparam \g4|LessThan0~0 .lut_mask = 16'hF0C0;
-defparam \g4|LessThan0~0 .sum_lutc_input = "datac";
+defparam \g4|greater~0 .lut_mask = 16'hF0C0;
+defparam \g4|greater~0 .sum_lutc_input = "datac";
 // synopsys translate_on
 
 // Location: IOIBUF_X14_Y31_N1

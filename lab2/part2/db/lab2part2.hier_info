@@ -28,15 +28,12 @@ hex0[0] <= sevenseg:g3.hex[0]
 
 
 |lab2part2|comparator:g4
-a[0] => LessThan0.IN4
-a[1] => LessThan0.IN3
-a[2] => LessThan0.IN2
-a[3] => LessThan0.IN1
-b[0] => LessThan0.IN8
-b[1] => LessThan0.IN7
-b[2] => LessThan0.IN6
-b[3] => LessThan0.IN5
-greater <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+a[0] => ~NO_FANOUT~
+a[1] => greater.IN0
+a[2] => greater.IN0
+a[3] => greater.IN1
+a[3] => greater.IN1
+greater <= greater.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |lab2part2|sevenseg:g0
@@ -86,26 +83,14 @@ hex[0] <= hex.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |lab2part2|circuit_a:g1
-v[0] => Equal0.IN3
-v[0] => Equal1.IN3
-v[0] => Equal2.IN3
-v[0] => Equal3.IN2
-v[0] => Equal4.IN2
-v[1] => Equal0.IN2
-v[1] => Equal1.IN2
-v[1] => Equal2.IN2
-v[1] => Equal3.IN3
-v[1] => Equal4.IN1
-v[2] => Equal0.IN1
-v[2] => Equal1.IN1
-v[2] => Equal2.IN1
-v[2] => Equal3.IN1
-v[2] => Equal4.IN3
-v[3] => Equal0.IN0
-v[3] => Equal1.IN0
-v[3] => Equal2.IN0
-v[3] => Equal3.IN0
-v[3] => Equal4.IN0
+v[0] => h.IN1
+v[0] => h.IN1
+v[1] => h.IN1
+v[1] => h.IN0
+v[1] => h.IN1
+v[2] => h.IN0
+v[3] => h.IN1
+v[3] => h.IN1
 h[0] <= h.DB_MAX_OUTPUT_PORT_TYPE
 h[1] <= h.DB_MAX_OUTPUT_PORT_TYPE
 h[2] <= h.DB_MAX_OUTPUT_PORT_TYPE

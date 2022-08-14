@@ -32,7 +32,7 @@ architecture behavior of lab2part2 is
 	end component;
 	component comparator
 		port (
-			a,b   : in std_logic_vector(3 downto 0);
+			a   : in std_logic_vector(3 downto 0);
 			greater  : out std_logic
 		);
 	end component;
@@ -42,17 +42,11 @@ architecture behavior of lab2part2 is
 	signal from_a : std_logic_vector(3 downto 0);
 begin
 	
-	g4: comparator port map (v,"1001", m0);
-	
+	g4: comparator port map (v, m0);
 	d1 <= "0001" when (m0 = '1') else "0000";
-	
 	g0: sevenseg port map (d1, hex1);
-	
 	g1: circuit_a port map (v, from_a);
-	
-	-- mux 2bit 2to1 before sent to d0
 	g2: mux_4bit_2to1 port map (m0, v, from_a, d0);
-	
 	g3: sevenseg port map (d0, hex0);
 	
 	

@@ -462,7 +462,7 @@ SIGNAL("lab2part2_vlg_vec_tst|i1|v[1]~input_o")
 	PARENT = "";
 }
 
-SIGNAL("lab2part2_vlg_vec_tst|i1|g4|LessThan0~0_combout")
+SIGNAL("lab2part2_vlg_vec_tst|i1|g4|greater~0_combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -1196,7 +1196,7 @@ TRANSITION_LIST("lab2part2_vlg_vec_tst|i1|v[1]~input_o")
 	}
 }
 
-TRANSITION_LIST("lab2part2_vlg_vec_tst|i1|g4|LessThan0~0_combout")
+TRANSITION_LIST("lab2part2_vlg_vec_tst|i1|g4|greater~0_combout")
 {
 	NODE
 	{
@@ -1807,7 +1807,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "lab2part2_vlg_vec_tst|i1|g4|LessThan0~0_combout";
+	CHANNEL = "lab2part2_vlg_vec_tst|i1|g4|greater~0_combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 43;

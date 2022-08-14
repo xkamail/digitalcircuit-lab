@@ -3,7 +3,7 @@ $comment
 		vcd file lab2part2.msim.vcd -direction
 $end
 $date
-	Wed Aug 10 00:58:06 2022
+	Sun Aug 14 20:51:25 2022
 $end
 $version
 	ModelSim Version 10.1d
@@ -52,7 +52,7 @@ $var wire 1 D hex0[0]~output_o $end
 $var wire 1 E v[2]~input_o $end
 $var wire 1 F v[3]~input_o $end
 $var wire 1 G v[1]~input_o $end
-$var wire 1 H g4|LessThan0~0_combout $end
+$var wire 1 H g4|greater~0_combout $end
 $var wire 1 I v[0]~input_o $end
 $var wire 1 J g3|hex[6]~0_combout $end
 $var wire 1 K g3|hex[5]~1_combout $end
