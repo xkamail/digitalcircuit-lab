@@ -1,0 +1,36 @@
+$comment
+	File created using the following command:
+		vcd file lab3part3.msim.vcd -direction
+$end
+$date
+	Sun Aug 14 15:08:18 2022
+$end
+$version
+	ModelSim Version 10.1d
+$end
+$timescale
+	1ps
+$end
+$scope module lab3part3_vlg_vec_tst $end
+$var reg 1 ! Clk $end
+$var reg 1 " D $end
+$var wire 1 # Q $end
+$var wire 1 $ sampler $end
+$scope module i1 $end
+$var wire 1 % gnd $end
+$var wire 1 & vcc $end
+$var wire 1 ' unknown $end
+$var tri1 1 ( devclrn $end
+$var tri1 1 ) devpor $end
+$var tri1 1 * devoe $end
+$var wire 1 + Clk~input_o $end
+$var wire 1 , ~QUARTUS_CREATED_GND~I_combout $end
+$var wire 1 - D~input_o $end
+$var wire 1 . master0|S_g~combout $end
+$var wire 1 / master0|Qb~combout $end
+$var wire 1 0 master0|R_g~combout $end
+$var wire 1 1 master0|Qa~combout $end
+$var wire 1 2 slave0|R_g~combout $end
+$var wire 1 3 slave0|S_g~combout $end
+$var wire 1 4 slave0|Qb~combout $end
+$var wire 1 5 slave0|Qa~combout $end
