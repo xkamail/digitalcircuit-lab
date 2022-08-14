@@ -1,7 +1,7 @@
-# digitalcircuit-laboratoy
+# Digitalcircuit-laboratoy
 A VHDL files 
 
-Board : 5CEBA4F23C7
+**Board:** 5CEBA4F23C7
 
 
 
