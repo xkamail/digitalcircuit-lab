@@ -1,17 +1,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
--- 0000001 = 0
--- 1001111 = 1
--- 0010010 = 2
--- 0000110 = 3
--- 1001100 = 4
--- 0100100 = 5
--- 0100000 = 6
--- 0001111 = 7
--- 0000000 = 8
--- 0000100 = 9
-
 entity sevenseg is 
 	port (
 		num : in std_logic_vector(3 downto 0);
