@@ -1,11 +1,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
--- encoder
--- 0000 -> 6
--- 0001 -> 7
--- 0010 -> 8
--- 0011 -> 9
 entity encoder_6to9 is 
 	port (
 		v : in std_logic_vector(3 downto 0);
