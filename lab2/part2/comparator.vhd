@@ -1,7 +1,6 @@
 Library ieee;
 use ieee.std_logic_1164.all;
 
--- warning! compare only 9 
 entity comparator is
   port (
       a   : in std_logic_vector(3 downto 0);
