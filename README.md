@@ -9,5 +9,5 @@ A VHDL files
 
 ## Lab 2 - Adder , Comparator , Encoder/Decoder
 
-## Lab 3 Latch , D-Latch, D-Flip Flop ( Master / Slave )
+## Lab 3 - Latch , D-Latch, D-Flip Flop ( Master / Slave )
 
