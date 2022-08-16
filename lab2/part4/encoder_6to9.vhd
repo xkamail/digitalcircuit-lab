@@ -16,9 +16,9 @@ end encoder_6to9;
 architecture behavior of encoder_6to9 is
 	signal t : std_logic;
 begin
-	t <= '1' when (v = "0000" or v = "0001") else '0';
-	h(3) <= '1' when (v = "0010" or v = "0011") else '0';
+	t <= (not(v(3)) and not(v(2)) and not(v(1)) and not(v(0))) or (not(v(3)) and not(v(2)) and not(v(1)) and v(0));
+	h(3) <= (not(v(3)) and not(v(2)) and v(1) and not(v(0))) or (not(v(3)) and not(v(2)) and v(1) and v(0));
 	h(2) <= t;
 	h(1) <= t;
-	h(0) <= '1' when (v = "0001" or v = "0011") else '0';
+	h(0) <= (not(v(3)) and not(v(2)) and not(v(1)) and v(0)) or (not(v(3)) and not(v(2)) and v(1) and v(0));
 end behavior;
