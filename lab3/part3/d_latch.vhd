@@ -18,10 +18,12 @@ architecture Structural of d_latch is
 begin
 	R <= not(D);
 	S <= D;
-	R_g <= R and Clk;
-	S_g <= S and Clk;
-	Qa <= not (R_g or Qb);
-	Qb <= not(S_g or Qa);
-	Qn <= Qb;
+	
+	R_g <= R nand Clk;
+	S_g <= S nand Clk;
+	
+	Qa <= S_g nand Qb;
+	Qb <= R_g nand Qa;
+	
 	Q <= Qa;
 end Structural;
