@@ -16,7 +16,7 @@
 // PROGRAM "Quartus II 64-Bit"
 // VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition"
 
-// DATE "08/14/2022 14:37:37"
+// DATE "08/18/2022 01:00:25"
 
 // 
 // Device: Altera 5CEBA4F23C7 Package FBGA484
@@ -56,8 +56,8 @@ tri1 devoe;
 wire \Clk~input_o ;
 wire \~QUARTUS_CREATED_GND~I_combout ;
 wire \D~input_o ;
-wire \R_g~combout ;
 wire \S_g~combout ;
+wire \R_g~combout ;
 wire \Qb~combout ;
 wire \Qa~combout ;
 
@@ -101,33 +101,9 @@ defparam \D~input .simulate_z_as = "z";
 // synopsys translate_on
 
 // Location: LABCELL_X20_Y44_N36
-cyclonev_lcell_comb R_g(
-// Equation(s):
-// \R_g~combout  = LCELL((\Clk~input_o  & !\D~input_o ))
-
-	.dataa(!\Clk~input_o ),
-	.datab(!\D~input_o ),
-	.datac(gnd),
-	.datad(gnd),
-	.datae(gnd),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\R_g~combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam R_g.extended_lut = "off";
-defparam R_g.lut_mask = 64'h4444444444444444;
-defparam R_g.shared_arith = "off";
-// synopsys translate_on
-
-// Location: LABCELL_X20_Y44_N39
 cyclonev_lcell_comb S_g(
 // Equation(s):
-// \S_g~combout  = LCELL((\Clk~input_o  & \D~input_o ))
+// \S_g~combout  = LCELL((!\Clk~input_o ) # (!\D~input_o ))
 
 	.dataa(!\Clk~input_o ),
 	.datab(!\D~input_o ),
@@ -144,18 +120,42 @@ cyclonev_lcell_comb S_g(
 	.shareout());
 // synopsys translate_off
 defparam S_g.extended_lut = "off";
-defparam S_g.lut_mask = 64'h1111111111111111;
+defparam S_g.lut_mask = 64'hEEEEEEEEEEEEEEEE;
 defparam S_g.shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X20_Y44_N39
+cyclonev_lcell_comb R_g(
+// Equation(s):
+// \R_g~combout  = LCELL((!\Clk~input_o ) # (\D~input_o ))
+
+	.dataa(!\Clk~input_o ),
+	.datab(!\D~input_o ),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\R_g~combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam R_g.extended_lut = "off";
+defparam R_g.lut_mask = 64'hBBBBBBBBBBBBBBBB;
+defparam R_g.shared_arith = "off";
 // synopsys translate_on
 
 // Location: LABCELL_X20_Y44_N33
 cyclonev_lcell_comb Qb(
 // Equation(s):
-// \Qb~combout  = LCELL(( !\Qa~combout  & ( !\S_g~combout  ) ))
+// \Qb~combout  = LCELL(( \Qa~combout  & ( !\R_g~combout  ) ) # ( !\Qa~combout  ))
 
 	.dataa(gnd),
 	.datab(gnd),
-	.datac(!\S_g~combout ),
+	.datac(!\R_g~combout ),
 	.datad(gnd),
 	.datae(gnd),
 	.dataf(!\Qa~combout ),
@@ -168,16 +168,16 @@ cyclonev_lcell_comb Qb(
 	.shareout());
 // synopsys translate_off
 defparam Qb.extended_lut = "off";
-defparam Qb.lut_mask = 64'hF0F0F0F000000000;
+defparam Qb.lut_mask = 64'hFFFFFFFFF0F0F0F0;
 defparam Qb.shared_arith = "off";
 // synopsys translate_on
 
 // Location: LABCELL_X20_Y44_N30
 cyclonev_lcell_comb Qa(
 // Equation(s):
-// \Qa~combout  = LCELL((!\R_g~combout  & !\Qb~combout ))
+// \Qa~combout  = LCELL((!\S_g~combout ) # (!\Qb~combout ))
 
-	.dataa(!\R_g~combout ),
+	.dataa(!\S_g~combout ),
 	.datab(gnd),
 	.datac(!\Qb~combout ),
 	.datad(gnd),
@@ -192,7 +192,7 @@ cyclonev_lcell_comb Qa(
 	.shareout());
 // synopsys translate_off
 defparam Qa.extended_lut = "off";
-defparam Qa.lut_mask = 64'hA0A0A0A0A0A0A0A0;
+defparam Qa.lut_mask = 64'hFAFAFAFAFAFAFAFA;
 defparam Qa.shared_arith = "off";
 // synopsys translate_on
 

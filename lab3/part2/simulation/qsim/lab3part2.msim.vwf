@@ -162,7 +162,7 @@ SIGNAL("lab3part2_vlg_vec_tst|i1|D~input_o")
 	PARENT = "";
 }
 
-SIGNAL("lab3part2_vlg_vec_tst|i1|R_g~combout")
+SIGNAL("lab3part2_vlg_vec_tst|i1|S_g~combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -172,7 +172,7 @@ SIGNAL("lab3part2_vlg_vec_tst|i1|R_g~combout")
 	PARENT = "";
 }
 
-SIGNAL("lab3part2_vlg_vec_tst|i1|S_g~combout")
+SIGNAL("lab3part2_vlg_vec_tst|i1|R_g~combout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -416,48 +416,48 @@ TRANSITION_LIST("lab3part2_vlg_vec_tst|i1|D~input_o")
 	}
 }
 
-TRANSITION_LIST("lab3part2_vlg_vec_tst|i1|R_g~combout")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 1 FOR 50.0;
-		LEVEL 0 FOR 50.0;
-		LEVEL 1 FOR 50.0;
-		LEVEL 0 FOR 70.0;
-		LEVEL 1 FOR 30.0;
-		LEVEL 0 FOR 150.0;
-		LEVEL 1 FOR 40.0;
-		LEVEL 0 FOR 160.0;
-		LEVEL 1 FOR 50.0;
-		LEVEL 0 FOR 70.0;
-		LEVEL 1 FOR 20.0;
-		LEVEL 0 FOR 160.0;
-		LEVEL 1 FOR 50.0;
-		LEVEL 0 FOR 50.0;
-	}
-}
-
 TRANSITION_LIST("lab3part2_vlg_vec_tst|i1|S_g~combout")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 200.0;
-		LEVEL 1 FOR 20.0;
-		LEVEL 0 FOR 80.0;
-		LEVEL 1 FOR 50.0;
-		LEVEL 0 FOR 90.0;
-		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 50.0;
-		LEVEL 1 FOR 50.0;
-		LEVEL 0 FOR 150.0;
-		LEVEL 1 FOR 20.0;
+		LEVEL 1 FOR 200.0;
 		LEVEL 0 FOR 20.0;
-		LEVEL 1 FOR 10.0;
+		LEVEL 1 FOR 80.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 90.0;
+		LEVEL 0 FOR 10.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 150.0;
+		LEVEL 0 FOR 20.0;
+		LEVEL 1 FOR 20.0;
+		LEVEL 0 FOR 10.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 150.0;
+	}
+}
+
+TRANSITION_LIST("lab3part2_vlg_vec_tst|i1|R_g~combout")
+{
+	NODE
+	{
+		REPEAT = 1;
 		LEVEL 0 FOR 50.0;
 		LEVEL 1 FOR 50.0;
-		LEVEL 0 FOR 150.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 70.0;
+		LEVEL 0 FOR 30.0;
+		LEVEL 1 FOR 150.0;
+		LEVEL 0 FOR 40.0;
+		LEVEL 1 FOR 160.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 70.0;
+		LEVEL 0 FOR 20.0;
+		LEVEL 1 FOR 160.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 50.0;
 	}
 }
 
@@ -618,7 +618,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "lab3part2_vlg_vec_tst|i1|R_g~combout";
+	CHANNEL = "lab3part2_vlg_vec_tst|i1|S_g~combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 13;
@@ -627,7 +627,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "lab3part2_vlg_vec_tst|i1|S_g~combout";
+	CHANNEL = "lab3part2_vlg_vec_tst|i1|R_g~combout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 14;
