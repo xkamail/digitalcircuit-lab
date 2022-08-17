@@ -5,7 +5,7 @@ use ieee.std_logic_1164.all;
 entity d_latch is
 	port (
 		 D, Clk : in std_logic;
-		Q : out std_logic
+		Q,Qn : out std_logic
 	);
 end d_latch;
 
@@ -22,6 +22,6 @@ begin
 	S_g <= S and Clk;
 	Qa <= not (R_g or Qb);
 	Qb <= not(S_g or Qa);
-	
+	Qn <= Qb;
 	Q <= Qa;
 end Structural;

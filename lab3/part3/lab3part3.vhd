@@ -7,7 +7,7 @@ entity lab3part3 is
 	port (
 		D : in std_logic;
 		Clk : in std_logic;
-		Q : out std_logic
+		Q,Qn : out std_logic
 	);
 end lab3part3;
 
@@ -22,4 +22,5 @@ architecture bhv of lab3part3 is
 begin
 	master0: d_latch port map (D, not(Clk),Qm);
 	slave0: d_latch port map (Qm, Clk, Q);
+	Qn <= not(Q);
 end bhv;
