@@ -1,5 +1,5 @@
 Fitter report for lab2part4
-Sun Aug 14 22:41:57 2022
+Tue Aug 16 20:54:07 2022
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -59,7 +59,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                        ;
 +-------------------------------------+-------------------------------------------------+
-; Fitter Status                       ; Successful - Sun Aug 14 22:41:57 2022           ;
+; Fitter Status                       ; Successful - Tue Aug 16 20:54:07 2022           ;
 ; Quartus II 64-Bit Version           ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                       ; lab2part4                                       ;
 ; Top-level Entity Name               ; lab2part4                                       ;
@@ -1384,7 +1384,7 @@ Info (332130): Timing requirements not specified -- quality metrics such as perf
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
-Info (11798): Fitter preparation operations ending: elapsed time is 00:00:06
+Info (11798): Fitter preparation operations ending: elapsed time is 00:00:09
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
@@ -1397,7 +1397,7 @@ Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.17 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.22 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -1436,10 +1436,10 @@ Critical Warning (169244): Total number of single-ended output or bi-directional
         Info (169220): Location U21 (pad PAD_151): Pin hex0[0] of type output uses 2.5 V I/O standard
 Info (144001): Generated suppressed messages file C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab2/part4/output_files/lab2part4.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 5610 megabytes
-    Info: Processing ended: Sun Aug 14 22:41:58 2022
-    Info: Elapsed time: 00:00:23
-    Info: Total CPU time (on all processors): 00:00:23
+    Info: Peak virtual memory: 5617 megabytes
+    Info: Processing ended: Tue Aug 16 20:54:08 2022
+    Info: Elapsed time: 00:00:30
+    Info: Total CPU time (on all processors): 00:00:26
 
 
 +----------------------------+
