@@ -43,7 +43,7 @@ architecture behavior of lab3part5 is
 		);
 	end component;
 	
-	signal c1,c2,c3,c4,c5,c6, c_out : std_logic;
+	signal c1,c2,c3,c4,c5,c6, c7, c_out : std_logic;
 	signal a,b, s : std_logic_vector(7 downto 0);
 	
 begin
@@ -56,9 +56,10 @@ begin
 	g1: full_adder port map (a(1),b(1),c1,s(1),c2);
 	g2: full_adder port map (a(2),b(2),c2,s(2),c3);
 	g3: full_adder port map (a(3),b(3),c3,s(3),c4);
-	g5: full_adder port map (a(4),b(4),c4,s(4),c5);
-	g6: full_adder port map (a(5),b(5),c5,s(5),c6);
-	g7: full_adder port map (a(6),b(6),c6,s(6),c_out);
+	g4: full_adder port map (a(4),b(4),c4,s(4),c5);
+	g5: full_adder port map (a(5),b(5),c5,s(5),c6);
+	g6: full_adder port map (a(6),b(6),c6,s(6),c7);
+	g7: full_adder port map (a(7),b(7),c7,s(7),c_out);
 	
 	ledr <= c_out;
 	
