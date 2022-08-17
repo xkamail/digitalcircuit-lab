@@ -24,9 +24,7 @@ architecture behavior of lab2part5 is
 	signal t0,z0,s0 : std_logic_vector(4 downto 0);
 	signal s1,c1 : std_logic_vector(3 downto 0);
 begin
-
 	t0 <= ('0' & a) + ('0' & b) + c0;
-	
 	process(t0)
 	begin
 		if t0 > 9 then 
@@ -36,8 +34,9 @@ begin
 			z0 <= "00000";
 			c1 <= "0000";
 		end if;
-		
 	end process;
+	s0 <= t0 - z0;
+	s1 <= c1;
 	
 	s0 <= t0 - z0;
 	s1 <= c1;
