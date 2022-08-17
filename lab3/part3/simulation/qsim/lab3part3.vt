@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "08/14/2022 15:08:16"
+// Generated on "08/17/2022 21:15:20"
                                                                         
 // Verilog Self-Checking Test Bench (with test vectors) for design :    lab3part3
 // 
@@ -170,25 +170,19 @@ lab3part3 i1 (
 );
 
 // Clk
-initial
+always
 begin
-	Clk = 1'b1;
-	# 10000;
-	repeat(49)
-	begin
-		Clk = 1'b0;
-		Clk = #10000 1'b1;
-		# 10000;
-	end
 	Clk = 1'b0;
+	Clk = #100000 1'b1;
+	#100000;
 end 
 
 // D
-always
+initial
 begin
 	D = 1'b0;
-	D = #10000 1'b1;
-	#10000;
+	D = #180000 1'b1;
+	D = #160000 1'b0;
 end 
 
 lab3part3_vlg_sample_tst tb_sample (

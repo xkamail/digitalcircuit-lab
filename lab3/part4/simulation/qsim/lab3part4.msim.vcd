@@ -1,0 +1,191 @@
+$comment
+	File created using the following command:
+		vcd file lab3part4.msim.vcd -direction
+$end
+$date
+	Wed Aug 17 21:38:17 2022
+$end
+$version
+	ModelSim Version 10.1d
+$end
+$timescale
+	1ps
+$end
+$scope module lab3part4_vlg_vec_tst $end
+$var reg 1 ! Clk $end
+$var reg 1 " D $end
+$var wire 1 # Qa $end
+$var wire 1 $ Qb $end
+$var wire 1 % Qc $end
+$var wire 1 & sampler $end
+$scope module i1 $end
+$var wire 1 ' gnd $end
+$var wire 1 ( vcc $end
+$var wire 1 ) unknown $end
+$var tri1 1 * devclrn $end
+$var tri1 1 + devpor $end
+$var tri1 1 , devoe $end
+$var wire 1 - ~QUARTUS_CREATED_GND~I_combout $end
+$var wire 1 . D~input_o $end
+$var wire 1 / Clk~input_o $end
+$var wire 1 0 u0|Q~combout $end
+$var wire 1 1 Clk~inputCLKENA0_outclk $end
+$var wire 1 2 u1|Q~q $end
+$var wire 1 3 u2|Q~feeder_combout $end
+$var wire 1 4 u2|Q~q $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+0"
+x#
+0$
+0%
+x&
+0'
+1(
+x)
+1*
+1+
+1,
+0-
+0.
+0/
+x0
+01
+02
+03
+04
+$end
+#80000
+1"
+1.
+0&
+13
+#100000
+1!
+1/
+11
+1&
+10
+1#
+12
+1$
+#120000
+0"
+0.
+0&
+03
+00
+0#
+#140000
+1"
+1.
+1&
+13
+10
+1#
+#170000
+0"
+0.
+0&
+03
+00
+0#
+#200000
+0!
+0/
+01
+1&
+#210000
+1"
+1.
+0&
+13
+#250000
+0"
+0.
+1&
+03
+#270000
+1"
+1.
+0&
+13
+#290000
+0"
+0.
+1&
+03
+#300000
+1!
+1/
+11
+0&
+02
+0$
+#320000
+1"
+1.
+1&
+13
+10
+1#
+#340000
+0"
+0.
+0&
+03
+00
+0#
+#360000
+1"
+1.
+1&
+13
+10
+1#
+#400000
+0!
+0/
+01
+0&
+14
+1%
+#440000
+0"
+0.
+1&
+03
+#500000
+1!
+1/
+11
+0&
+00
+0#
+#600000
+0!
+0/
+01
+1&
+04
+0%
+#700000
+1!
+1/
+11
+0&
+#800000
+0!
+0/
+01
+1&
+#900000
+1!
+1/
+11
+0&
+#1000000

@@ -14,12 +14,12 @@ end lab3part3;
 architecture bhv of lab3part3 is
 	component d_latch
 		port (
-			Clk, D : in std_logic;
+			D, Clk : in std_logic;
 			Q : out std_logic
 		);
 	end component;
 	signal Qm : std_logic;
 begin
-	master0: d_latch port map (not(Clk), D, Qm);
-	slave0: d_latch port map (Clk, Qm, Q);
+	master0: d_latch port map (D, not(Clk),Qm);
+	slave0: d_latch port map (Qm, Clk, Q);
 end bhv;

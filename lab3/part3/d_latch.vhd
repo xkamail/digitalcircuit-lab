@@ -4,7 +4,7 @@ use ieee.std_logic_1164.all;
 
 entity d_latch is
 	port (
-		Clk, D : in std_logic;
+		 D, Clk : in std_logic;
 		Q : out std_logic
 	);
 end d_latch;
