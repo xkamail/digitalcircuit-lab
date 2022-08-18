@@ -4,7 +4,7 @@ use ieee.std_logic_1164.all;
 
 entity lab3part5 is
 	port (
-		m : in std_logic;
+		m, key0 : in std_logic;
 		sw : in std_logic_vector(7 downto 0);
 		hex5,hex4,hex3,hex2,hex1,hex0 : out std_logic_vector(0 to 6);
 		debug_a,debug_b,debug_s : out std_logic_vector(7 downto 0);
@@ -44,13 +44,28 @@ architecture behavior of lab3part5 is
 	end component;
 	
 	signal c1,c2,c3,c4,c5,c6, c7, c_out : std_logic;
-	signal a,b, s : std_logic_vector(7 downto 0);
+	signal before_input ,a,b, s : std_logic_vector(7 downto 0);
+	signal reset, en_a, en_b : std_logic;
 	
 begin
 	
+	process(key0)
+	begin
+		if key0 = '0' then
+			before_input <= "00000000";
+		else
+			before_input <= sw;
+		end if;
+		
+	end process;
+	
+	reset <= not(key0);
+	en_a <= not(m) or reset;
+	en_b <= m or reset;
+	
 	-- store value A and B
-	r0: register8bit port map (not(m), sw, a);
-	r1: register8bit port map (m, sw, b);
+	r0: register8bit port map (en_a, before_input, a);
+	r1: register8bit port map (en_b, before_input, b);
 	
 	g0: full_adder port map (a(0),b(0),'0',s(0),c1);
 	g1: full_adder port map (a(1),b(1),c1,s(1),c2);
