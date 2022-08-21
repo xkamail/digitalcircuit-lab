@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "08/18/2022 00:53:32"
+// Generated on "08/21/2022 13:57:03"
                                                                         
 // Verilog Self-Checking Test Bench (with test vectors) for design :    lab3part5
 // 
@@ -27,17 +27,19 @@
 
 `timescale 1 ps/ 1 ps
 module lab3part5_vlg_sample_tst(
+	key0,
 	m,
 	sw,
 	sampler_tx
 );
+input  key0;
 input  m;
 input [7:0] sw;
 output sampler_tx;
 
 reg sample;
 time current_time;
-always @(m or sw)
+always @(key0 or m or sw)
                                                                                 
 begin                                                 
  if ($realtime > 0)                                   
@@ -1414,6 +1416,7 @@ endmodule
 module lab3part5_vlg_vec_tst();
 // constants                                           
 // general purpose registers
+reg key0;
 reg m;
 reg [7:0] sw;
 // wires                                               
@@ -1442,6 +1445,7 @@ lab3part5 i1 (
 	.hex3(hex3),
 	.hex4(hex4),
 	.hex5(hex5),
+	.key0(key0),
 	.ledr(ledr),
 	.m(m),
 	.sw(sw)
@@ -1517,7 +1521,18 @@ begin
 	sw[0] = #220000 1'b0;
 end 
 
+// key0
+initial
+begin
+	key0 = 1'b1;
+	key0 = #300000 1'b0;
+	key0 = #40000 1'b1;
+	key0 = #80000 1'b0;
+	key0 = #80000 1'b1;
+end 
+
 lab3part5_vlg_sample_tst tb_sample (
+	.key0(key0),
 	.m(m),
 	.sw(sw),
 	.sampler_tx(sampler)

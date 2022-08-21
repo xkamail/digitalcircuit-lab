@@ -26,4 +26,5 @@ begin
 	Qb <= R_g nand Qa;
 	
 	Q <= Qa;
+	Qn <= Qb;
 end Structural;

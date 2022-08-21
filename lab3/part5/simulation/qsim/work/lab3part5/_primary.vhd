@@ -3,6 +3,7 @@ use verilog.vl_types.all;
 entity lab3part5 is
     port(
         m               : in     vl_logic;
+        key0            : in     vl_logic;
         sw              : in     vl_logic_vector(7 downto 0);
         hex5            : out    vl_logic_vector(0 to 6);
         hex4            : out    vl_logic_vector(0 to 6);
