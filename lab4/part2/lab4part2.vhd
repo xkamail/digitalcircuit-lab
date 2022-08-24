@@ -28,6 +28,7 @@ begin
 		begin
 		if clear = '1' then
 			if enable = '0' then
+				-- TODO // check loop counter
 				q <= "0000000000000000";
 			else
 				if rising_edge(clk) then 
