@@ -1,0 +1,68 @@
+# Copyright (C) 1991-2013 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+
+# Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+# File: C:\Users\xKamaiL\Desktop\digitalcircuit-laboratoy\lab4\part2\pin.csv
+# Generated on: Thu Aug 25 00:40:23 2022
+
+# Note: The column header names should not be changed if you wish to import this .csv file into the Quartus II software.
+
+To,Direction,Location,I/O Bank,VREF Group,Fitter Location,I/O Standard,Reserved,Current Strength,Slew Rate,Differential Pair,Transceiver Analog Settings Protocol,VCCR_GXB/VCCT_GXB Voltage,Transceiver I/O Pin Termination,Transceiver Dedicated Refclk Pin Termination,Transmitter Common Mode Driver Voltage,Transmitter Slew Rate Control,Transmitter Differential Output Voltage,Receiver Buffer Common Mode Voltage
+clear,Input,PIN_U13,4A,B4A_N0,PIN_Y16,,,,,,,,,,,,,
+debug[15],Output,,,,PIN_AB13,,,,,,,,,,,,,
+debug[14],Output,,,,PIN_AA12,,,,,,,,,,,,,
+debug[13],Output,,,,PIN_P9,,,,,,,,,,,,,
+debug[12],Output,,,,PIN_N9,,,,,,,,,,,,,
+debug[11],Output,,,,PIN_V20,,,,,,,,,,,,,
+debug[10],Output,,,,PIN_V16,,,,,,,,,,,,,
+debug[9],Output,,,,PIN_W16,,,,,,,,,,,,,
+debug[8],Output,,,,PIN_R14,,,,,,,,,,,,,
+debug[7],Output,,,,PIN_V14,,,,,,,,,,,,,
+debug[6],Output,,,,PIN_AB18,,,,,,,,,,,,,
+debug[5],Output,,,,PIN_AB20,,,,,,,,,,,,,
+debug[4],Output,,,,PIN_Y17,,,,,,,,,,,,,
+debug[3],Output,,,,PIN_V15,,,,,,,,,,,,,
+debug[2],Output,,,,PIN_T12,,,,,,,,,,,,,
+debug[1],Output,,,,PIN_AA13,,,,,,,,,,,,,
+debug[0],Output,,,,PIN_T13,,,,,,,,,,,,,
+enable,Input,PIN_V13,4A,B4A_N0,PIN_AB21,,,,,,,,,,,,,
+hex0[0],Output,PIN_U21,4A,B4A_N0,PIN_Y14,,,,,,,,,,,,,
+hex0[1],Output,PIN_V21,4A,B4A_N0,PIN_AA15,,,,,,,,,,,,,
+hex0[2],Output,PIN_W22,4A,B4A_N0,PIN_V13,,,,,,,,,,,,,
+hex0[3],Output,PIN_W21,4A,B4A_N0,PIN_AB15,,,,,,,,,,,,,
+hex0[4],Output,PIN_Y22,4A,B4A_N0,PIN_Y15,,,,,,,,,,,,,
+hex0[5],Output,PIN_Y21,4A,B4A_N0,PIN_AB17,,,,,,,,,,,,,
+hex0[6],Output,PIN_AA22,4A,B4A_N0,PIN_AA14,,,,,,,,,,,,,
+hex1[0],Output,PIN_AA20,4A,B4A_N0,PIN_AA17,,,,,,,,,,,,,
+hex1[1],Output,PIN_AB20,4A,B4A_N0,PIN_AA19,,,,,,,,,,,,,
+hex1[2],Output,PIN_AA19,4A,B4A_N0,PIN_T14,,,,,,,,,,,,,
+hex1[3],Output,PIN_AA18,4A,B4A_N0,PIN_U15,,,,,,,,,,,,,
+hex1[4],Output,PIN_AB18,4A,B4A_N0,PIN_W19,,,,,,,,,,,,,
+hex1[5],Output,PIN_AA17,4A,B4A_N0,PIN_AA20,,,,,,,,,,,,,
+hex1[6],Output,PIN_U22,4A,B4A_N0,PIN_AA18,,,,,,,,,,,,,
+hex2[0],Output,PIN_Y19,4A,B4A_N0,PIN_W21,,,,,,,,,,,,,
+hex2[1],Output,PIN_AB17,4A,B4A_N0,PIN_Y19,,,,,,,,,,,,,
+hex2[2],Output,PIN_AA10,3B,B3B_N0,PIN_Y20,,,,,,,,,,,,,
+hex2[3],Output,PIN_Y14,4A,B4A_N0,PIN_AB22,,,,,,,,,,,,,
+hex2[4],Output,PIN_V14,4A,B4A_N0,PIN_Y22,,,,,,,,,,,,,
+hex2[5],Output,PIN_AB22,4A,B4A_N0,PIN_AA22,,,,,,,,,,,,,
+hex2[6],Output,PIN_AB21,4A,B4A_N0,PIN_W22,,,,,,,,,,,,,
+hex3[0],Output,PIN_Y16,4A,B4A_N0,PIN_Y11,,,,,,,,,,,,,
+hex3[1],Output,PIN_W16,4A,B4A_N0,PIN_R10,,,,,,,,,,,,,
+hex3[2],Output,PIN_Y17,4A,B4A_N0,PIN_AB10,,,,,,,,,,,,,
+hex3[3],Output,PIN_V16,4A,B4A_N0,PIN_AB11,,,,,,,,,,,,,
+hex3[4],Output,PIN_U17,4A,B4A_N0,PIN_U12,,,,,,,,,,,,,
+hex3[5],Output,PIN_V18,4A,B4A_N0,PIN_U11,,,,,,,,,,,,,
+hex3[6],Output,PIN_V19,4A,B4A_N0,PIN_R11,,,,,,,,,,,,,
+key0,Input,PIN_U7,3A,B3A_N0,PIN_M16,,,,,,,,,,,,,
