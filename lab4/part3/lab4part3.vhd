@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 
 entity lab4part3 is
 	port (
-		clock50 : in std_logic;
+		clock50, key0 : in std_logic;
 		hex0 : out std_logic_vector(0 to 6)
 	);
 end lab4part3;
@@ -17,7 +17,7 @@ architecture behavior of lab4part3 is
 	end component;
 	component counter0to9
 		port (
-			clk, en : in std_logic;
+			clk, en, reset : in std_logic;
 			num : out std_logic_vector(3 downto 0)
 		);
 	end component;
@@ -39,7 +39,7 @@ begin
 		end if;
 	end process;
 	
-	u0: counter0to9 port map (clock50, e, num);
+	u0: counter0to9 port map (clock50, e, not(key0), num);
 	h0: sevenseg port map (num, hex0);
 	
 end behavior;

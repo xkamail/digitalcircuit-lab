@@ -5,7 +5,6 @@ entity lab4part1 is
 	port (
 		-- SW0 = EN, SW1 = CLR
 		enable,clear, key0 : in std_logic;
-		debug : out std_logic_vector(7 downto 0);
 		hex0, hex1 : out std_logic_vector(0 to 6)
 	);
 end lab4part1;
@@ -48,8 +47,7 @@ begin
 	u6: t_ff port map (clk,clear, t6, q(5));
 	u7: t_ff port map (clk,clear, t7, q(6));
 	u8: t_ff port map (clk,clear, t8, q(7));
-	
-	debug <= q;
+
 
 	h1: sevenseg port map (q(7 downto 4),hex1);
 	h2: sevenseg port map (q(3 downto 0),hex0);

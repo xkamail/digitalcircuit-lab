@@ -6,7 +6,7 @@ entity lab4part4 is
 		sw : in std_logic_vector(9 downto 0);
 		ledr : out std_logic_vector(9 downto 0);
 		clock50 : in std_logic;
-		debug : out std_logic;
+		-- debug : out std_logic;
 		hex2,hex1,hex0 : out std_logic_vector(0 to 6)
 	);
 end lab4part4;
@@ -32,10 +32,10 @@ architecture behavior of lab4part4 is
 		);
 	end component;
 	component counter0to3
-		port (
-			clk : in std_logic;
-			n : out std_logic_vector(1 downto 0)
-		);
+	port (
+		clk, en, clear : in std_logic;
+		n : out std_logic_vector(1 downto 0)
+	);
 	end component;
 	signal en : std_logic;
 	
@@ -47,9 +47,9 @@ architecture behavior of lab4part4 is
 begin
 	
 	x0: every_seconds port map (clock50, en);
-	debug <= en;
+	-- debug <= en;
 	
-	x1: counter0to3 port map (clock50 and en, num);
+	x1: counter0to3 port map (clock50, en, sw(9), num);
 	
 	
 	-- sw(1 downto 0) is '0' put '10'

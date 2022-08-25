@@ -5,8 +5,9 @@ use ieee.std_logic_unsigned.all;
 
 entity lab4part2 is 
 	port (
-		enable, clear, key0 : in std_logic;
-		debug: out std_logic_vector(15 downto 0);
+		
+		enable, clear, key0, init : in std_logic;
+		-- debug: out std_logic_vector(15 downto 0);
 		hex3, hex2, hex1, hex0 : out std_logic_vector(0 to 6)
 	);
 end lab4part2;
@@ -27,19 +28,28 @@ begin
 	process(clk, enable, clear)
 		begin
 		if clear = '1' then
+			
 			if enable = '0' then
-				-- TODO // check loop counter
-				q <= "0000000000000000";
+				q <= q;
 			else
-				if rising_edge(clk) then 
-					q <= unsigned(q) + '1';
+				if init = '0' then
+						-- set Q to FFFA when press key1
+						q <= "1111111111111010";
+				else
+					if rising_edge(clk) then 
+						if q = "1111111111111111" then
+							q <= "0000000000000000";
+						else
+							q <= unsigned(q) + '1';
+						end if;
+					end if;
 				end if;
 			end if;
 		else
 			q <= "0000000000000000";
 		end if;
 	end process;
-	debug <= q;
+	-- debug <= q;
 	h1: sevenseg port map (q(15 downto 12), hex3);
 	h2: sevenseg port map (q(11 downto 8), hex2);
 	h3: sevenseg port map (q(7 downto 4), hex1);
