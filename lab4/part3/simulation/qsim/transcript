@@ -20,27 +20,27 @@
 # Loading work.lab4part3_vlg_sample_tst
 # Loading work.lab4part3_vlg_check_tst
 # Loading altera_ver.PRIM_GDFF_LOW
+# ERROR! Vector Mismatch for output port hex0[0] :: @time = 1000000.000 ps
+#      Expected value = 0000000
+#      Real value = 1001111
+# ERROR! Vector Mismatch for output port hex0[3] :: @time = 1000000.000 ps
+#      Expected value = 0000000
+#      Real value = 1001111
+# ERROR! Vector Mismatch for output port hex0[4] :: @time = 1000000.000 ps
+#      Expected value = 0000000
+#      Real value = 1001111
+# ERROR! Vector Mismatch for output port hex0[5] :: @time = 1000000.000 ps
+#      Expected value = 0000000
+#      Real value = 1001111
 # ERROR! Vector Mismatch for output port hex0[6] :: @time = 1000000.000 ps
 #      Expected value = 0000000
-#      Real value = 0000001
-# ERROR! Vector Mismatch for output port hex0[0] :: @time = 1300000.000 ps
-#      Expected value = 0000000
 #      Real value = 1001111
-# ERROR! Vector Mismatch for output port hex0[3] :: @time = 1300000.000 ps
-#      Expected value = 0000000
-#      Real value = 1001111
-# ERROR! Vector Mismatch for output port hex0[4] :: @time = 1300000.000 ps
-#      Expected value = 0000000
-#      Real value = 1001111
-# ERROR! Vector Mismatch for output port hex0[5] :: @time = 1300000.000 ps
-#      Expected value = 0000000
-#      Real value = 1001111
-# ERROR! Vector Mismatch for output port hex0[2] :: @time = 2300000.000 ps
+# ERROR! Vector Mismatch for output port hex0[2] :: @time = 1100000.000 ps
 #      Expected value = 0000000
 #      Real value = 0010010
-# ERROR! Vector Mismatch for output port hex0[1] :: @time = 5300000.000 ps
+# ERROR! Vector Mismatch for output port hex0[1] :: @time = 2300000.000 ps
 #      Expected value = 0000000
 #      Real value = 0100100
 #           7 mismatched vectors : Simulation failed !
-# ** Note: $finish    : lab4part3.vt(347)
+# ** Note: $finish    : lab4part3.vt(344)
 #    Time: 10 us  Iteration: 0  Instance: /lab4part3_vlg_vec_tst/tb_out
