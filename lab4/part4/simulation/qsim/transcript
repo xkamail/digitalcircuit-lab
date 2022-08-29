@@ -21,5 +21,5 @@
 # Loading work.lab4part4_vlg_check_tst
 # Loading altera_ver.PRIM_GDFF_LOW
 # Simulation passed !
-# ** Note: $finish    : lab4part4.vt(740)
+# ** Note: $finish    : lab4part4.vt(713)
 #    Time: 1 us  Iteration: 0  Instance: /lab4part4_vlg_vec_tst/tb_out
