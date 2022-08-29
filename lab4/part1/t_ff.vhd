@@ -8,16 +8,15 @@ entity t_ff is
 	);
 end t_ff;
 
-
 architecture behavior of t_ff is
 	signal temp : std_logic;
 begin
 	process (clk,clr)
 		begin
-			if clr = '0' then 
-				temp <= '0';
-			else
-				if rising_edge(clk) then
+			if rising_edge(clk) then
+				if clr = '0' then 
+					temp <= '0';
+				else
 					if t = '0' then
 						temp <= temp;
 					elsif t = '1' then

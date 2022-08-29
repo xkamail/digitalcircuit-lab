@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "08/24/2022 19:31:56"
+// Generated on "08/29/2022 18:03:29"
                                                                         
 // Verilog Self-Checking Test Bench (with test vectors) for design :    lab4part1
 // 
@@ -120,54 +120,6 @@ begin
 end
 
 
-// expected debug[ 7 ]
-initial
-begin
-	debug_expected[7] = 1'bX;
-	debug_expected[7] = #999000 1'b0;
-end 
-// expected debug[ 6 ]
-initial
-begin
-	debug_expected[6] = 1'bX;
-	debug_expected[6] = #999000 1'b0;
-end 
-// expected debug[ 5 ]
-initial
-begin
-	debug_expected[5] = 1'bX;
-	debug_expected[5] = #999000 1'b0;
-end 
-// expected debug[ 4 ]
-initial
-begin
-	debug_expected[4] = 1'bX;
-	debug_expected[4] = #999000 1'b0;
-end 
-// expected debug[ 3 ]
-initial
-begin
-	debug_expected[3] = 1'bX;
-	debug_expected[3] = #999000 1'b0;
-end 
-// expected debug[ 2 ]
-initial
-begin
-	debug_expected[2] = 1'bX;
-	debug_expected[2] = #999000 1'b0;
-end 
-// expected debug[ 1 ]
-initial
-begin
-	debug_expected[1] = 1'bX;
-	debug_expected[1] = #999000 1'b0;
-end 
-// expected debug[ 0 ]
-initial
-begin
-	debug_expected[0] = 1'bX;
-	debug_expected[0] = #999000 1'b0;
-end 
 // expected hex0[ 6 ]
 initial
 begin
@@ -251,6 +203,54 @@ initial
 begin
 	hex1_expected[0] = 1'bX;
 	hex1_expected[0] = #999000 1'b0;
+end 
+// expected debug[ 7 ]
+initial
+begin
+	debug_expected[7] = 1'bX;
+	debug_expected[7] = #999000 1'b0;
+end 
+// expected debug[ 6 ]
+initial
+begin
+	debug_expected[6] = 1'bX;
+	debug_expected[6] = #999000 1'b0;
+end 
+// expected debug[ 5 ]
+initial
+begin
+	debug_expected[5] = 1'bX;
+	debug_expected[5] = #999000 1'b0;
+end 
+// expected debug[ 4 ]
+initial
+begin
+	debug_expected[4] = 1'bX;
+	debug_expected[4] = #999000 1'b0;
+end 
+// expected debug[ 3 ]
+initial
+begin
+	debug_expected[3] = 1'bX;
+	debug_expected[3] = #999000 1'b0;
+end 
+// expected debug[ 2 ]
+initial
+begin
+	debug_expected[2] = 1'bX;
+	debug_expected[2] = #999000 1'b0;
+end 
+// expected debug[ 1 ]
+initial
+begin
+	debug_expected[1] = 1'bX;
+	debug_expected[1] = #999000 1'b0;
+end 
+// expected debug[ 0 ]
+initial
+begin
+	debug_expected[0] = 1'bX;
+	debug_expected[0] = #999000 1'b0;
 end 
 // generate trigger
 always @(debug_expected or debug or hex0_expected or hex0 or hex1_expected or hex1)
@@ -596,26 +596,26 @@ lab4part1 i1 (
 initial
 begin
 	clear = 1'b1;
+	clear = #522000 1'b0;
+	clear = #6000 1'b1;
+	clear = #14000 1'b0;
+	clear = #30000 1'b1;
 end 
 
 // enable
 initial
 begin
 	enable = 1'b1;
+	enable = #120000 1'b0;
+	enable = #40000 1'b1;
 end 
 
 // key0
-initial
+always
 begin
-	key0 = 1'b1;
-	# 5000;
-	repeat(99)
-	begin
-		key0 = 1'b0;
-		key0 = #5000 1'b1;
-		# 5000;
-	end
 	key0 = 1'b0;
+	key0 = #10000 1'b1;
+	#10000;
 end 
 
 lab4part1_vlg_sample_tst tb_sample (
