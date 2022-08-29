@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "08/24/2022 20:38:08"
+// Generated on "08/29/2022 21:50:01"
                                                                         
 // Verilog Self-Checking Test Bench (with test vectors) for design :    lab4part2
 // 
@@ -29,17 +29,19 @@
 module lab4part2_vlg_sample_tst(
 	clear,
 	enable,
+	init,
 	key0,
 	sampler_tx
 );
 input  clear;
 input  enable;
+input  init;
 input  key0;
 output sampler_tx;
 
 reg sample;
 time current_time;
-always @(clear or enable or key0)
+always @(clear or enable or init or key0)
                                                                                 
 begin                                                 
  if ($realtime > 0)                                   
@@ -949,7 +951,7 @@ initial
 
 begin 
 $timeformat(-12,3," ps",6);
-#1000000;
+#500000;
 if (nummismatches > 0)
 	$display ("%d mismatched vectors : Simulation failed !",nummismatches);
 else
@@ -963,6 +965,7 @@ module lab4part2_vlg_vec_tst();
 // general purpose registers
 reg clear;
 reg enable;
+reg init;
 reg key0;
 // wires                                               
 wire [15:0] debug;
@@ -983,6 +986,7 @@ lab4part2 i1 (
 	.hex1(hex1),
 	.hex2(hex2),
 	.hex3(hex3),
+	.init(init),
 	.key0(key0)
 );
 
@@ -992,6 +996,8 @@ begin
 	clear = 1'b1;
 	clear = #20000 1'b0;
 	clear = #10000 1'b1;
+	clear = #70000 1'b0;
+	clear = #20000 1'b1;
 end 
 
 // enable
@@ -1005,19 +1011,28 @@ end
 initial
 begin
 	key0 = 1'b1;
-	# 1000;
-	repeat(499)
+	# 10000;
+	repeat(24)
 	begin
 		key0 = 1'b0;
-		key0 = #1000 1'b1;
-		# 1000;
+		key0 = #10000 1'b1;
+		# 10000;
 	end
 	key0 = 1'b0;
+end 
+
+// init
+initial
+begin
+	init = 1'b1;
+	init = #280000 1'b0;
+	init = #20000 1'b1;
 end 
 
 lab4part2_vlg_sample_tst tb_sample (
 	.clear(clear),
 	.enable(enable),
+	.init(init),
 	.key0(key0),
 	.sampler_tx(sampler)
 );

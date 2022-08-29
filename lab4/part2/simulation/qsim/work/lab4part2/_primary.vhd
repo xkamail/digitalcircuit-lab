@@ -5,6 +5,7 @@ entity lab4part2 is
         enable          : in     vl_logic;
         clear           : in     vl_logic;
         key0            : in     vl_logic;
+        init            : in     vl_logic;
         debug           : out    vl_logic_vector(15 downto 0);
         hex3            : out    vl_logic_vector(0 to 6);
         hex2            : out    vl_logic_vector(0 to 6);

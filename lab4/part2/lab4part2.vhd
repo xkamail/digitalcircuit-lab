@@ -25,25 +25,27 @@ begin
 	clk <= not(key0);
 	process(clk, enable, clear)
 		begin
-		if clear = '1' then
-			if enable = '0' then
-				q <= q;
-			else
-				if init = '0' then
-						q <= "1111111111111010";
-				else
-					if rising_edge(clk) then 
-						if q = "1111111111111111" then
-							q <= "0000000000000000";
+			if rising_edge(clk) then
+				if clear = '1' then
+					if enable = '0' then
+						q <= q;
+					else
+						if init = '0' then
+								q <= "1111111111111010";
 						else
-							q <= q + '1';
+							
+								if q = "1111111111111111" then
+									q <= "0000000000000000";
+								else
+									q <= q + '1';
+								end if;
+								
 						end if;
 					end if;
+				else
+					q <= "0000000000000000";
 				end if;
 			end if;
-		else
-			q <= "0000000000000000";
-		end if;
 	end process;
 	
 	debug <= q;
