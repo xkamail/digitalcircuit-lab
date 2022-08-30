@@ -27,10 +27,10 @@ architecture behavior of lab4part3 is
 begin
 	
 	process(clock50)
-		variable i : integer range 1 to 2;
+		variable i : integer range 1 to 50_000_000;
 	begin
 		if rising_edge(clock50) then
-			if i = 2 then
+			if i = 50_000_000 then
 				e <= '1';
 				i := 1;
 			else
