@@ -20,34 +20,30 @@ architecture behavior of lab4part2 is
 	end component;
 	signal reset,clk : std_logic;
 	signal q : std_logic_vector(15 downto 0);
-	
 begin
 	clk <= not(key0);
 	process(clk, enable, clear)
 		begin
-			if rising_edge(clk) then
-				if clear = '1' then
-					if enable = '0' then
-						q <= q;
-					else
-						if init = '0' then
-								q <= "1111111111111010";
-						else
-							
-								if q = "1111111111111111" then
-									q <= "0000000000000000";
-								else
-									q <= q + '1';
-								end if;
-								
-						end if;
-					end if;
+		if rising_edge(clk) then
+			if clear = '1' then
+				if enable = '0' then
+					q <= q;
 				else
-					q <= "0000000000000000";
+					if init = '0' then
+						q <= "1111111111111010";
+					else
+						if q = "1111111111111111" then
+							q <= "0000000000000000";
+						else
+							q <= q + '1';
+						end if;					
+					end if;
 				end if;
+			else
+				q <= "0000000000000000";
 			end if;
+		end if;
 	end process;
-	
 	debug <= q;
 	h1: sevenseg port map (q(15 downto 12), hex3);
 	h2: sevenseg port map (q(11 downto 8), hex2);
