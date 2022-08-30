@@ -7,13 +7,13 @@ entity modulo_k is
 	generic ( k : natural := 4 );
 	port (
 		clock, reset_n : in std_logic;
-		Q : out std_logic_vector(natural(ceil(log2(real(k-1)))) - 1 downto 0);
+		Q : out std_logic_vector(natural(ceil(log2(real(k)))) - 1 downto 0);
 		rollover : out std_logic
 	);
 end modulo_k;
 
 architecture Behavior of modulo_k is
-	signal v : std_logic_vector(natural(ceil(log2(real(k-1)))) - 1 downto 0);
+	signal v : std_logic_vector(natural(ceil(log2(real(k)))) - 1 downto 0);
 begin
 	
 	process(clock,reset_n)
