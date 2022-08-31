@@ -6,9 +6,9 @@ use ieee.math_real.all;
 
 entity lab5part1 is
 	port (
-		key0, reset : in std_logic;
-		ro : out std_logic;
-		Q : out std_logic_vector(4 downto 0)
+		key0, key1 : in std_logic;
+		ro : out std_logic; -- roll over
+		Q : out std_logic_vector(4 downto 0) -- content
 	);
 end lab5part1;
 
@@ -21,8 +21,10 @@ architecture bhv of lab5part1 is
 			rollover : out std_logic
 		);
 	end component;
+	signal clk, reset : std_logic;
 begin
-
-	x0: modulo_k generic map (k => 20) port map (key0, reset ,Q, ro);
+	clk <= key1;
+	reset <= key0;
+	x0: modulo_k generic map (k => 20) port map (clk, reset ,Q, ro);
 	
 end bhv;
