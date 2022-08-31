@@ -11,10 +11,10 @@ end every_seconds;
 architecture bhv of every_seconds is
 begin
 	process(clock50)
-		variable i : integer range 1 to 2;
+		variable i : integer range 1 to 5;
 	begin
 		if rising_edge(clock50) then
-			if i = 2 then
+			if i = 5 then
 				trig <= '1';
 				i := 1;
 			else

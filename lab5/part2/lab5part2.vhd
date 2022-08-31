@@ -47,14 +47,14 @@ begin
 	x0: every_seconds port map (clock50, sec);
 
 	u0: modulo_k generic map (k => 10) port map (clock50, sec, reset_n, d0, rollover1);
-	u1: modulo_k generic map (k => 10) port map (not(rollover1), '1', reset_n, d1, rollover2);
-	u2: modulo_k generic map (k => 10) port map (not(rollover2), '1', reset_n, d2);
+	u1: modulo_k generic map (k => 10) port map (clock50, sec and rollover1, reset_n, d1, rollover2);
+	u2: modulo_k generic map (k => 10) port map (clock50, sec and rollover1 and rollover2, reset_n, d2);
 	
 	debug1 <= d0;
 	debug2 <= d1;
 	debug3 <= d2;
-	r1 <= not(rollover1);
-	r2 <= not(rollover2);
+	r1 <= sec and rollover1;
+	r2 <= sec and rollover1 and rollover2;
 	
 	h0: sevenseg port map(d0, hex0);
 	h1: sevenseg port map(d1, hex1);
