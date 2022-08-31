@@ -13,6 +13,9 @@ entity lab5part3 is
         r2              : out    vl_logic;
         hex0            : out    vl_logic_vector(0 to 6);
         hex1            : out    vl_logic_vector(0 to 6);
-        hex2            : out    vl_logic_vector(0 to 6)
+        hex2            : out    vl_logic_vector(0 to 6);
+        hex3            : out    vl_logic_vector(0 to 6);
+        hex4            : out    vl_logic_vector(0 to 6);
+        hex5            : out    vl_logic_vector(0 to 6)
     );
 end lab5part3;

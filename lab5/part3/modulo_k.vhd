@@ -7,7 +7,7 @@ entity modulo_k is
 	generic ( k : natural := 4 );
 	port (
 		clock, en, preset, reset_n  : in std_logic;
-		presetQ : in std_logic_vector(natural(ceil(log2(real(k)))) - 1 downto 0);
+		data : in std_logic_vector(natural(ceil(log2(real(k)))) - 1 downto 0);
 		Q : out std_logic_vector(natural(ceil(log2(real(k)))) - 1 downto 0);
 		rollover : out std_logic
 	);
@@ -21,11 +21,12 @@ begin
 	begin
 		if reset_n = '0' then
 			v <= (Others => '0');
-		elsif en = '0' then 
-			v <= v;
-		elsif rising_edge(clock) and en = '1' then
+		elsif rising_edge(clock) then
+			
 			if preset = '0' then
-				v <= presetQ;
+				v <= data;
+			elsif en = '0' then
+				v <= v;
 			else 
 				if v = (k - 1) then
 					 v <= (Others => '0');
