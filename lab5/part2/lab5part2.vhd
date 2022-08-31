@@ -37,7 +37,7 @@ architecture bhv of lab5part2 is
 	end component;
 	
 	signal d0,d1,d2 : std_logic_vector(3 downto 0);
-	signal reset_n, sec, w1, w2, w3 : std_logic;
+	signal reset_n, sec : std_logic;
 	-- tell when reach max value
 	signal rollover1, rollover2 : std_logic; 
 	
