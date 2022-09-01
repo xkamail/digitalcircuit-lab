@@ -33,7 +33,7 @@ begin
 				if rollover_v = '1' then
 					 v <= (Others => '0');
 				else
-					v <= v + 1;
+					 v <= v + 1;
 				end if;
 				
 			end if;

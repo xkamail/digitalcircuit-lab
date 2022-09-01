@@ -3,23 +3,27 @@ use ieee.std_logic_1164.all;
 
 entity every_seconds is
 	port (
-		clock50 : in std_logic;
+		clock50, reset : in std_logic;
 		trig : out std_logic
 	);
 end every_seconds;
 
 architecture bhv of every_seconds is
 begin
-	process(clock50)
-		variable i : integer range 1 to 5;
+	process(clock50,reset)
+		variable i : integer range 1 to 50_000_000;
 	begin
-		if rising_edge(clock50) then
-			if i = 5 then
-				trig <= '1';
-				i := 1;
-			else
-				trig <= '0';
-				i := i + 1;
+		if reset = '0' then
+			i := 1;
+		else
+			if rising_edge(clock50) then
+				if i = 50_000_000 then
+					trig <= '1';
+					i := 1;
+				else
+					trig <= '0';
+					i := i + 1;
+				end if;
 			end if;
 		end if;
 	end process;

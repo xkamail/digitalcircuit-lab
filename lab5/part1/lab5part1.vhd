@@ -23,8 +23,8 @@ architecture bhv of lab5part1 is
 	end component;
 	signal clk, reset : std_logic;
 begin
-	clk <= key1;
+	clk <= not(key1);
 	reset <= key0;
-	x0: modulo_k generic map (k => 20) port map (clk, reset ,Q, ro);
+	x0: modulo_k generic map (k => 20) port map (clk, reset, Q, ro);
 	
 end bhv;

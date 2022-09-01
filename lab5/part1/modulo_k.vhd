@@ -27,7 +27,7 @@ begin
 			else
 				v <= v + 1;
 			end if;
-			-- paralell check
+			-- current k-1
 			if v = (k - 2) then
 					rollover <= '1';
 				else 
