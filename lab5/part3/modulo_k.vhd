@@ -30,7 +30,12 @@ begin
 			elsif en = '0' then
 				v <= v;
 			else 
-				v <= v + 1;
+				if v = (k - 1) then
+					 v <= (Others => '0');
+				else
+					v <= v + 1;
+				end if;
+				-- paralell check
 				if v = (k - 2) then
 						rollover <= '1';
 					else 
