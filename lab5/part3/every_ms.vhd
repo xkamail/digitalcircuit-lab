@@ -11,7 +11,7 @@ end every_ms;
 architecture bhv of every_ms is
 begin
 	process(clock50)
-		variable i : integer range 1 to 100 / 100;
+		variable i : integer range 1 to 50_000_000 / 100;
 	begin
 		if rising_edge(clock50) then
 			if i = 100 / 100 then
