@@ -1,0 +1,678 @@
+$comment
+	File created using the following command:
+		vcd file lab6part4.msim.vcd -direction
+$end
+$date
+	Thu Sep 22 02:44:32 2022
+$end
+$version
+	ModelSim Version 10.1d
+$end
+$timescale
+	1ps
+$end
+$scope module lab6part4_vlg_vec_tst $end
+$var reg 1 ! key0 $end
+$var reg 1 " key1 $end
+$var reg 10 # sw [9:0] $end
+$var wire 1 $ hex0 [0] $end
+$var wire 1 % hex0 [1] $end
+$var wire 1 & hex0 [2] $end
+$var wire 1 ' hex0 [3] $end
+$var wire 1 ( hex0 [4] $end
+$var wire 1 ) hex0 [5] $end
+$var wire 1 * hex0 [6] $end
+$var wire 1 + hex1 [0] $end
+$var wire 1 , hex1 [1] $end
+$var wire 1 - hex1 [2] $end
+$var wire 1 . hex1 [3] $end
+$var wire 1 / hex1 [4] $end
+$var wire 1 0 hex1 [5] $end
+$var wire 1 1 hex1 [6] $end
+$var wire 1 2 hex2 [0] $end
+$var wire 1 3 hex2 [1] $end
+$var wire 1 4 hex2 [2] $end
+$var wire 1 5 hex2 [3] $end
+$var wire 1 6 hex2 [4] $end
+$var wire 1 7 hex2 [5] $end
+$var wire 1 8 hex2 [6] $end
+$var wire 1 9 hex3 [0] $end
+$var wire 1 : hex3 [1] $end
+$var wire 1 ; hex3 [2] $end
+$var wire 1 < hex3 [3] $end
+$var wire 1 = hex3 [4] $end
+$var wire 1 > hex3 [5] $end
+$var wire 1 ? hex3 [6] $end
+$var wire 1 @ ledr [7] $end
+$var wire 1 A ledr [6] $end
+$var wire 1 B ledr [5] $end
+$var wire 1 C ledr [4] $end
+$var wire 1 D ledr [3] $end
+$var wire 1 E ledr [2] $end
+$var wire 1 F ledr [1] $end
+$var wire 1 G ledr [0] $end
+$var wire 1 H sampler $end
+$scope module i1 $end
+$var wire 1 I gnd $end
+$var wire 1 J vcc $end
+$var wire 1 K unknown $end
+$var tri1 1 L devclrn $end
+$var tri1 1 M devpor $end
+$var tri1 1 N devoe $end
+$var wire 1 O r1|d6|Q~combout $end
+$var wire 1 P key0~input_o $end
+$var wire 1 Q key1~input_o $end
+$var wire 1 R ~QUARTUS_CREATED_GND~I_combout $end
+$var wire 1 S sw[6]~input_o $end
+$var wire 1 T sw[9]~input_o $end
+$var wire 1 U r0|d6|Q~combout $end
+$var wire 1 V sw[5]~input_o $end
+$var wire 1 W r0|d5|Q~combout $end
+$var wire 1 X sw[8]~input_o $end
+$var wire 1 Y r1|d5|Q~combout $end
+$var wire 1 Z sw[3]~input_o $end
+$var wire 1 [ r1|d3|Q~combout $end
+$var wire 1 \ sw[4]~input_o $end
+$var wire 1 ] r1|d4|Q~combout $end
+$var wire 1 ^ r0|d4|Q~combout $end
+$var wire 1 _ sw[0]~input_o $end
+$var wire 1 ` r1|d0|Q~combout $end
+$var wire 1 a sw[1]~input_o $end
+$var wire 1 b r0|d1|Q~combout $end
+$var wire 1 c r1|d1|Q~combout $end
+$var wire 1 d sw[2]~input_o $end
+$var wire 1 e r1|d2|Q~combout $end
+$var wire 1 f r0|d0|Q~combout $end
+$var wire 1 g f0|u0:2:cell_i|c_out~0_combout $end
+$var wire 1 h f0|u0:4:cell_i|c_out~0_combout $end
+$var wire 1 i f0|u0:6:cell_i|s~combout $end
+$var wire 1 j f0|u0:5:cell_i|s~0_combout $end
+$var wire 1 k f0|u0:5:cell_i|s~combout $end
+$var wire 1 l r0|d3|Q~combout $end
+$var wire 1 m f0|u0:4:cell_i|s~combout $end
+$var wire 1 n sw[7]~input_o $end
+$var wire 1 o r1|d7|Q~combout $end
+$var wire 1 p r0|d7|Q~combout $end
+$var wire 1 q f0|u0:7:cell_i|s~0_combout $end
+$var wire 1 r f0|u0:7:cell_i|s~combout $end
+$var wire 1 s h1|hex[6]~0_combout $end
+$var wire 1 t h1|hex[5]~1_combout $end
+$var wire 1 u h1|hex[4]~2_combout $end
+$var wire 1 v h1|hex[3]~3_combout $end
+$var wire 1 w h1|hex[2]~4_combout $end
+$var wire 1 x h1|hex[1]~5_combout $end
+$var wire 1 y h1|hex[0]~6_combout $end
+$var wire 1 z f0|u0:1:cell_i|c_out~0_combout $end
+$var wire 1 { f0|f0|s~0_combout $end
+$var wire 1 | f0|u0:1:cell_i|s~combout $end
+$var wire 1 } r0|d2|Q~combout $end
+$var wire 1 ~ f0|u0:3:cell_i|s~0_combout $end
+$var wire 1 !! h0|hex[6]~0_combout $end
+$var wire 1 "! h0|hex[5]~1_combout $end
+$var wire 1 #! h0|hex[4]~2_combout $end
+$var wire 1 $! h0|hex[3]~3_combout $end
+$var wire 1 %! h0|hex[2]~4_combout $end
+$var wire 1 &! h0|hex[1]~5_combout $end
+$var wire 1 '! h0|hex[0]~6_combout $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+1!
+0"
+b1000001011 #
+x*
+x)
+x(
+x'
+x&
+x%
+x$
+x1
+x0
+x/
+x.
+x-
+x,
+x+
+18
+07
+06
+05
+04
+03
+02
+1?
+0>
+0=
+0<
+0;
+0:
+09
+0G
+0F
+0E
+0D
+0C
+0B
+0A
+0@
+xH
+0I
+1J
+xK
+1L
+1M
+1N
+xO
+1P
+0Q
+0R
+0S
+1T
+0U
+0V
+0W
+0X
+xY
+1Z
+x[
+0\
+x]
+0^
+1_
+x`
+1a
+1b
+xc
+0d
+xe
+1f
+xg
+xh
+xi
+xj
+xk
+1l
+xm
+0n
+xo
+0p
+xq
+xr
+xs
+xt
+xu
+xv
+xw
+xx
+xy
+xz
+x{
+x|
+0}
+x~
+x!!
+x"!
+x#!
+x$!
+x%!
+x&!
+x'!
+$end
+#10000
+1"
+1Q
+0H
+#20000
+0"
+0Q
+1H
+#30000
+1"
+1Q
+0H
+#40000
+0"
+0Q
+1H
+#50000
+1"
+1Q
+0H
+#60000
+0"
+0Q
+1H
+#70000
+1"
+1Q
+0H
+#80000
+0"
+0Q
+1H
+#90000
+1"
+1Q
+0H
+#100000
+0"
+0Q
+1H
+#110000
+1"
+1Q
+0H
+#120000
+0"
+0Q
+1H
+#130000
+1"
+1Q
+0H
+#140000
+0"
+0Q
+1H
+#150000
+1"
+1Q
+0H
+#160000
+0"
+0Q
+1H
+#170000
+1"
+1Q
+0H
+#180000
+0"
+0Q
+1H
+#190000
+1"
+1Q
+0H
+#200000
+0"
+0Q
+1H
+#210000
+1"
+1Q
+0H
+#220000
+0"
+0Q
+1H
+#230000
+1"
+1Q
+0H
+#240000
+0"
+0Q
+1H
+#250000
+1"
+1Q
+0H
+#260000
+0"
+0Q
+1H
+#270000
+1"
+1Q
+0H
+#280000
+0"
+0Q
+1H
+#290000
+1"
+1Q
+0H
+#300000
+0"
+0Q
+1H
+#310000
+1"
+1Q
+0H
+#320000
+0"
+0Q
+1H
+#330000
+1"
+1Q
+0H
+#340000
+0"
+0Q
+1H
+#350000
+1"
+1Q
+0H
+#360000
+0"
+0Q
+1H
+#370000
+1"
+1Q
+0H
+#380000
+0"
+0Q
+1H
+#390000
+1"
+1Q
+0H
+#400000
+0"
+0Q
+1H
+#410000
+1"
+1Q
+0H
+#420000
+b1011 #
+b100001011 #
+b100001111 #
+b100001101 #
+b100001100 #
+0"
+0_
+0a
+1d
+1X
+0T
+0Q
+1H
+0`
+0c
+1e
+0O
+0Y
+1[
+0]
+0o
+0g
+0z
+1{
+1|
+0i
+0j
+0h
+1m
+0~
+0q
+0k
+0r
+1!!
+1"!
+1#!
+1$!
+0%!
+0&!
+0'!
+0w
+1*
+1)
+1(
+1'
+0&
+0%
+0$
+0-
+1s
+1t
+1u
+1v
+0x
+1y
+11
+10
+1/
+1.
+0,
+1+
+#430000
+1"
+1Q
+0H
+#440000
+0"
+0Q
+1H
+#450000
+1"
+1Q
+0H
+#460000
+0"
+0Q
+1H
+#470000
+1"
+1Q
+0H
+#480000
+0"
+0Q
+1H
+#490000
+1"
+1Q
+0H
+#500000
+0"
+0Q
+1H
+#510000
+1"
+1Q
+0H
+#520000
+0"
+0Q
+1H
+#530000
+1"
+1Q
+0H
+#540000
+0"
+0Q
+1H
+#550000
+1"
+1Q
+0H
+#560000
+0"
+0Q
+1H
+#570000
+1"
+1Q
+0H
+#580000
+0"
+0Q
+1H
+#590000
+1"
+1Q
+0H
+#600000
+0"
+0Q
+1H
+#610000
+1"
+1Q
+0H
+#620000
+0"
+0Q
+1H
+#630000
+1"
+1Q
+0H
+#640000
+0"
+0Q
+1H
+#650000
+1"
+1Q
+0H
+#660000
+0"
+0Q
+1H
+#670000
+1"
+1Q
+0H
+#680000
+0"
+0Q
+1H
+#690000
+1"
+1Q
+0H
+#700000
+0"
+0Q
+1H
+#710000
+1"
+1Q
+0H
+#720000
+0"
+0Q
+1H
+#730000
+1"
+1Q
+0H
+#740000
+0"
+0Q
+1H
+#750000
+1"
+1Q
+0H
+#760000
+0"
+0Q
+1H
+#770000
+1"
+1Q
+0H
+#780000
+0"
+0Q
+1H
+#790000
+1"
+1Q
+0H
+#800000
+0"
+0Q
+1H
+#810000
+1"
+1Q
+0H
+#820000
+0"
+0Q
+1H
+#830000
+1"
+1Q
+0H
+#840000
+0"
+0Q
+1H
+#850000
+1"
+1Q
+0H
+#860000
+0"
+0Q
+1H
+#870000
+1"
+1Q
+0H
+#880000
+0"
+0Q
+1H
+#890000
+1"
+1Q
+0H
+#900000
+0"
+0Q
+1H
+#910000
+1"
+1Q
+0H
+#920000
+0"
+0Q
+1H
+#930000
+1"
+1Q
+0H
+#940000
+0"
+0Q
+1H
+#950000
+1"
+1Q
+0H
+#960000
+0"
+0Q
+1H
+#970000
+1"
+1Q
+0H
+#980000
+0"
+0Q
+1H
+#990000
+1"
+1Q
+0H
+#1000000
