@@ -28,11 +28,18 @@ begin
 			else
 				sum <= ('0' & A) + ('0' & B);
 			end if;
+			
+			if A > 0 and B > 0 and A + B < 0 then
+				overflow <= '1';
+			elsif A < 0 and B < 0 and A+B > 0 then
+				overflow <= '1';
+			else
+				overflow <= '0';
+			end if;
 		else
 			sum <= sum;
 		end if;
 	end process;
-	overflow <= sum(n-1) xnor sum(n-2);
 	carry <= sum(n);
 	v <= sum(n-1 downto 0);
 end bhv;
