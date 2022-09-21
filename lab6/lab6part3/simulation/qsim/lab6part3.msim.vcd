@@ -1,0 +1,228 @@
+$comment
+	File created using the following command:
+		vcd file lab6part3.msim.vcd -direction
+$end
+$date
+	Thu Sep 22 01:55:28 2022
+$end
+$version
+	ModelSim Version 10.1d
+$end
+$timescale
+	1ps
+$end
+$scope module lab6part3_vlg_vec_tst $end
+$var reg 8 ! sw [7:0] $end
+$var wire 1 " hex0 [0] $end
+$var wire 1 # hex0 [1] $end
+$var wire 1 $ hex0 [2] $end
+$var wire 1 % hex0 [3] $end
+$var wire 1 & hex0 [4] $end
+$var wire 1 ' hex0 [5] $end
+$var wire 1 ( hex0 [6] $end
+$var wire 1 ) hex2 [0] $end
+$var wire 1 * hex2 [1] $end
+$var wire 1 + hex2 [2] $end
+$var wire 1 , hex2 [3] $end
+$var wire 1 - hex2 [4] $end
+$var wire 1 . hex2 [5] $end
+$var wire 1 / hex2 [6] $end
+$var wire 1 0 hex4 [0] $end
+$var wire 1 1 hex4 [1] $end
+$var wire 1 2 hex4 [2] $end
+$var wire 1 3 hex4 [3] $end
+$var wire 1 4 hex4 [4] $end
+$var wire 1 5 hex4 [5] $end
+$var wire 1 6 hex4 [6] $end
+$var wire 1 7 hex5 [0] $end
+$var wire 1 8 hex5 [1] $end
+$var wire 1 9 hex5 [2] $end
+$var wire 1 : hex5 [3] $end
+$var wire 1 ; hex5 [4] $end
+$var wire 1 < hex5 [5] $end
+$var wire 1 = hex5 [6] $end
+$var wire 1 > sampler $end
+$scope module i1 $end
+$var wire 1 ? gnd $end
+$var wire 1 @ vcc $end
+$var wire 1 A unknown $end
+$var tri1 1 B devclrn $end
+$var tri1 1 C devpor $end
+$var tri1 1 D devoe $end
+$var wire 1 E ~QUARTUS_CREATED_GND~I_combout $end
+$var wire 1 F sw[6]~input_o $end
+$var wire 1 G sw[4]~input_o $end
+$var wire 1 H sw[0]~input_o $end
+$var wire 1 I sw[7]~input_o $end
+$var wire 1 J sw[1]~input_o $end
+$var wire 1 K r0f3|s~combout $end
+$var wire 1 L sw[2]~input_o $end
+$var wire 1 M sw[5]~input_o $end
+$var wire 1 N r1f2|s~0_combout $end
+$var wire 1 O r1f2|s~combout $end
+$var wire 1 P r0f2|s~combout $end
+$var wire 1 Q r1f2|c_out~0_combout $end
+$var wire 1 R r0f3|c_out~0_combout $end
+$var wire 1 S r1f3|s~0_combout $end
+$var wire 1 T sw[3]~input_o $end
+$var wire 1 U r2f2|s~combout $end
+$var wire 1 V r2f2|c_out~0_combout $end
+$var wire 1 W comb~1_combout $end
+$var wire 1 X comb~0_combout $end
+$var wire 1 Y r1f4|s~combout $end
+$var wire 1 Z r1f4|c_out~0_combout $end
+$var wire 1 [ h5|hex[6]~0_combout $end
+$var wire 1 \ h5|hex[5]~1_combout $end
+$var wire 1 ] h5|hex[4]~2_combout $end
+$var wire 1 ^ h5|hex[2]~3_combout $end
+$var wire 1 _ h5|hex[1]~4_combout $end
+$var wire 1 ` h5|hex[0]~5_combout $end
+$var wire 1 a r0f1|s~0_combout $end
+$var wire 1 b r1f1|s~0_combout $end
+$var wire 1 c comb~2_combout $end
+$var wire 1 d h4|hex[6]~0_combout $end
+$var wire 1 e h4|hex[5]~1_combout $end
+$var wire 1 f h4|hex[4]~2_combout $end
+$var wire 1 g h4|hex[3]~3_combout $end
+$var wire 1 h h4|hex[2]~4_combout $end
+$var wire 1 i h4|hex[1]~5_combout $end
+$var wire 1 j h4|hex[0]~6_combout $end
+$var wire 1 k h2|hex[6]~0_combout $end
+$var wire 1 l h2|hex[5]~1_combout $end
+$var wire 1 m h2|hex[4]~2_combout $end
+$var wire 1 n h2|hex[3]~3_combout $end
+$var wire 1 o h2|hex[2]~4_combout $end
+$var wire 1 p h2|hex[1]~5_combout $end
+$var wire 1 q h2|hex[0]~6_combout $end
+$var wire 1 r h0|hex[6]~0_combout $end
+$var wire 1 s h0|hex[5]~1_combout $end
+$var wire 1 t h0|hex[4]~2_combout $end
+$var wire 1 u h0|hex[3]~3_combout $end
+$var wire 1 v h0|hex[2]~4_combout $end
+$var wire 1 w h0|hex[1]~5_combout $end
+$var wire 1 x h0|hex[0]~6_combout $end
+$var wire 1 y p [7] $end
+$var wire 1 z p [6] $end
+$var wire 1 { p [5] $end
+$var wire 1 | p [4] $end
+$var wire 1 } p [3] $end
+$var wire 1 ~ p [2] $end
+$var wire 1 !! p [1] $end
+$var wire 1 "! p [0] $end
+$var wire 1 #! h5|hex [0] $end
+$var wire 1 $! h5|hex [1] $end
+$var wire 1 %! h5|hex [2] $end
+$var wire 1 &! h5|hex [3] $end
+$var wire 1 '! h5|hex [4] $end
+$var wire 1 (! h5|hex [5] $end
+$var wire 1 )! h5|hex [6] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b10111100 !
+1(
+0'
+0&
+0%
+1$
+1#
+0"
+0/
+0.
+0-
+0,
+0+
+1*
+1)
+06
+05
+14
+13
+02
+01
+10
+0=
+0<
+0;
+0:
+09
+08
+07
+x>
+0?
+1@
+xA
+1B
+1C
+1D
+0E
+0F
+1G
+0H
+1I
+0J
+0K
+1L
+1M
+1N
+1O
+0P
+0Q
+0R
+0S
+1T
+0U
+1V
+1W
+0X
+1Y
+0Z
+0[
+0\
+0]
+0^
+0_
+0`
+0a
+1b
+1c
+0d
+0e
+1f
+1g
+0h
+0i
+1j
+0k
+0l
+0m
+0n
+0o
+1p
+1q
+1r
+0s
+0t
+0u
+1v
+1w
+0x
+0"!
+z!!
+z~
+z}
+z|
+z{
+zz
+zy
+z)!
+z(!
+z'!
+0&!
+z%!
+z$!
+z#!
+$end
+#1000000
