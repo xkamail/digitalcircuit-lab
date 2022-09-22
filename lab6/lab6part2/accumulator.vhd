@@ -19,32 +19,34 @@ architecture bhv of accumulator is
 	
 	signal sum : std_logic_vector(n downto 0);
 	signal o,c : std_logic;
+	signal bb : std_logic_vector(n-1 downto 0);
 begin
+	
+	process(add_sub)
+	begin
+		if add_sub = '1' then
+			bb <= std_logic_vector(unsigned(not(B) + 1));
+		else
+			bb <= B;
+		end if;
+	end process;
+	
 	process(clk)
 	begin
 		if rising_edge(clk) then
+			
 			if reset = '0' then
 				sum <=  (Others => '0');
 			else
-				if add_sub = '1' then
-					sum <= ('0' & A) - ('0' & B);
-					if A > 0 and B > 0 and A - B < 0 then
+					sum <= ('0' & A) + ('0' & bb);
+					
+					if A > 0 and bb > 0 and A + bb < 0 then
 						overflow <= '1';
-					elsif A < 0 and B < 0 and A - B > 0 then
-						overflow <= '1';
-					else
-						overflow <= '0';
-					end if;
-				else
-					sum <= ('0' & A) + ('0' & B);
-					if A > 0 and B > 0 and A + B < 0 then
-						overflow <= '1';
-					elsif A < 0 and B < 0 and A + B > 0 then
+					elsif A < 0 and bb < 0 and A + bb > 0 then
 						overflow <= '1';
 					else
 						overflow <= '0';
 					end if;
-				end if;
 			end if;
 			
 			

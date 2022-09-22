@@ -41,7 +41,7 @@ set_global_assignment -name DEVICE 5CEBA4F23C7
 set_global_assignment -name TOP_LEVEL_ENTITY lab6part4
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "13.0 SP1"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "02:00:46  SEPTEMBER 22, 2022"
-set_global_assignment -name LAST_QUARTUS_VERSION "13.0 SP1"
+set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Standard Edition"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
@@ -65,4 +65,52 @@ set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
 set_global_assignment -name SIMULATION_MODE FUNCTIONAL
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST ON -section_id eda_simulation
 set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE "C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab6/lab6part4/Waveform.vwf"
+set_location_assignment PIN_U21 -to hex0[0]
+set_location_assignment PIN_V21 -to hex0[1]
+set_location_assignment PIN_W22 -to hex0[2]
+set_location_assignment PIN_W21 -to hex0[3]
+set_location_assignment PIN_Y22 -to hex0[4]
+set_location_assignment PIN_Y21 -to hex0[5]
+set_location_assignment PIN_AA22 -to hex0[6]
+set_location_assignment PIN_AA20 -to hex1[0]
+set_location_assignment PIN_AB20 -to hex1[1]
+set_location_assignment PIN_AA19 -to hex1[2]
+set_location_assignment PIN_AA18 -to hex1[3]
+set_location_assignment PIN_AB18 -to hex1[4]
+set_location_assignment PIN_AA17 -to hex1[5]
+set_location_assignment PIN_U22 -to hex1[6]
+set_location_assignment PIN_Y19 -to hex2[0]
+set_location_assignment PIN_AB17 -to hex2[1]
+set_location_assignment PIN_AA10 -to hex2[2]
+set_location_assignment PIN_Y14 -to hex2[3]
+set_location_assignment PIN_V14 -to hex2[4]
+set_location_assignment PIN_AB22 -to hex2[5]
+set_location_assignment PIN_AB21 -to hex2[6]
+set_location_assignment PIN_Y16 -to hex3[0]
+set_location_assignment PIN_W16 -to hex3[1]
+set_location_assignment PIN_Y17 -to hex3[2]
+set_location_assignment PIN_V16 -to hex3[3]
+set_location_assignment PIN_U17 -to hex3[4]
+set_location_assignment PIN_V18 -to hex3[5]
+set_location_assignment PIN_V19 -to hex3[6]
+set_location_assignment PIN_AA13 -to sw[7]
+set_location_assignment PIN_AA14 -to sw[6]
+set_location_assignment PIN_AB15 -to sw[5]
+set_location_assignment PIN_AA15 -to sw[4]
+set_location_assignment PIN_T12 -to sw[3]
+set_location_assignment PIN_T13 -to sw[2]
+set_location_assignment PIN_V13 -to sw[1]
+set_location_assignment PIN_U13 -to sw[0]
+set_location_assignment PIN_AB13 -to sw[8]
+set_location_assignment PIN_AB12 -to sw[9]
+set_location_assignment PIN_U7 -to key0
+set_location_assignment PIN_W9 -to key1
+set_location_assignment PIN_U1 -to ledr[7]
+set_location_assignment PIN_U2 -to ledr[6]
+set_location_assignment PIN_N1 -to ledr[5]
+set_location_assignment PIN_N2 -to ledr[4]
+set_location_assignment PIN_Y3 -to ledr[3]
+set_location_assignment PIN_W2 -to ledr[2]
+set_location_assignment PIN_AA1 -to ledr[1]
+set_location_assignment PIN_AA2 -to ledr[0]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

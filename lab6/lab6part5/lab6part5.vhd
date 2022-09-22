@@ -2,16 +2,16 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 
-entity lab6part4 is 
+entity lab6part5 is 
 	port (
 		sw : in std_logic_vector(9 downto 0);
 		key0, key1 : in std_logic;
 		ledr : out std_logic_vector(7 downto 0);
 		hex3,hex2,hex1,hex0 : out std_logic_vector(0 to 6)
 	);
-end lab6part4;
+end lab6part5;
 
-architecture bhv of lab6part4 is
+architecture bhv of lab6part5 is
 	component sevenseg is 
 		port (
 			num : in std_logic_vector(3 downto 0);
@@ -40,8 +40,8 @@ architecture bhv of lab6part4 is
 	
 	signal b0,b1,b2,b3,b4,b5,b6,b7 : std_logic_vector(7 downto 0);
 	
-	signal s1,s2,s3,s4,s5,s6,s7 : std_logic_vector(7 downto 0);
-	signal c1,c2,c3,c4,c5,c6,c7 : std_logic;
+	signal s1,s2,s3,s4,s5,s6,s7,x ,y : std_logic_vector(15 downto 0);
+	signal c1,c2,c3,c4,c5,c6,c7,cx,cy : std_logic;
 	
 begin
 	b0 <= (b(0) & b(0) & b(0) & b(0) & b(0) & b(0) & b(0) & b(0));
@@ -60,38 +60,30 @@ begin
 
 	ledr <= sw(7 downto 0);
 	
-	p(0) <= a(0) and b(0);
 	
-	f1: adder_n generic map(8)
-	port map ('0', ('0' & a(7 downto 1)) and b0, a and b1, s1, c1);
-	
-	f2: adder_n generic map(8)
-	port map ('0', c1 & s1(7 downto 1), a and b2, s2, c2);
-	
-	f3: adder_n generic map(8)
-	port map ('0', c2 & s2(7 downto 1), a and b3, s3, c3);
-	
-	f4: adder_n generic map(8)
-	port map ('0', c3 & s3(7 downto 1), a and b4, s4, c4);
-	
-	f5: adder_n generic map(8)
-	port map ('0', c4 & s4(7 downto 1), a and b5, s5, c5);
-	
-	f6: adder_n generic map(8)
-	port map ('0', c5 & s5(7 downto 1), a and b6, s6, c6);
-	
-	f7: adder_n generic map(8)
-	port map ('0', c6 & s6(7 downto 1), a and b7, s7, c7);
+	f1: adder_n generic map(16)
+	port map ('0', ("00000000" & (a and b0)), ("0000000" &(a and b1) & "0"), s1, c1);
 	
 	
-	p(1) <= s1(0);
-	p(2) <= s2(0);
-	p(3) <= s3(0);
-	p(4) <= s4(0);
-	p(5) <= s5(0);
-	p(6) <= s6(0);
-	p(14 downto 7) <= s7;
-	p(15) <= c7;
+	f2: adder_n generic map(16)
+	port map ('0', ("000000" & (a and b2) & "00"), ("00000" & (a and b3) & "000"), s2, c2);
+	
+	f3: adder_n generic map(16)
+	port map ('0', ("0000" & (a and b4) & "0000"), ("000" & (a and b5) & "00000"), s3, c3);
+	
+	f4: adder_n generic map(16)
+	port map ('0', ("00" & (a and b6) & "000000"), ("0" & (a and b7) & "0000000"), s4, c4);
+	
+	
+	f5: adder_n generic map(16)
+	port map('0',s1,s2,x);
+	
+	f6: adder_n generic map(16)
+	port map('0',s3,s4,y);
+	
+	f7: adder_n generic map(16)
+	port map('0', x, y, p);
+	
 	
 	h0: sevenseg port map (p(3 downto 0), hex0);
 	h1: sevenseg port map (p(7 downto 4), hex1);
