@@ -20,7 +20,7 @@ architecture bhv of accumulator is
 	signal sum : std_logic_vector(n downto 0);
 	signal o,c : std_logic;
 begin
-	process(clk)
+	process(clk, reset)
 	begin
 		if rising_edge(clk) then
 			if reset = '0' then
