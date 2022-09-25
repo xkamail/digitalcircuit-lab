@@ -7,6 +7,7 @@ entity lab6part5 is
 		sw : in std_logic_vector(9 downto 0);
 		key0, key1 : in std_logic;
 		ledr : out std_logic_vector(7 downto 0);
+		debug : out std_logic_vector(15 downto 0);
 		hex3,hex2,hex1,hex0 : out std_logic_vector(0 to 6)
 	);
 end lab6part5;
@@ -83,6 +84,8 @@ begin
 	
 	f7: adder_n generic map(16)
 	port map('0', x, y, p);
+	
+	debug <= p;
 	
 	
 	h0: sevenseg port map (p(3 downto 0), hex0);
