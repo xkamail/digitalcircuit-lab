@@ -4,78 +4,78 @@ K3
 cModel Technology
 Z0 dC:\Users\xKamaiL\Desktop\digitalcircuit-laboratoy\lab6\lab6part2\simulation\qsim
 vlab6part2
-Z1 I719[^]hPRE5P8GBS[YF=g1
-Z2 VZoNzzQgzWiBNXgiolJ:ao2
-Z3 dC:\Users\xKamaiL\Desktop\digitalcircuit-laboratoy\lab6\lab6part2\simulation\qsim
-Z4 w1663783019
-Z5 8lab6part2.vo
-Z6 Flab6part2.vo
+Z1 !s100 `lKi6MPjD;Re]MYi>b;]F0
+Z2 ICU@=J>hHlkjLQoDnnk`B^2
+Z3 VA4]a@la2Ma5nONhHOnk<g0
+Z4 dC:\Users\xKamaiL\Desktop\digitalcircuit-laboratoy\lab6\lab6part2\simulation\qsim
+Z5 w1664101159
+Z6 8lab6part2.vo
+Z7 Flab6part2.vo
 L0 31
-Z7 OV;L;10.1d;51
+Z8 OV;L;10.1d;51
 r1
 31
-Z8 o-work work -O0
+Z9 !s90 -work|work|lab6part2.vo|
+Z10 o-work work -O0
 !i10b 1
-Z9 !s100 z;JfHRHX_?gAh0DO>TmZK1
 !s85 0
-Z10 !s108 1663783019.636000
-Z11 !s107 lab6part2.vo|
-Z12 !s90 -work|work|lab6part2.vo|
+Z11 !s108 1664101159.651000
+Z12 !s107 lab6part2.vo|
 !s101 -O0
 vlab6part2_vlg_check_tst
 !i10b 1
-!s100 1k?4H<LcWQO8PX6We:^Fj0
-I?enh@hn8?fgN<_RB]<li13
-V5iF7WA2a4DS=J=HV?MXVB1
-R3
-Z13 w1663783017
-Z14 8lab6part2.vt
-Z15 Flab6part2.vt
+Z13 !s100 1k?4H<LcWQO8PX6We:^Fj0
+Z14 I?enh@hn8?fgN<_RB]<li13
+Z15 V5iF7WA2a4DS=J=HV?MXVB1
+R4
+Z16 w1664101158
+Z17 8lab6part2.vt
+Z18 Flab6part2.vt
 L0 63
-R7
+R8
 r1
 !s85 0
 31
-Z16 !s108 1663783019.703000
-Z17 !s107 lab6part2.vt|
-Z18 !s90 -work|work|lab6part2.vt|
+Z19 !s108 1664101159.715000
+Z20 !s107 lab6part2.vt|
+Z21 !s90 -work|work|lab6part2.vt|
 !s101 -O0
-R8
+R10
 vlab6part2_vlg_sample_tst
 !i10b 1
-!s100 Z1cVkn@CRS5U3XmN?MP3P2
-IE^iX0[o=I9WDBN[`[f9e<0
-V5eVcHhg^neaKz<_mWn7?b0
-R3
-R13
-R14
-R15
-L0 29
-R7
-r1
-!s85 0
-31
+Z22 !s100 YRnIGzNODgnlP<PSK2jT`1
+Z23 IbcGWCjil[doe@W14J5beH3
+Z24 V>4M2o82m9OkMbRJCGnJe40
+R4
 R16
 R17
 R18
-!s101 -O0
+L0 29
 R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10
 vlab6part2_vlg_vec_tst
 !i10b 1
-!s100 L`PzM`GBIz0`8IBCVjh9k3
-I4kRAe:6bFOXo_KLj^eJcl0
-V@4nMW=cJdA4K]7;]ehZf61
-R3
-R13
-R14
-R15
-L0 873
-R7
-r1
-!s85 0
-31
+!s100 _=V6Zii[JzEhVAdMCMGeL1
+I:<e0Ee_ZL9Y<6[9ln814^3
+Z25 V@4nMW=cJdA4K]7;]ehZf61
+R4
 R16
 R17
 R18
-!s101 -O0
+Z26 L0 873
 R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10

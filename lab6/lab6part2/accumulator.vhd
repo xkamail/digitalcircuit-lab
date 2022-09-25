@@ -21,18 +21,14 @@ architecture bhv of accumulator is
 	signal o,c : std_logic;
 	signal bb : std_logic_vector(n-1 downto 0);
 begin
-	
-	process(add_sub)
+
+	process(clk,reset,add_sub)
 	begin
 		if add_sub = '1' then
 			bb <= std_logic_vector(unsigned(not(B) + 1));
 		else
 			bb <= B;
 		end if;
-	end process;
-	
-	process(clk)
-	begin
 		if rising_edge(clk) then
 			
 			if reset = '0' then

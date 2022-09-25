@@ -4,7 +4,7 @@ entity lab6part2 is
     port(
         sw              : in     vl_logic_vector(7 downto 0);
         sw8             : in     vl_logic;
-        clock           : in     vl_logic;
+        key1            : in     vl_logic;
         key0            : in     vl_logic;
         led             : out    vl_logic_vector(7 downto 0);
         ledr9           : out    vl_logic;
