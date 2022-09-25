@@ -47,7 +47,7 @@ begin
 
 	addsub <= sw8;
 	u0: accumulator generic map (n => 8)
-						 port map (a,b, addsub, clk, key0, oflow, c_out, result);
+						 port map (result,b, addsub, clk, key0, oflow, c_out, result);
 	
 	led <= result;
 	
