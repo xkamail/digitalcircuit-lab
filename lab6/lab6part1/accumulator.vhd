@@ -25,6 +25,7 @@ begin
 		if rising_edge(clk) then
 			if reset = '0' then
 				sum <=  (Others => '0');
+				overflow <= '0';
 			else
 				sum <= ('0' & A) + ('0' & B);
 			end if;
@@ -37,7 +38,7 @@ begin
 				overflow <= '0';
 			end if;
 		else
-			sum <= sum;
+			-- sum <= sum;
 		end if;
 	end process;
 	carry <= sum(n);
