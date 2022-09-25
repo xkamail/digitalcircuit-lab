@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "09/22/2022 01:55:26"
+// Generated on "09/25/2022 19:27:51"
                                                                         
 // Verilog Self-Checking Test Bench (with test vectors) for design :    lab6part3
 // 
@@ -679,45 +679,66 @@ lab6part3 i1 (
 	.hex5(hex5),
 	.sw(sw)
 );
-// sw[ 7 ]
+
+// sw[7]
 initial
 begin
-	sw[7] = 1'b1;
+	sw[7] = 1'b0;
+	sw[7] = #270000 1'b1;
+	sw[7] = #180000 1'b0;
 end 
-// sw[ 6 ]
+
+// sw[6]
 initial
 begin
 	sw[6] = 1'b0;
+	sw[6] = #270000 1'b1;
+	sw[6] = #340000 1'b0;
 end 
-// sw[ 5 ]
+
+// sw[5]
 initial
 begin
-	sw[5] = 1'b1;
+	sw[5] = 1'b0;
+	sw[5] = #270000 1'b1;
 end 
-// sw[ 4 ]
+
+// sw[4]
 initial
 begin
 	sw[4] = 1'b1;
+	sw[4] = #610000 1'b0;
 end 
-// sw[ 3 ]
+
+// sw[3]
 initial
 begin
-	sw[3] = 1'b1;
+	sw[3] = 1'b0;
+	sw[3] = #270000 1'b1;
+	sw[3] = #340000 1'b0;
 end 
-// sw[ 2 ]
+
+// sw[2]
 initial
 begin
 	sw[2] = 1'b1;
+	sw[2] = #450000 1'b0;
 end 
-// sw[ 1 ]
+
+// sw[1]
 initial
 begin
 	sw[1] = 1'b0;
+	sw[1] = #270000 1'b1;
+	sw[1] = #180000 1'b0;
+	sw[1] = #160000 1'b1;
 end 
-// sw[ 0 ]
+
+// sw[0]
 initial
 begin
-	sw[0] = 1'b0;
+	sw[0] = 1'b1;
+	sw[0] = #450000 1'b0;
 end 
 
 lab6part3_vlg_sample_tst tb_sample (
