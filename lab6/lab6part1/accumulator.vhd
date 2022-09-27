@@ -38,7 +38,7 @@ begin
 				overflow <= '0';
 			end if;
 		else
-			-- sum <= sum;
+			sum <= sum;
 		end if;
 	end process;
 	carry <= sum(n);
