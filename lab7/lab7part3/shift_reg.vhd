@@ -17,11 +17,15 @@ begin
 	begin
 		if rst = '0' then
 			temp <= "0000";
-		elsif rising_edge(clk) and en ='1' then
-			temp(3) <= temp(2);
-			temp(2) <= temp(1);
-			temp(1) <= temp(0);
-			temp(0) <= s_in;
+		elsif rising_edge(clk) then
+			if en = '1' then
+				temp(3) <= temp(2);
+				temp(2) <= temp(1);
+				temp(1) <= temp(0);
+				temp(0) <= s_in;
+			end if;
+		else
+			temp <= temp;
 		end if;
 	end process;
 	reg_out <= temp;

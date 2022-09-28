@@ -20,13 +20,16 @@ architecture bhv of lab7part3 is
 	signal m1, m2 : std_logic_vector(3 downto 0);
 begin
 	clk <= not(key0);
-	reset <= not(sw0);
+	reset <= sw0;
 	con1 <= sw1;
 	con2 <= not(sw1);
-	u1: shift_reg port map(sw0, clk, reset, con1, m1);
-	u2: shift_reg port map(sw0, clk, reset, con2, m2);
+	u1: shift_reg port map(sw1, clk, reset, '1', m1);
+	u2: shift_reg port map(not(sw1), clk, reset, '1', m2);
+	
 	z <= '1' when (m1 = "1111" or m2 = "1111") else '0';
+	
 	ledr(3 downto 0) <= m1;
 	ledr(7 downto 4) <= m2;
+	
 	ledr(9) <= z;
 end bhv;

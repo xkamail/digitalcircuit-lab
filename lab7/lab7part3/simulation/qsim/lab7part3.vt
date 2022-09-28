@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "09/29/2022 02:38:19"
+// Generated on "09/29/2022 03:08:23"
                                                                         
 // Verilog Self-Checking Test Bench (with test vectors) for design :    lab7part3
 // 
@@ -104,52 +104,62 @@ begin
 end
 
 
-// expected ledr[ 9 ]
+
+// expected ledr[9]
 initial
 begin
 	ledr_expected[9] = 1'bX;
 end 
-// expected ledr[ 8 ]
+
+// expected ledr[8]
 initial
 begin
 	ledr_expected[8] = 1'bX;
 end 
-// expected ledr[ 7 ]
+
+// expected ledr[7]
 initial
 begin
 	ledr_expected[7] = 1'bX;
 end 
-// expected ledr[ 6 ]
+
+// expected ledr[6]
 initial
 begin
 	ledr_expected[6] = 1'bX;
 end 
-// expected ledr[ 5 ]
+
+// expected ledr[5]
 initial
 begin
 	ledr_expected[5] = 1'bX;
 end 
-// expected ledr[ 4 ]
+
+// expected ledr[4]
 initial
 begin
 	ledr_expected[4] = 1'bX;
 end 
-// expected ledr[ 3 ]
+
+// expected ledr[3]
 initial
 begin
 	ledr_expected[3] = 1'bX;
 end 
-// expected ledr[ 2 ]
+
+// expected ledr[2]
 initial
 begin
 	ledr_expected[2] = 1'bX;
 end 
-// expected ledr[ 1 ]
+
+// expected ledr[1]
 initial
 begin
 	ledr_expected[1] = 1'bX;
 end 
-// expected ledr[ 0 ]
+
+// expected ledr[0]
 initial
 begin
 	ledr_expected[0] = 1'bX;

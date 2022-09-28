@@ -16,8 +16,10 @@
 # vsim -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate -c -t 1ps -novopt work.lab7part3_vlg_vec_tst 
 # Loading work.lab7part3_vlg_vec_tst
 # Loading work.lab7part3
+# Loading altera_ver.dffeas
 # Loading work.lab7part3_vlg_sample_tst
 # Loading work.lab7part3_vlg_check_tst
+# Loading altera_ver.PRIM_GDFF_LOW
 # Simulation passed !
-# ** Note: $finish    : lab7part3.vt(313)
+# ** Note: $finish    : lab7part3.vt(323)
 #    Time: 1 us  Iteration: 0  Instance: /lab7part3_vlg_vec_tst/tb_out
