@@ -7,8 +7,11 @@ entity lab7part4 is
 		sw : in std_logic_vector(2 downto 0);
 		key1, key0 : in std_logic;
 		clk50 : in std_logic;
-		led : out std_logic_vector(1 downto 0);
-		ledr : out std_logic
+		led : out std_logic_vector(2 downto 0);
+		debug_counter, debug_i : out std_logic_vector(2 downto 0);
+		ledr : out std_logic;
+		srgt, debug_done,debug_load : out std_logic;
+		dd : out std_logic_vector(3 downto 0)
 	);
 end lab7part4;
 
@@ -16,9 +19,9 @@ end lab7part4;
 architecture bhv of lab7part4 is
 	component counter
 		port (
-			clk, clear : in std_logic;
-			max : in std_logic_vector(1 downto 0);
-			n : out std_logic_vector(1 downto 0)
+			clk, clear, en : in std_logic;
+			max : in std_logic_vector(2 downto 0);
+			n : out std_logic_vector(2 downto 0)
 		);
 	end component;
 	component half_sec is
@@ -31,86 +34,74 @@ architecture bhv of lab7part4 is
 		port (
 			v : in std_logic_vector(2 downto 0);
 			s : out std_logic_vector(3 downto 0);
-			count : out std_logic_vector(1 downto 0)
+			count : out std_logic_vector(2 downto 0)
 		);
 	end component;
 	component shift_reg is
 		port (
 			p_in : in std_logic_vector(3 downto 0);
-			clk,rst,load : in std_logic;
-			reg_out : out std_logic
+			clk,en, rst,load : in std_logic;
+			reg_out : out std_logic;
+			debug : out std_logic_vector(3 downto 0)
 		);
 	end component;
-	type State_type is (A,B,C,D,E,F); 
+	type State_type is (A,B,C,D,E,F, A2); 
 	attribute syn_encoding : string;
-	attribute syn_encoding of State_type : type is "000 001 010 011 100 101";
+	attribute syn_encoding of State_type : type is "000 001 010 011 100 101 110";
 	signal y_Q, y_D : State_type; -- y_Q is present, y_D is next
-	signal clk : std_logic;
-	signal rst : std_logic;
+	signal clk, counter_done : std_logic;
+	signal done, load, count_en,shift_n, regout, w,z : std_logic;
 	signal data : std_logic_vector(3 downto 0);
-	signal n,i : std_logic_vector(1 downto 0);
-	signal regout, w, z : std_logic;
-	signal en : std_logic;
+	signal n,i : std_logic_vector(2 downto 0);
 begin
 	u0: letter port map(sw,data,n);
-	c0: half_sec port map(clk50);
-	clk <= not(key0);
-	rst <= '1' when (unsigned(i) = unsigned(n)) else '0';
-	en <= '1';
+	u1: half_sec port map(clk50);
+	clk <= key0;
+	load <= not(key1);
 	
-	c2: counter port map(clk, '0', n, i);
-
-	c1: shift_reg port map(data, clk, rst, rst, regout);
+	counter_done <= '1' when (unsigned(n) = unsigned(i)) else '0';
+	debug_done <= counter_done;
+	done <= counter_done;
+	debug_load <= count_en;
+	u2: shift_reg port map(data, clk, shift_n, '1', load, regout,dd);
+	u3: counter port map(clk, load, count_en, n, i);
+	debug_counter <=  n;
+	debug_i <= i;
 	w <= regout;
-	process(w,y_Q)
+	srgt <= regout;
+	process(w,y_Q,load,done)
 	begin
 		case y_Q is 
 			when A =>
-				if w = '0' then
+				if load = '1' then -- check press key
+					y_D <= A2;
+				end if;
+			when A2 =>
+				if w = '0' then 
 					y_D <= B;
 				else
 					y_D <= C;
 				end if;
-			when B =>
-				if w = '0' then
-					y_D <= F;
-				else
-					y_D <= F;
-				end if;
-			when C =>
-				if w = '0' then
-					y_D <= D;
-				else
-					y_D <= D;
-				end if;
-			when D =>
-				if w = '0' then
-					y_D <= E;
-				else
-					y_D <= E;
-				end if;
-			when E =>
-				if w = '0' then
-					y_D <= F;
-				else
-					y_D <= F;
-				end if;
+			when B => y_D <= F;
+			when C => y_D <= D;
+			when D => y_D <= E;
+			when E => y_D <= F;
 			when F =>
-				if w = '0' then
-					y_D <= B;
-				else
-					y_D <= C;
-				end if;
+				if done = '1' then
+						y_D <= A;
+					else 
+						if w = '0' then
+							y_D <= B;
+						else
+							y_D <= C;
+						end if;
+					end if;
 		end case;
 	end process;
-	process(clk,rst)
+	process(clk)
 	begin
-		if rst = '1' then
-			y_Q <= A;
-		else
-			if rising_edge(clk) then
+		if rising_edge(clk) then
 				y_Q <= y_D;
-			end if;
 		end if;
 	end process;
 	process(y_Q)
@@ -126,7 +117,36 @@ begin
 		else
 			z <= '0';
 		end if;
+		case y_Q is
+			when A => 
+				count_en <= '0';
+				led <= "000";
+				shift_n <= '0';
+			when A2 =>
+				count_en <= '0';
+				led <= "110";
+				shift_n <= '1';
+			when B => 
+				count_en <= '1';
+				led <= "001";
+				shift_n <= '0';
+			when C => 
+				count_en <= '0';
+				shift_n <= '0';
+				led <= "010";
+			when D => 
+				count_en <= '0';
+				shift_n <= '0';
+				led <= "011";
+			when E => 
+				count_en <= '1';
+				shift_n <= '0';
+				led <= "100";
+			when F => 
+				count_en <= '0';
+				led <= "101";
+				shift_n <= '1';
+		end case;
 	end process;
-	led <= i;
 	ledr <= z;
 end bhv;
