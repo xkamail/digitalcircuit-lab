@@ -22,6 +22,7 @@ architecture bhv of lab7part2 is
 	attribute syn_encoding : string;
 	attribute syn_encoding of State_type : type is "0000 0001 0010 0011 0100 0101 0110 0111 1000";
 	signal y_Q, y_D : State_type; -- y_Q is present, y_D is next
+	signal s : std_logic_vector(3 downto 0);
 begin
 	w <= sw1;
 	clk <= not(key0);
@@ -36,10 +37,14 @@ begin
 	begin
 		case y_Q is 
 			when A => 
-				if (w = '0') then 
-					y_D <= B;
-				else 
-					y_D <= F;
+				if (reset ='1') then
+					y_D <= A;
+				else
+					if (w = '0') then 
+						y_D <= B;
+					else 
+						y_D <= F;
+					end if;
 				end if;
 			when B => 
 				if (w = '0') then 
@@ -105,6 +110,17 @@ begin
 	
 	process(y_Q)
 	begin
+		case y_Q is
+			when A => s <= "0000";
+			when B => s <= "0001";
+			when C => s <= "0010";
+			when D => s <= "0011";
+			when E => s <= "0100";
+			when F => s <= "0101";
+			when G => s <= "0110";
+			when H => s <= "0111";
+			when I => s <= "1000";
+		end case;
 		if y_Q = E then
 			z <= '1';
 		elsif y_Q = I then
@@ -113,6 +129,7 @@ begin
 			z <= '0';
 		end if;
 	end process;
+	ledr(3 downto 0) <= s;
 	ledr(9) <= z;
 	
 end bhv;
