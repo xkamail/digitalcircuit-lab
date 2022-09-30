@@ -8,10 +8,9 @@ entity lab7part4 is
 		key1, key0 : in std_logic;
 		clk50 : in std_logic;
 		led : out std_logic_vector(2 downto 0);
-		ledr : out std_logic;
+		ledr : out std_logic
 	);
 end lab7part4;
-
 
 architecture bhv of lab7part4 is
 	component counter
@@ -37,9 +36,8 @@ architecture bhv of lab7part4 is
 	component shift_reg is
 		port (
 			p_in : in std_logic_vector(3 downto 0);
-			clk,en, rst,load : in std_logic;
-			reg_out : out std_logic;
-			debug : out std_logic_vector(3 downto 0)
+			clk,en,load : in std_logic;
+			reg_out : out std_logic
 		);
 	end component;
 	type State_type is (A,B,C,D,E,F); 
@@ -59,28 +57,33 @@ begin
 	counter_done <= '1' when (unsigned(n) = unsigned(i)) else '0';
 	
 	u3: counter port map(clk, load, count_en, n, i);
-	u2: shift_reg port map(data, clk, shift_n, '1', load, regout,dd);
+	u2: shift_reg port map(data, clk, shift_n, load, regout);
 
 	w <= regout; -- current bit
 	process(w,y_Q,load)
 	begin
 		case y_Q is 
-			when A =>
+			when A => -- waiting
 				if load = '1' then -- check press key
-					y_D <= A2;
-				else
 					y_D <= F;
-				end if;
-			when B => y_D <= F; -- state display dot
-			when C => y_D <= D; -- state display dash
-			when D => y_D <= E;
-			when E => y_D <= F;
-			when F => -- checking a next state
-				if w = '0' then
-					y_D <= B;
 				else
-					y_D <= C;
+					y_D <= A;
 				end if;
+			when B => y_D <= F; -- state display dot 0.5s
+			when C => y_D <= D; -- state display dash 0.5s
+			when D => y_D <= E; -- state display dash 0.5s
+			when E => y_D <= F; -- state display dash 0.5s
+			when F => -- checking a next state gap 0.5s
+				if counter_done = '1' then
+					y_D <= A;
+				else
+					if w = '0' then
+						y_D <= B;
+					else
+						y_D <= C;
+					end if;
+				end if;
+
 		end case;
 	end process;
 	
@@ -98,6 +101,7 @@ begin
 				count_en <= '0';
 				led <= "000";
 				shift_n <= '0';
+				z <= '0';
 			when B => 
 				count_en <= '1';
 				led <= "001";
