@@ -3,7 +3,7 @@ $comment
 		vcd file lab7part4.msim.vcd -direction
 $end
 $date
-	Fri Sep 30 16:53:57 2022
+	Fri Sep 30 17:04:11 2022
 $end
 $version
 	ModelSim Version 10.1d
@@ -28,52 +28,64 @@ $var wire 1 , unknown $end
 $var tri1 1 - devclrn $end
 $var tri1 1 . devpor $end
 $var tri1 1 / devoe $end
-$var wire 1 0 u2|temp~2_combout $end
-$var wire 1 1 u2|temp[1]~3_combout $end
+$var wire 1 0 u2|temp~3_combout $end
+$var wire 1 1 u0|x~2_combout $end
 $var wire 1 2 clk50~input_o $end
 $var wire 1 3 key0~input_o $end
 $var wire 1 4 ~QUARTUS_CREATED_GND~I_combout $end
 $var wire 1 5 key0~inputCLKENA0_outclk $end
-$var wire 1 6 sw[0]~input_o $end
+$var wire 1 6 sw[2]~input_o $end
 $var wire 1 7 sw[1]~input_o $end
-$var wire 1 8 sw[2]~input_o $end
-$var wire 1 9 u3|q~2_combout $end
+$var wire 1 8 sw[0]~input_o $end
+$var wire 1 9 u0|x~1_combout $end
 $var wire 1 : key1~input_o $end
-$var wire 1 ; count_en~combout $end
-$var wire 1 < u3|q~1_combout $end
-$var wire 1 = u3|q~0_combout $end
-$var wire 1 > Equal0~0_combout $end
-$var wire 1 ? u2|temp~0_combout $end
-$var wire 1 @ u2|temp~1_combout $end
-$var wire 1 A y_Q~6_combout $end
-$var wire 1 B y_Q~3_q $end
-$var wire 1 C y_Q~7_combout $end
-$var wire 1 D y_Q~4_q $end
-$var wire 1 E y_Q~5_combout $end
-$var wire 1 F y_Q~2_q $end
-$var wire 1 G y_Q.A~0_combout $end
-$var wire 1 H y_Q.F~0_combout $end
-$var wire 1 I z~combout $end
-$var wire 1 J u3|q [2] $end
-$var wire 1 K u3|q [1] $end
-$var wire 1 L u3|q [0] $end
-$var wire 1 M u2|temp [3] $end
-$var wire 1 N u2|temp [2] $end
-$var wire 1 O u2|temp [1] $end
-$var wire 1 P u2|temp [0] $end
+$var wire 1 ; u2|temp~2_combout $end
+$var wire 1 < y_Q~7_combout $end
+$var wire 1 = y_Q~4_q $end
+$var wire 1 > u2|temp[3]~1_combout $end
+$var wire 1 ? u0|x~0_combout $end
+$var wire 1 @ u2|temp~0_combout $end
+$var wire 1 A u0|i~1_combout $end
+$var wire 1 B u0|i~2_combout $end
+$var wire 1 C u0|i~0_combout $end
+$var wire 1 D u3|q~2_combout $end
+$var wire 1 E count_en~combout $end
+$var wire 1 F u3|q~0_combout $end
+$var wire 1 G u3|q~1_combout $end
+$var wire 1 H Equal0~0_combout $end
+$var wire 1 I y_Q~6_combout $end
+$var wire 1 J y_Q~3_q $end
+$var wire 1 K y_Q~5_combout $end
+$var wire 1 L y_Q~2_q $end
+$var wire 1 M y_Q~3DUPLICATE_q $end
+$var wire 1 N z~0_combout $end
+$var wire 1 O u0|i [2] $end
+$var wire 1 P u0|i [1] $end
+$var wire 1 Q u0|i [0] $end
+$var wire 1 R u3|q [2] $end
+$var wire 1 S u3|q [1] $end
+$var wire 1 T u3|q [0] $end
+$var wire 1 U u0|x [3] $end
+$var wire 1 V u0|x [2] $end
+$var wire 1 W u0|x [1] $end
+$var wire 1 X u0|x [0] $end
+$var wire 1 Y u2|temp [3] $end
+$var wire 1 Z u2|temp [2] $end
+$var wire 1 [ u2|temp [1] $end
+$var wire 1 \ u2|temp [0] $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
 #0
 $dumpvars
-1!
+0!
 0"
 0#
-b111 $
+b0 $
 0'
 0&
 0%
-1(
+0(
 x)
 0*
 1+
@@ -83,78 +95,89 @@ x,
 1/
 00
 01
-12
+02
 03
 04
 05
-16
-17
-18
-09
+06
+07
+08
+19
 0:
 0;
 1<
 0=
-0>
+1>
 0?
-1@
+0@
 0A
-0B
-1C
+1B
+0C
 0D
-1E
+0E
 0F
-1G
-0H
-1I
-0L
-0K
+0G
+1H
+0I
 0J
-zP
-0O
-0N
+1K
+0L
 0M
+1N
+0Q
+0P
+0O
+0T
+0S
+0R
+zX
+0W
+0V
+0U
+z\
+0[
+0Z
+0Y
 $end
 #10000
 1"
 13
 15
 0)
-1F
-1D
-0C
-0G
-1H
+1P
+1V
+1L
+1=
+1G
+0H
+1;
+0<
+0K
 1'
 1%
-0I
-0(
+1K
 #20000
-0!
 1#
 0"
-02
 1:
 03
 05
 1)
+0;
 #30000
 1"
 13
 15
 0)
-0D
-1;
-0@
-1C
-0H
+0=
+1<
+0>
+1E
+0N
 0%
-1I
 1(
 #40000
-1!
 0"
-12
 03
 05
 1)
@@ -163,21 +186,18 @@ $end
 13
 15
 0)
-1L
-1D
-0<
+1T
 1=
-0;
-1@
-0C
-1H
+1D
+0G
+0<
+1>
+0E
+1N
 1%
-0I
 0(
 #60000
-0!
 0"
-02
 03
 05
 1)
@@ -186,18 +206,15 @@ $end
 13
 15
 0)
-0D
-1;
-0@
-1C
-0H
+0=
+1<
+0>
+1E
+0N
 0%
-1I
 1(
 #80000
-1!
 0"
-12
 03
 05
 1)
@@ -206,21 +223,20 @@ $end
 13
 15
 0)
-1K
-0L
-1D
-1<
-0;
-1@
-0C
+0T
+1S
+1=
+0D
 1H
+0<
+1>
+0E
+1N
 1%
-0I
+0K
 0(
 #100000
-0!
 0"
-02
 03
 05
 1)
@@ -229,18 +245,13 @@ $end
 13
 15
 0)
-0D
-1;
-0@
-1C
-0H
+0L
+0=
+0>
+0'
 0%
-1I
-1(
 #120000
-1!
 0"
-12
 03
 05
 1)
@@ -249,22 +260,8 @@ $end
 13
 15
 0)
-1L
-1D
-19
-0<
-0=
-0;
-1@
-0C
-1H
-1%
-0I
-0(
 #140000
-0!
 0"
-02
 03
 05
 1)
@@ -273,18 +270,8 @@ $end
 13
 15
 0)
-0D
-1;
-0@
-1C
-0H
-0%
-1I
-1(
 #160000
-1!
 0"
-12
 03
 05
 1)
@@ -293,24 +280,8 @@ $end
 13
 15
 0)
-0K
-0L
-1J
-1D
-09
-1>
-0;
-1@
-0C
-1H
-1%
-0E
-0I
-0(
 #180000
-0!
 0"
-02
 03
 05
 1)
@@ -319,17 +290,8 @@ $end
 13
 15
 0)
-0F
-0D
-0@
-1G
-0H
-0'
-0%
 #200000
-1!
 0"
-12
 03
 05
 1)
@@ -339,9 +301,7 @@ $end
 15
 0)
 #220000
-0!
 0"
-02
 03
 05
 1)
@@ -351,9 +311,7 @@ $end
 15
 0)
 #240000
-1!
 0"
-12
 03
 05
 1)
@@ -363,9 +321,7 @@ $end
 15
 0)
 #260000
-0!
 0"
-02
 03
 05
 1)
@@ -375,9 +331,7 @@ $end
 15
 0)
 #280000
-1!
 0"
-12
 03
 05
 1)
@@ -387,9 +341,7 @@ $end
 15
 0)
 #300000
-0!
 0"
-02
 03
 05
 1)
@@ -399,9 +351,7 @@ $end
 15
 0)
 #320000
-1!
 0"
-12
 03
 05
 1)
@@ -411,9 +361,7 @@ $end
 15
 0)
 #340000
-0!
 0"
-02
 03
 05
 1)
@@ -423,9 +371,7 @@ $end
 15
 0)
 #360000
-1!
 0"
-12
 03
 05
 1)
@@ -435,9 +381,7 @@ $end
 15
 0)
 #380000
-0!
 0"
-02
 03
 05
 1)
@@ -447,9 +391,7 @@ $end
 15
 0)
 #400000
-1!
 0"
-12
 03
 05
 1)
@@ -459,9 +401,7 @@ $end
 15
 0)
 #420000
-0!
 0"
-02
 03
 05
 1)
@@ -471,9 +411,7 @@ $end
 15
 0)
 #440000
-1!
 0"
-12
 03
 05
 1)
@@ -483,9 +421,7 @@ $end
 15
 0)
 #460000
-0!
 0"
-02
 03
 05
 1)
@@ -495,9 +431,7 @@ $end
 15
 0)
 #480000
-1!
 0"
-12
 03
 05
 1)
@@ -507,9 +441,7 @@ $end
 15
 0)
 #500000
-0!
 0"
-02
 03
 05
 1)
@@ -519,9 +451,7 @@ $end
 15
 0)
 #520000
-1!
 0"
-12
 03
 05
 1)
@@ -531,9 +461,7 @@ $end
 15
 0)
 #540000
-0!
 0"
-02
 03
 05
 1)
@@ -543,9 +471,7 @@ $end
 15
 0)
 #560000
-1!
 0"
-12
 03
 05
 1)
@@ -555,9 +481,7 @@ $end
 15
 0)
 #580000
-0!
 0"
-02
 03
 05
 1)
@@ -567,9 +491,7 @@ $end
 15
 0)
 #600000
-1!
 0"
-12
 03
 05
 1)
@@ -579,9 +501,7 @@ $end
 15
 0)
 #620000
-0!
 0"
-02
 03
 05
 1)
@@ -591,9 +511,7 @@ $end
 15
 0)
 #640000
-1!
 0"
-12
 03
 05
 1)
@@ -603,9 +521,7 @@ $end
 15
 0)
 #660000
-0!
 0"
-02
 03
 05
 1)
@@ -615,9 +531,7 @@ $end
 15
 0)
 #680000
-1!
 0"
-12
 03
 05
 1)
@@ -627,9 +541,7 @@ $end
 15
 0)
 #700000
-0!
 0"
-02
 03
 05
 1)
@@ -639,9 +551,7 @@ $end
 15
 0)
 #720000
-1!
 0"
-12
 03
 05
 1)
@@ -651,9 +561,7 @@ $end
 15
 0)
 #740000
-0!
 0"
-02
 03
 05
 1)
@@ -663,9 +571,7 @@ $end
 15
 0)
 #760000
-1!
 0"
-12
 03
 05
 1)
@@ -675,9 +581,7 @@ $end
 15
 0)
 #780000
-0!
 0"
-02
 03
 05
 1)
@@ -687,9 +591,7 @@ $end
 15
 0)
 #800000
-1!
 0"
-12
 03
 05
 1)
@@ -699,9 +601,7 @@ $end
 15
 0)
 #820000
-0!
 0"
-02
 03
 05
 1)
@@ -711,9 +611,7 @@ $end
 15
 0)
 #840000
-1!
 0"
-12
 03
 05
 1)
@@ -723,9 +621,7 @@ $end
 15
 0)
 #860000
-0!
 0"
-02
 03
 05
 1)
@@ -735,9 +631,7 @@ $end
 15
 0)
 #880000
-1!
 0"
-12
 03
 05
 1)
@@ -747,9 +641,7 @@ $end
 15
 0)
 #900000
-0!
 0"
-02
 03
 05
 1)
@@ -759,9 +651,7 @@ $end
 15
 0)
 #920000
-1!
 0"
-12
 03
 05
 1)
@@ -771,9 +661,7 @@ $end
 15
 0)
 #940000
-0!
 0"
-02
 03
 05
 1)
@@ -783,9 +671,7 @@ $end
 15
 0)
 #960000
-1!
 0"
-12
 03
 05
 1)
@@ -795,9 +681,7 @@ $end
 15
 0)
 #980000
-0!
 0"
-02
 03
 05
 1)

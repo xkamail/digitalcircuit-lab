@@ -175,7 +175,7 @@ TRANSITION_LIST("sw[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 1000.0;
 	}
 }
 
@@ -184,7 +184,7 @@ TRANSITION_LIST("sw[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 1000.0;
 	}
 }
 
@@ -193,7 +193,7 @@ TRANSITION_LIST("sw[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 1000.0;
 	}
 }
 
@@ -220,7 +220,12 @@ TRANSITION_LIST("key0")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		NODE
+		{
+			REPEAT = 50;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+		}
 	}
 }
 
@@ -229,7 +234,8 @@ TRANSITION_LIST("key1")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 0 FOR 20.0;
+		LEVEL 1 FOR 980.0;
 	}
 }
 
@@ -322,7 +328,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "sw";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 8;
 	TREE_LEVEL = 0;
 	CHILDREN = 9, 10, 11;
@@ -332,7 +338,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "sw[2]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 9;
 	TREE_LEVEL = 1;
 	PARENT = 8;
@@ -342,7 +348,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "sw[1]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 10;
 	TREE_LEVEL = 1;
 	PARENT = 8;
@@ -352,7 +358,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "sw[0]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 11;
 	TREE_LEVEL = 1;
 	PARENT = 8;

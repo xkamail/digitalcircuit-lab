@@ -28,6 +28,7 @@ architecture bhv of lab7part4 is
 	end component;
 	component letter is
 		port (
+			clk, en : in std_logic;
 			v : in std_logic_vector(2 downto 0);
 			s : out std_logic_vector(3 downto 0);
 			count : out std_logic_vector(2 downto 0)
@@ -47,16 +48,14 @@ architecture bhv of lab7part4 is
 	signal clk, counter_done : std_logic;
 	signal done, load, count_en,shift_n, regout, w,z : std_logic;
 	signal data : std_logic_vector(3 downto 0);
-	signal n,i : std_logic_vector(2 downto 0);
+	signal max_i,i : std_logic_vector(2 downto 0);
 begin
-	u0: letter port map(sw,data,n);
-	u1: half_sec port map(clk50);
-	clk <= key0;
 	load <= not(key1);
-	
-	counter_done <= '1' when (unsigned(n) = unsigned(i)) else '0';
-	
-	u3: counter port map(clk, load, count_en, n, i);
+	clk <= key0;
+	counter_done <= '1' when (unsigned(max_i) = unsigned(i)) else '0';
+	u0: letter port map(clk,load,sw,data,max_i);
+	u1: half_sec port map(clk50);
+	u3: counter port map(clk, load, count_en, max_i, i);
 	u2: shift_reg port map(data, clk, shift_n, load, regout);
 
 	w <= regout; -- current bit
