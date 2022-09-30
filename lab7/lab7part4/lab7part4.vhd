@@ -4,11 +4,11 @@ use ieee.std_logic_arith.all;
 
 entity lab7part4 is
 	port (
-		sw : in std_logic_vector(2 downto 0);
-		key1, key0 : in std_logic;
-		clk50 : in std_logic;
-		led : out std_logic_vector(2 downto 0);
-		ledr : out std_logic
+		sw : in std_logic_vector(2 downto 0); -- SW2to0
+		key1, key0 : in std_logic; -- KEY1 = load
+		clk50 : in std_logic; -- 50Mhz
+		led : out std_logic_vector(2 downto 0); -- state
+		ledr : out std_logic -- Z
 	);
 end lab7part4;
 
@@ -28,7 +28,6 @@ architecture bhv of lab7part4 is
 	end component;
 	component letter is
 		port (
-			clk, en : in std_logic;
 			v : in std_logic_vector(2 downto 0);
 			s : out std_logic_vector(3 downto 0);
 			count : out std_logic_vector(2 downto 0)
@@ -38,45 +37,45 @@ architecture bhv of lab7part4 is
 		port (
 			p_in : in std_logic_vector(3 downto 0);
 			clk,en,load : in std_logic;
-			reg_out : out std_logic
+			s_out : out std_logic
 		);
 	end component;
 	type State_type is (A,B,C,D,E,F); 
 	attribute syn_encoding : string;
 	attribute syn_encoding of State_type : type is "000 001 010 011 100 101";
 	signal y_Q, y_D : State_type; -- y_Q is present, y_D is next
-	signal clk, counter_done : std_logic;
-	signal done, load, count_en,shift_n, regout, w,z : std_logic;
+	signal clk, done, load, count_en, shift_n, w,z, reg_out : std_logic;
 	signal data : std_logic_vector(3 downto 0);
 	signal max_i,i : std_logic_vector(2 downto 0);
 begin
 	load <= not(key1);
-	clk <= key0;
-	counter_done <= '1' when (unsigned(max_i) = unsigned(i)) else '0';
-	u0: letter port map(clk,load,sw,data,max_i);
-	u1: half_sec port map(clk50);
+	-- clk <= key0; act like manual clock
+	done <= '1' when (unsigned(max_i) = unsigned(i)) else '0';
+	u0: letter port map(sw,data,max_i);
+	u1: half_sec port map(clk50, clk); -- clock with 0.5 sec
 	u3: counter port map(clk, load, count_en, max_i, i);
-	u2: shift_reg port map(data, clk, shift_n, load, regout);
+	u2: shift_reg port map(data, clk, shift_n, load, reg_out);
 
-	w <= regout; -- current bit
-	process(w,y_Q,load)
+	w <= reg_out; -- current bit
+	process(w,y_Q,load,done)
 	begin
 		case y_Q is 
 			when A => -- waiting
 				if load = '1' then -- check press key
 					y_D <= F;
-				else
-					y_D <= A;
 				end if;
+				
 			when B => y_D <= F; -- state display dot 0.5s
+			
 			when C => y_D <= D; -- state display dash 0.5s
 			when D => y_D <= E; -- state display dash 0.5s
 			when E => y_D <= F; -- state display dash 0.5s
+			
 			when F => -- checking a next state gap 0.5s
-				if counter_done = '1' then
+				if done = '1' then
 					y_D <= A;
 				else
-					if w = '0' then
+					if w = '0' then -- find a next state
 						y_D <= B;
 					else
 						y_D <= C;
@@ -84,6 +83,7 @@ begin
 				end if;
 
 		end case;
+		
 	end process;
 	
 	process(clk)
@@ -127,7 +127,8 @@ begin
 				shift_n <= '1';
 				z <= '0';
 		end case;
+		
 	end process;
-	ledr <= z;
+	ledr <= z; -- showing an output
 	
 end bhv;

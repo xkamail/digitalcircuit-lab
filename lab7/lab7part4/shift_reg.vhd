@@ -5,7 +5,7 @@ entity shift_reg is
 		port (
 			p_in : in std_logic_vector(3 downto 0);
 			clk,en,load : in std_logic;
-			reg_out : out std_logic
+			s_out : out std_logic
 		);
 end shift_reg;
 
@@ -30,5 +30,5 @@ begin
 			temp <= temp;
 		end if;
 	end process;
-	reg_out <= temp(3);
+	s_out <= temp(3);
 end bhv;

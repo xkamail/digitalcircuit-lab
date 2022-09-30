@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "09/30/2022 17:04:09"
+// Generated on "09/30/2022 18:05:43"
                                                                         
 // Verilog Self-Checking Test Bench (with test vectors) for design :    lab7part4
 // 
@@ -75,10 +75,8 @@ reg  ledr_expected;
 reg [2:0] led_prev;
 reg  ledr_prev;
 
-reg [2:0] led_expected_prev;
 reg  ledr_expected_prev;
 
-reg [2:0] last_led_exp;
 reg  last_ledr_exp;
 
 reg trigger;
@@ -109,26 +107,10 @@ end
 
 always @(trigger)
 begin
-	led_expected_prev = led_expected;
 	ledr_expected_prev = ledr_expected;
 end
 
 
-// expected led[ 2 ]
-initial
-begin
-	led_expected[2] = 1'bX;
-end 
-// expected led[ 1 ]
-initial
-begin
-	led_expected[1] = 1'bX;
-end 
-// expected led[ 0 ]
-initial
-begin
-	led_expected[0] = 1'bX;
-end 
 
 // expected ledr
 initial
@@ -149,45 +131,6 @@ begin
 	$display("| expected led = %b | expected ledr = %b | ",led_expected_prev,ledr_expected_prev);
 	$display("| real led = %b | real ledr = %b | ",led_prev,ledr_prev);
 `endif
-	if (
-		( led_expected_prev[0] !== 1'bx ) && ( led_prev[0] !== led_expected_prev[0] )
-		&& ((led_expected_prev[0] !== last_led_exp[0]) ||
-			on_first_change[1])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port led[0] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", led_expected_prev);
-		$display ("     Real value = %b", led_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[1] = 1'b0;
-		last_led_exp[0] = led_expected_prev[0];
-	end
-	if (
-		( led_expected_prev[1] !== 1'bx ) && ( led_prev[1] !== led_expected_prev[1] )
-		&& ((led_expected_prev[1] !== last_led_exp[1]) ||
-			on_first_change[1])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port led[1] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", led_expected_prev);
-		$display ("     Real value = %b", led_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[1] = 1'b0;
-		last_led_exp[1] = led_expected_prev[1];
-	end
-	if (
-		( led_expected_prev[2] !== 1'bx ) && ( led_prev[2] !== led_expected_prev[2] )
-		&& ((led_expected_prev[2] !== last_led_exp[2]) ||
-			on_first_change[1])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port led[2] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", led_expected_prev);
-		$display ("     Real value = %b", led_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[1] = 1'b0;
-		last_led_exp[2] = led_expected_prev[2];
-	end
 	if (
 		( ledr_expected_prev !== 1'bx ) && ( ledr_prev !== ledr_expected_prev )
 		&& ((ledr_expected_prev !== last_ledr_exp) ||
@@ -251,8 +194,8 @@ end
 always
 begin
 	key0 = 1'b0;
-	key0 = #10000 1'b1;
-	#10000;
+	key0 = #20000 1'b1;
+	#20000;
 end 
 
 // key1
@@ -260,21 +203,24 @@ initial
 begin
 	key1 = 1'b0;
 	key1 = #20000 1'b1;
+	key1 = #320000 1'b0;
+	key1 = #50000 1'b1;
 end 
 // sw[ 2 ]
 initial
 begin
-	sw[2] = 1'b0;
+	sw[2] = 1'b1;
 end 
 // sw[ 1 ]
 initial
 begin
-	sw[1] = 1'b0;
+	sw[1] = 1'b1;
 end 
 // sw[ 0 ]
 initial
 begin
 	sw[0] = 1'b0;
+	sw[0] = #340000 1'b1;
 end 
 
 lab7part4_vlg_sample_tst tb_sample (
