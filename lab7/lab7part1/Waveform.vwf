@@ -49,7 +49,7 @@ SIGNAL("ledr[9]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "ledr";
+	PARENT = "";
 }
 
 SIGNAL("ledr[8]")
@@ -59,7 +59,7 @@ SIGNAL("ledr[8]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "ledr";
+	PARENT = "";
 }
 
 SIGNAL("ledr[7]")
@@ -69,7 +69,7 @@ SIGNAL("ledr[7]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "ledr";
+	PARENT = "";
 }
 
 SIGNAL("ledr[6]")
@@ -79,7 +79,7 @@ SIGNAL("ledr[6]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "ledr";
+	PARENT = "";
 }
 
 SIGNAL("ledr[5]")
@@ -89,7 +89,7 @@ SIGNAL("ledr[5]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "ledr";
+	PARENT = "";
 }
 
 SIGNAL("ledr[4]")
@@ -99,7 +99,7 @@ SIGNAL("ledr[4]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "ledr";
+	PARENT = "";
 }
 
 SIGNAL("ledr[3]")
@@ -109,7 +109,7 @@ SIGNAL("ledr[3]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "ledr";
+	PARENT = "";
 }
 
 SIGNAL("ledr[2]")
@@ -119,7 +119,7 @@ SIGNAL("ledr[2]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "ledr";
+	PARENT = "";
 }
 
 SIGNAL("ledr[1]")
@@ -129,7 +129,7 @@ SIGNAL("ledr[1]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "ledr";
+	PARENT = "";
 }
 
 SIGNAL("ledr[0]")
@@ -139,7 +139,7 @@ SIGNAL("ledr[0]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "ledr";
+	PARENT = "";
 }
 
 SIGNAL("sw0")
@@ -288,11 +288,11 @@ TRANSITION_LIST("sw1")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 50.0;
-		LEVEL 1 FOR 50.0;
-		LEVEL 0 FOR 180.0;
-		LEVEL 1 FOR 200.0;
-		LEVEL 0 FOR 520.0;
+		LEVEL 0 FOR 80.0;
+		LEVEL 1 FOR 40.0;
+		LEVEL 0 FOR 160.0;
+		LEVEL 1 FOR 160.0;
+		LEVEL 0 FOR 560.0;
 	}
 }
 

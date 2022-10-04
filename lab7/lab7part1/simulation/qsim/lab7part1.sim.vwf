@@ -52,7 +52,7 @@ SIGNAL("ledr[9]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "ledr";
+	PARENT = "";
 }
 
 SIGNAL("ledr[8]")
@@ -62,7 +62,7 @@ SIGNAL("ledr[8]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "ledr";
+	PARENT = "";
 }
 
 SIGNAL("ledr[7]")
@@ -72,7 +72,7 @@ SIGNAL("ledr[7]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "ledr";
+	PARENT = "";
 }
 
 SIGNAL("ledr[6]")
@@ -82,7 +82,7 @@ SIGNAL("ledr[6]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "ledr";
+	PARENT = "";
 }
 
 SIGNAL("ledr[5]")
@@ -92,7 +92,7 @@ SIGNAL("ledr[5]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "ledr";
+	PARENT = "";
 }
 
 SIGNAL("ledr[4]")
@@ -102,7 +102,7 @@ SIGNAL("ledr[4]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "ledr";
+	PARENT = "";
 }
 
 SIGNAL("ledr[3]")
@@ -112,7 +112,7 @@ SIGNAL("ledr[3]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "ledr";
+	PARENT = "";
 }
 
 SIGNAL("ledr[2]")
@@ -122,7 +122,7 @@ SIGNAL("ledr[2]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "ledr";
+	PARENT = "";
 }
 
 SIGNAL("ledr[1]")
@@ -132,7 +132,7 @@ SIGNAL("ledr[1]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "ledr";
+	PARENT = "";
 }
 
 SIGNAL("ledr[0]")
@@ -142,7 +142,7 @@ SIGNAL("ledr[0]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "ledr";
+	PARENT = "";
 }
 
 SIGNAL("sw0")
@@ -235,9 +235,9 @@ TRANSITION_LIST("ledr[9]")
 		LEVEL 0 FOR 260.0;
 		LEVEL 1 FOR 40.0;
 		LEVEL 0 FOR 120.0;
-		LEVEL 1 FOR 80.0;
+		LEVEL 1 FOR 40.0;
 		LEVEL 0 FOR 120.0;
-		LEVEL 1 FOR 380.0;
+		LEVEL 1 FOR 420.0;
 	}
 }
 TRANSITION_LIST("ledr[8]")
@@ -246,8 +246,8 @@ TRANSITION_LIST("ledr[8]")
 	{
 		REPEAT = 1;
 		LEVEL 0 FOR 420.0;
-		LEVEL 1 FOR 80.0;
-		LEVEL 0 FOR 500.0;
+		LEVEL 1 FOR 40.0;
+		LEVEL 0 FOR 540.0;
 	}
 }
 TRANSITION_LIST("ledr[7]")
@@ -265,9 +265,7 @@ TRANSITION_LIST("ledr[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 100.0;
-		LEVEL 1 FOR 40.0;
-		LEVEL 0 FOR 200.0;
+		LEVEL 0 FOR 340.0;
 		LEVEL 1 FOR 40.0;
 		LEVEL 0 FOR 620.0;
 	}
@@ -277,9 +275,9 @@ TRANSITION_LIST("ledr[5]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 60.0;
+		LEVEL 0 FOR 100.0;
 		LEVEL 1 FOR 40.0;
-		LEVEL 0 FOR 200.0;
+		LEVEL 0 FOR 160.0;
 		LEVEL 1 FOR 40.0;
 		LEVEL 0 FOR 660.0;
 	}
@@ -291,8 +289,8 @@ TRANSITION_LIST("ledr[4]")
 		REPEAT = 1;
 		LEVEL 0 FOR 260.0;
 		LEVEL 1 FOR 40.0;
-		LEVEL 0 FOR 320.0;
-		LEVEL 1 FOR 380.0;
+		LEVEL 0 FOR 280.0;
+		LEVEL 1 FOR 420.0;
 	}
 }
 TRANSITION_LIST("ledr[3]")
@@ -302,9 +300,9 @@ TRANSITION_LIST("ledr[3]")
 		REPEAT = 1;
 		LEVEL 0 FOR 220.0;
 		LEVEL 1 FOR 40.0;
-		LEVEL 0 FOR 320.0;
+		LEVEL 0 FOR 280.0;
 		LEVEL 1 FOR 40.0;
-		LEVEL 0 FOR 380.0;
+		LEVEL 0 FOR 420.0;
 	}
 }
 TRANSITION_LIST("ledr[2]")
@@ -314,9 +312,9 @@ TRANSITION_LIST("ledr[2]")
 		REPEAT = 1;
 		LEVEL 0 FOR 180.0;
 		LEVEL 1 FOR 40.0;
-		LEVEL 0 FOR 320.0;
+		LEVEL 0 FOR 280.0;
 		LEVEL 1 FOR 40.0;
-		LEVEL 0 FOR 420.0;
+		LEVEL 0 FOR 460.0;
 	}
 }
 TRANSITION_LIST("ledr[1]")
@@ -324,11 +322,13 @@ TRANSITION_LIST("ledr[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 140.0;
+		LEVEL 0 FOR 60.0;
 		LEVEL 1 FOR 40.0;
-		LEVEL 0 FOR 320.0;
+		LEVEL 0 FOR 40.0;
 		LEVEL 1 FOR 40.0;
-		LEVEL 0 FOR 460.0;
+		LEVEL 0 FOR 280.0;
+		LEVEL 1 FOR 40.0;
+		LEVEL 0 FOR 500.0;
 	}
 }
 TRANSITION_LIST("ledr[0]")
@@ -355,11 +355,11 @@ TRANSITION_LIST("sw1")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 50.0;
-		LEVEL 1 FOR 50.0;
-		LEVEL 0 FOR 180.0;
-		LEVEL 1 FOR 200.0;
-		LEVEL 0 FOR 520.0;
+		LEVEL 0 FOR 80.0;
+		LEVEL 1 FOR 40.0;
+		LEVEL 0 FOR 160.0;
+		LEVEL 1 FOR 160.0;
+		LEVEL 0 FOR 560.0;
 	}
 }
 
