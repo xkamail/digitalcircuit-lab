@@ -4,8 +4,9 @@ use ieee.std_logic_1164.all;
 entity shift_reg is
 		port (
 			p_in : in std_logic_vector(3 downto 0);
-			clk,en,load : in std_logic;
-			s_out : out std_logic
+			clk,en, rst,load : in std_logic;
+			reg_out : out std_logic;
+			debug : out std_logic_vector(3 downto 0)
 		);
 end shift_reg;
 
@@ -13,9 +14,11 @@ architecture bhv of shift_reg is
 	signal temp : std_logic_vector(3 downto 0);
 begin
 
-	process(clk,load)
+	process(clk,rst,load)
 	begin
-		if rising_edge(clk) then
+		if rst = '0' then
+			temp <= "0000";
+		elsif rising_edge(clk) then
 			if load = '1' then
 				temp <= p_in;
 			else
@@ -30,5 +33,6 @@ begin
 			temp <= temp;
 		end if;
 	end process;
-	s_out <= temp(3);
+	reg_out <= temp(3);
+	debug <= temp;
 end bhv;
