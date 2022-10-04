@@ -3,7 +3,7 @@ $comment
 		vcd file lab7part1.msim.vcd -direction
 $end
 $date
-	Wed Oct 05 01:08:18 2022
+	Wed Oct 05 01:31:34 2022
 $end
 $version
 	ModelSim Version 10.1d
@@ -37,28 +37,27 @@ $var wire 1 5 key0~input_o $end
 $var wire 1 6 ~QUARTUS_CREATED_GND~I_combout $end
 $var wire 1 7 key0~inputCLKENA0_outclk $end
 $var wire 1 8 sw0~input_o $end
-$var wire 1 9 f0|Q~0_combout $end
-$var wire 1 : f0|Q~q $end
-$var wire 1 ; sw1~input_o $end
-$var wire 1 < f5|Q~1_combout $end
-$var wire 1 = f2|Q~0_combout $end
-$var wire 1 > f2|Q~q $end
-$var wire 1 ? f3|Q~0_combout $end
-$var wire 1 @ f3|Q~q $end
-$var wire 1 A f4|Q~0_combout $end
-$var wire 1 B f4|Q~q $end
-$var wire 1 C f5|Q~0_combout $end
-$var wire 1 D f5|Q~q $end
+$var wire 1 9 f0|Q~q $end
+$var wire 1 : f5|Q~1_combout $end
+$var wire 1 ; f2|Q~0_combout $end
+$var wire 1 < f2|Q~q $end
+$var wire 1 = sw1~input_o $end
+$var wire 1 > f3|Q~0_combout $end
+$var wire 1 ? f3|Q~q $end
+$var wire 1 @ f4|Q~0_combout $end
+$var wire 1 A f4|Q~q $end
+$var wire 1 B f5|Q~0_combout $end
+$var wire 1 C f5|Q~q $end
+$var wire 1 D f1|Q~1_combout $end
 $var wire 1 E f6|Q~0_combout $end
 $var wire 1 F f6|Q~q $end
 $var wire 1 G f7|Q~0_combout $end
 $var wire 1 H f7|Q~q $end
-$var wire 1 I f1|Q~1_combout $end
-$var wire 1 J f8|Q~0_combout $end
-$var wire 1 K f8|Q~q $end
-$var wire 1 L f1|Q~0_combout $end
-$var wire 1 M f1|Q~q $end
-$var wire 1 N z~0_combout $end
+$var wire 1 I f8|Q~0_combout $end
+$var wire 1 J f8|Q~q $end
+$var wire 1 K f1|Q~0_combout $end
+$var wire 1 L f1|Q~q $end
+$var wire 1 M z~0_combout $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
@@ -88,7 +87,7 @@ x1
 06
 17
 08
-19
+09
 0:
 0;
 0<
@@ -109,22 +108,17 @@ x1
 0K
 0L
 0M
-0N
 $end
 #20000
 0!
 05
 07
 0.
-1:
-1-
 #30000
 1"
 18
 1.
-09
-1I
-1L
+1D
 #40000
 1!
 15
@@ -135,54 +129,48 @@ $end
 05
 07
 1.
-0:
-1M
-0L
-1=
-0-
-1,
+19
+1K
+1-
 #80000
 1#
 1!
-1;
+1=
 15
 17
 0.
-1<
-0=
-0I
-1C
+1:
+0D
+1B
+0K
 #100000
 0!
 05
 07
 1.
-1D
-0M
+1C
 1E
-0C
 1(
-0,
 #120000
 0#
 1!
-0;
+0=
 15
 17
 0.
-0<
+0:
+1D
 0E
-1I
-1L
+0B
+1K
 #140000
 0!
 05
 07
 1.
-0D
-1M
-0L
-1=
+0C
+1L
+1;
 0(
 1,
 #160000
@@ -195,12 +183,9 @@ $end
 05
 07
 1.
+1<
 1>
-0M
-1?
-0=
 1+
-0,
 #200000
 1!
 15
@@ -211,11 +196,8 @@ $end
 05
 07
 1.
-0>
+1?
 1@
-0?
-1A
-0+
 1*
 #240000
 1!
@@ -227,35 +209,41 @@ $end
 05
 07
 1.
-0@
-1B
-0*
+1A
 1)
-1N
+1M
 1$
 #280000
 1#
 1!
-1;
+1=
 15
 17
 0.
-1<
-0A
-0I
-1C
+1:
+0;
+0>
+0@
+0D
+1B
+0K
 #300000
 0!
 05
 07
 1.
-0B
-1D
-0C
+0<
+0?
+0A
+1C
+0L
 1E
+0+
+0*
 0)
 1(
-0N
+0,
+0M
 0$
 #320000
 1!
@@ -267,11 +255,8 @@ $end
 05
 07
 1.
-0D
 1F
-0E
 1G
-0(
 1'
 #360000
 1!
@@ -283,11 +268,8 @@ $end
 05
 07
 1.
-0F
 1H
-0G
-1J
-0'
+1I
 1&
 #400000
 1!
@@ -299,35 +281,41 @@ $end
 05
 07
 1.
-0H
-1K
-0&
+1J
 1%
-1N
+1M
 1$
 #440000
 0#
 1!
-0;
+0=
 15
 17
 0.
-0<
-1I
-0J
-1L
+0:
+1D
+0E
+0G
+0I
+0B
+1K
 #460000
 0!
 05
 07
 1.
-0K
-1M
-0L
-1=
+0C
+0F
+0H
+0J
+1L
+1;
+0(
+0'
+0&
 0%
 1,
-0N
+0M
 0$
 #480000
 1!
@@ -339,12 +327,9 @@ $end
 05
 07
 1.
+1<
 1>
-0M
-1?
-0=
 1+
-0,
 #520000
 1!
 15
@@ -355,11 +340,8 @@ $end
 05
 07
 1.
-0>
+1?
 1@
-0?
-1A
-0+
 1*
 #560000
 1!
@@ -371,11 +353,9 @@ $end
 05
 07
 1.
-0@
-1B
-0*
+1A
 1)
-1N
+1M
 1$
 #600000
 1!

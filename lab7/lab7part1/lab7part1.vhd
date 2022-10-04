@@ -22,7 +22,7 @@ begin
 	w <= sw1;
 	clk <= not(key0);
 	reset <= not(sw0); -- active low
-	f0: d_ff port map(clk, '0', reset, q(0));
+	f0: d_ff port map(clk, reset, not(reset), q(0));
 	f1: d_ff port map(clk, reset, not(w) and (q(0) or q(5) or q(6) or q(7) or q(8)), q(1));
 	f2: d_ff port map(clk, reset, not(w) and q(1), q(2));
 	f3: d_ff port map(clk, reset, not(w) and q(2), q(3)); 
