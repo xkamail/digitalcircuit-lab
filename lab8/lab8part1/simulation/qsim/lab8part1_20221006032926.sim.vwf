@@ -1,48 +1,3 @@
-/*<simulation_settings>
-<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off lab8part1 -c lab8part1 --vector_source="C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab8/lab8part1/Waveform.vwf" --testbench_file="C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab8/lab8part1/simulation/qsim/Waveform.vwf.vht"</ftestbench_cmd>
-<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off lab8part1 -c lab8part1 --vector_source="C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab8/lab8part1/Waveform.vwf" --testbench_file="C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab8/lab8part1/simulation/qsim/Waveform.vwf.vht"</ttestbench_cmd>
-<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab8/lab8part1/simulation/qsim/" lab8part1 -c lab8part1</fnetlist_cmd>
-<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab8/lab8part1/simulation/qsim/" lab8part1 -c lab8part1</tnetlist_cmd>
-<modelsim_script>onerror {exit -code 1}
-vlib work
-vcom -work work lab8part1.vho
-vcom -work work Waveform.vwf.vht
-vsim -novopt -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.lab8part1_vhd_vec_tst
-vcd file -direction lab8part1.msim.vcd
-vcd add -internal lab8part1_vhd_vec_tst/*
-vcd add -internal lab8part1_vhd_vec_tst/i1/*
-proc simTimestamp {} {
-    echo "Simulation time: $::now ps"
-    if { [string equal running [runStatus]] } {
-        after 2500 simTimestamp
-    }
-}
-after 2500 simTimestamp
-run -all
-quit -f
-
-</modelsim_script>
-<modelsim_script_timing>onerror {exit -code 1}
-vlib work
-vcom -work work lab8part1.vho
-vcom -work work Waveform.vwf.vht
-vsim -novopt -c -t 1ps -sdfmax lab8part1_vhd_vec_tst/i1=lab8part1_vhd.sdo -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.lab8part1_vhd_vec_tst
-vcd file -direction lab8part1.msim.vcd
-vcd add -internal lab8part1_vhd_vec_tst/*
-vcd add -internal lab8part1_vhd_vec_tst/i1/*
-proc simTimestamp {} {
-    echo "Simulation time: $::now ps"
-    if { [string equal running [runStatus]] } {
-        after 2500 simTimestamp
-    }
-}
-after 2500 simTimestamp
-run -all
-quit -f
-
-</modelsim_script_timing>
-<hdl_lang>vhdl</hdl_lang>
-</simulation_settings>*/
 /*
 WARNING: Do NOT edit the input and output ports in this file in a text
 editor if you plan to continue editing the block that represents it in
@@ -262,11 +217,15 @@ TRANSITION_LIST("addr[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 320.0;
-		LEVEL 1 FOR 80.0;
-		LEVEL 0 FOR 80.0;
-		LEVEL 1 FOR 80.0;
-		LEVEL 0 FOR 440.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 320.0;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 80.0;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 440.0;
+		}
 	}
 }
 
@@ -275,11 +234,15 @@ TRANSITION_LIST("addr[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 320.0;
-		LEVEL 1 FOR 80.0;
-		LEVEL 0 FOR 80.0;
-		LEVEL 1 FOR 80.0;
-		LEVEL 0 FOR 440.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 320.0;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 80.0;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 440.0;
+		}
 	}
 }
 
@@ -288,11 +251,15 @@ TRANSITION_LIST("addr[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 320.0;
-		LEVEL 1 FOR 80.0;
-		LEVEL 0 FOR 80.0;
-		LEVEL 1 FOR 80.0;
-		LEVEL 0 FOR 440.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 320.0;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 80.0;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 440.0;
+		}
 	}
 }
 
@@ -301,11 +268,15 @@ TRANSITION_LIST("addr[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 320.0;
-		LEVEL 1 FOR 80.0;
-		LEVEL 0 FOR 80.0;
-		LEVEL 1 FOR 80.0;
-		LEVEL 0 FOR 440.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 320.0;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 80.0;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 440.0;
+		}
 	}
 }
 
@@ -314,11 +285,15 @@ TRANSITION_LIST("addr[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 320.0;
-		LEVEL 1 FOR 80.0;
-		LEVEL 0 FOR 80.0;
-		LEVEL 1 FOR 80.0;
-		LEVEL 0 FOR 440.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 320.0;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 80.0;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 440.0;
+		}
 	}
 }
 
@@ -329,11 +304,33 @@ TRANSITION_LIST("clk")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 12;
+			REPEAT = 1;
 			LEVEL 0 FOR 40.0;
 			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 40.0;
 		}
-		LEVEL 0 FOR 40.0;
 	}
 }
 
@@ -342,9 +339,13 @@ TRANSITION_LIST("data[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 160.0;
-		LEVEL 1 FOR 80.0;
-		LEVEL 0 FOR 760.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 160.0;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 760.0;
+		}
 	}
 }
 
@@ -353,9 +354,13 @@ TRANSITION_LIST("data[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 320.0;
-		LEVEL 1 FOR 80.0;
-		LEVEL 0 FOR 600.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 320.0;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 600.0;
+		}
 	}
 }
 
@@ -364,9 +369,13 @@ TRANSITION_LIST("data[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 160.0;
-		LEVEL 1 FOR 80.0;
-		LEVEL 0 FOR 760.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 160.0;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 760.0;
+		}
 	}
 }
 
@@ -375,9 +384,13 @@ TRANSITION_LIST("data[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 320.0;
-		LEVEL 1 FOR 80.0;
-		LEVEL 0 FOR 600.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 320.0;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 600.0;
+		}
 	}
 }
 
@@ -386,7 +399,16 @@ TRANSITION_LIST("v[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 200.001;
+			LEVEL 1 FOR 160.0;
+			LEVEL 0 FOR 80.0;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 80.0;
+			LEVEL 1 FOR 399.999;
+		}
 	}
 }
 
@@ -395,7 +417,15 @@ TRANSITION_LIST("v[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 360.001;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 80.0;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 399.999;
+		}
 	}
 }
 
@@ -404,7 +434,16 @@ TRANSITION_LIST("v[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 200.001;
+			LEVEL 1 FOR 160.0;
+			LEVEL 0 FOR 80.0;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 80.0;
+			LEVEL 1 FOR 399.999;
+		}
 	}
 }
 
@@ -413,7 +452,15 @@ TRANSITION_LIST("v[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 360.001;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 80.0;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 399.999;
+		}
 	}
 }
 
@@ -422,11 +469,15 @@ TRANSITION_LIST("w")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 160.0;
-		LEVEL 1 FOR 80.0;
-		LEVEL 0 FOR 80.0;
-		LEVEL 1 FOR 80.0;
-		LEVEL 0 FOR 600.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 160.0;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 80.0;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 600.0;
+		}
 	}
 }
 
