@@ -22,11 +22,6 @@ begin
 	clk <= not(key0);
 	reset <= not(sw0); -- active low
 	
-	f0: d_ff port map(clk,q(0),y(0));
-	f1: d_ff port map(clk,q(1),y(1));
-	f2: d_ff port map(clk,q(2),y(2));
-	f3: d_ff port map(clk,q(3),y(3));
-	
 	process(w,y_Q)
 	begin
 		case y_Q is 
