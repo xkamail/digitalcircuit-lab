@@ -154,5 +154,5 @@ END SYN;
 -- Retrieval info: GEN_FILE: TYPE_NORMAL ram32x4.inc FALSE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL ram32x4.cmp TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL ram32x4.bsf FALSE
--- Retrieval info: GEN_FILE: TYPE_NORMAL ram32x4_inst.vhd TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL ram32x4_inst.vhd FALSE
 -- Retrieval info: LIB_FILE: altera_mf
