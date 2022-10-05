@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "09/30/2022 18:05:43"
+// Generated on "10/05/2022 22:37:36"
                                                                         
 // Verilog Self-Checking Test Bench (with test vectors) for design :    lab7part4
 // 
@@ -116,6 +116,7 @@ end
 initial
 begin
 	ledr_expected = 1'bX;
+	ledr_expected = #999000 1'b0;
 end 
 // generate trigger
 always @(led_expected or led or ledr_expected or ledr)
@@ -151,7 +152,7 @@ initial
 
 begin 
 $timeformat(-12,3," ps",6);
-#1000000;
+#1250000;
 if (nummismatches > 0)
 	$display ("%d mismatched vectors : Simulation failed !",nummismatches);
 else
@@ -191,11 +192,17 @@ begin
 end 
 
 // key0
-always
+initial
 begin
+	repeat(59)
+	begin
+		key0 = 1'b0;
+		key0 = #10000 1'b1;
+		# 10000;
+	end
 	key0 = 1'b0;
-	key0 = #20000 1'b1;
-	#20000;
+	key0 = #10000 1'b1;
+	key0 = #9000 1'b0;
 end 
 
 // key1
@@ -203,24 +210,46 @@ initial
 begin
 	key1 = 1'b0;
 	key1 = #20000 1'b1;
-	key1 = #320000 1'b0;
-	key1 = #50000 1'b1;
+	key1 = #100000 1'b0;
+	key1 = #20000 1'b1;
+	key1 = #180000 1'b0;
+	key1 = #20000 1'b1;
+	key1 = #250000 1'b0;
+	key1 = #20000 1'b1;
+	key1 = #170000 1'b0;
+	key1 = #20000 1'b1;
+	key1 = #40000 1'b0;
+	key1 = #20000 1'b1;
+	key1 = #220000 1'b0;
+	key1 = #20000 1'b1;
+	key1 = #99000 1'b0;
 end 
 // sw[ 2 ]
 initial
 begin
-	sw[2] = 1'b1;
+	sw[2] = 1'b0;
+	sw[2] = #800000 1'b1;
+	sw[2] = #399000 1'b0;
 end 
 // sw[ 1 ]
 initial
 begin
-	sw[1] = 1'b1;
+	sw[1] = 1'b0;
+	sw[1] = #320000 1'b1;
+	sw[1] = #480000 1'b0;
+	sw[1] = #280000 1'b1;
+	sw[1] = #119000 1'b0;
 end 
 // sw[ 0 ]
 initial
 begin
 	sw[0] = 1'b0;
-	sw[0] = #340000 1'b1;
+	sw[0] = #120000 1'b1;
+	sw[0] = #200000 1'b0;
+	sw[0] = #270000 1'b1;
+	sw[0] = #210000 1'b0;
+	sw[0] = #40000 1'b1;
+	sw[0] = #240000 1'b0;
 end 
 
 lab7part4_vlg_sample_tst tb_sample (

@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\xKamaiL\Desktop\digitalcircuit-laboratoy\lab8\lab8part3\simulation\qsim
+vlab8part3
+Z1 IUVTCmz:D_[1iiGSo1O7132
+Z2 V0OnTMG9ZZ6Dk2m?SX;V7^2
+Z3 dC:\Users\xKamaiL\Desktop\digitalcircuit-laboratoy\lab8\lab8part3\simulation\qsim
+Z4 w1664987781
+Z5 8lab8part3.vo
+Z6 Flab8part3.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -work|work|lab8part3.vo|
+Z9 o-work work -O0
+!i10b 1
+Z10 !s100 ?Mdj4oP1lflBT;C`e4CiU0
+!s85 0
+Z11 !s108 1664987781.931000
+Z12 !s107 lab8part3.vo|
+!s101 -O0
+vlab8part3_vlg_check_tst
+!i10b 1
+Z13 !s100 1mb6<13kQW_dhPIl:ZMoB0
+Z14 ILg?]_Wlhh1XJ0OzZo74I50
+Z15 VYRXc@CBhi4J;[oi1Un5aA0
+R3
+Z16 w1664987780
+Z17 8lab8part3.vt
+Z18 Flab8part3.vt
+L0 59
+R7
+r1
+!s85 0
+31
+Z19 !s108 1664987781.985000
+Z20 !s107 lab8part3.vt|
+Z21 !s90 -work|work|lab8part3.vt|
+!s101 -O0
+R9
+vlab8part3_vlg_sample_tst
+!i10b 1
+Z22 !s100 0Z]Ma1f4DMOYmILkY=[L=2
+Z23 I1XZB7`7Xa:^JnC_HFoL>j2
+Z24 VE1Wzd^:NfI7@fIFaC<U3?0
+R3
+R16
+R17
+R18
+L0 29
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9
+vlab8part3_vlg_vec_tst
+!i10b 1
+Z25 !s100 PCb9WoO;oVQe5AQajVCdS0
+Z26 I<n`o5WIi_BzjOhBXdB=Z<0
+Z27 VDOi=6FM1JPWZ7`H__?9WF1
+R3
+R16
+R17
+R18
+Z28 L0 663
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9

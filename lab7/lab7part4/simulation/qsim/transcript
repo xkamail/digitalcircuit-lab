@@ -20,6 +20,9 @@
 # Loading work.lab7part4_vlg_sample_tst
 # Loading work.lab7part4_vlg_check_tst
 # Loading altera_ver.PRIM_GDFF_LOW
-# Simulation passed !
-# ** Note: $finish    : lab7part4.vt(159)
-#    Time: 1 us  Iteration: 0  Instance: /lab7part4_vlg_vec_tst/tb_out
+# ERROR! Vector Mismatch for output port ledr :: @time = 1000000.000 ps
+#      Expected value = 0
+#      Real value = 1
+#           1 mismatched vectors : Simulation failed !
+# ** Note: $finish    : lab7part4.vt(160)
+#    Time: 1250 ns  Iteration: 0  Instance: /lab7part4_vlg_vec_tst/tb_out
