@@ -10,12 +10,6 @@ end lab7part2;
 
 
 architecture bhv of lab7part2 is
-	component d_ff is
-		port (
-			Clk, D  : in std_logic;
-			Q : out std_logic
-		);
-	end component;
 	signal reset, clk, w, z  : std_logic;
 	signal q,y : std_logic_vector(3 downto 0);
 	type State_type is (A,B,C,D,E,F,G,H,I);
