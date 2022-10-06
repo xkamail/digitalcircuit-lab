@@ -1,28 +1,52 @@
-# do lab7part4.do 
+# do lab7part4.do
 # ** Warning: (vlib-34) Library already exists at "work".
-# 
-# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module lab7part4
-# 
-# Top level modules:
-# 	lab7part4
-# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module lab7part4_vlg_sample_tst
-# -- Compiling module lab7part4_vlg_check_tst
-# -- Compiling module lab7part4_vlg_vec_tst
-# 
-# Top level modules:
-# 	lab7part4_vlg_vec_tst
-# vsim -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate -c -t 1ps -novopt work.lab7part4_vlg_vec_tst 
-# Loading work.lab7part4_vlg_vec_tst
-# Loading work.lab7part4
-# Loading altera_ver.dffeas
-# Loading work.lab7part4_vlg_sample_tst
-# Loading work.lab7part4_vlg_check_tst
-# Loading altera_ver.PRIM_GDFF_LOW
-# ERROR! Vector Mismatch for output port ledr :: @time = 1000000.000 ps
-#      Expected value = 0
-#      Real value = 1
-#           1 mismatched vectors : Simulation failed !
-# ** Note: $finish    : lab7part4.vt(160)
-#    Time: 1250 ns  Iteration: 0  Instance: /lab7part4_vlg_vec_tst/tb_out
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:05:17 on Oct 06,2022
+# vcom -work work lab7part4.vho 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package dffeas_pack
+# -- Loading package altera_primitives_components
+# -- Loading package altera_lnsim_components
+# -- Loading package cyclonev_atom_pack
+# -- Loading package cyclonev_components
+# -- Compiling entity lab7part4
+# -- Compiling architecture structure of lab7part4
+# End time: 11:05:18 on Oct 06,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:05:18 on Oct 06,2022
+# vcom -work work Sim_AtoF.vwf.vht 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity lab7part4_vhd_vec_tst
+# -- Compiling architecture lab7part4_arch of lab7part4_vhd_vec_tst
+# End time: 11:05:18 on Oct 06,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -novopt -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.lab7part4_vhd_vec_tst 
+# Start time: 11:05:18 on Oct 06,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.lab7part4_vhd_vec_tst(lab7part4_arch)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading altera.dffeas_pack
+# Loading altera.altera_primitives_components
+# Loading altera_lnsim.altera_lnsim_components
+# Loading cyclonev.cyclonev_atom_pack(body)
+# Loading cyclonev.cyclonev_components
+# Loading work.lab7part4(structure)
+# Loading ieee.std_logic_arith(body)
+# Loading cyclonev.cyclonev_io_obuf(arch)
+# Loading cyclonev.cyclonev_io_ibuf(arch)
+# Loading cyclonev.cyclonev_clkena(behavior)
+# Loading altera.dffeas(vital_dffeas)
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)
+# after#34
+# End time: 11:05:18 on Oct 06,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

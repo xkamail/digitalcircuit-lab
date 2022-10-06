@@ -36,7 +36,7 @@ begin
 	data <= sw(3 downto 0);
 	clk <= not(key0);
 	
-	u0: ram32x4 port map (addr, clk, data, w, v);
+	u0: ram32x4 port map (addr, clk, data, w, v);.
 	
 	u1: sevenseg port map(v, hex0);
 	u2: sevenseg port map("0"&"0"&"0"&addr(4), hex5);

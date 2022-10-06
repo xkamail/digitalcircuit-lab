@@ -53,7 +53,7 @@ architecture bhv of lab8part4 is
 	signal clk_sec, trigg : std_logic;
 begin
 	
-	reset <= not(key0);
+	reset <= key0;
 	w <= not(key1);
 	
 	

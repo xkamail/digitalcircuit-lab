@@ -8,6 +8,7 @@ entity lab7part4 is
 		key1, key0 : in std_logic; -- KEY1 = load
 		clk50 : in std_logic; -- 50Mhz
 		led : out std_logic_vector(2 downto 0); -- state
+		d_clk : out std_logic;
 		ledr : out std_logic -- Z
 	);
 end lab7part4;
@@ -22,7 +23,7 @@ architecture bhv of lab7part4 is
 	end component;
 	component half_sec is
 		port (
-			clock50 : in std_logic;
+			reset, clock50 : in std_logic;
 			trig : out std_logic
 		);
 	end component;
@@ -44,26 +45,31 @@ architecture bhv of lab7part4 is
 	attribute syn_encoding : string;
 	attribute syn_encoding of State_type : type is "000 001 010 011 100 101";
 	signal y_Q, y_D : State_type; -- y_Q is present, y_D is next
-	signal clk, done, load, count_en, shift_n, w,z, reg_out : std_logic;
+	signal clk, done, load, count_en, shift_n, w,z, reg_out,reset : std_logic;
 	signal data : std_logic_vector(3 downto 0);
 	signal max_i,i : std_logic_vector(2 downto 0);
 begin
 	load <= not(key1);
-	-- clk <= key0; act like manual clock
+	reset <= not(key0);
+	-- clk <= key0; -- act like manual clock
 	done <= '1' when (unsigned(max_i) = unsigned(i)) else '0';
 	u0: letter port map(sw,data,max_i);
-	u1: half_sec port map(clk50, clk); -- clock with 0.5 sec
+	u1: half_sec port map(reset, clk50, clk); -- clock with 0.5 sec
+	d_clk <= clk;
 	u3: counter port map(clk, load, count_en, max_i, i);
 	u2: shift_reg port map(data, clk, shift_n, load, reg_out);
-
+	
 	w <= reg_out; -- current bit
-	process(w,y_Q,load,done)
+	process(w,y_Q)
 	begin
 		case y_Q is 
 			when A => -- waiting
 				if load = '1' then -- check press key
 					y_D <= F;
+				else
+					y_D <= A;
 				end if;
+				
 				
 			when B => y_D <= F; -- state display dot 0.5s
 			
@@ -86,10 +92,14 @@ begin
 		
 	end process;
 	
-	process(clk)
+	process(clk,reset)
 	begin
-		if rising_edge(clk) then
-				y_Q <= y_D;
+		if reset = '1' then
+			y_Q <= A;
+		else
+			if rising_edge(clk) then
+				y_Q <= y_D; 
+			end if;
 		end if;
 	end process;
 	

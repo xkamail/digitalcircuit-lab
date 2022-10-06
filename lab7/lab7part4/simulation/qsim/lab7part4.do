@@ -1,10 +1,19 @@
-onerror {quit -f}
+onerror {exit -code 1}
 vlib work
-vlog -work work lab7part4.vo
-vlog -work work lab7part4.vt
-vsim -novopt -c -t 1ps -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate work.lab7part4_vlg_vec_tst
+vcom -work work lab7part4.vho
+vcom -work work Sim_AtoF.vwf.vht
+vsim -novopt -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.lab7part4_vhd_vec_tst
 vcd file -direction lab7part4.msim.vcd
-vcd add -internal lab7part4_vlg_vec_tst/*
-vcd add -internal lab7part4_vlg_vec_tst/i1/*
-add wave /*
+vcd add -internal lab7part4_vhd_vec_tst/*
+vcd add -internal lab7part4_vhd_vec_tst/i1/*
+proc simTimestamp {} {
+    echo "Simulation time: $::now ps"
+    if { [string equal running [runStatus]] } {
+        after 2500 simTimestamp
+    }
+}
+after 2500 simTimestamp
 run -all
+quit -f
+
+

@@ -14,9 +14,9 @@
 
 -- VENDOR "Altera"
 -- PROGRAM "Quartus Prime"
--- VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
+-- VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition"
 
--- DATE "10/05/2022 23:56:21"
+-- DATE "10/06/2022 09:28:00"
 
 -- 
 -- Device: Altera 5CEBA4F23C7 Package FBGA484
@@ -39,7 +39,7 @@ ENTITY 	lab8part1 IS
 	clk : IN std_logic;
 	data : IN std_logic_vector(3 DOWNTO 0);
 	w : IN std_logic;
-	v : BUFFER std_logic_vector(3 DOWNTO 0)
+	v : OUT std_logic_vector(3 DOWNTO 0)
 	);
 END lab8part1;
 

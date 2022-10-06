@@ -14,9 +14,9 @@
 
 -- VENDOR "Altera"
 -- PROGRAM "Quartus Prime"
--- VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
+-- VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition"
 
--- DATE "10/06/2022 03:45:12"
+-- DATE "10/06/2022 10:08:06"
 
 -- 
 -- Device: Altera 5CEBA4F23C7 Package FBGA484
