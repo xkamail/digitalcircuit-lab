@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "10/10/2022 02:11:26"
+-- Generated on "10/10/2022 18:48:06"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          lab9part1
 -- 
@@ -36,25 +36,29 @@ ARCHITECTURE lab9part1_arch OF lab9part1_vhd_vec_tst IS
 SIGNAL busWires : STD_LOGIC_VECTOR(8 DOWNTO 0);
 SIGNAL clk : STD_LOGIC;
 SIGNAL data_in : STD_LOGIC_VECTOR(8 DOWNTO 0);
-SIGNAL debug_I : STD_LOGIC_VECTOR(2 DOWNTO 0);
-SIGNAL debug_R0to7out : STD_LOGIC_VECTOR(0 TO 7);
-SIGNAL debug_regn : STD_LOGIC_VECTOR(8 DOWNTO 0);
-SIGNAL debug_state : STD_LOGIC_VECTOR(1 DOWNTO 0);
 SIGNAL done : STD_LOGIC;
+SIGNAL reg_0 : STD_LOGIC_VECTOR(8 DOWNTO 0);
+SIGNAL reg_1 : STD_LOGIC_VECTOR(8 DOWNTO 0);
+SIGNAL reg_A : STD_LOGIC_VECTOR(8 DOWNTO 0);
+SIGNAL reg_G : STD_LOGIC_VECTOR(8 DOWNTO 0);
+SIGNAL reg_IR : STD_LOGIC_VECTOR(8 DOWNTO 0);
 SIGNAL reset_n : STD_LOGIC;
 SIGNAL run : STD_LOGIC;
+SIGNAL Tstep_Q : STD_LOGIC_VECTOR(3 DOWNTO 0);
 COMPONENT lab9part1
 	PORT (
 	busWires : BUFFER STD_LOGIC_VECTOR(8 DOWNTO 0);
 	clk : IN STD_LOGIC;
 	data_in : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
-	debug_I : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
-	debug_R0to7out : OUT STD_LOGIC_VECTOR(0 TO 7);
-	debug_regn : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
-	debug_state : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
 	done : BUFFER STD_LOGIC;
+	reg_0 : BUFFER STD_LOGIC_VECTOR(8 DOWNTO 0);
+	reg_1 : BUFFER STD_LOGIC_VECTOR(8 DOWNTO 0);
+	reg_A : BUFFER STD_LOGIC_VECTOR(8 DOWNTO 0);
+	reg_G : BUFFER STD_LOGIC_VECTOR(8 DOWNTO 0);
+	reg_IR : BUFFER STD_LOGIC_VECTOR(8 DOWNTO 0);
 	reset_n : IN STD_LOGIC;
-	run : IN STD_LOGIC
+	run : IN STD_LOGIC;
+	Tstep_Q : BUFFER STD_LOGIC_VECTOR(3 DOWNTO 0)
 	);
 END COMPONENT;
 BEGIN
@@ -64,13 +68,15 @@ BEGIN
 	busWires => busWires,
 	clk => clk,
 	data_in => data_in,
-	debug_I => debug_I,
-	debug_R0to7out => debug_R0to7out,
-	debug_regn => debug_regn,
-	debug_state => debug_state,
 	done => done,
+	reg_0 => reg_0,
+	reg_1 => reg_1,
+	reg_A => reg_A,
+	reg_G => reg_G,
+	reg_IR => reg_IR,
 	reset_n => reset_n,
-	run => run
+	run => run,
+	Tstep_Q => Tstep_Q
 	);
 
 -- reset_n
@@ -90,13 +96,17 @@ LOOP
 	WAIT FOR 10000 ps;
 	clk <= '1';
 	WAIT FOR 10000 ps;
-	IF (NOW >= 1000000 ps) THEN WAIT; END IF;
+	IF (NOW >= 300000 ps) THEN WAIT; END IF;
 END LOOP;
 END PROCESS t_prcs_clk;
 
 -- run
 t_prcs_run: PROCESS
 BEGIN
+	run <= '0';
+	WAIT FOR 20000 ps;
+	run <= '1';
+	WAIT FOR 20000 ps;
 	run <= '0';
 	WAIT FOR 20000 ps;
 	run <= '1';
@@ -114,6 +124,8 @@ END PROCESS t_prcs_data_in_8;
 t_prcs_data_in_7: PROCESS
 BEGIN
 	data_in(7) <= '0';
+	WAIT FOR 80000 ps;
+	data_in(7) <= '1';
 WAIT;
 END PROCESS t_prcs_data_in_7;
 -- data_in[6]
@@ -142,6 +154,10 @@ END PROCESS t_prcs_data_in_4;
 t_prcs_data_in_3: PROCESS
 BEGIN
 	data_in(3) <= '0';
+	WAIT FOR 60000 ps;
+	data_in(3) <= '1';
+	WAIT FOR 20000 ps;
+	data_in(3) <= '0';
 WAIT;
 END PROCESS t_prcs_data_in_3;
 -- data_in[2]
@@ -168,6 +184,8 @@ BEGIN
 	data_in(0) <= '1';
 	WAIT FOR 20000 ps;
 	data_in(0) <= '0';
+	WAIT FOR 20000 ps;
+	data_in(0) <= '1';
 WAIT;
 END PROCESS t_prcs_data_in_0;
 END lab9part1_arch;

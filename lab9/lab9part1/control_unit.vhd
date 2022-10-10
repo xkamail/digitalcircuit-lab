@@ -12,8 +12,7 @@ entity control_unit is
 		IRin, Dout : out std_logic; -- tell load instruction set to register
 		R0toR7out : out std_logic_vector(0 to 7);
 		done : buffer std_logic;
-		debug_state: out std_logic_vector(1 downto 0)
-		
+		Tstep_Q : out std_logic_vector(3 downto 0)
 	);
 end control_unit;
 
@@ -67,33 +66,38 @@ begin
 	begin
 		case y_Q is
 			when T0 => 
-				debug_state <= "00";
+				Tstep_Q <= "0000";
+				R0toR7out <= "00000000";
 				Dout <= '0';
 				IRin <= '1';
 				Rin <= Xreg or Yreg;
 				done <= '0';
 			when T1 =>
-				debug_state <= "01";
 				IRin <= '0';
+				Tstep_Q <= "0011";
 				case I is
 					when "000" => -- copy Ry -> Rx
 						R0toR7out <= Yreg;
 						Rin <= Xreg;
 						done <= '1';
+						Dout <= '0';
 					when "001" => -- copy D -> Rx
+						R0toR7out <= "00000000";
 						Dout <= '1';
 						Rin <= Xreg;
 						done <= '1';
 					when others =>
 				end case;
 			when T2 =>
-				debug_state <= "10";
+				Tstep_Q <= "0011";
+				R0toR7out <= "00000000";
 				IRin <= '0';
 				Dout <= '0';
 				Rin <= "00000000";
 				done <= '0';
 			when T3 =>
-				debug_state <= "11";
+				Tstep_Q <= "0011";
+				R0toR7out <= "00000000";
 				IRin <= '0';
 				Dout <= '0';
 				Rin <= "00000000";

@@ -55,7 +55,6 @@ set_global_assignment -name VHDL_FILE lab9part1.vhd
 set_global_assignment -name VHDL_FILE add_sub.vhd
 set_global_assignment -name VHDL_FILE mux10to1.vhd
 set_global_assignment -name VHDL_FILE control_unit.vhd
-set_global_assignment -name VHDL_FILE reg.vhd
 set_global_assignment -name VHDL_FILE dec3to8.vhd
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top

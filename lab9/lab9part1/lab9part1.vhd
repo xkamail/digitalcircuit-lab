@@ -6,10 +6,8 @@ entity lab9part1 is
 		data_in : in std_logic_vector(8 downto 0);
 		reset_n, clk, run : in std_logic;
 		done : buffer std_logic;
-		debug_state : out std_logic_vector(1 downto 0);
-		debug_I : out std_logic_vector(2 downto 0);
-		debug_R0to7out : out std_logic_vector(0 to 7);
-		debug_regn: out std_logic_vector(8 downto 0);
+		reg_A,reg_G,reg_IR,reg_0,reg_1 : out std_logic_vector(8 downto 0);
+		Tstep_Q : out std_logic_vector(3 downto 0);
 		busWires: buffer std_logic_vector(8 downto 0)
 	);
 end lab9part1;
@@ -49,7 +47,7 @@ architecture bhv of lab9part1 is
 			IRin, Dout : out std_logic; -- tell load instruction set to register
 			R0toR7out : out std_logic_vector(0 to 7);
 			done : buffer std_logic;
-			debug_state : out std_logic_vector(1 downto 0)
+			Tstep_Q : out std_logic_vector(3 downto 0)
 		);
 	end component;
 	-- signal for enable of register
@@ -73,16 +71,22 @@ begin
 	reg5: regn port map (busWires, Rin(5), clk, r5);
 	reg6: regn port map (busWires, Rin(6), clk, r6);
 	reg7: regn port map (busWires, Rin(7), clk, r7);
-	debug_R0to7out <= R0toR7out;
-	debug_regn <= r0;
+	
+	-- reg_A: regn port map();
+	-- reg_G: regn port map();
+	
+	-- debug
+	reg_IR <= IR;
+	reg_0 <= r0;
+	reg_1 <= r1;
+	
 	I <= IR(1 to 3);
-	debug_I <= I;
 	
 	decX: dec3to8 port map(IR(4 to 6), '1', Xreg);
 	dexY: dec3to8 port map(IR(7 to 9), '1', Yreg);
 	mux0: mux8bit port map(busWires, R0toR7out, Dout,'0',data_in, r0,r1,r2,r3,r4,r5,r6,r7);
 	
-	fsm: control_unit port map(reset_n, clk, run, I, Xreg,Yreg, Rin, IRin, Dout, R0toR7out, done,debug_state);
+	fsm: control_unit port map(reset_n, clk, run, I, Xreg,Yreg, Rin, IRin, Dout, R0toR7out, done, Tstep_Q);
 	
 
 end bhv;
