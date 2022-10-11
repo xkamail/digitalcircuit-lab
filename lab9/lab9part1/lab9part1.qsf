@@ -53,7 +53,6 @@ set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
 set_global_assignment -name VHDL_FILE lab9part1.vhd
 set_global_assignment -name VHDL_FILE add_sub.vhd
-set_global_assignment -name VHDL_FILE mux10to1.vhd
 set_global_assignment -name VHDL_FILE control_unit.vhd
 set_global_assignment -name VHDL_FILE dec3to8.vhd
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top

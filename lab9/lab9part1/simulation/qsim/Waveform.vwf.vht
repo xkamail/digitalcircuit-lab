@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "10/10/2022 18:48:06"
+-- Generated on "10/11/2022 22:13:50"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          lab9part1
 -- 
@@ -51,14 +51,14 @@ COMPONENT lab9part1
 	clk : IN STD_LOGIC;
 	data_in : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
 	done : BUFFER STD_LOGIC;
-	reg_0 : BUFFER STD_LOGIC_VECTOR(8 DOWNTO 0);
-	reg_1 : BUFFER STD_LOGIC_VECTOR(8 DOWNTO 0);
-	reg_A : BUFFER STD_LOGIC_VECTOR(8 DOWNTO 0);
-	reg_G : BUFFER STD_LOGIC_VECTOR(8 DOWNTO 0);
-	reg_IR : BUFFER STD_LOGIC_VECTOR(8 DOWNTO 0);
+	reg_0 : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
+	reg_1 : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
+	reg_A : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
+	reg_G : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
+	reg_IR : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
 	reset_n : IN STD_LOGIC;
 	run : IN STD_LOGIC;
-	Tstep_Q : BUFFER STD_LOGIC_VECTOR(3 DOWNTO 0)
+	Tstep_Q : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
 	);
 END COMPONENT;
 BEGIN
@@ -112,6 +112,14 @@ BEGIN
 	run <= '1';
 	WAIT FOR 20000 ps;
 	run <= '0';
+	WAIT FOR 20000 ps;
+	run <= '1';
+	WAIT FOR 20000 ps;
+	run <= '0';
+	WAIT FOR 60000 ps;
+	run <= '1';
+	WAIT FOR 20000 ps;
+	run <= '0';
 WAIT;
 END PROCESS t_prcs_run;
 -- data_in[8]
@@ -126,6 +134,8 @@ BEGIN
 	data_in(7) <= '0';
 	WAIT FOR 80000 ps;
 	data_in(7) <= '1';
+	WAIT FOR 120000 ps;
+	data_in(7) <= '0';
 WAIT;
 END PROCESS t_prcs_data_in_7;
 -- data_in[6]
@@ -133,6 +143,10 @@ t_prcs_data_in_6: PROCESS
 BEGIN
 	data_in(6) <= '0';
 	WAIT FOR 20000 ps;
+	data_in(6) <= '1';
+	WAIT FOR 20000 ps;
+	data_in(6) <= '0';
+	WAIT FOR 140000 ps;
 	data_in(6) <= '1';
 	WAIT FOR 20000 ps;
 	data_in(6) <= '0';
@@ -186,6 +200,8 @@ BEGIN
 	data_in(0) <= '0';
 	WAIT FOR 20000 ps;
 	data_in(0) <= '1';
+	WAIT FOR 100000 ps;
+	data_in(0) <= '0';
 WAIT;
 END PROCESS t_prcs_data_in_0;
 END lab9part1_arch;

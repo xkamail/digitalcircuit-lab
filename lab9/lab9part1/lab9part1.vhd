@@ -17,9 +17,10 @@ architecture bhv of lab9part1 is
 	component mux8bit is
 		port (
 			busWires : out std_logic_vector(8 downto 0);
+			data_in : in std_logic_vector(8 downto 0);
 			R0to7out : in std_logic_vector(0 to 7);
 			Dout, Gout : in std_logic;
-			Din, r0,r1,r2,r3,r4,r5,r6,r7 : in std_logic_vector(8 downto 0)
+			Din, r0,r1,r2,r3,r4,r5,r6,r7,G : in std_logic_vector(8 downto 0)
 		);
 	end component;
 	component dec3to8 is
@@ -47,17 +48,27 @@ architecture bhv of lab9part1 is
 			IRin, Dout : out std_logic; -- tell load instruction set to register
 			R0toR7out : out std_logic_vector(0 to 7);
 			done : buffer std_logic;
-			Tstep_Q : out std_logic_vector(3 downto 0)
+			Tstep_Q : out std_logic_vector(3 downto 0);
+			Gout,Gin,Ain, AddSub : out std_logic
+		);
+	end component;
+	component add_sub is 
+		generic ( n : natural := 9);
+		port (
+			A, B : in std_logic_vector(n-1 downto 0);
+			add_sub, reset : in std_logic;
+			v : out std_logic_vector(n-1 downto 0)
 		);
 	end component;
 	-- signal for enable of register
-	signal r0,r1,r2,r3,r4,r5,r6,r7 : std_logic_vector(8 downto 0);
-	signal IRin, Dout : std_logic;
+	signal r0,r1,r2,r3,r4,r5,r6,r7,A,G : std_logic_vector(8 downto 0);
+	signal IRin, Dout, Gout, Ain, Gin : std_logic;
 	signal IR : std_logic_vector(1 to 9);
 	signal I : std_logic_vector(1 to 3);
 	signal Rin, Xreg, Yreg, R0toR7out : std_logic_vector(0 to 7);
 	signal instruction_set : std_logic_vector(1 to 3);
-	
+	signal addsub : std_logic;
+	signal sum_result : std_logic_vector(8 downto 0);
 begin
 	
 	ir0: regn port map(data_in, IRin, clk, IR);
@@ -72,21 +83,24 @@ begin
 	reg6: regn port map (busWires, Rin(6), clk, r6);
 	reg7: regn port map (busWires, Rin(7), clk, r7);
 	
-	-- reg_A: regn port map();
-	-- reg_G: regn port map();
+	regA: regn port map(busWires, Ain, clk, A);
+	addsub0: add_sub port map (A, BusWires, addsub,reset_n, sum_result);
+	regG: regn port map(sum_result, Gin, clk, G);
 	
 	-- debug
 	reg_IR <= IR;
 	reg_0 <= r0;
 	reg_1 <= r1;
+	reg_A <= A;
+	reg_G <= G;
 	
 	I <= IR(1 to 3);
 	
 	decX: dec3to8 port map(IR(4 to 6), '1', Xreg);
 	dexY: dec3to8 port map(IR(7 to 9), '1', Yreg);
-	mux0: mux8bit port map(busWires, R0toR7out, Dout,'0',data_in, r0,r1,r2,r3,r4,r5,r6,r7);
+	mux0: mux8bit port map(busWires, data_in, R0toR7out, Dout, Gout,data_in, r0,r1,r2,r3,r4,r5,r6,r7,G);
 	
-	fsm: control_unit port map(reset_n, clk, run, I, Xreg,Yreg, Rin, IRin, Dout, R0toR7out, done, Tstep_Q);
+	fsm: control_unit port map(reset_n, clk, run, I, Xreg,Yreg, Rin, IRin, Dout, R0toR7out, done, Tstep_Q, Gout,Gin,Ain, addsub);
 	
 
 end bhv;
