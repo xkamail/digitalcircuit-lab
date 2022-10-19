@@ -18,15 +18,6 @@ architecture bhv of lab8part3 is
 			hex : out std_logic_vector(0 to 6)
 		);
 	end component;
-	component ram32x4 is
-		PORT (
-			address		: IN STD_LOGIC_VECTOR (4 DOWNTO 0);
-			clock		: IN STD_LOGIC  := '1';
-			data		: IN STD_LOGIC_VECTOR (3 DOWNTO 0);
-			wren		: IN STD_LOGIC ;
-			q		: OUT STD_LOGIC_VECTOR (3 DOWNTO 0)
-		);
-	end component;
 	type mem is array(0 to 31) of std_logic_vector(3 downto 0);
 	signal memory_array: mem;
 	signal addr : integer range 0 to 31 := 0;
