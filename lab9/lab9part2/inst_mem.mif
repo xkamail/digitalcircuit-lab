@@ -1,18 +1,30 @@
-DEPTH = 32;
-WIDTH = 9;
-ADDRESS_RADIX = HEX;
-DATA_RADIX = BIN;
-CONTENT
-BEGIN
-00 : 001000000; % mvi r0,#5 %
-01 : 000000101;
-02 : 000001000; % mv r1,r0 %
-03 : 010000001; % add r0, r1 %
-04 : 011000000; % sub r0, r0 %
-05 : 000000000;
-06 : 000000000;
+-- Copyright (C) 2018  Intel Corporation. All rights reserved.
+-- Your use of Intel Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files from any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Intel Program License 
+-- Subscription Agreement, the Intel Quartus Prime License Agreement,
+-- the Intel FPGA IP License Agreement, or other applicable license
+-- agreement, including, without limitation, that your use is for
+-- the sole purpose of programming logic devices manufactured by
+-- Intel and sold by Intel or its authorized distributors.  Please
+-- refer to the applicable agreement for further details.
 
-1E : 000000000;
-1F : 000000000;
+-- Quartus Prime generated Memory Initialization File (.mif)
 
+WIDTH=9;
+DEPTH=32;
+
+ADDRESS_RADIX=HEX;
+DATA_RADIX=BIN;
+
+CONTENT BEGIN
+	00  :   001000000;
+	01  :   000000101;
+	02  :   000001000;
+	03  :   010000001;
+	04  :   011000000;
+	[05..1F]  :   000000000;
 END;

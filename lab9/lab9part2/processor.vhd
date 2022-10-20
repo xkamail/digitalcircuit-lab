@@ -33,9 +33,9 @@ architecture bhv of processor is
 	component regn is 
 		generic (n : integer := 9);
 		port (
-			r : in std_logic_vector(n-1 downto 0);
-			Rin, clk : std_logic;
-			Q : buffer std_logic_vector(n-1 downto 0)
+		r : in std_logic_vector(n-1 downto 0);
+		reset_n, Rin, clk : in std_logic;
+		Q : buffer std_logic_vector(n-1 downto 0)
 		);
 	end component;
 	component control_unit is
@@ -71,21 +71,21 @@ architecture bhv of processor is
 	signal sum_result : std_logic_vector(8 downto 0);
 begin
 	
-	ir0: regn port map(data_in, IRin, clk, IR);
+	ir0: regn port map(data_in,reset_n, IRin, clk, IR);
 
 					
-	reg0: regn port map (busWires, Rin(0), clk, r0);
-	reg1: regn port map (busWires, Rin(1), clk, r1);
-	reg2: regn port map (busWires, Rin(2), clk, r2);
-	reg3: regn port map (busWires, Rin(3), clk, r3);
-	reg4: regn port map (busWires, Rin(4), clk, r4);
-	reg5: regn port map (busWires, Rin(5), clk, r5);
-	reg6: regn port map (busWires, Rin(6), clk, r6);
-	reg7: regn port map (busWires, Rin(7), clk, r7);
+	reg0: regn port map (busWires,reset_n, Rin(0), clk, r0);
+	reg1: regn port map (busWires,reset_n, Rin(1), clk, r1);
+	reg2: regn port map (busWires,reset_n, Rin(2), clk, r2);
+	reg3: regn port map (busWires,reset_n, Rin(3), clk, r3);
+	reg4: regn port map (busWires,reset_n, Rin(4), clk, r4);
+	reg5: regn port map (busWires,reset_n, Rin(5), clk, r5);
+	reg6: regn port map (busWires,reset_n, Rin(6), clk, r6);
+	reg7: regn port map (busWires,reset_n, Rin(7), clk, r7);
 	
-	regA: regn port map(busWires, Ain, clk, A);
+	regA: regn port map(busWires,reset_n, Ain, clk, A);
 	addsub0: add_sub port map (A, BusWires, addsub,reset_n, sum_result);
-	regG: regn port map(sum_result, Gin, clk, G);
+	regG: regn port map(sum_result,reset_n, Gin, clk, G);
 	
 	-- debug
 	reg_IR <= IR;
