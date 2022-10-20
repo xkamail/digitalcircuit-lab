@@ -7,22 +7,30 @@ entity lab9part2 is
 	port (
 		sw0, sw9 : in std_logic;
 		key0, key1 : in std_logic;
-		data_in : out std_logic_vector(8 downto 0);
+		hex0,hex1 : out std_logic_vector(0 to 6);
 		ledr: buffer std_logic_vector(9 downto 0)
+		-- data_in : out std_logic_vector(8 downto 0)
+	--	r0,r1: out std_logic_vector(8 downto 0)
+		
 	);
 end lab9part2;
 
 
 architecture bhv of lab9part2 is
-	
-	component processor is
+component processor is
 		port (
 			data_in : in std_logic_vector(8 downto 0);
 			reset_n, clk, run : in std_logic;
 			done : buffer std_logic;
 			busWires: buffer std_logic_vector(8 downto 0);
-			reg_A, reg_G, reg_IR, reg_0, reg_1 : out std_logic_vector(8 downto 0);
+			reg_A,reg_G,reg_IR,reg_0,reg_1 : out std_logic_vector(8 downto 0);
 			Tstep_Q : out std_logic_vector(3 downto 0)
+		);
+	end component;
+	component sevenseg is
+		port (
+			num : in std_logic_vector(3 downto 0);
+			hex : out std_logic_vector(0 to 6)
 		);
 	end component;
 	
@@ -47,12 +55,14 @@ architecture bhv of lab9part2 is
 	signal MClock, PClock, Resetn, Run : std_logic;
 	signal DIN : std_logic_vector(8 downto 0);
 	signal addr : std_logic_vector(4 downto 0);
+	signal reg0,reg1: std_logic_vector(8 downto 0);
+
 begin
 	
 	Run <= sw9;
 	Resetn <= sw0;
-	MClock <= key0;
-	PClock <= key1;
+	MClock <= not(key1);
+	PClock <= not(key0);
 	
 	
 	c0: modulo_k 
@@ -61,17 +71,24 @@ begin
 				
 				
 	rom0: inst_mem port map (addr, MClock, DIN);		
-				
-				data_in <= DIN;
+	-- data_in <= DIN;
 	p1: processor port 
 		map(
 			DIN,
 			Resetn,
 			PClock,
-			Run,
+			sw9,
 			ledr(9),
-			ledr(8 downto 0)
+			ledr(8 downto 0),
+			open,
+			open,
+			open,
+			reg0,
+			reg1
 		);
-		
-		
+
+		-- r0 <= reg0;
+		-- r1 <= reg1;
+		s0: sevenseg port map(reg0(3 downto 0),hex0);
+		s1: sevenseg port map(reg1(3 downto 0),hex1);
 end bhv;

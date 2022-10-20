@@ -7,9 +7,9 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab9/lab9part2/simulation/qsim
+Z0 dC:/Users/xKamaiL/Desktop/digitalcircuit-lab/lab9/lab9part2/simulation/qsim
 Elab9part2
-Z1 w1665506673
+Z1 w1666241100
 Z2 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 OGn598C_0mX<WSGfCb?AK2
 Z3 DPx8 cyclonev 19 cyclonev_components 0 22 CcdNAEi>PYH4@n><]NQ]V2
 Z4 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 QZo1Vh6en2ZO3=hNmAfQ>0
@@ -24,13 +24,13 @@ Z11 8lab9part2.vho
 Z12 Flab9part2.vho
 l0
 L38
-VU0LTPe7=XF]2VU_g;WG]]3
-!s100 afzN:mRN[@1A8fnDH>`AI1
+VRogL4e>GHB5HzBjh?8Hmo3
+!s100 PXoL5c[9eM_VHg>iLOWLn0
 Z13 OV;C;10.5b;63
 32
-Z14 !s110 1665506674
+Z14 !s110 1666241101
 !i10b 1
-Z15 !s108 1665506674.000000
+Z15 !s108 1666241101.000000
 Z16 !s90 -work|work|lab9part2.vho|
 Z17 !s107 lab9part2.vho|
 !i113 1
@@ -46,11 +46,11 @@ R7
 R8
 R9
 R10
-DEx4 work 9 lab9part2 0 22 U0LTPe7=XF]2VU_g;WG]]3
-l324
-L75
-VRdodIWc[]LcLRbe@2hY<71
-!s100 daJ>3cda^7d2HIgH5k7A@0
+DEx4 work 9 lab9part2 0 22 RogL4e>GHB5HzBjh?8Hmo3
+l346
+L81
+VE:CjikfhYn`oL`NkR@AI?1
+!s100 aW@?YRD>8bdoz2aE?iX]?2
 R13
 32
 R14
@@ -62,7 +62,7 @@ R17
 R18
 R19
 Elab9part2_vhd_vec_tst
-Z20 w1665506672
+Z20 w1666241097
 R8
 R9
 R0
@@ -86,10 +86,10 @@ Alab9part2_arch
 R8
 R9
 Z25 DEx4 work 21 lab9part2_vhd_vec_tst 0 22 ;5L:6ljRO3aV8o@gDdzCQ3
-l52
+l54
 L33
-V0ofGAhh3M?=d1GR0alVj]0
-!s100 G09f5kMgg08W9QSg36>lk3
+V2fQ^3I=nH5NQhdZNF[TBT3
+!s100 1oF_Af`9IIiIB^eGONN4j1
 R13
 32
 R14

@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "10/11/2022 23:44:32"
+-- Generated on "10/20/2022 11:44:57"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          lab9part2
 -- 
@@ -33,7 +33,8 @@ END lab9part2_vhd_vec_tst;
 ARCHITECTURE lab9part2_arch OF lab9part2_vhd_vec_tst IS
 -- constants                                                 
 -- signals                                                   
-SIGNAL data_in : STD_LOGIC_VECTOR(8 DOWNTO 0);
+SIGNAL hex0 : STD_LOGIC_VECTOR(0 TO 6);
+SIGNAL hex1 : STD_LOGIC_VECTOR(0 TO 6);
 SIGNAL key0 : STD_LOGIC;
 SIGNAL key1 : STD_LOGIC;
 SIGNAL ledr : STD_LOGIC_VECTOR(9 DOWNTO 0);
@@ -41,7 +42,8 @@ SIGNAL sw0 : STD_LOGIC;
 SIGNAL sw9 : STD_LOGIC;
 COMPONENT lab9part2
 	PORT (
-	data_in : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
+	hex0 : OUT STD_LOGIC_VECTOR(0 TO 6);
+	hex1 : OUT STD_LOGIC_VECTOR(0 TO 6);
 	key0 : IN STD_LOGIC;
 	key1 : IN STD_LOGIC;
 	ledr : BUFFER STD_LOGIC_VECTOR(9 DOWNTO 0);
@@ -53,13 +55,23 @@ BEGIN
 	i1 : lab9part2
 	PORT MAP (
 -- list connections between master ports and signals
-	data_in => data_in,
+	hex0 => hex0,
+	hex1 => hex1,
 	key0 => key0,
 	key1 => key1,
 	ledr => ledr,
 	sw0 => sw0,
 	sw9 => sw9
 	);
+
+-- sw0
+t_prcs_sw0: PROCESS
+BEGIN
+	sw0 <= '0';
+	WAIT FOR 10000 ps;
+	sw0 <= '1';
+WAIT;
+END PROCESS t_prcs_sw0;
 
 -- key0
 t_prcs_key0: PROCESS
@@ -68,26 +80,13 @@ BEGIN
 	WAIT FOR 20000 ps;
 	key0 <= '1';
 	WAIT FOR 10000 ps;
-	key0 <= '0';
-	WAIT FOR 10000 ps;
-	key0 <= '1';
-	WAIT FOR 10000 ps;
-	key0 <= '0';
-	WAIT FOR 10000 ps;
-	key0 <= '1';
-	WAIT FOR 10000 ps;
-	key0 <= '0';
-	WAIT FOR 30000 ps;
-	key0 <= '1';
-	WAIT FOR 10000 ps;
-	key0 <= '0';
-	WAIT FOR 70000 ps;
-	key0 <= '1';
-	WAIT FOR 10000 ps;
-	key0 <= '0';
-	WAIT FOR 20000 ps;
-	key0 <= '1';
-	WAIT FOR 10000 ps;
+	FOR i IN 1 TO 48
+	LOOP
+		key0 <= '0';
+		WAIT FOR 10000 ps;
+		key0 <= '1';
+		WAIT FOR 10000 ps;
+	END LOOP;
 	key0 <= '0';
 WAIT;
 END PROCESS t_prcs_key0;
@@ -95,44 +94,34 @@ END PROCESS t_prcs_key0;
 -- key1
 t_prcs_key1: PROCESS
 BEGIN
-LOOP
+	key1 <= '0';
+	WAIT FOR 20000 ps;
+	key1 <= '1';
+	WAIT FOR 10000 ps;
 	key1 <= '0';
 	WAIT FOR 10000 ps;
 	key1 <= '1';
 	WAIT FOR 10000 ps;
-	IF (NOW >= 1000000 ps) THEN WAIT; END IF;
-END LOOP;
+	key1 <= '0';
+	WAIT FOR 10000 ps;
+	key1 <= '1';
+	WAIT FOR 10000 ps;
+	key1 <= '0';
+	WAIT FOR 10000 ps;
+	key1 <= '1';
+	WAIT FOR 10000 ps;
+	key1 <= '0';
+	WAIT FOR 70000 ps;
+	key1 <= '1';
+	WAIT FOR 10000 ps;
+	key1 <= '0';
+WAIT;
 END PROCESS t_prcs_key1;
 
 -- sw9
 t_prcs_sw9: PROCESS
 BEGIN
-	sw9 <= '0';
-	WAIT FOR 20000 ps;
 	sw9 <= '1';
-	WAIT FOR 20000 ps;
-	sw9 <= '0';
-	WAIT FOR 20000 ps;
-	sw9 <= '1';
-	WAIT FOR 20000 ps;
-	sw9 <= '0';
-	WAIT FOR 20000 ps;
-	sw9 <= '1';
-	WAIT FOR 20000 ps;
-	sw9 <= '0';
-	WAIT FOR 60000 ps;
-	sw9 <= '1';
-	WAIT FOR 20000 ps;
-	sw9 <= '0';
 WAIT;
 END PROCESS t_prcs_sw9;
-
--- sw0
-t_prcs_sw0: PROCESS
-BEGIN
-	sw0 <= '0';
-	WAIT FOR 20000 ps;
-	sw0 <= '1';
-WAIT;
-END PROCESS t_prcs_sw0;
 END lab9part2_arch;
