@@ -7,6 +7,7 @@ entity lab8part3 is
 	port (
 		sw : in std_logic_vector(9 downto 0);
 		key0 : in std_logic;
+		d_out : out std_logic_vector(3 downto 0);
 		hex5,hex4, hex2,hex0 : out std_logic_vector(0 to 6)
 	);
 end lab8part3;
@@ -47,7 +48,7 @@ begin
 			end if;
 		end if;
 	end process;
-
+	d_out <= data_out;
 	h0: sevenseg port map("0" &"0" &"0" & sw(8) , hex5);
 	h1: sevenseg port map(sw(7 downto 4), hex4);
 	h3: sevenseg port map(data_in, hex2);

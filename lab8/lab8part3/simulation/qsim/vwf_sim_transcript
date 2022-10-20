@@ -7,7 +7,7 @@ Note: if both ModelSim-Altera and ModelSim executables are available, ModelSim-A
 
 **** Generating the ModelSim Testbench ****
 
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off lab8part2 -c lab8part2 --vector_source="C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab8/lab8part2/Waveform.vwf" --testbench_file="C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab8/lab8part2/simulation/qsim/Waveform.vwf.vht"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off lab8part2 -c lab8part2 --vector_source="C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab8/lab8part3/Waveform1.vwf" --testbench_file="C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab8/lab8part3/simulation/qsim/Waveform1.vwf.vht"
 
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
@@ -25,17 +25,15 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Thu Oct 06 03:40:09 2022
-Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off lab8part2 -c lab8part2 --vector_source=C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab8/lab8part2/Waveform.vwf --testbench_file=C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab8/lab8part2/simulation/qsim/Waveform.vwf.vht
+    Info: Processing started: Wed Oct 19 19:16:22 2022
+Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off lab8part2 -c lab8part2 --vector_source=C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab8/lab8part3/Waveform1.vwf --testbench_file=C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab8/lab8part3/simulation/qsim/Waveform1.vwf.vht
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-
-st bench files
 
 Completed successfully. 
 
 **** Generating the functional simulation netlist ****
 
-quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab8/lab8part2/simulation/qsim/" lab8part2 -c lab8part2
+quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab8/lab8part3/simulation/qsim/" lab8part2 -c lab8part2
 
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
@@ -53,13 +51,13 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Thu Oct 06 03:40:11 2022
-Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab8/lab8part2/simulation/qsim/ lab8part2 -c lab8part2
+    Info: Processing started: Wed Oct 19 19:16:23 2022
+Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab8/lab8part3/simulation/qsim/ lab8part2 -c lab8part2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (204019): Generated file lab8part2.vho in folder "C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab8/lab8part2/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file lab8part2.vho in folder "C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab8/lab8part3/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4709 megabytes
-    Info: Processing ended: Thu Oct 06 03:40:12 2022
+    Info: Processing ended: Wed Oct 19 19:16:24 2022
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
@@ -67,7 +65,7 @@ Completed successfully.
 
 **** Generating the ModelSim .do script ****
 
-C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab8/lab8part2/simulation/qsim/lab8part2.do generated.
+C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab8/lab8part3/simulation/qsim/lab8part2.do generated.
 
 Completed successfully. 
 
@@ -79,11 +77,11 @@ Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 
 # 10.5b
 
-
 # do lab8part2.do
 # ** Warning: (vlib-34) Library already exists at "work".
+
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 03:40:13 on Oct 06,2022
+# Start time: 19:16:25 on Oct 19,2022
 # vcom -work work lab8part2.vho 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -93,38 +91,36 @@ Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 # -- Loading package VITAL_Primitives
 # -- Loading package cyclonev_atom_pack
 # -- Loading package cyclonev_components
-# -- Compiling entity lab8part2
-
-# -- Compiling architecture structure of lab8part2
-# End time: 03:40:13 on Oct 06,2022, Elapsed time: 0:00:00
+# -- Compiling entity lab8part3
+# -- Compiling architecture structure of lab8part3
+# End time: 19:16:25 on Oct 19,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 03:40:13 on Oct 06,2022
-# vcom -work work Waveform.vwf.vht 
+# Start time: 19:16:25 on Oct 19,2022
+# vcom -work work Waveform1.vwf.vht 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Compiling entity lab8part2_vhd_vec_tst
-# -- Compiling architecture lab8part2_arch of lab8part2_vhd_vec_tst
-# End time: 03:40:13 on Oct 06,2022, Elapsed time: 0:00:00
+# -- Compiling entity lab8part3_vhd_vec_tst
+# -- Compiling architecture lab8part3_arch of lab8part3_vhd_vec_tst
+# End time: 19:16:25 on Oct 19,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
-# vsim -novopt -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.lab8part2_vhd_vec_tst 
-# Start time: 03:40:13 on Oct 06,2022
+# vsim -novopt -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.lab8part3_vhd_vec_tst 
+# Start time: 19:16:25 on Oct 19,2022
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
-# Loading work.lab8part2_vhd_vec_tst(lab8part2_arch)
+# Loading work.lab8part3_vhd_vec_tst(lab8part3_arch)
 # Loading altera_lnsim.altera_lnsim_components
 # Loading ieee.vital_timing(body)
 # Loading ieee.vital_primitives(body)
 # Loading cyclonev.cyclonev_atom_pack(body)
 # Loading cyclonev.cyclonev_components
-# Loading work.lab8part2(structure)
+# Loading work.lab8part3(structure)
 # Loading ieee.std_logic_arith(body)
 # Loading cyclonev.cyclonev_io_obuf(arch)
 # Loading cyclonev.cyclonev_io_ibuf(arch)
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)
 # Loading cyclonev.cyclonev_clkena(behavior)
 # Loading cyclonev.cyclonev_ram_block(block_arch)
 # Loading sv_std.std
@@ -133,24 +129,25 @@ Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 # Loading altera_lnsim.common_28nm_ram_block
 # Loading altera_lnsim.common_28nm_ram_register
 # Loading altera_lnsim.common_28nm_ram_pulse_generator
-# ** Warning: Design size of 12001 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)
+# ** Warning: Design size of 12333 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
 # after#32
 
-# End time: 03:40:13 on Oct 06,2022, Elapsed time: 0:00:00
+# End time: 19:16:26 on Oct 19,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 1
 
 Completed successfully. 
 
 **** Converting ModelSim VCD to vector waveform ****
 
-Reading C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab8/lab8part2/Waveform.vwf...
+Reading C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab8/lab8part3/Waveform1.vwf...
 
-Reading C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab8/lab8part2/simulation/qsim/lab8part2.msim.vcd...
+Reading C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab8/lab8part3/simulation/qsim/lab8part2.msim.vcd...
 
 Processing channel transitions... 
 
-Writing the resulting VWF to C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab8/lab8part2/simulation/qsim/lab8part2_20221006034013.sim.vwf
+Writing the resulting VWF to C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab8/lab8part3/simulation/qsim/lab8part2_20221019191626.sim.vwf
 
 Finished VCD to VWF conversion.
 

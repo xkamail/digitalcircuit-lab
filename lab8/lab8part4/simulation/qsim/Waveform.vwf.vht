@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "10/06/2022 01:28:25"
+-- Generated on "10/19/2022 19:37:13"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          lab8part4
 -- 
@@ -34,6 +34,7 @@ ARCHITECTURE lab8part4_arch OF lab8part4_vhd_vec_tst IS
 -- constants                                                 
 -- signals                                                   
 SIGNAL clk50 : STD_LOGIC;
+SIGNAL d_out : STD_LOGIC_VECTOR(3 DOWNTO 0);
 SIGNAL hex0 : STD_LOGIC_VECTOR(0 TO 6);
 SIGNAL hex2 : STD_LOGIC_VECTOR(0 TO 6);
 SIGNAL hex3 : STD_LOGIC_VECTOR(0 TO 6);
@@ -45,6 +46,7 @@ SIGNAL sw : STD_LOGIC_VECTOR(9 DOWNTO 0);
 COMPONENT lab8part4
 	PORT (
 	clk50 : IN STD_LOGIC;
+	d_out : BUFFER STD_LOGIC_VECTOR(3 DOWNTO 0);
 	hex0 : BUFFER STD_LOGIC_VECTOR(0 TO 6);
 	hex2 : BUFFER STD_LOGIC_VECTOR(0 TO 6);
 	hex3 : BUFFER STD_LOGIC_VECTOR(0 TO 6);
@@ -60,6 +62,7 @@ BEGIN
 	PORT MAP (
 -- list connections between master ports and signals
 	clk50 => clk50,
+	d_out => d_out,
 	hex0 => hex0,
 	hex2 => hex2,
 	hex3 => hex3,
@@ -86,6 +89,8 @@ END PROCESS t_prcs_clk50;
 t_prcs_key0: PROCESS
 BEGIN
 	key0 <= '0';
+	WAIT FOR 20000 ps;
+	key0 <= '1';
 WAIT;
 END PROCESS t_prcs_key0;
 
@@ -111,6 +116,8 @@ END PROCESS t_prcs_sw_9;
 t_prcs_sw_3: PROCESS
 BEGIN
 	sw(3) <= '1';
+	WAIT FOR 480000 ps;
+	sw(3) <= '0';
 WAIT;
 END PROCESS t_prcs_sw_3;
 
@@ -125,6 +132,8 @@ END PROCESS t_prcs_sw_2;
 t_prcs_sw_1: PROCESS
 BEGIN
 	sw(1) <= '1';
+	WAIT FOR 480000 ps;
+	sw(1) <= '0';
 WAIT;
 END PROCESS t_prcs_sw_1;
 
@@ -153,6 +162,8 @@ END PROCESS t_prcs_sw_7;
 t_prcs_sw_6: PROCESS
 BEGIN
 	sw(6) <= '1';
+	WAIT FOR 480000 ps;
+	sw(6) <= '0';
 WAIT;
 END PROCESS t_prcs_sw_6;
 
@@ -167,6 +178,8 @@ END PROCESS t_prcs_sw_5;
 t_prcs_sw_4: PROCESS
 BEGIN
 	sw(4) <= '1';
+	WAIT FOR 480000 ps;
+	sw(4) <= '0';
 WAIT;
 END PROCESS t_prcs_sw_4;
 END lab8part4_arch;

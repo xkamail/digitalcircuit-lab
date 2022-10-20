@@ -8,6 +8,7 @@ entity lab8part4 is
 	port (
 		sw : in std_logic_vector(9 downto 0);
 		clk50, key0, key1 : in std_logic;
+		d_out : out std_logic_vector(3 downto 0);
 		hex5,hex4,hex3,hex2,hex0 : out std_logic_vector(0 to 6)
 	);
 end lab8part4;
@@ -63,7 +64,7 @@ begin
 	u0: one_sec port map(clk50, clk_sec); -- TODO apply to clk_sec
 	
 	u1: modulo_k generic map(k => 32) 
-				port map(clk50, clk_sec, reset, r_addr);
+				port map(clk50, '1', reset, r_addr);
 
 
 	
@@ -77,5 +78,5 @@ begin
 	h3: sevenseg port map(r_addr(3 downto 0),hex2);
 	-- show current data out
 	h5: sevenseg port map(data_out,hex0);
-	
+	d_out <= data_out;
 end bhv;
