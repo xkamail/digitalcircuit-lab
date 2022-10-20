@@ -11,3 +11,16 @@ A VHDL files
 
 ## Lab 3 - Latch , D-Latch, D-Flip Flop ( Master / Slave )
 
+## Lab 4 - Counter
+
+## Lab 5 - Timers and Real-time Clock
+
+## Lab 6 - Adders, Subtractor and Multipliers
+
+## Lab 7 - Finite State Machine 
+
+## Lab 8 - RAM, Memory Block
+
+## Lab 9 - Processor 
+
+## Lab 10 - Processor (Enchance)
