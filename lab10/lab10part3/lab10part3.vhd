@@ -8,12 +8,10 @@ entity lab10part3 is
 		sw0, sw9 : in std_logic;
 		key0, key1 : in std_logic;
 		hex0,hex1 : out std_logic_vector(0 to 6);
+		addr, d_out : out std_logic_vector(9 downto 0);
 		ledr: buffer std_logic_vector(9 downto 0)
-		-- data_in : out std_logic_vector(8 downto 0)
-	--	r0,r1: out std_logic_vector(8 downto 0)
-		
 	);
-end lab9part2;
+end lab10part3;
 
 
 architecture bhv of lab10part3 is
@@ -23,6 +21,7 @@ component processor is
 			reset_n, clk, run : in std_logic;
 			done : buffer std_logic;
 			busWires: buffer std_logic_vector(8 downto 0);
+			ADDR, DOUT : out std_logic_vector(8 downto 0); -- new 
 			reg_A,reg_G,reg_IR,reg_0,reg_1 : out std_logic_vector(8 downto 0);
 			Tstep_Q : out std_logic_vector(3 downto 0)
 		);
@@ -45,7 +44,7 @@ component processor is
 	
 	signal MClock, PClock, Resetn, Run : std_logic;
 	signal DIN : std_logic_vector(8 downto 0);
-	signal addr : std_logic_vector(4 downto 0);
+	signal r_addr : std_logic_vector(4 downto 0);
 	signal reg0,reg1: std_logic_vector(8 downto 0);
 
 begin
@@ -56,8 +55,8 @@ begin
 	
 	
 				
-	rom0: inst_mem port map (addr, MClock, DIN);		
-	-- data_in <= DIN;
+	-- rom0: inst_mem port map (open, MClock, DIN);		
+
 	p1: processor port 
 		map(
 			DIN,
@@ -66,6 +65,8 @@ begin
 			sw9,
 			ledr(9),
 			ledr(8 downto 0),
+			addr,  -- added
+			d_out, -- added
 			open,
 			open,
 			open,
@@ -73,8 +74,6 @@ begin
 			reg1
 		);
 
-		-- r0 <= reg0;
-		-- r1 <= reg1;
 		s0: sevenseg port map(reg0(3 downto 0),hex0);
 		s1: sevenseg port map(reg1(3 downto 0),hex1);
 end bhv;
