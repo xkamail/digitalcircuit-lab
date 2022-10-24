@@ -13,7 +13,8 @@ entity control_unit is
 		R0toR7out : out std_logic_vector(0 to 7);
 		done : buffer std_logic;
 		Tstep_Q : out std_logic_vector(3 downto 0);
-		Gout,Gin,Ain, AddSub, ADDRin, DoutIn, pc_incr : out std_logic -- add/sub ops signal
+		Greg : in std_logic_vector(8 downto 0); -- value of G
+		Gout,Gin,Ain, AddSub, ADDRin, DoutIn, pc_incr, Wr_en : out std_logic -- add/sub ops signal
 	);
 end control_unit;
 
@@ -71,45 +72,32 @@ begin
 		end if;
 	end process;
 	
-	controlsignals: process (y_Q, Xreg, Yreg)
+	controlsignals: process (y_Q, Xreg, Yreg,run)
 	begin
-		
+		Gout <= '0'; Tstep_Q <= "0000"; Dout <= '0'; done <= '0'; Rin <= NONE;
+		Gin <= '0';
+		Wr_en <= '0'; R0toR7out <= NONE; ADDrIn <= '0'; pc_incr <= '0'; 
+		IRin <= '0';
 		case y_Q is
 			when T0 => 
-			
-				Gout <= '0';
-				Tstep_Q <= "0000";
-				Dout <= '0';
-				Rin <= NONE;
-				done <= '0';
-				Gin <= '0';
 				
 				R0toR7out <= PC_DATA; -- data from PC out (R7) to ADDR register
 				ADDrIn <= '1'; -- sent an address from PC into ADDR
-				pc_incr <= '1'; -- increase PC after read IR.
+				pc_incr <= run;
 				IRin <= '1'; -- load instruction from data in.
 				
 			when T1 =>
-				Gout <= '0';
-				IRin <= '0';
 				Tstep_Q <= "0011";
-				Gin <= '0';
 				if I = MVI then
-					pc_incr <= '1'; -- we need to increase because that value is locate on the next address not current address
-				else
-					pc_incr <= '0';
+					pc_incr <= '1';
+					ADDrIn <= '1';
+					R0toR7out <= PC_DATA;
 				end if;
 				
-				case I is -- ADD,SUB not use Addr
-					when ADD | SUB  => ADDRin <= '0';
-					when others => ADDRin <= '1'; -- includes (LOAD,ST,MVNZ,NOP,MVI,MV)
-				end case;
-				
 				case I is -- DONE signal
-					when NOP | MV | MVI | MVNZ =>
+					when NOP | MV | MVNZ =>
 						done <= '1';
-					when others =>
-						done <= '0';
+					when others => null;
 				end case;
 				
 				case I is
@@ -120,72 +108,55 @@ begin
 					when MV => -- copy Ry -> Rx
 						R0toR7out <= Yreg;
 						Rin <= Xreg;
-						Dout <= '0';
-						Ain <= '0';
-					when MVI => -- copy D -> Rx
-						R0toR7out <= NONE;
-						Dout <= '1';
-						Rin <= Xreg;
-						Ain <= '0';
 					when ADD | SUB => -- add or sub: load Rx into Areg
 						R0toR7out <= Xreg; -- tell mux out Rx
-						Dout <= '0';
 						Ain <= '1'; -- tell A load data from BUS
-						Rin <= NONE;
 					when LOAD | STORE =>
 						R0toR7out <= Yreg; -- Addr that hold at Ry
-						Dout <= '0';
 						Ain <= '0';
 						Rin <= NONE;
 					when MVNZ =>
-						if Greg != "000000000" then
+						if Greg /= "000000000" then
 							-- x = y
 							R0toR7out <= Yreg;
 							Rin <= Xreg;
-						else -- do nothing
-							R0toR7out <= NONE;
-							Rin <= NONE;
 						end if;
-						R0toR7out <= NONE;
-						Dout <= '0';
-						Ain <= '0';
-						Rin <= NONE;
-					when others =>
-						R0toR7out <= NONE;
-						Dout <= '0';
-						Ain <= '0';
-						Rin <= NONE;
+					when others => null;
 				end case;
 			when T2 =>
-				pc_incr <= '0';
 				Tstep_Q <= "0101";
-				IRin <= '0';
-				Dout <= '0';
-				Rin <= NONE;
-				done <= '0';
-				R0toR7out <= Yreg;
-				Gin <= '1';
-				Gout <= '0';
-				if I = SUB then
-					AddSub <='1';
-				else
-					AddSub <='0';
-				end if;
-			when T3 =>
-				pc_incr <= '0';
-				Tstep_Q <= "1001";
-				R0toR7out <= "00000000";
-				IRin <= '0';
-				Dout <= '0';
-				done <= '1';
-				Gin <= '0';
+		
+				case I is
+					
+					when MVI =>
+						done <= '1';
+						Dout <= '1';
+						Rin <= Xreg;
+					when LOAD =>
+						Dout <= '1';
+						Rin <= Xreg;
+					when STORE => 
+						DoutIn <= '1';
+						Wr_en <= '1';
+					when ADD => 
+						Gin <= '1';
+						R0toR7out <= Yreg;
+					when SUB => 
+						AddSub <= '1';
+						Gin <= '1';
+						R0toR7out <= Yreg;
+					when others => null;
+				end case;
 				
+			when T3 =>
+				Tstep_Q <= "1001";
+				done <= '1'; -- must done
+				AddRin <= '1'; -- always done
 				case I is
 					when ADD | SUB =>
 						Rin <= Xreg;
 						Gout <= '1';
-					when others =>
-						Rin <= NONE;
+					when others => null;
 				end case;
 		end case;
 	end process;
