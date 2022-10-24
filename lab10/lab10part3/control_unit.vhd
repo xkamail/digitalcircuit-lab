@@ -76,13 +76,13 @@ begin
 	begin
 		Gout <= '0'; Tstep_Q <= "0000"; Dout <= '0'; done <= '0'; Rin <= NONE;
 		Gin <= '0';
-		Wr_en <= '0'; R0toR7out <= NONE; ADDrIn <= '0'; pc_incr <= '0'; 
-		IRin <= '0'; DoutIn <= '0'; AddSub <= '0';
+		Wr_en <= '0'; R0toR7out <= NONE; ADDRin <= '0'; pc_incr <= '0'; 
+		IRin <= '0'; DoutIn <= '0'; AddSub <= '0'; Ain <= '0';
 		case y_Q is
 			when T0 => 
 				
 				R0toR7out <= PC_DATA; -- data from PC out (R7) to ADDR register
-				ADDrIn <= '1'; -- sent an address from PC into ADDR
+				ADDRin <= '1'; -- sent an address from PC into ADDR
 				pc_incr <= run;
 				IRin <= '1'; -- load instruction from data in.
 				
@@ -90,7 +90,7 @@ begin
 				Tstep_Q <= "0011";
 				if I = MVI then
 					pc_incr <= '1';
-					ADDrIn <= '1';
+					ADDRin <= '1';
 					R0toR7out <= PC_DATA;
 				end if;
 				
@@ -101,10 +101,6 @@ begin
 				end case;
 				
 				case I is
-					when NOP =>
-						Ain <= '0';
-						Dout <= '0';
-						Rin <= NONE;
 					when MV => -- copy Ry -> Rx
 						R0toR7out <= Yreg;
 						Rin <= Xreg;
@@ -116,8 +112,7 @@ begin
 						Ain <= '1'; -- tell A load data from BUS
 					when LOAD | STORE =>
 						R0toR7out <= Yreg; -- Addr that hold at Ry
-						Ain <= '0';
-						Rin <= NONE;
+						ADDrIn <= '1';
 					when MVNZ =>
 						if Greg /= "000000000" then
 							R0toR7out <= Yreg;
@@ -144,6 +139,7 @@ begin
 					when STORE => 
 						DoutIn <= '1';
 						Wr_en <= '1';
+						R0toR7out <= Xreg;
 					when ADD => 
 						AddSub <= '0';
 						Gin <= '1';

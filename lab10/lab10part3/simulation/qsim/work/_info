@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dC:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab10/lab10part3/simulation/qsim
 Eprocessor
-Z1 w1666577939
+Z1 w1666597982
 Z2 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 OGn598C_0mX<WSGfCb?AK2
 Z3 DPx8 cyclonev 19 cyclonev_components 0 22 CcdNAEi>PYH4@n><]NQ]V2
 Z4 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 QZo1Vh6en2ZO3=hNmAfQ>0
@@ -28,9 +28,9 @@ VWd4H`C0G]_dNn^49OSQI01
 !s100 >>bizf@3fg=8;@>@0Jbhi0
 Z13 OV;C;10.5b;63
 32
-Z14 !s110 1666577940
+Z14 !s110 1666597983
 !i10b 1
-Z15 !s108 1666577940.000000
+Z15 !s108 1666597983.000000
 Z16 !s90 -work|work|lab10part3.vho|
 Z17 !s107 lab10part3.vho|
 !i113 1
@@ -47,10 +47,10 @@ R8
 R9
 R10
 DEx4 work 9 processor 0 22 Wd4H`C0G]_dNn^49OSQI01
-l529
+l581
 L175
-VbHYXbQn3kOB]_=Gz=mT4;1
-!s100 OXfGa95IVQ84T=C;C?_g?0
+V_Q8h^1AHVA1Q213RP>Th60
+!s100 _^XAOOM5mOLdJnIn_a?IW0
 R13
 32
 R14
@@ -62,7 +62,7 @@ R17
 R18
 R19
 Eprocessor_vhd_vec_tst
-Z20 w1666577938
+Z20 w1666597981
 R8
 R9
 R0
@@ -88,8 +88,8 @@ R9
 Z25 DEx4 work 21 processor_vhd_vec_tst 0 22 Z_;JTz]ZR`LJ`k_CY9[j03
 l78
 L33
-Z26 V3m13iz<KWd=llWAJKz@?31
-Z27 !s100 9LLgE3U076z;JAf1Sz^j50
+VGjGZhW3n6PJ[64CKA7YCf2
+!s100 Ob9c=Alh5Whb0U8]Aojb72
 R13
 32
 R14
