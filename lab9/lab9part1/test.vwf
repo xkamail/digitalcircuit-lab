@@ -1,16 +1,16 @@
 /*<simulation_settings>
-<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off lab9part1 -c lab9part1 --vector_source="C:/Users/xKamaiL/Desktop/digitalcircuit-lab/lab9/lab9part1/test.vwf" --testbench_file="C:/Users/xKamaiL/Desktop/digitalcircuit-lab/lab9/lab9part1/simulation/qsim/output_files/test.vwf.vht"</ftestbench_cmd>
-<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off lab9part1 -c lab9part1 --vector_source="C:/Users/xKamaiL/Desktop/digitalcircuit-lab/lab9/lab9part1/output_files/Waveform1.vwf" --testbench_file="C:/Users/xKamaiL/Desktop/digitalcircuit-lab/lab9/lab9part1/simulation/qsim/output_files/Waveform1.vwf.vht"</ttestbench_cmd>
-<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/xKamaiL/Desktop/digitalcircuit-lab/lab9/lab9part1/simulation/qsim/" lab9part1 -c lab9part1</fnetlist_cmd>
-<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/xKamaiL/Desktop/digitalcircuit-lab/lab9/lab9part1/simulation/qsim/" lab9part1 -c lab9part1</tnetlist_cmd>
+<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off lab9part1 -c lab9part1 --vector_source="C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab9/lab9part1/test.vwf" --testbench_file="C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab9/lab9part1/simulation/qsim/test.vwf.vht"</ftestbench_cmd>
+<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off lab9part1 -c lab9part1 --vector_source="C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab9/lab9part1/test.vwf" --testbench_file="C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab9/lab9part1/simulation/qsim/test.vwf.vht"</ttestbench_cmd>
+<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab9/lab9part1/simulation/qsim/" lab9part1 -c lab9part1</fnetlist_cmd>
+<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab9/lab9part1/simulation/qsim/" lab9part1 -c lab9part1</tnetlist_cmd>
 <modelsim_script>onerror {exit -code 1}
 vlib work
 vcom -work work lab9part1.vho
-vcom -work work output_files/Waveform1.vwf.vht
-vsim -novopt -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.processor_vhd_vec_tst
+vcom -work work test.vwf.vht
+vsim -novopt -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.lab9part1_vhd_vec_tst
 vcd file -direction lab9part1.msim.vcd
-vcd add -internal processor_vhd_vec_tst/*
-vcd add -internal processor_vhd_vec_tst/i1/*
+vcd add -internal lab9part1_vhd_vec_tst/*
+vcd add -internal lab9part1_vhd_vec_tst/i1/*
 proc simTimestamp {} {
     echo "Simulation time: $::now ps"
     if { [string equal running [runStatus]] } {
@@ -20,16 +20,15 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
-
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
 vcom -work work lab9part1.vho
-vcom -work work output_files/Waveform1.vwf.vht
-vsim -novopt -c -t 1ps -sdfmax processor_vhd_vec_tst/i1=lab9part1_vhd.sdo -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.processor_vhd_vec_tst
+vcom -work work test.vwf.vht
+vsim -novopt -c -t 1ps -sdfmax lab9part1_vhd_vec_tst/i1=lab9part1_vhd.sdo -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.lab9part1_vhd_vec_tst
 vcd file -direction lab9part1.msim.vcd
-vcd add -internal processor_vhd_vec_tst/*
-vcd add -internal processor_vhd_vec_tst/i1/*
+vcd add -internal lab9part1_vhd_vec_tst/*
+vcd add -internal lab9part1_vhd_vec_tst/i1/*
 proc simTimestamp {} {
     echo "Simulation time: $::now ps"
     if { [string equal running [runStatus]] } {
@@ -39,7 +38,6 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
-
 </modelsim_script_timing>
 <hdl_lang>vhdl</hdl_lang>
 </simulation_settings>*/

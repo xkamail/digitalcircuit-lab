@@ -22,6 +22,7 @@ component processor is
 			done : buffer std_logic;
 			busWires: buffer std_logic_vector(8 downto 0);
 			ADDR, DOUT : out std_logic_vector(8 downto 0); -- new 
+			Wr_en : out std_logic; -- new
 			reg_A,reg_G,reg_IR,reg_0,reg_1 : out std_logic_vector(8 downto 0);
 			Tstep_Q : out std_logic_vector(3 downto 0)
 		);

@@ -8,7 +8,10 @@ entity processor is
 		done : buffer std_logic;
 		busWires: buffer std_logic_vector(8 downto 0);
 		ADDR, DOUT : out std_logic_vector(8 downto 0); -- new 
-		reg_A,reg_G,reg_IR,reg_0,reg_1 : out std_logic_vector(8 downto 0);
+		Wr_en : out std_logic; -- write en for RAM
+		reg_A,reg_G,reg_IR,reg_0,reg_1, reg_5 : out std_logic_vector(8 downto 0);
+		debug_pr_in, debug_addrIn : out std_logic;
+		pc_v : out std_logic_vector(8 downto 0);
 		Tstep_Q : out std_logic_vector(3 downto 0)
 	);
 end processor;
@@ -58,7 +61,8 @@ architecture bhv of processor is
 			R0toR7out : out std_logic_vector(0 to 7);
 			done : buffer std_logic;
 			Tstep_Q : out std_logic_vector(3 downto 0);
-			Gout,Gin,Ain, AddSub, AddrIn, DoutIn, pc_incr : out std_logic
+			Greg : in std_logic_vector(8 downto 0); -- value of G
+			Gout,Gin,Ain, AddSub, AddrIn, DoutIn, pc_incr, Wr_en : out std_logic
 		);
 	end component;
 	component add_sub is 
@@ -105,6 +109,7 @@ begin
 	reg_1 <= r1;
 	reg_A <= A;
 	reg_G <= G;
+	reg_5 <= r5;
 	
 	I <= IR(1 to 3);
 	
@@ -126,14 +131,18 @@ begin
 				R0toR7out,
 				done,
 				Tstep_Q,
+				G,
 				Gout,
 				Gin,
 				Ain, 
 				addsub,
 				ADDRin,
 				DoutIn,
-				pc_incr
+				pc_incr,
+				Wr_en
 			);
-	
+	debug_addrIn <= AddRin;
+	debug_pr_in <= pc_incr;
+	pc_v <= pc_value;
 
 end bhv;
