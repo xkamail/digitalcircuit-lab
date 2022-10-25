@@ -23,4 +23,4 @@ A VHDL files
 
 ## Lab 9 - Processor 
 
-## Lab 10 - Processor External Module ( RAM, 7Seg )
+## Lab 10 - Processor w/ External Module ( RAM, 7Seg )
