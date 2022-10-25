@@ -17,7 +17,7 @@ A VHDL files
 
 ## Lab 6 - Adders, Subtractor and Multipliers
 
-## Lab 7 - Finite State Machine 
+## Lab 7 - Finite State Machine > Morse Code
 
 ## Lab 8 - RAM, Memory Block
 
