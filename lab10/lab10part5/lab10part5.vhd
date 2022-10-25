@@ -67,7 +67,9 @@ architecture bhv of lab10part5 is
 	signal A : std_logic_vector(8 downto 0);
 begin
 	
-	process()
+	mux: process(A)
+		begin
+		
 	end process;
 	
 	ff0: d_ff port map(clk,sw9, Run);
