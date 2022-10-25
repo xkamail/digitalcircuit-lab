@@ -81,7 +81,7 @@ begin
 	
 	leds0: regn port map(d_out,Resetn,led_en,clk,ledr);
 	
-	u0: seg7_scroll port map(Resetn,clk,w, A(8 downto 6),d_out(3 downto 0),hex5,hex4,hex3,hex2,hex1,hex0);
+	u0: seg7_scroll port map(Resetn,clk,w, A(2 downto 0),d_out(3 downto 0),hex5,hex4,hex3,hex2,hex1,hex0);
 	
 	p1: processor port 
 		map(
