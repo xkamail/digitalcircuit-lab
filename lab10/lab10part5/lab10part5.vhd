@@ -3,16 +3,16 @@ use ieee.std_logic_1164.all;
 use ieee.std_logic_unsigned.all;
 use ieee.math_real.all;
 
-entity lab10part4 is
+entity lab10part5 is
 	port (
 		sw9, key0, clk : in std_logic;
 		hex5,hex4,hex3,hex2,hex1,hex0 : out std_logic_vector(0 to 6);
 		ledr : out std_logic_vector(8 downto 0)
 	);
-end lab10part4;
+end lab10part5;
 
 
-architecture bhv of lab10part4 is
+architecture bhv of lab10part5 is
 	component d_ff is
 		port (
 			Clk, D  : in std_logic;
@@ -67,6 +67,8 @@ architecture bhv of lab10part4 is
 	signal A : std_logic_vector(8 downto 0);
 begin
 	
+	process()
+	end process;
 	
 	ff0: d_ff port map(clk,sw9, Run);
 	
@@ -81,7 +83,7 @@ begin
 	
 	leds0: regn port map(d_out,Resetn,led_en,clk,ledr);
 	
-	u0: seg7_scroll port map(Resetn,clk,w, A(8 downto 6),d_out(3 downto 0),hex5,hex4,hex3,hex2,hex1,hex0);
+	u0: seg7_scroll port map(Resetn,clk, w, A(8 downto 6),d_out(3 downto 0),hex5,hex4,hex3,hex2,hex1,hex0);
 	
 	p1: processor port 
 		map(
