@@ -71,7 +71,7 @@ architecture bhv of lab10part5 is
 			q : out std_logic_vector(n-1 downto 0)
 		);
 	end component;
-	signal  Resetn, Run, wr_en,w, led_en : std_logic;
+	signal  Resetn, Run, wr_en,w, led_en, en_seg7 : std_logic;
 	signal DIN,d_out,q_ram_out,port_out : std_logic_vector(8 downto 0);
 	signal A : std_logic_vector(8 downto 0);
 begin
@@ -86,7 +86,7 @@ begin
 	end process;
 	
 	ff0: d_ff port map(clk,sw9, Run);
-	
+	en_seg7 <= '1' when (A(8 downto 7) = "10") else '0';
 	Resetn <= key0;
 	
 	wr_en <= w and not( A(8) or A(7) );
@@ -98,7 +98,7 @@ begin
 	
 	leds0: regn port map(d_out,Resetn,led_en,clk,ledr);
 	
-	u0: seg7_scroll port map(Resetn,clk, w, A(2 downto 0),d_out(3 downto 0),hex5,hex4,hex3,hex2,hex1,hex0);
+	u0: seg7_scroll port map(Resetn,clk, en_seg7 and w, A(2 downto 0),d_out(3 downto 0),hex5,hex4,hex3,hex2,hex1,hex0);
 	
 	u1: port_n generic map(9) port map(sw,Resetn,clk,not(w),port_out);
 	
