@@ -9,7 +9,7 @@ entity processor is
 		busWires: buffer std_logic_vector(8 downto 0);
 		ADDR, DOUT : out std_logic_vector(8 downto 0); -- new 
 		Wr_en : out std_logic; -- write en for RAM
-		reg_A,reg_G,reg_IR,reg_0,reg_1, reg_5 : out std_logic_vector(8 downto 0);
+		reg_2,reg_4,reg_5,reg_7,reg_1, reg_0, reg_IR, reg_3 : out std_logic_vector(8 downto 0);
 		debug_pr_in, debug_addrIn : out std_logic;
 		pc_v : out std_logic_vector(8 downto 0);
 		Tstep_Q : out std_logic_vector(3 downto 0)
@@ -18,6 +18,12 @@ end processor;
 
 
 architecture bhv of processor is
+	component d_ff is
+		port (
+			Clk, D  : in std_logic;
+			Q : out std_logic
+		);
+	end component;
 	component counter is
 		generic ( k : natural := 4; n : natural := 4 );
 		port (
@@ -75,7 +81,7 @@ architecture bhv of processor is
 	end component;
 	-- signal for enable of register
 	signal r0,r1,r2,r3,r4,r5,r6,pc_value,A,G : std_logic_vector(8 downto 0);
-	signal IRin, DinOut, Gout, Ain, Gin : std_logic;
+	signal IRin, DinOut, Gout, Ain, Gin, W_D : std_logic;
 	signal IR : std_logic_vector(1 to 9);
 	signal I : std_logic_vector(1 to 3);
 	signal Rin, Xreg, Yreg, R0toR7out : std_logic_vector(0 to 7);
@@ -105,11 +111,14 @@ begin
 	regDout: regn port map(busWires,reset_n, DoutIn, clk, DOUT);
 	
 	reg_IR <= IR;
-	reg_0 <= r0;
-	reg_1 <= r1;
-	reg_A <= A;
-	reg_G <= G;
+	reg_2 <= r2;
+	reg_4 <= r4;
 	reg_5 <= r5;
+	reg_7 <= pc_value;
+	reg_1 <= r1; 
+	reg_0 <= r0;
+	reg_IR <= IR;
+	reg_3 <= r3;
 	
 	I <= IR(1 to 3);
 	
@@ -139,8 +148,10 @@ begin
 				ADDRin,
 				DoutIn,
 				pc_incr,
-				Wr_en
+				w_D
 			);
+			
+	ff0: d_ff port map(clk,W_D, wr_en);
 	debug_addrIn <= AddRin;
 	debug_pr_in <= pc_incr;
 	pc_v <= pc_value;

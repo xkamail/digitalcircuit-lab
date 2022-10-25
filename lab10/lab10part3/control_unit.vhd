@@ -19,17 +19,17 @@ entity control_unit is
 end control_unit;
 
 architecture bhv of control_unit is
-	type State_type is (T0,T1,T2,T3); -- mv, mvi, add, sub
+	type State_type is (T0,TX,TXX,T1,T2,T3); -- mv, mvi, add, sub
 	signal y_Q, y_D : State_type;
-	constant NOP : std_logic_vector(2 downto 0) := "000";
-	constant MV : std_logic_vector(2 downto 0) := "001";
-	constant MVI : std_logic_vector(2 downto 0) := "010";
-	constant ADD : std_logic_vector(2 downto 0) := "011";
-	constant SUB : std_logic_vector(2 downto 0) := "100";
+	constant MV : std_logic_vector(2 downto 0) := "000";
+	constant MVI : std_logic_vector(2 downto 0) := "001";
+	constant ADD : std_logic_vector(2 downto 0) := "010";
+	constant SUB : std_logic_vector(2 downto 0) := "011";
 	-- a new instruction
-	constant LOAD : std_logic_vector(2 downto 0) := "101"; -- Rx = *Ry;
-	constant STORE : std_logic_vector(2 downto 0) := "110"; -- *Ry = 
-	constant MVNZ, PCReg : std_logic_vector(2 downto 0) := "111";
+	constant LOAD : std_logic_vector(2 downto 0) := "100";  -- Rx = *Ry;
+	constant STORE : std_logic_vector(2 downto 0) := "101"; -- *Ry = 
+	constant MVNZ : std_logic_vector(2 downto 0) := "110"; 
+	constant PCReg : std_logic_vector(2 downto 0) := "111";
 	constant PC_DATA : std_logic_vector(0 to 7) := "00000001";
 	constant NONE : std_logic_vector(0 to 7) := "00000000";
 begin 
@@ -40,10 +40,12 @@ begin
 		case y_Q is
 			when T0 => -- wait for run signal
 				if run = '1' then 
-					y_D <= T1;
+					y_D <= TX;
 				else
 					y_D <= T0;
 				end if;
+			when TX => y_D <= TXX;
+			when TXX => y_D <= T1;
 			when T1 => -- load data into IR register
 				if done = '1' then
 					y_D <= T0;
@@ -84,22 +86,14 @@ begin
 				R0toR7out <= PC_DATA; -- data from PC out (R7) to ADDR register
 				ADDRin <= '1'; -- sent an address from PC into ADDR
 				pc_incr <= run;
-				IRin <= '1'; -- load instruction from data in.
 				
-			when T1 =>
+			when TX => Tstep_Q <= "0001"; -- wait for RAM clock
+			when TXX =>  -- load instruction on data-in into IR
+				IRin <= '1';
+				Tstep_Q <= "0010";
+			when T1 => -- at T1
 				Tstep_Q <= "0011";
-				if I = MVI then
-					pc_incr <= '1';
-					ADDRin <= '1';
-					R0toR7out <= PC_DATA;
-				end if;
-				
-				case I is -- DONE signal
-					when NOP | MV | MVNZ =>
-						done <= '1';
-					when others => null;
-				end case;
-				
+
 				case I is
 					when MV => -- copy Ry -> Rx
 						R0toR7out <= Yreg;
@@ -107,6 +101,11 @@ begin
 						if Xreg = "111" then -- when move PC need
 							ADDRin <= '1';
 						end if;
+						done <= '1';
+					when MVI =>
+						pc_incr <= '1';
+						ADDRin <= '1';
+						R0toR7out <= PC_DATA;
 					when ADD | SUB => -- add or sub: load Rx into Areg
 						R0toR7out <= Xreg; -- tell mux out Rx
 						Ain <= '1'; -- tell A load data from BUS
@@ -114,6 +113,7 @@ begin
 						R0toR7out <= Yreg; -- Addr that hold at Ry
 						ADDrIn <= '1';
 					when MVNZ =>
+						done <= '1';
 						if Greg /= "000000000" then
 							R0toR7out <= Yreg;
 							Rin <= Xreg;
@@ -130,12 +130,9 @@ begin
 				case I is
 					
 					when MVI =>
-						done <= '1';
-						Dout <= '1';
-						Rin <= Xreg;
+						
 					when LOAD =>
-						Dout <= '1';
-						Rin <= Xreg;
+						-- wait for RAM
 					when STORE => 
 						DoutIn <= '1';
 						Wr_en <= '1';
@@ -155,6 +152,13 @@ begin
 				Tstep_Q <= "1001";
 				done <= '1'; -- must done
 				case I is
+					when MVI =>
+						done <= '1';
+						Dout <= '1';
+						Rin <= Xreg;
+					when LOAD => 
+						Dout <= '1';
+						Rin <= Xreg;
 					when ADD | SUB =>
 						Rin <= Xreg;
 						Gout <= '1';
