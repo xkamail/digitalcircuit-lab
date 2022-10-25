@@ -72,13 +72,13 @@ architecture bhv of lab10part5 is
 		);
 	end component;
 	signal  Resetn, Run, wr_en,w, led_en : std_logic;
-	signal DIN,d_out,q_ram_out port_out : std_logic_vector(8 downto 0);
+	signal DIN,d_out,q_ram_out,port_out : std_logic_vector(8 downto 0);
 	signal A : std_logic_vector(8 downto 0);
 begin
 	
-	mux: process(A)
+	process(A)
 		begin
-			if A(8 downto 7) == "11" then
+			if A(8 downto 7) = "11" then
 				DIN <= port_out;
 			else
 				DIN <= q_ram_out;
