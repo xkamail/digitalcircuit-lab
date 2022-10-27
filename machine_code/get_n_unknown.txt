@@ -7,3 +7,5 @@
 	% call: clearAllHex(): and go back to line 24 %
 	% R6 = x, R5 = 100, PC goto 100 %
 	n+15	: 160 76 150 144 075;
+    
+    n+20 : 100 003 150 403 505; %66%
