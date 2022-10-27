@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "10/28/2022 04:00:15"
+-- Generated on "10/28/2022 04:05:28"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          lab10part4
 -- 
@@ -105,7 +105,7 @@ LOOP
 	WAIT FOR 10000 ps;
 	clk <= '1';
 	WAIT FOR 10000 ps;
-	IF (NOW >= 15000000 ps) THEN WAIT; END IF;
+	IF (NOW >= 20000000 ps) THEN WAIT; END IF;
 END LOOP;
 END PROCESS t_prcs_clk;
 
@@ -121,8 +121,6 @@ END PROCESS t_prcs_key0;
 -- sw9
 t_prcs_sw9: PROCESS
 BEGIN
-	sw9 <= '0';
-	WAIT FOR 40000 ps;
 	sw9 <= '1';
 WAIT;
 END PROCESS t_prcs_sw9;
