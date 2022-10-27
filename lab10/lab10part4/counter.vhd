@@ -22,7 +22,10 @@ begin
 			v <= (Others => '0');
 		elsif rising_edge(clock) then
 			if en = '1' then
-				v <= v + 1;
+				if v = k-2 then
+				else
+					v <= v + 1;
+				end if;
 			elsif data_in = '1' then
 				v <= data;
 			end if;
