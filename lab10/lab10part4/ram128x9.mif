@@ -53,8 +53,20 @@ CONTENT BEGIN
 	%  write Hex3 = 3 %
 	62 : 100 003 150 403 505; %66%
 
-	67: 000;
+	67: 000; %พัก%
 
+    % get_n(): %
+	67: 100 002 150 177 505 455;
+
+	% loop(r5): %
+	72    :   110 001 025 047 035 067 331 676 321 674;
+	
+	% call: clearAllHex(): and go back to line 24 %
+	% R6 = x, R5 = 100, PC goto 100 %
+	82	: 160 76 150 144 075;
+
+	% write Hex2 = 2 %
+	87 : 100 002 150 402 505; %66%
 	
 
 	
@@ -68,6 +80,7 @@ CONTENT BEGIN
 	100 : 100 000 150 405 505 150 404 505 150 403 505 150 402 505 150 401 505 150 400 505 076; %120%
 	
 	125: 170;
+	% TODO: may be go to zero line %
 	126: 175; % infinite loop%
 	127: 000; % temp variable don't go to here !!! %
 END;
