@@ -133,6 +133,7 @@ begin
 						
 					when LOAD =>
 						-- wait for RAM
+						-- Dout <= '1';
 					when STORE => 
 						DoutIn <= '1';
 						Wr_en <= '1';
@@ -157,7 +158,7 @@ begin
 						Dout <= '1';
 						Rin <= Xreg;
 					when LOAD => 
-						Dout <= '1';
+						-- Dout <= '1';
 						Rin <= Xreg;
 					when ADD | SUB =>
 						Rin <= Xreg;

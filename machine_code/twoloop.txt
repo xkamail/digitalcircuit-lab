@@ -1,0 +1,10 @@
+	8    :   110; % start loop: mvi r1,#1 % 
+		 :	 001;
+	7    :   025; % mv r2, r5 %
+	9    :   047; % begin inner loop: mv r4,r7 %
+	10   :   035; % mv r3, r5 %
+	12   :   067; % mv r6, r7 %
+	13   :   331; % sub r3, r1  %
+	14   :   676; % while(r3 != 0) %
+	15   :   321; % sub r2,r1  %
+	16   :   674; % while(r3 != 0) %

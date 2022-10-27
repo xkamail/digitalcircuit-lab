@@ -101,7 +101,7 @@ begin
 	reg5: regn port map (busWires,reset_n, Rin(5), clk, r5);
 	reg6: regn port map (busWires,reset_n, Rin(6), clk, r6);
 	-- incr_pc
-	pc0: counter generic map (n => 9, k => 511) port map (clk, pc_incr, reset_n, Rin(7), BusWires, pc_value);
+	pc0: counter generic map (n => 9, k => 128) port map (clk, pc_incr, reset_n, Rin(7), BusWires, pc_value);
 	
 	regA: regn port map(busWires,reset_n, Ain, clk, A);
 	addsub0: add_sub port map (A, BusWires, addsub,reset_n, sum_result);

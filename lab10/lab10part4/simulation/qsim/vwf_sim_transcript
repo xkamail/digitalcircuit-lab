@@ -25,11 +25,11 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Wed Oct 26 05:09:49 2022
+    Info: Processing started: Fri Oct 28 03:47:12 2022
 Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off lab10part4 -c lab10part4 --vector_source=C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab10/lab10part4/Waveform.vwf --testbench_file=C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab10/lab10part4/simulation/qsim/Waveform.vwf.vht
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 
-ing test bench files
+source file when writing test bench files
 
 Completed successfully. 
 
@@ -53,15 +53,15 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Wed Oct 26 05:09:50 2022
+    Info: Processing started: Fri Oct 28 03:47:14 2022
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab10/lab10part4/simulation/qsim/ lab10part4 -c lab10part4
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file lab10part4.vho in folder "C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab10/lab10part4/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4711 megabytes
-    Info: Processing ended: Wed Oct 26 05:09:52 2022
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Peak virtual memory: 4712 megabytes
+    Info: Processing ended: Fri Oct 28 03:47:15 2022
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
 
 Completed successfully. 
 
@@ -79,11 +79,11 @@ Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 
 # 10.5b
 
-# do lab10part4.do
 
+# do lab10part4.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 05:09:52 on Oct 26,2022
+# Start time: 03:47:15 on Oct 28,2022
 # vcom -work work lab10part4.vho 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -96,24 +96,24 @@ Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 # -- Loading package cyclonev_atom_pack
 # -- Loading package cyclonev_components
 # -- Compiling entity lab10part4
+
 # -- Compiling architecture structure of lab10part4
 
-# End time: 05:09:53 on Oct 26,2022, Elapsed time: 0:00:01
+# End time: 03:47:16 on Oct 28,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 05:09:53 on Oct 26,2022
+# Start time: 03:47:16 on Oct 28,2022
 # vcom -work work Waveform.vwf.vht 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity lab10part4_vhd_vec_tst
 # -- Compiling architecture lab10part4_arch of lab10part4_vhd_vec_tst
-
-# End time: 05:09:53 on Oct 26,2022, Elapsed time: 0:00:00
+# End time: 03:47:16 on Oct 28,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
 # vsim -novopt -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.lab10part4_vhd_vec_tst 
-# Start time: 05:09:53 on Oct 26,2022
+# Start time: 03:47:16 on Oct 28,2022
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -130,8 +130,8 @@ Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 # Loading cyclonev.cyclonev_io_obuf(arch)
 # Loading cyclonev.cyclonev_io_ibuf(arch)
 # Loading cyclonev.cyclonev_clkena(behavior)
-# Loading altera.dffeas(vital_dffeas)
 # Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)
+# Loading altera.dffeas(vital_dffeas)
 # Loading cyclonev.cyclonev_ram_block(block_arch)
 # Loading sv_std.std
 # Loading altera_lnsim.generic_m10k
@@ -139,11 +139,13 @@ Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 # Loading altera_lnsim.common_28nm_ram_block
 # Loading altera_lnsim.common_28nm_ram_register
 # Loading altera_lnsim.common_28nm_ram_pulse_generator
-# ** Warning: Design size of 79715 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# ** Warning: Design size of 88499 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
 # after#34
 
-# End time: 05:09:54 on Oct 26,2022, Elapsed time: 0:00:01
+# Simulation time: 4050000 ps
+
+# End time: 03:47:20 on Oct 28,2022, Elapsed time: 0:00:04
 # Errors: 0, Warnings: 1
 
 Completed successfully. 
@@ -156,7 +158,25 @@ Reading C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab10/lab10part4/simul
 
 Processing channel transitions... 
 
-Writing the resulting VWF to C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab10/lab10part4/simulation/qsim/lab10part4_20221026050954.sim.vwf
+Warning: d_r4[8] - signal not found in VCD.
+
+Warning: d_r4[7] - signal not found in VCD.
+
+Warning: d_r4[6] - signal not found in VCD.
+
+Warning: d_r4[5] - signal not found in VCD.
+
+Warning: d_r4[4] - signal not found in VCD.
+
+Warning: d_r4[3] - signal not found in VCD.
+
+Warning: d_r4[2] - signal not found in VCD.
+
+Warning: d_r4[1] - signal not found in VCD.
+
+Warning: d_r4[0] - signal not found in VCD.
+
+Writing the resulting VWF to C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab10/lab10part4/simulation/qsim/lab10part4_20221028034721.sim.vwf
 
 Finished VCD to VWF conversion.
 

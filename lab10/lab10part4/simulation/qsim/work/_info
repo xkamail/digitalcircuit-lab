@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dC:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab10/lab10part4/simulation/qsim
 Elab10part4
-Z1 w1666735792
+Z1 w1666903635
 Z2 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 OGn598C_0mX<WSGfCb?AK2
 Z3 DPx8 cyclonev 19 cyclonev_components 0 22 CcdNAEi>PYH4@n><]NQ]V2
 Z4 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 QZo1Vh6en2ZO3=hNmAfQ>0
@@ -24,13 +24,13 @@ Z11 8lab10part4.vho
 Z12 Flab10part4.vho
 l0
 L38
-Vb4m:ehlLkakW0Id;CWISY1
-!s100 o120L0<=_GlhN=aJ?jFzk1
+VA1jX7U:_d1cg0oL7jmD?M1
+!s100 8Dif@9Sg<QnB1@:73[R4o2
 Z13 OV;C;10.5b;63
 32
-Z14 !s110 1666735793
+Z14 !s110 1666903636
 !i10b 1
-Z15 !s108 1666735792.000000
+Z15 !s108 1666903635.000000
 Z16 !s90 -work|work|lab10part4.vho|
 Z17 !s107 lab10part4.vho|
 !i113 1
@@ -46,11 +46,11 @@ R7
 R8
 R9
 R10
-DEx4 work 10 lab10part4 0 22 b4m:ehlLkakW0Id;CWISY1
-l536
-L110
-VmOg1mZd]b<nRjk^m=L9>D3
-!s100 Ed1H4Nl>512hg]@a@^UYT1
+DEx4 work 10 lab10part4 0 22 A1jX7U:_d1cg0oL7jmD?M1
+l665
+L185
+VDdB7[7Oa>Z^48L@lCFBDe0
+!s100 bXjIL`5[W^;5E[REzJ^F[2
 R13
 32
 R14
@@ -62,7 +62,7 @@ R17
 R18
 R19
 Elab10part4_vhd_vec_tst
-Z20 w1666735790
+Z20 w1666903633
 R8
 R9
 R0
@@ -76,7 +76,7 @@ R13
 32
 R14
 !i10b 1
-Z23 !s108 1666735793.000000
+Z23 !s108 1666903636.000000
 Z24 !s90 -work|work|Waveform.vwf.vht|
 Z25 !s107 Waveform.vwf.vht|
 !i113 1
@@ -86,10 +86,10 @@ Alab10part4_arch
 R8
 R9
 Z26 DEx4 work 22 lab10part4_vhd_vec_tst 0 22 0D^a0d<0d]GmaGcWU1CLh1
-l60
+l76
 L33
-Z27 VS1YGdU=16a;g;XCVDT^iE2
-Z28 !s100 YXL0OnFGGIi5am>?5U3WF0
+Z27 Vgd2=X=5MbBn9H_dbE0`l;2
+Z28 !s100 0Qi?ISSABGV5XBj;clJe71
 R13
 32
 R14
