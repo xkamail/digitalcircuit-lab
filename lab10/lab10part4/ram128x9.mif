@@ -63,7 +63,7 @@ CONTENT BEGIN
 	
 	% call: clearAllHex(): and go back to line 24 %
 	% R6 = x, R5 = 100, PC goto 100 %
-	82	: 160 76 150 144 075;
+	82	: 160 127 150 144 075;
 
 	% write Hex2 = 2 %
 	87 : 100 002 150 402 505; %66%
