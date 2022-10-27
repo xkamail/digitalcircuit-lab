@@ -34,7 +34,7 @@ CONTENT BEGIN
 	11    :   110 001 025 047 035 067 331 676 321 674;
 
 	% call: clearAllHex(): and go back to line 24 %
-	% R6 = 40, PC goto 100 %
+	% R6 = x, PC goto 100 %
 	21	: 160 32 150 144 075;
 	
 	%  write Hex4 = 4 %
@@ -43,6 +43,17 @@ CONTENT BEGIN
 	% get_n(): %
 	31: 100 002 150 177 505 455;
 
+	% loop(r5): %
+	47    :   110 001 025 047 035 067 331 676 321 674;
+	
+	% call: clearAllHex(): and go back to line 24 %
+	% R6 = x, R5 = 100, PC goto 100 %
+	57	: 160 76 150 144 075;
+	
+	%  write Hex3 = 3 %
+	62 : 100 003 150 403 505; %66%
+
+	67: 000;
 
 	
 
