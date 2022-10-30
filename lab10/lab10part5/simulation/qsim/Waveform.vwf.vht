@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "10/26/2022 05:39:43"
+-- Generated on "10/30/2022 22:48:09"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          lab10part5
 -- 
@@ -34,6 +34,10 @@ ARCHITECTURE lab10part5_arch OF lab10part5_vhd_vec_tst IS
 -- constants                                                 
 -- signals                                                   
 SIGNAL clk : STD_LOGIC;
+SIGNAL d_in : STD_LOGIC_VECTOR(8 DOWNTO 0);
+SIGNAL d_r2 : STD_LOGIC_VECTOR(8 DOWNTO 0);
+SIGNAL d_r3 : STD_LOGIC_VECTOR(8 DOWNTO 0);
+SIGNAL d_r5 : STD_LOGIC_VECTOR(8 DOWNTO 0);
 SIGNAL hex0 : STD_LOGIC_VECTOR(0 TO 6);
 SIGNAL hex1 : STD_LOGIC_VECTOR(0 TO 6);
 SIGNAL hex2 : STD_LOGIC_VECTOR(0 TO 6);
@@ -47,6 +51,10 @@ SIGNAL sw9 : STD_LOGIC;
 COMPONENT lab10part5
 	PORT (
 	clk : IN STD_LOGIC;
+	d_in : BUFFER STD_LOGIC_VECTOR(8 DOWNTO 0);
+	d_r2 : BUFFER STD_LOGIC_VECTOR(8 DOWNTO 0);
+	d_r3 : BUFFER STD_LOGIC_VECTOR(8 DOWNTO 0);
+	d_r5 : BUFFER STD_LOGIC_VECTOR(8 DOWNTO 0);
 	hex0 : BUFFER STD_LOGIC_VECTOR(0 TO 6);
 	hex1 : BUFFER STD_LOGIC_VECTOR(0 TO 6);
 	hex2 : BUFFER STD_LOGIC_VECTOR(0 TO 6);
@@ -64,6 +72,10 @@ BEGIN
 	PORT MAP (
 -- list connections between master ports and signals
 	clk => clk,
+	d_in => d_in,
+	d_r2 => d_r2,
+	d_r3 => d_r3,
+	d_r5 => d_r5,
 	hex0 => hex0,
 	hex1 => hex1,
 	hex2 => hex2,
@@ -79,13 +91,17 @@ BEGIN
 -- clk
 t_prcs_clk: PROCESS
 BEGIN
-LOOP
-	clk <= '0';
-	WAIT FOR 10000 ps;
 	clk <= '1';
-	WAIT FOR 10000 ps;
-	IF (NOW >= 1000000 ps) THEN WAIT; END IF;
-END LOOP;
+	WAIT FOR 5000 ps;
+	FOR i IN 1 TO 999
+	LOOP
+		clk <= '0';
+		WAIT FOR 5000 ps;
+		clk <= '1';
+		WAIT FOR 5000 ps;
+	END LOOP;
+	clk <= '0';
+WAIT;
 END PROCESS t_prcs_clk;
 
 -- key0
@@ -99,7 +115,7 @@ END PROCESS t_prcs_key0;
 -- sw[8]
 t_prcs_sw_8: PROCESS
 BEGIN
-	sw(8) <= '1';
+	sw(8) <= '0';
 WAIT;
 END PROCESS t_prcs_sw_8;
 -- sw[7]
@@ -147,6 +163,8 @@ END PROCESS t_prcs_sw_1;
 -- sw[0]
 t_prcs_sw_0: PROCESS
 BEGIN
+	sw(0) <= '1';
+	WAIT FOR 4020000 ps;
 	sw(0) <= '0';
 WAIT;
 END PROCESS t_prcs_sw_0;
