@@ -24,7 +24,8 @@ begin
 			
 			if en = '1' then
 				if v = k-1 then
-					v <= std_logic_vector(to_unsigned(k-1, v'length));
+					v <= (Others => '0');
+					-- v <= std_logic_vector(to_unsigned(k-1, v'length));
 				else
 					v <= v + 1;
 				end if;
