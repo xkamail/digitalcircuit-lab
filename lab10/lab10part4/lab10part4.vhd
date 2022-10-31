@@ -7,8 +7,8 @@ entity lab10part4 is
 	port (
 		sw9, key0, clk : in std_logic;
 		hex5,hex4,hex3,hex2,hex1,hex0 : out std_logic_vector(0 to 6);
-		ir_debug, d_r2, d_r3, d_r0, d_in, addr_v,busWires : out std_logic_vector(8 downto 0 );
-		Tstep_Q : out std_logic_vector(3 downto 0);
+		-- ir_debug, d_r2, d_r3, d_r0, d_in, addr_v,busWires : out std_logic_vector(8 downto 0 );
+		-- Tstep_Q : out std_logic_vector(3 downto 0);
 		ledr : out std_logic_vector(8 downto 0)
 	);
 end lab10part4;
@@ -67,6 +67,10 @@ architecture bhv of lab10part4 is
 	signal  Resetn, Run, wr_en,w, led_en : std_logic;
 	signal DIN,d_out : std_logic_vector(8 downto 0);
 	signal A : std_logic_vector(8 downto 0);
+
+	signal ir_debug, d_r2, d_r3, d_r0, d_in, addr_v,busWires :  std_logic_vector(8 downto 0 );
+	signal Tstep_Q :  std_logic_vector(3 downto 0);
+
 begin
 	
 	
@@ -86,6 +90,7 @@ begin
 	u0: seg7_scroll port map(Resetn,clk,w, A(2 downto 0),d_out(3 downto 0),hex5,hex4,hex3,hex2,hex1,hex0);
 	d_in <= DIN;
 	addr_v <= A;
+	-- ledr <= A;
 	p1: processor port 
 		map(
 			DIN,

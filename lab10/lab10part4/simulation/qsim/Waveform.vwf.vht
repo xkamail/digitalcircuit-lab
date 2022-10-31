@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "10/28/2022 04:10:45"
+-- Generated on "10/31/2022 15:12:54"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          lab10part4
 -- 
@@ -53,24 +53,24 @@ SIGNAL sw9 : STD_LOGIC;
 SIGNAL Tstep_Q : STD_LOGIC_VECTOR(3 DOWNTO 0);
 COMPONENT lab10part4
 	PORT (
-	addr_v : BUFFER STD_LOGIC_VECTOR(8 DOWNTO 0);
-	busWires : BUFFER STD_LOGIC_VECTOR(8 DOWNTO 0);
+	addr_v : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
+	busWires : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
 	clk : IN STD_LOGIC;
-	d_in : BUFFER STD_LOGIC_VECTOR(8 DOWNTO 0);
-	d_r0 : BUFFER STD_LOGIC_VECTOR(8 DOWNTO 0);
-	d_r2 : BUFFER STD_LOGIC_VECTOR(8 DOWNTO 0);
-	d_r3 : BUFFER STD_LOGIC_VECTOR(8 DOWNTO 0);
-	hex0 : BUFFER STD_LOGIC_VECTOR(0 TO 6);
-	hex1 : BUFFER STD_LOGIC_VECTOR(0 TO 6);
-	hex2 : BUFFER STD_LOGIC_VECTOR(0 TO 6);
-	hex3 : BUFFER STD_LOGIC_VECTOR(0 TO 6);
-	hex4 : BUFFER STD_LOGIC_VECTOR(0 TO 6);
-	hex5 : BUFFER STD_LOGIC_VECTOR(0 TO 6);
-	ir_debug : BUFFER STD_LOGIC_VECTOR(8 DOWNTO 0);
+	d_in : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
+	d_r0 : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
+	d_r2 : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
+	d_r3 : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
+	hex0 : OUT STD_LOGIC_VECTOR(0 TO 6);
+	hex1 : OUT STD_LOGIC_VECTOR(0 TO 6);
+	hex2 : OUT STD_LOGIC_VECTOR(0 TO 6);
+	hex3 : OUT STD_LOGIC_VECTOR(0 TO 6);
+	hex4 : OUT STD_LOGIC_VECTOR(0 TO 6);
+	hex5 : OUT STD_LOGIC_VECTOR(0 TO 6);
+	ir_debug : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
 	key0 : IN STD_LOGIC;
-	ledr : BUFFER STD_LOGIC_VECTOR(8 DOWNTO 0);
+	ledr : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
 	sw9 : IN STD_LOGIC;
-	Tstep_Q : BUFFER STD_LOGIC_VECTOR(3 DOWNTO 0)
+	Tstep_Q : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
 	);
 END COMPONENT;
 BEGIN
@@ -102,10 +102,10 @@ t_prcs_clk: PROCESS
 BEGIN
 LOOP
 	clk <= '0';
-	WAIT FOR 10000 ps;
+	WAIT FOR 5000 ps;
 	clk <= '1';
-	WAIT FOR 10000 ps;
-	IF (NOW >= 20000000 ps) THEN WAIT; END IF;
+	WAIT FOR 5000 ps;
+	IF (NOW >= 40000000 ps) THEN WAIT; END IF;
 END LOOP;
 END PROCESS t_prcs_clk;
 
