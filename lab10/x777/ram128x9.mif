@@ -19,44 +19,38 @@ DEPTH=128;
 
 ADDRESS_RADIX=UNS;
 DATA_RADIX=OCT;
-
+% X = R1, Y = R2%
+% X-Y = 11-77 = %
 CONTENT BEGIN
-	0    :   100; %// R0 = 1									%
-	1    :   001; 
-	2    :   110; %// R1 = Ra = A									%
-	3    :   036; %// sw address								%
-	4    :   000; %// load A from sw									%
-	5    :   120; %// R2 = Rb = B									%
-	6    :   074; %// sw address								%
-	7    :   000; %// load B from sw									%
-	8    :   000; %// nothing											%
-
-%11 loop: %	
-
-	9    :   031; %// mv R3,Ra begin loop (11 in oct)						%
-	10   :   042; %// mv R4, Rb						%
-	11   :   334; %// sub R3,R4 (sub Ra,Rb) to check overflow						%
-	12   :   150; %// mvi R5, #else		%
-	13	 :	 022;
-	14   :   775; %// move if overflow to R5 (else line)											%
-	15   :   312; %// not overflow, A > B do a=a-b			%
-	16	 :   170; %// mvi R7,#check    %
-	17	 :   023; % check line %
-% else: %
-	18   :	 321; %// overflow, B > A do b=b-a;				%
-% check: %
-	19   :	 031; % mv R3, Ra  %
-	20   :	 042; % mv R4, Rb  %
-	21   :	 334; % R3=R3-R4   %
-	22   :	 140; % mvi R4, #loop %
-	23   :	 011; % &loop 		%
-	24   :	 674; % if R3-R4 != 0 then go to loop again %
+	0    :   100; %mvi R0, #127%
+	1    :   177; %%
+	2    :   410; %ld R1,R0%
+	3    :   100; %mvi R0,126%
+	4    :   176; %%
+	5    :   420; %ld R2, R0%
 	
-	25   :	 160; % mvi R6, #led   %
-	26   :	 200; % led address %
-	27   :	 416;  % st, Ra,R6  %
-	28   :	 000;
-	29   :	 000;
-	30   :	 000;
-	
+	6	: 	047;	%mv R4,R7%
+	7	: 	001;	%mv R0, R1 // just a temp variable%
+	8	: 	302;	%sub R0,R2 // compare X - Y %
+
+	9	: 	150;	%mvi R5,# // store else line%
+%%	10	: 	017; %#15%
+
+	11	: 	775;	%mvgt R7,R5 if X > Y%
+
+	12  : 	321;	%sub R2,R1 // Y = Y - X%
+	13  : 	170; 	%mvi R7,# // skip else %
+	14	:	020; 	%// end loop line%
+	15	:	312; 	%sub R1,R2 // X > Y X = X - Y%
+
+
+%check X!=Y go R4%
+
+	16	:	312; %sub R1,R2 %
+	17	:	674; %mvnz R7, R4 %
+	18	:	000; %%
+	19	:	000; %%
+
+	126: 115; %Y%
+	127: 13;  %X%
 END;
