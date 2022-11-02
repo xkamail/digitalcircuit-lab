@@ -9,7 +9,8 @@ entity x777 is
 		sw : in std_logic_vector(8 downto 0);
 		hex5,hex4,hex3,hex2,hex1,hex0 : out std_logic_vector(0 to 6);
 		r_addr, r1, r2,r3,r4 : out std_logic_vector(8 downto 0);
-		overflow : out std_logic;
+		gt_flags : out std_logic;
+		
 		ledr : out std_logic_vector(8 downto 0)
 	);
 end x777;
@@ -21,8 +22,6 @@ architecture bhv of x777 is
 			Q : out std_logic
 		);
 	end component;
-
-
 
 	component ram128x9 IS
 		port
@@ -73,7 +72,8 @@ architecture bhv of x777 is
 		reg_2,reg_4,reg_5,reg_7,reg_1, reg_0, reg_IR, reg_3 : out std_logic_vector(8 downto 0);
 		debug_pr_in, debug_addrIn : out std_logic;
 		pc_v : out std_logic_vector(8 downto 0);
-		Tstep_Q : out std_logic_vector(3 downto 0)
+		Tstep_Q : out std_logic_vector(3 downto 0);
+		gt_flag : out std_logic
 		);
 	end component;
 begin
@@ -100,16 +100,18 @@ begin
 			open, -- 
 			open,
 			open,
-			open
+			open,
+			gt_flags
 		);
-	process(A)
-		begin
-			if A(8 downto 7) = "11" then
-				DIN <= port_out;
-			else
-				DIN <= q_ram_out;
-			end if;
-	end process;
+--	process(A)
+--		begin
+--			if A(8 downto 7) = "11" then
+--				DIN <= port_out;
+--			else
+--				DIN <= q_ram_out;
+--			end if;
+--	end process;
+	DIN <= q_ram_out;
 	
 	ff0: d_ff port map(clk,sw9, Run);
 	en_seg7 <= '1' when (A(8 downto 7) = "10") else '0';

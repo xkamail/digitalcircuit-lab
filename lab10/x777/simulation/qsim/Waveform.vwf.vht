@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "11/02/2022 19:37:53"
+-- Generated on "11/02/2022 22:15:52"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          x777
 -- 
@@ -34,6 +34,7 @@ ARCHITECTURE x777_arch OF x777_vhd_vec_tst IS
 -- constants                                                 
 -- signals                                                   
 SIGNAL clk : STD_LOGIC;
+SIGNAL gt_flags : STD_LOGIC;
 SIGNAL hex0 : STD_LOGIC_VECTOR(0 TO 6);
 SIGNAL hex1 : STD_LOGIC_VECTOR(0 TO 6);
 SIGNAL hex2 : STD_LOGIC_VECTOR(0 TO 6);
@@ -42,7 +43,6 @@ SIGNAL hex4 : STD_LOGIC_VECTOR(0 TO 6);
 SIGNAL hex5 : STD_LOGIC_VECTOR(0 TO 6);
 SIGNAL key0 : STD_LOGIC;
 SIGNAL ledr : STD_LOGIC_VECTOR(8 DOWNTO 0);
-SIGNAL overflow : STD_LOGIC;
 SIGNAL r1 : STD_LOGIC_VECTOR(8 DOWNTO 0);
 SIGNAL r2 : STD_LOGIC_VECTOR(8 DOWNTO 0);
 SIGNAL r3 : STD_LOGIC_VECTOR(8 DOWNTO 0);
@@ -53,6 +53,7 @@ SIGNAL sw9 : STD_LOGIC;
 COMPONENT x777
 	PORT (
 	clk : IN STD_LOGIC;
+	gt_flags : BUFFER STD_LOGIC;
 	hex0 : BUFFER STD_LOGIC_VECTOR(0 TO 6);
 	hex1 : BUFFER STD_LOGIC_VECTOR(0 TO 6);
 	hex2 : BUFFER STD_LOGIC_VECTOR(0 TO 6);
@@ -61,7 +62,6 @@ COMPONENT x777
 	hex5 : BUFFER STD_LOGIC_VECTOR(0 TO 6);
 	key0 : IN STD_LOGIC;
 	ledr : BUFFER STD_LOGIC_VECTOR(8 DOWNTO 0);
-	overflow : BUFFER STD_LOGIC;
 	r1 : BUFFER STD_LOGIC_VECTOR(8 DOWNTO 0);
 	r2 : BUFFER STD_LOGIC_VECTOR(8 DOWNTO 0);
 	r3 : BUFFER STD_LOGIC_VECTOR(8 DOWNTO 0);
@@ -76,6 +76,7 @@ BEGIN
 	PORT MAP (
 -- list connections between master ports and signals
 	clk => clk,
+	gt_flags => gt_flags,
 	hex0 => hex0,
 	hex1 => hex1,
 	hex2 => hex2,
@@ -84,7 +85,6 @@ BEGIN
 	hex5 => hex5,
 	key0 => key0,
 	ledr => ledr,
-	overflow => overflow,
 	r1 => r1,
 	r2 => r2,
 	r3 => r3,

@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "11/02/2022 19:42:35"
+-- Generated on "11/02/2022 22:26:44"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          add_sub
 -- 
@@ -36,19 +36,23 @@ ARCHITECTURE add_sub_arch OF add_sub_vhd_vec_tst IS
 SIGNAL A : STD_LOGIC_VECTOR(8 DOWNTO 0);
 SIGNAL addsub : STD_LOGIC;
 SIGNAL B : STD_LOGIC_VECTOR(8 DOWNTO 0);
-SIGNAL carry : STD_LOGIC;
-SIGNAL overflow : STD_LOGIC;
+SIGNAL gt : STD_LOGIC;
+SIGNAL N : STD_LOGIC;
 SIGNAL reset : STD_LOGIC;
-SIGNAL v : STD_LOGIC_VECTOR(8 DOWNTO 0);
+SIGNAL result : STD_LOGIC_VECTOR(8 DOWNTO 0);
+SIGNAL V : STD_LOGIC;
+SIGNAL Z : STD_LOGIC;
 COMPONENT add_sub
 	PORT (
 	A : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
 	addsub : IN STD_LOGIC;
 	B : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
-	carry : OUT STD_LOGIC;
-	overflow : OUT STD_LOGIC;
+	gt : BUFFER STD_LOGIC;
+	N : BUFFER STD_LOGIC;
 	reset : IN STD_LOGIC;
-	v : OUT STD_LOGIC_VECTOR(8 DOWNTO 0)
+	result : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
+	V : BUFFER STD_LOGIC;
+	Z : BUFFER STD_LOGIC
 	);
 END COMPONENT;
 BEGIN
@@ -58,10 +62,12 @@ BEGIN
 	A => A,
 	addsub => addsub,
 	B => B,
-	carry => carry,
-	overflow => overflow,
+	gt => gt,
+	N => N,
 	reset => reset,
-	v => v
+	result => result,
+	V => V,
+	Z => Z
 	);
 -- A[8]
 t_prcs_A_8: PROCESS
@@ -90,13 +96,13 @@ END PROCESS t_prcs_A_5;
 -- A[4]
 t_prcs_A_4: PROCESS
 BEGIN
-	A(4) <= '1';
+	A(4) <= '0';
 WAIT;
 END PROCESS t_prcs_A_4;
 -- A[3]
 t_prcs_A_3: PROCESS
 BEGIN
-	A(3) <= '1';
+	A(3) <= '0';
 WAIT;
 END PROCESS t_prcs_A_3;
 -- A[2]
@@ -145,19 +151,19 @@ END PROCESS t_prcs_B_6;
 -- B[5]
 t_prcs_B_5: PROCESS
 BEGIN
-	B(5) <= '1';
+	B(5) <= '0';
 WAIT;
 END PROCESS t_prcs_B_5;
 -- B[4]
 t_prcs_B_4: PROCESS
 BEGIN
-	B(4) <= '1';
+	B(4) <= '0';
 WAIT;
 END PROCESS t_prcs_B_4;
 -- B[3]
 t_prcs_B_3: PROCESS
 BEGIN
-	B(3) <= '1';
+	B(3) <= '0';
 WAIT;
 END PROCESS t_prcs_B_3;
 -- B[2]
@@ -169,13 +175,13 @@ END PROCESS t_prcs_B_2;
 -- B[1]
 t_prcs_B_1: PROCESS
 BEGIN
-	B(1) <= '0';
+	B(1) <= '1';
 WAIT;
 END PROCESS t_prcs_B_1;
 -- B[0]
 t_prcs_B_0: PROCESS
 BEGIN
-	B(0) <= '0';
+	B(0) <= '1';
 WAIT;
 END PROCESS t_prcs_B_0;
 

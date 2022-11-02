@@ -76,15 +76,11 @@ architecture bhv of processor is
 	end component;
 	
 	component add_sub is 
-		generic (
-			k : natural := 9
-		);
-		port (
-			A, B : in std_logic_vector(k-1 downto 0);
-			addsub, reset : in std_logic;
-			Z,N,V : out std_logic;
-			result : out std_logic_vector(k-1 downto 0)
-		);
+    Generic (n : natural);
+    PORT (a,b :IN   STD_logic_vector(n-1 DOWNTO 0);
+            add_sub : IN STD_logic;
+            V,Z,Ne      : OUT STD_logic;
+            s   :OUT  STD_logic_vector(n-1 DOWNTO 0));
 	end component;
 	-- signal for enable of register
 	signal r0,r1,r2,r3,r4,r5,r6,pc_value,A,G : std_logic_vector(8 downto 0);
@@ -117,14 +113,14 @@ begin
 	ff_V: d_ff port map(clk, is_overflow, V);
 	ff_N: d_ff port map(clk, is_negative, N);
 	
-	addsub0: add_sub port map (
+	
+	addsub0: add_sub generic map(n => 9) port map (
 		A, 
 		BusWires, 
 		addsub,
-		reset_n, 
+		is_overflow,
 		is_zero,
 		is_negative,
-		is_overflow,
 		sum_result
 	);
 	

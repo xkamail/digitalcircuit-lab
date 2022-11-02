@@ -21,6 +21,7 @@ after 2500 simTimestamp
 run -all
 quit -f
 
+
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -39,6 +40,7 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
 
 </modelsim_script_timing>
 <hdl_lang>vhdl</hdl_lang>
@@ -1287,7 +1289,7 @@ SIGNAL("r4[0]")
 	PARENT = "r4";
 }
 
-SIGNAL("overflow")
+SIGNAL("gt_flags")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -2356,7 +2358,7 @@ TRANSITION_LIST("r4[0]")
 	}
 }
 
-TRANSITION_LIST("overflow")
+TRANSITION_LIST("gt_flags")
 {
 	NODE
 	{
@@ -3574,7 +3576,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "overflow";
+	CHANNEL = "gt_flags";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 121;
