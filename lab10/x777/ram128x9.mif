@@ -28,29 +28,42 @@ CONTENT BEGIN
 	3    :   100; %mvi R0,126%
 	4    :   176; %%
 	5    :   420; %ld R2, R0%
-	
-	6	: 	047;	%mv R4,R7%
-	7	: 	001;	%mv R0, R1 // just a temp variable%
-	8	: 	302;	%sub R0,R2 // compare X - Y %
 
-	9	: 	150;	%mvi R5,# // store else line%
-%%	10	: 	017; %#15%
+% start compare X != Y %
+	6	:	001;	%R0=X % 
+	7 	: 	302;	%sub R0,R2 // X = X - Y%
+	8	:	100;
+	9	:	015;
+	10	:	670;	%mvnz R7,R0 go begin loop when Y!=X	%
+	% when number is zero	%
+	11	:	170; 	% store R0 = show result%
+	12	:	052;	% show result line = #42 %
 
-	11	: 	775;	%mvgt R7,R5 if X > Y%
+%begin loop%
+	13	:	001; %// R0=R1=X %
+	14	:	150;	%mvi, R5, # %
+	15	:	025;	%//line=21%
+	16	:	302; %sub R0,RY (check R0-RY if R0> RY)%
+	17	:	775; %mvgt R7,R5 go to R5 line if R0>R7 (X>Y)%
+	18	:	321;	%sub R2,R1 Y=Y-X%
+	19	:	170;	%mvi R7, # done line%
+	20	:	026;	%//line=22%
 
-	12  : 	321;	%sub R2,R1 // Y = Y - X%
-	13  : 	170; 	%mvi R7,# // skip else %
-	14	:	020; 	%// end loop line%
-	15	:	312; 	%sub R1,R2 // X > Y X = X - Y%
+	21	:	312; %sub R1,R2 X=X-Y%
 
+%done line%
+	22	: 	170; %back to compare again%
+	23	:	006;
 
-%check X!=Y go R4%
-
-	16	:	312; %sub R1,R2 %
-	17	:	674; %mvnz R7, R4 %
-	18	:	000; %%
-	19	:	000; %%
-
+	42	:	100; % mvi R0%
+	43	:	200; %led address%
+	44	:	510; %st R1 which is x into LED address%
+	45	:	000; %%
+	46	:	000;
+	47	:	000;
+	48	:	000;
+	124	:	170;
+	125	:	174;
 	126: 115; %Y%
 	127: 13;  %X%
 END;

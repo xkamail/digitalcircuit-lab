@@ -15,7 +15,8 @@ entity control_unit is
 		Tstep_Q : out std_logic_vector(3 downto 0);
 		Greg : in std_logic_vector(8 downto 0); -- value of G
 		Z,N,V : in std_logic;
-		Gout,Gin,Ain, AddSub, ADDRin, DoutIn, pc_incr, Wr_en, gt_flag: out std_logic -- add/sub ops signal
+		Gout,Gin,Ain, AddSub, ADDRin, DoutIn, pc_incr, Wr_en,flagIn : out std_logic;
+		gt_flag: in std_logic -- add/sub ops signal
 	);
 end control_unit;
 
@@ -38,8 +39,7 @@ architecture bhv of control_unit is
 	constant NONE : std_logic_vector(0 to 7) := "00000000";
 	signal gt : std_logic;
 begin 
-	gt <= Z or (N xor V);
-	gt_flag <= gt;
+
 	-- state table
 	process (y_Q,run,done)
 	begin
@@ -82,6 +82,7 @@ begin
 	
 	controlsignals: process (y_Q, Xreg, Yreg,run)
 	begin
+		flagIn <= '0';
 		Gout <= '0'; Tstep_Q <= "0000"; Dout <= '0'; done <= '0'; Rin <= NONE;
 		Gin <= '0';
 		Wr_en <= '0'; R0toR7out <= NONE; ADDRin <= '0'; pc_incr <= '0'; 
@@ -131,7 +132,7 @@ begin
 						end if;
 					when MVGT =>
 						done <= '1';
-						if gt = '0' then
+						if gt_flag = '0' then
 							R0toR7out <= Yreg;
 							Rin <= Xreg;
 							
@@ -155,12 +156,14 @@ begin
 						Wr_en <= '1';
 						R0toR7out <= Xreg;
 					when ADD => 
+						flagIn <= '1';
 						AddSub <= '0';
 						Gin <= '1';
 						R0toR7out <= Yreg;
 					when SUB => 
 						AddSub <= '1';
 						Gin <= '1';
+						flagIn <= '1';
 						R0toR7out <= Yreg;
 					when others => null;
 				end case;
@@ -179,6 +182,7 @@ begin
 					when ADD | SUB =>
 						Rin <= Xreg;
 						Gout <= '1';
+						
 					when others => null;
 				end case;
 		end case;

@@ -13,7 +13,7 @@ entity processor is
 		debug_pr_in, debug_addrIn : out std_logic;
 		pc_v : out std_logic_vector(8 downto 0);
 		Tstep_Q : out std_logic_vector(3 downto 0);
-		gt_flag : out std_logic
+		gt_flag,d_en_flag : out std_logic
 	);
 end processor;
 
@@ -21,7 +21,7 @@ end processor;
 architecture bhv of processor is
 	component d_ff is
 		port (
-			Clk, D  : in std_logic;
+			Clk, en, D  : in std_logic;
 			Q : out std_logic
 		);
 	end component;
@@ -70,7 +70,8 @@ architecture bhv of processor is
 			Tstep_Q : out std_logic_vector(3 downto 0);
 			Greg : in std_logic_vector(8 downto 0); -- value of G
 			Z,N,V : in std_logic;
-			Gout,Gin,Ain, AddSub, ADDRin, DoutIn, pc_incr, Wr_en,gt_flag : out std_logic -- add/sub ops signal
+			Gout,Gin,Ain, AddSub, ADDRin, DoutIn, pc_incr, Wr_en,flagIn: out std_logic;
+			gt_flag : in std_logic -- add/sub ops signal
 			
 		);
 	end component;
@@ -84,7 +85,7 @@ architecture bhv of processor is
 	end component;
 	-- signal for enable of register
 	signal r0,r1,r2,r3,r4,r5,r6,pc_value,A,G : std_logic_vector(8 downto 0);
-	signal IRin, DinOut, Gout, Ain, Gin, W_D : std_logic;
+	signal IRin, DinOut, Gout, Ain, Gin, W_D,FlagIn : std_logic;
 	signal IR : std_logic_vector(1 to 9);
 	signal I : std_logic_vector(1 to 3);
 	signal Rin, Xreg, Yreg, R0toR7out : std_logic_vector(0 to 7);
@@ -92,8 +93,10 @@ architecture bhv of processor is
 	signal addsub, pc_incr, ADDRin, DoutIn : std_logic;
 	signal sum_result : std_logic_vector(8 downto 0);
 	signal is_zero,is_overflow,is_negative,Z,V,N : std_logic;
+	signal xx_flag,gt_flag_value : std_logic;
 begin
-	
+	gt_flag <= gt_flag_value;
+	d_en_flag <= flagIn;
 	ir0: regn port map(data_in,reset_n, IRin, clk, IR);
 
 					
@@ -109,24 +112,27 @@ begin
 	
 	regA: regn port map(busWires,reset_n, Ain, clk, A);
 	
-	ff_Z: d_ff  port map(clk, is_zero, Z);
-	ff_V: d_ff port map(clk, is_overflow, V);
-	ff_N: d_ff port map(clk, is_negative, N);
+--	ff_Z: d_ff  port map(clk, '1', is_zero, Z);
+--	ff_V: d_ff port map(clk, '1', is_overflow, V);
+--	ff_N: d_ff port map(clk, '1', is_negative, N);
 	
 	
 	addsub0: add_sub generic map(n => 9) port map (
 		A, 
 		BusWires, 
 		addsub,
-		is_overflow,
-		is_zero,
-		is_negative,
+		V,
+		Z,
+		N,
 		sum_result
 	);
 	
 	
 	regG: regn port map(sum_result,reset_n, Gin, clk, G);
+	xx_flag <= Z or (N xor V);
 	
+	regFlag: d_ff port map(clk,FlagIn,xx_flag,gt_flag_value);
+
 	regAddr: regn port map(busWires,reset_n, ADDRin, clk, ADDR);
 	regDout: regn port map(busWires,reset_n, DoutIn, clk, DOUT);
 	
@@ -170,10 +176,11 @@ begin
 				DoutIn,
 				pc_incr,
 				w_D,
-				gt_flag
+				FlagIn,
+				gt_flag_value
 			);
 			
-	ff0: d_ff port map(clk,W_D, wr_en);
+	ff0: d_ff port map(clk,'1',W_D, wr_en);
 	debug_addrIn <= AddRin;
 	debug_pr_in <= pc_incr;
 	pc_v <= pc_value;

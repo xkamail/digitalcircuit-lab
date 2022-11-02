@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "11/02/2022 22:26:44"
+-- Generated on "11/02/2022 22:50:39"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          add_sub
 -- 
@@ -33,96 +33,144 @@ END add_sub_vhd_vec_tst;
 ARCHITECTURE add_sub_arch OF add_sub_vhd_vec_tst IS
 -- constants                                                 
 -- signals                                                   
-SIGNAL A : STD_LOGIC_VECTOR(8 DOWNTO 0);
+SIGNAL a : STD_LOGIC_VECTOR(8 DOWNTO 0);
 SIGNAL addsub : STD_LOGIC;
-SIGNAL B : STD_LOGIC_VECTOR(8 DOWNTO 0);
-SIGNAL gt : STD_LOGIC;
-SIGNAL N : STD_LOGIC;
-SIGNAL reset : STD_LOGIC;
-SIGNAL result : STD_LOGIC_VECTOR(8 DOWNTO 0);
+SIGNAL b : STD_LOGIC_VECTOR(8 DOWNTO 0);
+SIGNAL Ne : STD_LOGIC;
+SIGNAL s : STD_LOGIC_VECTOR(8 DOWNTO 0);
 SIGNAL V : STD_LOGIC;
 SIGNAL Z : STD_LOGIC;
 COMPONENT add_sub
 	PORT (
-	A : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
+	a : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
 	addsub : IN STD_LOGIC;
-	B : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
-	gt : BUFFER STD_LOGIC;
-	N : BUFFER STD_LOGIC;
-	reset : IN STD_LOGIC;
-	result : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
-	V : BUFFER STD_LOGIC;
-	Z : BUFFER STD_LOGIC
+	b : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
+	Ne : OUT STD_LOGIC;
+	s : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
+	V : OUT STD_LOGIC;
+	Z : OUT STD_LOGIC
 	);
 END COMPONENT;
 BEGIN
 	i1 : add_sub
 	PORT MAP (
 -- list connections between master ports and signals
-	A => A,
+	a => a,
 	addsub => addsub,
-	B => B,
-	gt => gt,
-	N => N,
-	reset => reset,
-	result => result,
+	b => b,
+	Ne => Ne,
+	s => s,
 	V => V,
 	Z => Z
 	);
--- A[8]
-t_prcs_A_8: PROCESS
+-- a[8]
+t_prcs_a_8: PROCESS
 BEGIN
-	A(8) <= '0';
+	a(8) <= '0';
 WAIT;
-END PROCESS t_prcs_A_8;
--- A[7]
-t_prcs_A_7: PROCESS
+END PROCESS t_prcs_a_8;
+-- a[7]
+t_prcs_a_7: PROCESS
 BEGIN
-	A(7) <= '0';
+	a(7) <= '0';
 WAIT;
-END PROCESS t_prcs_A_7;
--- A[6]
-t_prcs_A_6: PROCESS
+END PROCESS t_prcs_a_7;
+-- a[6]
+t_prcs_a_6: PROCESS
 BEGIN
-	A(6) <= '0';
+	a(6) <= '0';
 WAIT;
-END PROCESS t_prcs_A_6;
--- A[5]
-t_prcs_A_5: PROCESS
+END PROCESS t_prcs_a_6;
+-- a[5]
+t_prcs_a_5: PROCESS
 BEGIN
-	A(5) <= '0';
+	a(5) <= '0';
 WAIT;
-END PROCESS t_prcs_A_5;
--- A[4]
-t_prcs_A_4: PROCESS
+END PROCESS t_prcs_a_5;
+-- a[4]
+t_prcs_a_4: PROCESS
 BEGIN
-	A(4) <= '0';
+	a(4) <= '0';
 WAIT;
-END PROCESS t_prcs_A_4;
--- A[3]
-t_prcs_A_3: PROCESS
+END PROCESS t_prcs_a_4;
+-- a[3]
+t_prcs_a_3: PROCESS
 BEGIN
-	A(3) <= '0';
+	a(3) <= '0';
 WAIT;
-END PROCESS t_prcs_A_3;
--- A[2]
-t_prcs_A_2: PROCESS
+END PROCESS t_prcs_a_3;
+-- a[2]
+t_prcs_a_2: PROCESS
 BEGIN
-	A(2) <= '1';
+	a(2) <= '1';
 WAIT;
-END PROCESS t_prcs_A_2;
--- A[1]
-t_prcs_A_1: PROCESS
+END PROCESS t_prcs_a_2;
+-- a[1]
+t_prcs_a_1: PROCESS
 BEGIN
-	A(1) <= '1';
+	a(1) <= '1';
 WAIT;
-END PROCESS t_prcs_A_1;
--- A[0]
-t_prcs_A_0: PROCESS
+END PROCESS t_prcs_a_1;
+-- a[0]
+t_prcs_a_0: PROCESS
 BEGIN
-	A(0) <= '0';
+	a(0) <= '0';
 WAIT;
-END PROCESS t_prcs_A_0;
+END PROCESS t_prcs_a_0;
+-- b[8]
+t_prcs_b_8: PROCESS
+BEGIN
+	b(8) <= '0';
+WAIT;
+END PROCESS t_prcs_b_8;
+-- b[7]
+t_prcs_b_7: PROCESS
+BEGIN
+	b(7) <= '0';
+WAIT;
+END PROCESS t_prcs_b_7;
+-- b[6]
+t_prcs_b_6: PROCESS
+BEGIN
+	b(6) <= '0';
+WAIT;
+END PROCESS t_prcs_b_6;
+-- b[5]
+t_prcs_b_5: PROCESS
+BEGIN
+	b(5) <= '0';
+WAIT;
+END PROCESS t_prcs_b_5;
+-- b[4]
+t_prcs_b_4: PROCESS
+BEGIN
+	b(4) <= '0';
+WAIT;
+END PROCESS t_prcs_b_4;
+-- b[3]
+t_prcs_b_3: PROCESS
+BEGIN
+	b(3) <= '0';
+WAIT;
+END PROCESS t_prcs_b_3;
+-- b[2]
+t_prcs_b_2: PROCESS
+BEGIN
+	b(2) <= '1';
+WAIT;
+END PROCESS t_prcs_b_2;
+-- b[1]
+t_prcs_b_1: PROCESS
+BEGIN
+	b(1) <= '0';
+WAIT;
+END PROCESS t_prcs_b_1;
+-- b[0]
+t_prcs_b_0: PROCESS
+BEGIN
+	b(0) <= '1';
+WAIT;
+END PROCESS t_prcs_b_0;
 
 -- addsub
 t_prcs_addsub: PROCESS
@@ -130,65 +178,4 @@ BEGIN
 	addsub <= '1';
 WAIT;
 END PROCESS t_prcs_addsub;
--- B[8]
-t_prcs_B_8: PROCESS
-BEGIN
-	B(8) <= '0';
-WAIT;
-END PROCESS t_prcs_B_8;
--- B[7]
-t_prcs_B_7: PROCESS
-BEGIN
-	B(7) <= '0';
-WAIT;
-END PROCESS t_prcs_B_7;
--- B[6]
-t_prcs_B_6: PROCESS
-BEGIN
-	B(6) <= '0';
-WAIT;
-END PROCESS t_prcs_B_6;
--- B[5]
-t_prcs_B_5: PROCESS
-BEGIN
-	B(5) <= '0';
-WAIT;
-END PROCESS t_prcs_B_5;
--- B[4]
-t_prcs_B_4: PROCESS
-BEGIN
-	B(4) <= '0';
-WAIT;
-END PROCESS t_prcs_B_4;
--- B[3]
-t_prcs_B_3: PROCESS
-BEGIN
-	B(3) <= '0';
-WAIT;
-END PROCESS t_prcs_B_3;
--- B[2]
-t_prcs_B_2: PROCESS
-BEGIN
-	B(2) <= '1';
-WAIT;
-END PROCESS t_prcs_B_2;
--- B[1]
-t_prcs_B_1: PROCESS
-BEGIN
-	B(1) <= '1';
-WAIT;
-END PROCESS t_prcs_B_1;
--- B[0]
-t_prcs_B_0: PROCESS
-BEGIN
-	B(0) <= '1';
-WAIT;
-END PROCESS t_prcs_B_0;
-
--- reset
-t_prcs_reset: PROCESS
-BEGIN
-	reset <= '1';
-WAIT;
-END PROCESS t_prcs_reset;
 END add_sub_arch;

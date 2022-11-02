@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 
 entity d_ff is
 	port (
-		Clk, D  : in std_logic;
+		Clk, en, D  : in std_logic;
 		Q : out std_logic
 	);
 end d_ff;
@@ -13,7 +13,11 @@ begin
 	process(d,clk)
 	begin
 		if rising_edge(clk) then
-			q <= d;
+			if en = '1' then
+				q <= d;
+			else
+				
+			end if;
 		end if;
 	end process;
 end Behavior;
