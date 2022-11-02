@@ -39,6 +39,7 @@ architecture bhv of control_unit is
 	signal gt : std_logic;
 begin 
 	gt <= Z or (N xor V);
+	gt_flag <= gt;
 	-- state table
 	process (y_Q,run,done)
 	begin

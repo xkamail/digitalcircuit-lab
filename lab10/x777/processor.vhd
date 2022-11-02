@@ -78,7 +78,7 @@ architecture bhv of processor is
 	component add_sub is 
     Generic (n : natural);
     PORT (a,b :IN   STD_logic_vector(n-1 DOWNTO 0);
-            add_sub : IN STD_logic;
+            addsub : IN STD_logic;
             V,Z,Ne      : OUT STD_logic;
             s   :OUT  STD_logic_vector(n-1 DOWNTO 0));
 	end component;

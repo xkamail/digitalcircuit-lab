@@ -6,7 +6,7 @@ use ieee.std_logic_signed.all;
 entity add_sub is 
     Generic (n : natural := 9);
     PORT (a,b :IN   STD_logic_vector(n-1 DOWNTO 0);
-            add_sub : IN STD_logic;
+            addsub : IN STD_logic;
             V,Z,Ne      : OUT STD_logic;
             s   :OUT  STD_logic_vector(n-1 DOWNTO 0));
 end add_sub;
@@ -17,9 +17,9 @@ architecture bhv of add_sub is
 begin
 	
    s <= se;
-    process (add_sub)
+    process (addsub)
         begin
-            if (add_sub = '0') THEN
+            if (addsub = '0') THEN
                 be <= b xor "000000000";
             else be <= (b xor "111111111") + 1;
             end if;
