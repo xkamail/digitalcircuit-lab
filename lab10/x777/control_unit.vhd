@@ -15,7 +15,7 @@ entity control_unit is
 		Tstep_Q : out std_logic_vector(3 downto 0);
 		Greg : in std_logic_vector(8 downto 0); -- value of G
 		Z,N,V : in std_logic;
-		Gout,Gin,Ain, AddSub, ADDRin, DoutIn, pc_incr, Wr_en : out std_logic -- add/sub ops signal
+		Gout,Gin,Ain, AddSub, ADDRin, DoutIn, pc_incr, Wr_en, gt_flag: out std_logic -- add/sub ops signal
 	);
 end control_unit;
 
@@ -30,7 +30,8 @@ architecture bhv of control_unit is
 	constant LOAD : std_logic_vector(2 downto 0) := "100";  -- Rx = *Ry;
 	constant STORE : std_logic_vector(2 downto 0) := "101"; -- *Ry = 
 	constant MVNZ : std_logic_vector(2 downto 0) := "110";
-	constant MVGT : std_logic_vector(2 downto 0) := "111"; -- move if overflow Ry to Rx
+	constant MVGT : std_logic_vector(2 downto 0) := "111"; 
+	-- Copy the value of Ry to Rx if Z and ( N xor V ) = 0
 
 	constant PCReg : std_logic_vector(2 downto 0) := "111";
 	constant PC_DATA : std_logic_vector(0 to 7) := "00000001";

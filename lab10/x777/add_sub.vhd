@@ -7,44 +7,42 @@ entity add_sub is
 	generic (
 		k : natural := 9
 	);
+--	port (
+--		A, B : in std_logic_vector(k-1 downto 0);
+--		addsub, reset : in std_logic;
+--		Z,N,V,gt : buffer std_logic;
+--		result : out std_logic_vector(k-1 downto 0)
+--	);
 	port (
-		A, B : in std_logic_vector(k-1 downto 0);
-		addsub, reset : in std_logic;
-		Z,N,V : out std_logic;
-		result : out std_logic_vector(k-1 downto 0)
+			A, B : in std_logic_vector(k-1 downto 0);
+			addsub, reset : in std_logic;
+			Z,N,V : out std_logic;
+			result : out std_logic_vector(k-1 downto 0)
 	);
 end add_sub;
 
 architecture bhv of add_sub is
 	
-	signal sum : std_logic_vector(k downto 0);
-	signal bb,zero : std_logic_vector(k-1 downto 0);
+	signal sum : std_logic_vector(k-1 downto 0);
+	signal zero : std_logic_vector(k-1 downto 0);
 begin
-	
-	process(reset,addsub)
+	zero <= (others => '0');
+
+	process(reset,A,addsub)
 	begin
-		if addsub = '1' then
-			bb <= std_logic_vector(unsigned(not(B) + 1));
-		else
-			bb <= B;
-		end if;
-		
 		if reset = '0' then
 			sum <=  (Others => '0');
 		else
-			sum <= ('0' & A) + ('0' & bb);
-			if A > 0 and bb > 0 and A + bb < 0 then
-				V <= '1';
-			elsif A < 0 and bb < 0 and A + bb > 0 then
-				V <= '1';
+			if addsub = '1' then
+				sum <= A-B;
 			else
-				V <= '0';
+				sum <= A+B;
 			end if;
 		end if;
 	end process;
-	zero <= (others => '0');
-	N <= '1' when(sum < 0) else '0';
-	Z <= '1' when( sum(k-1 downto 0) = zero ) else '1';
-	
+	V <= (A(k-1) xnor B(k-1)) and ( B(k-1) xor sum(k-1));
+	N <= '1' when (sum < 0) else '0';
+	Z <= '1' when (sum = "000000000") else '0';
+	-- gt <= Z and (N xor V);
 	result <= sum(k-1 downto 0);
 end bhv;

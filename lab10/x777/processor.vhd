@@ -12,7 +12,8 @@ entity processor is
 		reg_2,reg_4,reg_5,reg_7,reg_1, reg_0, reg_IR, reg_3 : out std_logic_vector(8 downto 0);
 		debug_pr_in, debug_addrIn : out std_logic;
 		pc_v : out std_logic_vector(8 downto 0);
-		Tstep_Q : out std_logic_vector(3 downto 0)
+		Tstep_Q : out std_logic_vector(3 downto 0);
+		gt_flag : out std_logic
 	);
 end processor;
 
@@ -69,7 +70,8 @@ architecture bhv of processor is
 			Tstep_Q : out std_logic_vector(3 downto 0);
 			Greg : in std_logic_vector(8 downto 0); -- value of G
 			Z,N,V : in std_logic;
-			Gout,Gin,Ain, AddSub, ADDRin, DoutIn, pc_incr, Wr_en : out std_logic -- add/sub ops signal
+			Gout,Gin,Ain, AddSub, ADDRin, DoutIn, pc_incr, Wr_en,gt_flag : out std_logic -- add/sub ops signal
+			
 		);
 	end component;
 	
@@ -171,7 +173,8 @@ begin
 				ADDRin,
 				DoutIn,
 				pc_incr,
-				w_D
+				w_D,
+				gt_flag
 			);
 			
 	ff0: d_ff port map(clk,W_D, wr_en);
