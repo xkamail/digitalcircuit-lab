@@ -25,7 +25,7 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Thu Nov 03 00:57:51 2022
+    Info: Processing started: Thu Nov 03 01:38:59 2022
 Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off x777 -c x777 --vector_source=C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab10/x777/Waveform.vwf --testbench_file=C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab10/x777/simulation/qsim/Waveform.vwf.vht
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 
@@ -53,13 +53,13 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Thu Nov 03 00:57:52 2022
+    Info: Processing started: Thu Nov 03 01:39:00 2022
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab10/x777/simulation/qsim/ x777 -c x777
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file x777.vho in folder "C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab10/x777/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4713 megabytes
-    Info: Processing ended: Thu Nov 03 00:57:53 2022
+    Info: Peak virtual memory: 4714 megabytes
+    Info: Processing ended: Thu Nov 03 01:39:01 2022
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
@@ -77,15 +77,14 @@ c:/intelfpga_lite/18.1/modelsim_ase/win32aloem//vsim -c -do x777.do
 
 Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 
-
 # 10.5b
+
 
 # do x777.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:57:54 on Nov 03,2022
+# Start time: 01:39:02 on Nov 03,2022
 # vcom -work work x777.vho 
-
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
@@ -93,16 +92,17 @@ Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 # -- Loading package VITAL_Primitives
 # -- Loading package dffeas_pack
 # -- Loading package altera_primitives_components
+
 # -- Loading package altera_lnsim_components
 # -- Loading package cyclonev_atom_pack
 # -- Loading package cyclonev_components
 # -- Compiling entity x777
 # -- Compiling architecture structure of x777
 
-# End time: 00:57:54 on Nov 03,2022, Elapsed time: 0:00:00
+# End time: 01:39:02 on Nov 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:57:54 on Nov 03,2022
+# Start time: 01:39:02 on Nov 03,2022
 # vcom -work work Waveform.vwf.vht 
 # -- Loading package STANDARD
 
@@ -110,11 +110,11 @@ Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 # -- Loading package std_logic_1164
 # -- Compiling entity x777_vhd_vec_tst
 # -- Compiling architecture x777_arch of x777_vhd_vec_tst
-# End time: 00:57:54 on Nov 03,2022, Elapsed time: 0:00:00
+# End time: 01:39:02 on Nov 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
 # vsim -novopt -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.x777_vhd_vec_tst 
-# Start time: 00:57:54 on Nov 03,2022
+# Start time: 01:39:02 on Nov 03,2022
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -144,9 +144,9 @@ Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 # Expect performance to be adversely affected.
 # after#34
 
-# Simulation time: 2005000 ps
+# Simulation time: 1585000 ps
 
-# End time: 00:57:59 on Nov 03,2022, Elapsed time: 0:00:05
+# End time: 01:39:07 on Nov 03,2022, Elapsed time: 0:00:05
 # Errors: 0, Warnings: 1
 
 Completed successfully. 
@@ -159,7 +159,7 @@ Reading C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab10/x777/simulation/
 
 Processing channel transitions... 
 
-Writing the resulting VWF to C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab10/x777/simulation/qsim/x777_20221103005759.sim.vwf
+Writing the resulting VWF to C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab10/x777/simulation/qsim/x777_20221103013907.sim.vwf
 
 Finished VCD to VWF conversion.
 

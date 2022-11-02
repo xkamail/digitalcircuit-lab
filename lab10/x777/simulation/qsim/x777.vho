@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
 
--- DATE "11/03/2022 00:57:53"
+-- DATE "11/03/2022 01:39:01"
 
 -- 
 -- Device: Altera 5CEBA4F23C7 Package FBGA484
@@ -562,39 +562,6 @@ SIGNAL \p1|regAddr|ALT_INV_Q\ : std_logic_vector(8 DOWNTO 0);
 SIGNAL \u0|r0|ALT_INV_Q\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \u0|r1|ALT_INV_Q\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \u0|r2|ALT_INV_Q\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \p1|fsm|ALT_INV_y_Q.T0~DUPLICATE_q\ : std_logic;
-SIGNAL \p1|fsm|ALT_INV_y_Q.T1~DUPLICATE_q\ : std_logic;
-SIGNAL \p1|ir0|ALT_INV_Q[0]~DUPLICATE_q\ : std_logic;
-SIGNAL \p1|ir0|ALT_INV_Q[1]~DUPLICATE_q\ : std_logic;
-SIGNAL \p1|ir0|ALT_INV_Q[2]~DUPLICATE_q\ : std_logic;
-SIGNAL \p1|ir0|ALT_INV_Q[6]~DUPLICATE_q\ : std_logic;
-SIGNAL \p1|ir0|ALT_INV_Q[8]~DUPLICATE_q\ : std_logic;
-SIGNAL \p1|fsm|ALT_INV_y_Q.T2~DUPLICATE_q\ : std_logic;
-SIGNAL \p1|reg1|ALT_INV_Q[0]~DUPLICATE_q\ : std_logic;
-SIGNAL \p1|pc0|ALT_INV_v[6]~DUPLICATE_q\ : std_logic;
-SIGNAL \p1|pc0|ALT_INV_v[4]~DUPLICATE_q\ : std_logic;
-SIGNAL \p1|pc0|ALT_INV_v[1]~DUPLICATE_q\ : std_logic;
-SIGNAL \p1|mux0|ALT_INV_y[3]~41_combout\ : std_logic;
-SIGNAL \p1|fsm|ALT_INV_Selector8~2_combout\ : std_logic;
-SIGNAL \p1|mux0|ALT_INV_y[3]~40_combout\ : std_logic;
-SIGNAL \p1|fsm|ALT_INV_Selector5~4_combout\ : std_logic;
-SIGNAL \p1|fsm|ALT_INV_Selector6~4_combout\ : std_logic;
-SIGNAL \p1|regA|ALT_INV_Q\ : std_logic_vector(8 DOWNTO 0);
-SIGNAL \p1|fsm|ALT_INV_Mux28~1_combout\ : std_logic;
-SIGNAL \p1|fsm|ALT_INV_Selector0~0_combout\ : std_logic;
-SIGNAL \p1|pc0|ALT_INV_v[0]~2_combout\ : std_logic;
-SIGNAL \p1|pc0|ALT_INV_v[0]~1_combout\ : std_logic;
-SIGNAL \p1|pc0|ALT_INV_v[0]~0_combout\ : std_logic;
-SIGNAL \p1|fsm|ALT_INV_Selector13~1_combout\ : std_logic;
-SIGNAL \p1|fsm|ALT_INV_Selector10~1_combout\ : std_logic;
-SIGNAL \p1|fsm|ALT_INV_Selector10~0_combout\ : std_logic;
-SIGNAL \ff0|ALT_INV_Q~q\ : std_logic;
-SIGNAL \p1|ALT_INV_xx_flag~0_combout\ : std_logic;
-SIGNAL \p1|fsm|ALT_INV_Selector12~1_combout\ : std_logic;
-SIGNAL \p1|fsm|ALT_INV_Selector12~0_combout\ : std_logic;
-SIGNAL \p1|mux0|ALT_INV_y[8]~39_combout\ : std_logic;
-SIGNAL \p1|mux0|ALT_INV_y[8]~38_combout\ : std_logic;
-SIGNAL \p1|mux0|ALT_INV_y[8]~37_combout\ : std_logic;
 SIGNAL \p1|reg5|ALT_INV_Q\ : std_logic_vector(8 DOWNTO 0);
 SIGNAL \p1|reg6|ALT_INV_Q\ : std_logic_vector(8 DOWNTO 0);
 SIGNAL \p1|mux0|ALT_INV_y[7]~36_combout\ : std_logic;
@@ -678,6 +645,39 @@ SIGNAL \p1|regG|ALT_INV_Q\ : std_logic_vector(8 DOWNTO 0);
 SIGNAL \p1|fsm|ALT_INV_Mux1~1_combout\ : std_logic;
 SIGNAL \p1|fsm|ALT_INV_Mux1~0_combout\ : std_logic;
 SIGNAL \p1|decX|ALT_INV_Mux0~0_combout\ : std_logic;
+SIGNAL \p1|fsm|ALT_INV_y_Q.T0~DUPLICATE_q\ : std_logic;
+SIGNAL \p1|fsm|ALT_INV_y_Q.T1~DUPLICATE_q\ : std_logic;
+SIGNAL \p1|ir0|ALT_INV_Q[0]~DUPLICATE_q\ : std_logic;
+SIGNAL \p1|ir0|ALT_INV_Q[1]~DUPLICATE_q\ : std_logic;
+SIGNAL \p1|ir0|ALT_INV_Q[2]~DUPLICATE_q\ : std_logic;
+SIGNAL \p1|ir0|ALT_INV_Q[6]~DUPLICATE_q\ : std_logic;
+SIGNAL \p1|ir0|ALT_INV_Q[8]~DUPLICATE_q\ : std_logic;
+SIGNAL \p1|fsm|ALT_INV_y_Q.T2~DUPLICATE_q\ : std_logic;
+SIGNAL \p1|reg1|ALT_INV_Q[0]~DUPLICATE_q\ : std_logic;
+SIGNAL \p1|pc0|ALT_INV_v[6]~DUPLICATE_q\ : std_logic;
+SIGNAL \p1|pc0|ALT_INV_v[4]~DUPLICATE_q\ : std_logic;
+SIGNAL \p1|pc0|ALT_INV_v[1]~DUPLICATE_q\ : std_logic;
+SIGNAL \p1|mux0|ALT_INV_y[3]~41_combout\ : std_logic;
+SIGNAL \p1|fsm|ALT_INV_Selector8~2_combout\ : std_logic;
+SIGNAL \p1|mux0|ALT_INV_y[3]~40_combout\ : std_logic;
+SIGNAL \p1|fsm|ALT_INV_Selector5~4_combout\ : std_logic;
+SIGNAL \p1|fsm|ALT_INV_Selector6~4_combout\ : std_logic;
+SIGNAL \p1|regA|ALT_INV_Q\ : std_logic_vector(8 DOWNTO 0);
+SIGNAL \p1|fsm|ALT_INV_Mux28~1_combout\ : std_logic;
+SIGNAL \p1|fsm|ALT_INV_Selector0~0_combout\ : std_logic;
+SIGNAL \p1|pc0|ALT_INV_v[0]~2_combout\ : std_logic;
+SIGNAL \p1|pc0|ALT_INV_v[0]~1_combout\ : std_logic;
+SIGNAL \p1|pc0|ALT_INV_v[0]~0_combout\ : std_logic;
+SIGNAL \p1|fsm|ALT_INV_Selector13~1_combout\ : std_logic;
+SIGNAL \p1|fsm|ALT_INV_Selector10~1_combout\ : std_logic;
+SIGNAL \p1|fsm|ALT_INV_Selector10~0_combout\ : std_logic;
+SIGNAL \ff0|ALT_INV_Q~q\ : std_logic;
+SIGNAL \p1|ALT_INV_xx_flag~0_combout\ : std_logic;
+SIGNAL \p1|fsm|ALT_INV_Selector12~1_combout\ : std_logic;
+SIGNAL \p1|fsm|ALT_INV_Selector12~0_combout\ : std_logic;
+SIGNAL \p1|mux0|ALT_INV_y[8]~39_combout\ : std_logic;
+SIGNAL \p1|mux0|ALT_INV_y[8]~38_combout\ : std_logic;
+SIGNAL \p1|mux0|ALT_INV_y[8]~37_combout\ : std_logic;
 
 BEGIN
 
@@ -839,52 +839,6 @@ ww_devpor <= devpor;
 \u0|r3|ALT_INV_Q\(0) <= NOT \u0|r3|Q\(0);
 \u0|r3|ALT_INV_Q\(1) <= NOT \u0|r3|Q\(1);
 \u0|r3|ALT_INV_Q\(2) <= NOT \u0|r3|Q\(2);
-\p1|fsm|ALT_INV_y_Q.T0~DUPLICATE_q\ <= NOT \p1|fsm|y_Q.T0~DUPLICATE_q\;
-\p1|fsm|ALT_INV_y_Q.T1~DUPLICATE_q\ <= NOT \p1|fsm|y_Q.T1~DUPLICATE_q\;
-\p1|ir0|ALT_INV_Q[0]~DUPLICATE_q\ <= NOT \p1|ir0|Q[0]~DUPLICATE_q\;
-\p1|ir0|ALT_INV_Q[1]~DUPLICATE_q\ <= NOT \p1|ir0|Q[1]~DUPLICATE_q\;
-\p1|ir0|ALT_INV_Q[2]~DUPLICATE_q\ <= NOT \p1|ir0|Q[2]~DUPLICATE_q\;
-\p1|ir0|ALT_INV_Q[6]~DUPLICATE_q\ <= NOT \p1|ir0|Q[6]~DUPLICATE_q\;
-\p1|ir0|ALT_INV_Q[8]~DUPLICATE_q\ <= NOT \p1|ir0|Q[8]~DUPLICATE_q\;
-\p1|fsm|ALT_INV_y_Q.T2~DUPLICATE_q\ <= NOT \p1|fsm|y_Q.T2~DUPLICATE_q\;
-\p1|reg1|ALT_INV_Q[0]~DUPLICATE_q\ <= NOT \p1|reg1|Q[0]~DUPLICATE_q\;
-\p1|pc0|ALT_INV_v[6]~DUPLICATE_q\ <= NOT \p1|pc0|v[6]~DUPLICATE_q\;
-\p1|pc0|ALT_INV_v[4]~DUPLICATE_q\ <= NOT \p1|pc0|v[4]~DUPLICATE_q\;
-\p1|pc0|ALT_INV_v[1]~DUPLICATE_q\ <= NOT \p1|pc0|v[1]~DUPLICATE_q\;
-\p1|mux0|ALT_INV_y[3]~41_combout\ <= NOT \p1|mux0|y[3]~41_combout\;
-\p1|fsm|ALT_INV_Selector8~2_combout\ <= NOT \p1|fsm|Selector8~2_combout\;
-\p1|mux0|ALT_INV_y[3]~40_combout\ <= NOT \p1|mux0|y[3]~40_combout\;
-\p1|fsm|ALT_INV_Selector5~4_combout\ <= NOT \p1|fsm|Selector5~4_combout\;
-\p1|fsm|ALT_INV_Selector6~4_combout\ <= NOT \p1|fsm|Selector6~4_combout\;
-\p1|regA|ALT_INV_Q\(5) <= NOT \p1|regA|Q\(5);
-\p1|regA|ALT_INV_Q\(4) <= NOT \p1|regA|Q\(4);
-\p1|regA|ALT_INV_Q\(3) <= NOT \p1|regA|Q\(3);
-\p1|regA|ALT_INV_Q\(2) <= NOT \p1|regA|Q\(2);
-\p1|regA|ALT_INV_Q\(1) <= NOT \p1|regA|Q\(1);
-\p1|regA|ALT_INV_Q\(0) <= NOT \p1|regA|Q\(0);
-\p1|regA|ALT_INV_Q\(7) <= NOT \p1|regA|Q\(7);
-\p1|regA|ALT_INV_Q\(6) <= NOT \p1|regA|Q\(6);
-\p1|fsm|ALT_INV_Mux28~1_combout\ <= NOT \p1|fsm|Mux28~1_combout\;
-\p1|fsm|ALT_INV_Selector0~0_combout\ <= NOT \p1|fsm|Selector0~0_combout\;
-\p1|pc0|ALT_INV_v[0]~2_combout\ <= NOT \p1|pc0|v[0]~2_combout\;
-\p1|pc0|ALT_INV_v[0]~1_combout\ <= NOT \p1|pc0|v[0]~1_combout\;
-\p1|pc0|ALT_INV_v[0]~0_combout\ <= NOT \p1|pc0|v[0]~0_combout\;
-\p1|fsm|ALT_INV_Selector13~1_combout\ <= NOT \p1|fsm|Selector13~1_combout\;
-\p1|fsm|ALT_INV_Selector10~1_combout\ <= NOT \p1|fsm|Selector10~1_combout\;
-\p1|fsm|ALT_INV_Selector10~0_combout\ <= NOT \p1|fsm|Selector10~0_combout\;
-\ff0|ALT_INV_Q~q\ <= NOT \ff0|Q~q\;
-\p1|regDout|ALT_INV_Q\(8) <= NOT \p1|regDout|Q\(8);
-\p1|regDout|ALT_INV_Q\(7) <= NOT \p1|regDout|Q\(7);
-\p1|regDout|ALT_INV_Q\(6) <= NOT \p1|regDout|Q\(6);
-\p1|regDout|ALT_INV_Q\(5) <= NOT \p1|regDout|Q\(5);
-\p1|regDout|ALT_INV_Q\(4) <= NOT \p1|regDout|Q\(4);
-\p1|ALT_INV_xx_flag~0_combout\ <= NOT \p1|xx_flag~0_combout\;
-\p1|regA|ALT_INV_Q\(8) <= NOT \p1|regA|Q\(8);
-\p1|fsm|ALT_INV_Selector12~1_combout\ <= NOT \p1|fsm|Selector12~1_combout\;
-\p1|fsm|ALT_INV_Selector12~0_combout\ <= NOT \p1|fsm|Selector12~0_combout\;
-\p1|mux0|ALT_INV_y[8]~39_combout\ <= NOT \p1|mux0|y[8]~39_combout\;
-\p1|mux0|ALT_INV_y[8]~38_combout\ <= NOT \p1|mux0|y[8]~38_combout\;
-\p1|mux0|ALT_INV_y[8]~37_combout\ <= NOT \p1|mux0|y[8]~37_combout\;
 \p1|reg5|ALT_INV_Q\(8) <= NOT \p1|reg5|Q\(8);
 \p1|reg6|ALT_INV_Q\(8) <= NOT \p1|reg6|Q\(8);
 \p1|mux0|ALT_INV_y[7]~36_combout\ <= NOT \p1|mux0|y[7]~36_combout\;
@@ -1001,6 +955,52 @@ ww_devpor <= devpor;
 \p1|pc0|ALT_INV_v\(0) <= NOT \p1|pc0|v\(0);
 \p1|regG|ALT_INV_Q\(0) <= NOT \p1|regG|Q\(0);
 \p1|regDout|ALT_INV_Q\(2) <= NOT \p1|regDout|Q\(2);
+\p1|fsm|ALT_INV_y_Q.T0~DUPLICATE_q\ <= NOT \p1|fsm|y_Q.T0~DUPLICATE_q\;
+\p1|fsm|ALT_INV_y_Q.T1~DUPLICATE_q\ <= NOT \p1|fsm|y_Q.T1~DUPLICATE_q\;
+\p1|ir0|ALT_INV_Q[0]~DUPLICATE_q\ <= NOT \p1|ir0|Q[0]~DUPLICATE_q\;
+\p1|ir0|ALT_INV_Q[1]~DUPLICATE_q\ <= NOT \p1|ir0|Q[1]~DUPLICATE_q\;
+\p1|ir0|ALT_INV_Q[2]~DUPLICATE_q\ <= NOT \p1|ir0|Q[2]~DUPLICATE_q\;
+\p1|ir0|ALT_INV_Q[6]~DUPLICATE_q\ <= NOT \p1|ir0|Q[6]~DUPLICATE_q\;
+\p1|ir0|ALT_INV_Q[8]~DUPLICATE_q\ <= NOT \p1|ir0|Q[8]~DUPLICATE_q\;
+\p1|fsm|ALT_INV_y_Q.T2~DUPLICATE_q\ <= NOT \p1|fsm|y_Q.T2~DUPLICATE_q\;
+\p1|reg1|ALT_INV_Q[0]~DUPLICATE_q\ <= NOT \p1|reg1|Q[0]~DUPLICATE_q\;
+\p1|pc0|ALT_INV_v[6]~DUPLICATE_q\ <= NOT \p1|pc0|v[6]~DUPLICATE_q\;
+\p1|pc0|ALT_INV_v[4]~DUPLICATE_q\ <= NOT \p1|pc0|v[4]~DUPLICATE_q\;
+\p1|pc0|ALT_INV_v[1]~DUPLICATE_q\ <= NOT \p1|pc0|v[1]~DUPLICATE_q\;
+\p1|mux0|ALT_INV_y[3]~41_combout\ <= NOT \p1|mux0|y[3]~41_combout\;
+\p1|fsm|ALT_INV_Selector8~2_combout\ <= NOT \p1|fsm|Selector8~2_combout\;
+\p1|mux0|ALT_INV_y[3]~40_combout\ <= NOT \p1|mux0|y[3]~40_combout\;
+\p1|fsm|ALT_INV_Selector5~4_combout\ <= NOT \p1|fsm|Selector5~4_combout\;
+\p1|fsm|ALT_INV_Selector6~4_combout\ <= NOT \p1|fsm|Selector6~4_combout\;
+\p1|regA|ALT_INV_Q\(5) <= NOT \p1|regA|Q\(5);
+\p1|regA|ALT_INV_Q\(4) <= NOT \p1|regA|Q\(4);
+\p1|regA|ALT_INV_Q\(3) <= NOT \p1|regA|Q\(3);
+\p1|regA|ALT_INV_Q\(2) <= NOT \p1|regA|Q\(2);
+\p1|regA|ALT_INV_Q\(1) <= NOT \p1|regA|Q\(1);
+\p1|regA|ALT_INV_Q\(0) <= NOT \p1|regA|Q\(0);
+\p1|regA|ALT_INV_Q\(7) <= NOT \p1|regA|Q\(7);
+\p1|regA|ALT_INV_Q\(6) <= NOT \p1|regA|Q\(6);
+\p1|fsm|ALT_INV_Mux28~1_combout\ <= NOT \p1|fsm|Mux28~1_combout\;
+\p1|fsm|ALT_INV_Selector0~0_combout\ <= NOT \p1|fsm|Selector0~0_combout\;
+\p1|pc0|ALT_INV_v[0]~2_combout\ <= NOT \p1|pc0|v[0]~2_combout\;
+\p1|pc0|ALT_INV_v[0]~1_combout\ <= NOT \p1|pc0|v[0]~1_combout\;
+\p1|pc0|ALT_INV_v[0]~0_combout\ <= NOT \p1|pc0|v[0]~0_combout\;
+\p1|fsm|ALT_INV_Selector13~1_combout\ <= NOT \p1|fsm|Selector13~1_combout\;
+\p1|fsm|ALT_INV_Selector10~1_combout\ <= NOT \p1|fsm|Selector10~1_combout\;
+\p1|fsm|ALT_INV_Selector10~0_combout\ <= NOT \p1|fsm|Selector10~0_combout\;
+\ff0|ALT_INV_Q~q\ <= NOT \ff0|Q~q\;
+\p1|regDout|ALT_INV_Q\(8) <= NOT \p1|regDout|Q\(8);
+\p1|regDout|ALT_INV_Q\(7) <= NOT \p1|regDout|Q\(7);
+\p1|regDout|ALT_INV_Q\(6) <= NOT \p1|regDout|Q\(6);
+\p1|regDout|ALT_INV_Q\(5) <= NOT \p1|regDout|Q\(5);
+\p1|regDout|ALT_INV_Q\(4) <= NOT \p1|regDout|Q\(4);
+\p1|ALT_INV_xx_flag~0_combout\ <= NOT \p1|xx_flag~0_combout\;
+\p1|regA|ALT_INV_Q\(8) <= NOT \p1|regA|Q\(8);
+\p1|fsm|ALT_INV_Selector12~1_combout\ <= NOT \p1|fsm|Selector12~1_combout\;
+\p1|fsm|ALT_INV_Selector12~0_combout\ <= NOT \p1|fsm|Selector12~0_combout\;
+\p1|mux0|ALT_INV_y[8]~39_combout\ <= NOT \p1|mux0|y[8]~39_combout\;
+\p1|mux0|ALT_INV_y[8]~38_combout\ <= NOT \p1|mux0|y[8]~38_combout\;
+\p1|mux0|ALT_INV_y[8]~37_combout\ <= NOT \p1|mux0|y[8]~37_combout\;
 
 -- Location: IOOBUF_X36_Y0_N19
 \hex5[6]~output\ : cyclonev_io_obuf
@@ -3288,8 +3288,8 @@ PORT MAP (
 \m0|altsyncram_component|auto_generated|ram_block1a0\ : cyclonev_ram_block
 -- pragma translate_off
 GENERIC MAP (
-	mem_init1 => "00078000780007C00078000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	mem_init0 => "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000016800105000400003400078000E3000A80003F00078001FA0003B00050000D300014000000006800001000400002100064000580014800080000400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000600078000CA0001600078000D1001FD000C20001500068000010002A00078001B80000D00040000C200001001100007E00040001080007F00040",
+	mem_init1 => "00064000640007C00078000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	mem_init0 => "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000016800105000400003400078000E3000A8001BA0004000050001FA0003C00050000D300014000000006800001000400002100064000580014800080000400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000600078000CA0001600078000D1001FD000C20001500068000010002A00078001B80000D00040000C200001001100007E00040001080007F00040",
 	data_interleave_offset_in_bits => 1,
 	data_interleave_width_in_bits => 1,
 	init_file => "ram128x9.mif",
