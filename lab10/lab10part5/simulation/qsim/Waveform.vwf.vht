@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "10/30/2022 22:48:09"
+-- Generated on "11/02/2022 17:16:04"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          lab10part5
 -- 
@@ -34,10 +34,6 @@ ARCHITECTURE lab10part5_arch OF lab10part5_vhd_vec_tst IS
 -- constants                                                 
 -- signals                                                   
 SIGNAL clk : STD_LOGIC;
-SIGNAL d_in : STD_LOGIC_VECTOR(8 DOWNTO 0);
-SIGNAL d_r2 : STD_LOGIC_VECTOR(8 DOWNTO 0);
-SIGNAL d_r3 : STD_LOGIC_VECTOR(8 DOWNTO 0);
-SIGNAL d_r5 : STD_LOGIC_VECTOR(8 DOWNTO 0);
 SIGNAL hex0 : STD_LOGIC_VECTOR(0 TO 6);
 SIGNAL hex1 : STD_LOGIC_VECTOR(0 TO 6);
 SIGNAL hex2 : STD_LOGIC_VECTOR(0 TO 6);
@@ -51,18 +47,14 @@ SIGNAL sw9 : STD_LOGIC;
 COMPONENT lab10part5
 	PORT (
 	clk : IN STD_LOGIC;
-	d_in : BUFFER STD_LOGIC_VECTOR(8 DOWNTO 0);
-	d_r2 : BUFFER STD_LOGIC_VECTOR(8 DOWNTO 0);
-	d_r3 : BUFFER STD_LOGIC_VECTOR(8 DOWNTO 0);
-	d_r5 : BUFFER STD_LOGIC_VECTOR(8 DOWNTO 0);
-	hex0 : BUFFER STD_LOGIC_VECTOR(0 TO 6);
-	hex1 : BUFFER STD_LOGIC_VECTOR(0 TO 6);
-	hex2 : BUFFER STD_LOGIC_VECTOR(0 TO 6);
-	hex3 : BUFFER STD_LOGIC_VECTOR(0 TO 6);
-	hex4 : BUFFER STD_LOGIC_VECTOR(0 TO 6);
-	hex5 : BUFFER STD_LOGIC_VECTOR(0 TO 6);
+	hex0 : OUT STD_LOGIC_VECTOR(0 TO 6);
+	hex1 : OUT STD_LOGIC_VECTOR(0 TO 6);
+	hex2 : OUT STD_LOGIC_VECTOR(0 TO 6);
+	hex3 : OUT STD_LOGIC_VECTOR(0 TO 6);
+	hex4 : OUT STD_LOGIC_VECTOR(0 TO 6);
+	hex5 : OUT STD_LOGIC_VECTOR(0 TO 6);
 	key0 : IN STD_LOGIC;
-	ledr : BUFFER STD_LOGIC_VECTOR(8 DOWNTO 0);
+	ledr : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
 	sw : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
 	sw9 : IN STD_LOGIC
 	);
@@ -72,10 +64,6 @@ BEGIN
 	PORT MAP (
 -- list connections between master ports and signals
 	clk => clk,
-	d_in => d_in,
-	d_r2 => d_r2,
-	d_r3 => d_r3,
-	d_r5 => d_r5,
 	hex0 => hex0,
 	hex1 => hex1,
 	hex2 => hex2,
@@ -157,15 +145,13 @@ END PROCESS t_prcs_sw_2;
 -- sw[1]
 t_prcs_sw_1: PROCESS
 BEGIN
-	sw(1) <= '1';
+	sw(1) <= '0';
 WAIT;
 END PROCESS t_prcs_sw_1;
 -- sw[0]
 t_prcs_sw_0: PROCESS
 BEGIN
 	sw(0) <= '1';
-	WAIT FOR 4020000 ps;
-	sw(0) <= '0';
 WAIT;
 END PROCESS t_prcs_sw_0;
 

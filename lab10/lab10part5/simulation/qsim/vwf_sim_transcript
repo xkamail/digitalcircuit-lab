@@ -25,11 +25,9 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Sun Oct 30 22:48:08 2022
+    Info: Processing started: Wed Nov 02 17:16:03 2022
 Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off lab10part5 -c lab10part5 --vector_source=C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab10/lab10part5/Waveform.vwf --testbench_file=C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab10/lab10part5/simulation/qsim/Waveform.vwf.vht
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-
-nch files
 
 Completed successfully. 
 
@@ -53,14 +51,14 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Sun Oct 30 22:48:10 2022
+    Info: Processing started: Wed Nov 02 17:16:04 2022
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab10/lab10part5/simulation/qsim/ lab10part5 -c lab10part5
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file lab10part5.vho in folder "C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab10/lab10part5/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4712 megabytes
-    Info: Processing ended: Sun Oct 30 22:48:11 2022
-    Info: Elapsed time: 00:00:01
+    Info: Processing ended: Wed Nov 02 17:16:06 2022
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
 Completed successfully. 
@@ -77,14 +75,15 @@ c:/intelfpga_lite/18.1/modelsim_ase/win32aloem//vsim -c -do lab10part5.do
 
 Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 
+
 # 10.5b
 
 # do lab10part5.do
-
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 22:48:11 on Oct 30,2022
+# Start time: 17:16:06 on Nov 02,2022
 # vcom -work work lab10part5.vho 
+
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
@@ -95,25 +94,24 @@ Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 # -- Loading package altera_lnsim_components
 # -- Loading package cyclonev_atom_pack
 # -- Loading package cyclonev_components
-
 # -- Compiling entity lab10part5
 # -- Compiling architecture structure of lab10part5
 
-# End time: 22:48:12 on Oct 30,2022, Elapsed time: 0:00:01
+# End time: 17:16:06 on Nov 02,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 22:48:12 on Oct 30,2022
+# Start time: 17:16:06 on Nov 02,2022
 # vcom -work work Waveform.vwf.vht 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity lab10part5_vhd_vec_tst
 # -- Compiling architecture lab10part5_arch of lab10part5_vhd_vec_tst
-# End time: 22:48:12 on Oct 30,2022, Elapsed time: 0:00:00
+# End time: 17:16:06 on Nov 02,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
 # vsim -novopt -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.lab10part5_vhd_vec_tst 
-# Start time: 22:48:12 on Oct 30,2022
+# Start time: 17:16:06 on Nov 02,2022
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -139,15 +137,15 @@ Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 # Loading altera_lnsim.common_28nm_ram_block
 # Loading altera_lnsim.common_28nm_ram_register
 # Loading altera_lnsim.common_28nm_ram_pulse_generator
-# ** Warning: Design size of 87497 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# ** Warning: Design size of 83635 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
 # after#34
 
-# Simulation time: 1895001 ps
+# Simulation time: 2115001 ps
 
-# Simulation time: 1895001 ps
+# Simulation time: 2115001 ps
 
-# End time: 22:48:19 on Oct 30,2022, Elapsed time: 0:00:07
+# End time: 17:16:13 on Nov 02,2022, Elapsed time: 0:00:07
 # Errors: 0, Warnings: 1
 
 Completed successfully. 
@@ -160,7 +158,79 @@ Reading C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab10/lab10part5/simul
 
 Processing channel transitions... 
 
-Writing the resulting VWF to C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab10/lab10part5/simulation/qsim/lab10part5_20221030224819.sim.vwf
+Warning: d_r2[8] - signal not found in VCD.
+
+Warning: d_r2[7] - signal not found in VCD.
+
+Warning: d_r2[6] - signal not found in VCD.
+
+Warning: d_r2[5] - signal not found in VCD.
+
+Warning: d_r2[4] - signal not found in VCD.
+
+Warning: d_r2[3] - signal not found in VCD.
+
+Warning: d_r2[2] - signal not found in VCD.
+
+Warning: d_r2[1] - signal not found in VCD.
+
+Warning: d_r2[0] - signal not found in VCD.
+
+Warning: d_r3[8] - signal not found in VCD.
+
+Warning: d_r3[7] - signal not found in VCD.
+
+Warning: d_r3[6] - signal not found in VCD.
+
+Warning: d_r3[5] - signal not found in VCD.
+
+Warning: d_r3[4] - signal not found in VCD.
+
+Warning: d_r3[3] - signal not found in VCD.
+
+Warning: d_r3[2] - signal not found in VCD.
+
+Warning: d_r3[1] - signal not found in VCD.
+
+Warning: d_r3[0] - signal not found in VCD.
+
+Warning: d_r5[8] - signal not found in VCD.
+
+Warning: d_r5[7] - signal not found in VCD.
+
+Warning: d_r5[6] - signal not found in VCD.
+
+Warning: d_r5[5] - signal not found in VCD.
+
+Warning: d_r5[4] - signal not found in VCD.
+
+Warning: d_r5[3] - signal not found in VCD.
+
+Warning: d_r5[2] - signal not found in VCD.
+
+Warning: d_r5[1] - signal not found in VCD.
+
+Warning: d_r5[0] - signal not found in VCD.
+
+Warning: d_in[8] - signal not found in VCD.
+
+Warning: d_in[7] - signal not found in VCD.
+
+Warning: d_in[6] - signal not found in VCD.
+
+Warning: d_in[5] - signal not found in VCD.
+
+Warning: d_in[4] - signal not found in VCD.
+
+Warning: d_in[3] - signal not found in VCD.
+
+Warning: d_in[2] - signal not found in VCD.
+
+Warning: d_in[1] - signal not found in VCD.
+
+Warning: d_in[0] - signal not found in VCD.
+
+Writing the resulting VWF to C:/Users/xKamaiL/Desktop/digitalcircuit-laboratoy/lab10/lab10part5/simulation/qsim/lab10part5_20221102171613.sim.vwf
 
 Finished VCD to VWF conversion.
 
