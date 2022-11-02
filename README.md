@@ -24,3 +24,6 @@ A VHDL files
 ## Lab 9 - Processor 
 
 ## Lab 10 - Processor w/ External Module ( RAM, 7Seg )
+
+## Lab Final - Processor with Great Common Dividier
+find two great common divider and show the result on LEDR and 7-Segment in decimal number
