@@ -12,7 +12,7 @@ entity x777 is
 	);
 end x777;
 
-architecture lab10part5 is 
+architecture x777 is 
 	component d_ff is
 		port (
 			Clk, D  : in std_logic;
