@@ -68,15 +68,20 @@ architecture bhv of processor is
 			done : buffer std_logic;
 			Tstep_Q : out std_logic_vector(3 downto 0);
 			Greg : in std_logic_vector(8 downto 0); -- value of G
-			Gout,Gin,Ain, AddSub, AddrIn, DoutIn, pc_incr, Wr_en : out std_logic
+			Z,N,V : in std_logic;
+			Gout,Gin,Ain, AddSub, ADDRin, DoutIn, pc_incr, Wr_en : out std_logic -- add/sub ops signal
 		);
 	end component;
+	
 	component add_sub is 
-		generic ( n : natural := 9);
+		generic (
+			k : natural := 9
+		);
 		port (
-			A, B : in std_logic_vector(n-1 downto 0);
-			add_sub, reset : in std_logic;
-			v : out std_logic_vector(n-1 downto 0)
+			A, B : in std_logic_vector(k-1 downto 0);
+			addsub, reset : in std_logic;
+			Z,N,V : out std_logic;
+			result : out std_logic_vector(k-1 downto 0)
 		);
 	end component;
 	-- signal for enable of register
@@ -88,6 +93,7 @@ architecture bhv of processor is
 	signal instruction_set : std_logic_vector(1 to 3);
 	signal addsub, pc_incr, ADDRin, DoutIn : std_logic;
 	signal sum_result : std_logic_vector(8 downto 0);
+	signal is_zero,is_overflow,is_negative,Z,V,N : std_logic;
 begin
 	
 	ir0: regn port map(data_in,reset_n, IRin, clk, IR);
@@ -104,7 +110,23 @@ begin
 	pc0: counter generic map (n => 9, k => 511) port map (clk, pc_incr, reset_n, Rin(7), BusWires, pc_value);
 	
 	regA: regn port map(busWires,reset_n, Ain, clk, A);
-	addsub0: add_sub port map (A, BusWires, addsub,reset_n, sum_result);
+	
+	ff_Z: d_ff  port map(clk, is_zero, Z);
+	ff_V: d_ff port map(clk, is_overflow, V);
+	ff_N: d_ff port map(clk, is_negative, N);
+	
+	addsub0: add_sub port map (
+		A, 
+		BusWires, 
+		addsub,
+		reset_n, 
+		is_zero,
+		is_negative,
+		is_overflow,
+		sum_result
+	);
+	
+	
 	regG: regn port map(sum_result,reset_n, Gin, clk, G);
 	
 	regAddr: regn port map(busWires,reset_n, ADDRin, clk, ADDR);
@@ -141,6 +163,7 @@ begin
 				done,
 				Tstep_Q,
 				G,
+				Z,N,V,
 				Gout,
 				Gin,
 				Ain, 
@@ -155,5 +178,6 @@ begin
 	debug_addrIn <= AddRin;
 	debug_pr_in <= pc_incr;
 	pc_v <= pc_value;
+	
 
 end bhv;

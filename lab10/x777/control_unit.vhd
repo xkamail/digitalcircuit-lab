@@ -14,6 +14,7 @@ entity control_unit is
 		done : buffer std_logic;
 		Tstep_Q : out std_logic_vector(3 downto 0);
 		Greg : in std_logic_vector(8 downto 0); -- value of G
+		Z,N,V : in std_logic;
 		Gout,Gin,Ain, AddSub, ADDRin, DoutIn, pc_incr, Wr_en : out std_logic -- add/sub ops signal
 	);
 end control_unit;
@@ -28,12 +29,15 @@ architecture bhv of control_unit is
 	-- a new instruction
 	constant LOAD : std_logic_vector(2 downto 0) := "100";  -- Rx = *Ry;
 	constant STORE : std_logic_vector(2 downto 0) := "101"; -- *Ry = 
-	constant MVNZ : std_logic_vector(2 downto 0) := "110"; 
+	constant MVNZ : std_logic_vector(2 downto 0) := "110";
+	constant MVGT : std_logic_vector(2 downto 0) := "111"; -- move if overflow Ry to Rx
+
 	constant PCReg : std_logic_vector(2 downto 0) := "111";
 	constant PC_DATA : std_logic_vector(0 to 7) := "00000001";
 	constant NONE : std_logic_vector(0 to 7) := "00000000";
+	signal gt : std_logic;
 begin 
-
+	gt <= Z and (N xor V);
 	-- state table
 	process (y_Q,run,done)
 	begin
@@ -80,6 +84,7 @@ begin
 		Gin <= '0';
 		Wr_en <= '0'; R0toR7out <= NONE; ADDRin <= '0'; pc_incr <= '0'; 
 		IRin <= '0'; DoutIn <= '0'; AddSub <= '0'; Ain <= '0';
+		
 		case y_Q is
 			when T0 => 
 				
@@ -115,6 +120,16 @@ begin
 					when MVNZ =>
 						done <= '1';
 						if Greg /= "000000000" then
+							R0toR7out <= Yreg;
+							Rin <= Xreg;
+							
+							if Xreg = PCReg then -- when move PC need
+								ADDRin <= '1';
+							end if;
+						end if;
+					when MVGT =>
+						done <= '1';
+						if gt = '0' then
 							R0toR7out <= Yreg;
 							Rin <= Xreg;
 							

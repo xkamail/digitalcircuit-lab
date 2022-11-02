@@ -12,7 +12,7 @@ end regn;
 
 architecture bhv of regn is
 begin
-	process(clk)
+	process(clk,reset_n)
 	begin
 		if reset_n = '0' then 
 				Q <= (Others => '0');
