@@ -1,8 +1,4 @@
-# Digitalcircuit-laboratoy
-A VHDL files 
-
-**Board:** 5CEBA4F23C7
-
+# Digitalcircuit-laboratoy Board: 5CEBA4F23C7
 
 
 ## Lab 1 - I/O , Multiplexer , 7 Segment
