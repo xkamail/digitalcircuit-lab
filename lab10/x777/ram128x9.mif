@@ -117,7 +117,7 @@ CONTENT BEGIN
 %show last digit%	
 	89	:	100; %mvi R0, #403%
 	90	:	403;
-	91	:	550; %st R5,R0 (show Hex3 with R5) %
+	91	:	540; %st R4,R0 (show Hex3 with R4) %
 
 	124	:	170;
 	125	:	174;
