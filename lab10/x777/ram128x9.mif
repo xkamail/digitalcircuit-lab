@@ -84,10 +84,43 @@ CONTENT BEGIN
 %out_loop=100%
 	64	:	100; %mvi R0, #405%
 	65	:	405;
-	66	:	550; %st R5,R0  (show R5 on R0)%
+	66	:	550; %st R5,R0  (show Hex5 with R5)%
+
+
+%ten digits%
+
+	67	:	130; % mvi R3,#10% 
+	68	:	012;
+	69	:	100; %mvi R0, #1 % 
+	70	:	001;
+	71	:	150; %mvi R5, #0%
+	72	:	000;
+%begin=111%
+	73	:	024; %mv R2,R4%
+	74	:	323; %sub R2,R3%
+	75	:	120; %mvi R2, #loop%
+	76	:	121;
+	77	:	772; %mvgt R7, #loop when R4>R3%
+	78	:	120;%mvi R2, #out_loop %
+	79	:	126;
+	80	:	672; %mvnz R7, #out_loop when R4-R3!=0 %
+%loop=121%
+	81	:	250; %add R5,R0%
+	82	:	343; %sub R4,R3%
+	83	:	170; %mvi R7, #begin %
+	84	:	111;
+%out_loop=126%
+	86	:	100; %mvi R0, #404%
+	87	:	404;
+	88	:	550; %st R5,R0  (show Hex4 with R5)%
+
+%show last digit%	
+	89	:	100; %mvi R0, #403%
+	90	:	403;
+	91	:	550; %st R5,R0 (show Hex3 with R5) %
 
 	124	:	170;
 	125	:	174;
-	126: 144; %Y%
-	127: 144;  %X%
+	126: 357; %Y%
+	127: 357;  %X%
 END;
