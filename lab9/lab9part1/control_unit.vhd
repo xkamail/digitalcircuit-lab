@@ -67,55 +67,33 @@ begin
 	
 	controlsignals: process (y_Q, Xreg, Yreg)
 	begin
+		Gin <= '0'; Gout <= '0'; Tstep_Q <= "0000"; Gin <= '0'; 
+		R0toR7out <= NONE; Dout <= '0'; Rin <= NONE; done <= '0';
+		IRin <= '0'; Ain <= '0';
 		case y_Q is
 			when T0 => 
-				Gout <= '0';
-				Tstep_Q <= "0000";
-				R0toR7out <= NONE;
-				Dout <= '0';
 				IRin <= '1';
-				Rin <= NONE;
-				done <= '0';
-				Gin <= '0';
 			when T1 =>
-				Gout <= '0';
-				IRin <= '0';
 				Tstep_Q <= "0011";
-				Gin <= '0';
 				case I is
 					when MV => -- copy Ry -> Rx
 						R0toR7out <= Yreg;
 						Rin <= Xreg;
 						done <= '1';
-						Dout <= '0';
-						Ain <= '0';
 					when MVI => -- copy D -> Rx
 						R0toR7out <= NONE;
 						Dout <= '1';
 						Rin <= Xreg;
 						done <= '1';
-						Ain <= '0';
 					when ADD | SUB => -- add or sub: load Rx into Areg
 						R0toR7out <= Xreg; -- tell mux out Rx
-						Dout <= '0';
 						Ain <= '1'; -- tell A load data from BUS
-						done <= '0';
-						Rin <= NONE;
-					when others =>
-						Ain <= '0';
-						done <= '0';
-						Dout <= '0';
-						Rin <= NONE;
+					when others => null;
 				end case;
 			when T2 =>
 				Tstep_Q <= "0101";
-				IRin <= '0';
-				Dout <= '0';
-				Rin <= NONE;
-				done <= '0';
 				R0toR7out <= Yreg;
 				Gin <= '1';
-				Gout <= '0';
 				if I = SUB then
 					AddSub <='1';
 				else
@@ -123,18 +101,12 @@ begin
 				end if;
 			when T3 =>
 				Tstep_Q <= "1001";
-				R0toR7out <= "00000000";
-				IRin <= '0';
-				Dout <= '0';
 				done <= '1';
-				Gin <= '0';
 				case I is
 					when ADD | SUB =>
 						Rin <= Xreg;
 						Gout <= '1';
-					when others =>
-						Rin <= NONE;
-						
+					when others => null;
 				end case;
 		end case;
 	end process;
