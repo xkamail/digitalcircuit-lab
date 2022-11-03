@@ -9,7 +9,7 @@ entity processor is
 		busWires: buffer std_logic_vector(8 downto 0);
 		ADDR, DOUT : out std_logic_vector(8 downto 0); -- new 
 		Wr_en : out std_logic; -- write en for RAM
-		reg_2,reg_4,reg_5,reg_7,reg_1, reg_0, reg_IR, reg_3 : out std_logic_vector(8 downto 0);
+		reg_2,reg_4,reg_5,reg_6,reg_1, reg_0, reg_IR, reg_3 : out std_logic_vector(8 downto 0);
 		debug_pr_in, debug_addrIn : out std_logic;
 		pc_v : out std_logic_vector(8 downto 0);
 		Tstep_Q : out std_logic_vector(3 downto 0);
@@ -140,7 +140,7 @@ begin
 	reg_2 <= r2;
 	reg_4 <= r4;
 	reg_5 <= r5;
-	reg_7 <= pc_value;
+	reg_6 <= r6;
 	reg_1 <= r1; 
 	reg_0 <= r0;
 	reg_IR <= IR;

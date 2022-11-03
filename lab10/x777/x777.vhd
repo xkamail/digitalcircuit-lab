@@ -2,14 +2,12 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.std_logic_unsigned.all;
 use ieee.math_real.all;
+use ieee.numeric_std.all;
 
 entity x777 is
 	port (
 		sw9, key0, clk : in std_logic;
-		sw : in std_logic_vector(8 downto 0);
 		hex5,hex4,hex3,hex2,hex1,hex0 : out std_logic_vector(0 to 6);
-		r_addr, r1, r2,r3,r4,r0 : out std_logic_vector(8 downto 0);
-		gt_flags,d_en_flag : out std_logic;
 		
 		ledr : out std_logic_vector(8 downto 0)
 	);
@@ -50,6 +48,12 @@ architecture bhv of x777 is
 			
 		);
 	end component;
+	component sevenseg is
+		port (
+			num : in std_logic_vector(3 downto 0);
+			hex : out std_logic_vector(0 to 6)
+		);
+	end component;
 	component port_n
 		generic (n : integer := 9);
 		port (
@@ -69,13 +73,18 @@ architecture bhv of x777 is
 		busWires: buffer std_logic_vector(8 downto 0);
 		ADDR, DOUT : out std_logic_vector(8 downto 0); -- new 
 		Wr_en : out std_logic; -- write en for RAM
-		reg_2,reg_4,reg_5,reg_7,reg_1, reg_0, reg_IR, reg_3 : out std_logic_vector(8 downto 0);
+		reg_2,reg_4,reg_5,reg_6,reg_1, reg_0, reg_IR, reg_3 : out std_logic_vector(8 downto 0);
 		debug_pr_in, debug_addrIn : out std_logic;
 		pc_v : out std_logic_vector(8 downto 0);
 		Tstep_Q : out std_logic_vector(3 downto 0);
 		gt_flag,d_en_flag : out std_logic
 		);
 	end component;
+	signal r5,r6,r2 :  std_logic_vector(8 downto 0);
+	signal r_addr, r1,r3,r4,r0 :  std_logic_vector(8 downto 0);
+	signal h5,h4,h3,h2,h1,h0 : std_logic_vector(3 downto 0);
+	signal i,k : integer;
+	signal sw : std_logic_vector(8 downto 0);
 begin
 	r_addr <= A(8 downto 0);
 	p1: processor port 
@@ -91,8 +100,8 @@ begin
 			w,
 			r2, -- r2
 			r4, -- r4
-			open, -- r5
-			open, -- r7
+			r5, -- r5
+			r6, -- r7
 			r1, -- r1
 			r0, -- r0
 			open, -- ir
@@ -100,19 +109,11 @@ begin
 			open, -- 
 			open,
 			open,
-			open,
-			gt_flags,
-			d_en_flag
+			open
 		);
---	process(A)
---		begin
---			if A(8 downto 7) = "11" then
---				DIN <= port_out;
---			else
---				DIN <= q_ram_out;
---			end if;
---	end process;
+
 	DIN <= q_ram_out;
+	ledr <= r2;
 	
 	ff0: d_ff port map(clk,'1',sw9, Run);
 	en_seg7 <= '1' when (A(8 downto 7) = "10") else '0';
@@ -123,11 +124,29 @@ begin
 	m0: ram128x9 port map(A(6 downto 0),clk,d_out,wr_en,q_ram_out);
 
 	
-	led_en <= not( not(A(7)) or A(8) ) and w;
+	--led_en <= not( not(A(7)) or A(8) ) and w;
+	--leds0: regn port map(d_out,Resetn,led_en,clk,ledr);
+	process(r5,r6)
+	begin
+		i <= to_integer(unsigned(r5));
+		h3 <= std_logic_vector(to_unsigned((i/100) mod 10,h3'length));
+		h4 <= std_logic_vector(to_unsigned(i /10,h4'length));
+		h5 <= std_logic_vector(to_unsigned(i /100,h5'length));
+		
+		k <= to_integer(unsigned(r6));
+		h0 <= std_logic_vector(to_unsigned((k- ((k /100) * 100)) mod 10,h0'length));
+		h1 <= std_logic_vector(to_unsigned((k- (k /100) * 100 ) /10,h1'length));
+		h2 <= std_logic_vector(to_unsigned(k /100,h2'length));
+		
+	end process;
 	
-	leds0: regn port map(d_out,Resetn,led_en,clk,ledr);
+	s5: sevenseg port map (h5,hex5);
+	s4: sevenseg port map (h4,hex4);
+	s3: sevenseg port map (h3,hex3);
 	
-	u0: seg7_scroll port map(Resetn,clk, en_seg7 and w, A(2 downto 0),d_out(3 downto 0),hex5,hex4,hex3,hex2,hex1,hex0);
+	s2: sevenseg port map (h2,hex2);
+	s1: sevenseg port map (h1,hex1);
+	s0: sevenseg port map (h0,hex0);
 	
 	u1: port_n generic map(9) port map(sw,Resetn,clk,not(w),port_out);
 	
