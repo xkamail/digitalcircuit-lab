@@ -31,28 +31,24 @@ begin
 	process (y_Q,run,done)
 	begin
 		case y_Q is
-			when T0 => -- wait for run signal
+			when T0 => -- wait for run signal 
 				if run = '1' then 
 					y_D <= T1;
 				else
 					y_D <= T0;
 				end if;
 			when T1 => -- load data into IR register
-				case I is
-					when MV => y_D <= T0;
-					when MVI => y_D <= T0;
-					when ADD => y_D <= T2; -- add
-					when SUB => y_D <= T2; -- sub
-					when others => y_D <= T0;
-				end case;
+				if done = '1' then
+					y_D <= T0;
+				else
+					y_D <= T2;
+				end if;
  			when T2 =>
-				case I is
-					when MV => y_D <= T0;
-					when MVI => y_D <= T0;
-					when ADD => y_D <= T3; -- add
-					when SUB => y_D <= T3; -- sub
-					when others => y_D <= T0;
-				end case;
+				if done = '1' then
+					y_D <= T0;
+				else
+					y_D <= T3;
+				end if;
 			when T3 =>
 				y_D <= T0;
 		end case;
