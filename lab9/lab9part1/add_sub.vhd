@@ -15,15 +15,12 @@ entity add_sub is
 end add_sub;
 
 architecture bhv of add_sub is
-	
 	signal sum : std_logic_vector(n-1 downto 0);
 	signal o,c : std_logic;
 	signal bb : std_logic_vector(n-1 downto 0);
 begin
-
 	process(reset,add_sub)
 	begin
-		
 		if add_sub = '1' then
 			bb <= std_logic_vector(unsigned(not(B) + 1));
 		else
