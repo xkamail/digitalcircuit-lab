@@ -70,7 +70,7 @@ CONTENT BEGIN
 	
 	% loop():		  %
 	77    : 150 121 170 127;
-	81    : 150 015 170 127;
+	81    : 150 125 170 127;
 
 	% jump to end program % 
 	% no need to execute this function zone %
